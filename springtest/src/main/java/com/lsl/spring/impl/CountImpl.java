@@ -20,6 +20,7 @@ public class CountImpl implements Count{
 	public int sub(int a, int b) {
 		int result=a-b;
 		LogManager.getLogger().debug(a+"-"+b+"="+result);
+		System.out.println("测试一下");
 		return result;
 	}
 

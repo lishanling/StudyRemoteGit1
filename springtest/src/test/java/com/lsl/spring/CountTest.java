@@ -30,5 +30,12 @@ public class CountTest {
 		int result=count.sub(5, 4);
 		assertEquals(result, 1);
 	}
+	
+	@Test
+	public void testSub01() {
+		Count count=loggingProxy.countProxy();
+		int result=count.sub(5, 4);
+		assertEquals(result, 1);
+	}
 
 }
