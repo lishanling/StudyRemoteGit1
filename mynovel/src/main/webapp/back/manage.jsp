@@ -16,11 +16,11 @@
 	<div data-options="region:'north'" style="height:auto;">
 		<div id="header">
 			<div id="top_login">
-				</label> <img src="images/manage.jpg" alt="锦书阅读" id="friend_logo" style="width:1092px;height:auto;" />
+				<img src="images/manage.jpg" alt="锦书阅读" id="friend_logo" style="width:1092px;height:auto;" />
 			</div>
 		</div>
 	</div>
-		</div>
+		
 	<div data-options="region:'east',title:'工具栏'" style="width: 182px;">
 		<div class="easyui-calendar"
 			style="width: 180px; height: 180px; border: 0px; border-bottom: 1px solid #94BAE7"></div>
@@ -34,8 +34,8 @@
 			</div>
 			<div title="图书管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="treeNav">
-					<li><span>图书添加</span></li>
-					<li><span>图书修改</span></li>
+					<li><span>添加图书</span></li>
+					<li><span>修改图书信息</span></li>
 				</ul>
 			</div>
 			
