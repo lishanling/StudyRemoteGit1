@@ -48,6 +48,18 @@ create table types(
        sname varchar2(50)--书的类名
 );
 
+alter table types add imgsrc  varchar2(50);
+select * from types;
+
+update types set imgsrc = 'images/masterpiece.png' where ssid='S1002'
+update types set imgsrc = 'images/kehuan.png' where ssid='S1003'
+update types set imgsrc = 'images/love.png' where ssid='S1004'
+update types set imgsrc = 'images/inspirational.png' where ssid='S1005'
+update types set imgsrc = 'images/academic.png' where ssid='S1006'
+update types set imgsrc = 'images/history.png' where ssid='S1007'
+update types set imgsrc = 'images/biography.png' where ssid='S1008'
+update types set imgsrc = 'images/science.png' where ssid='S1009'
+
 --书表
 create sequence seq_bid start with 1001  increment by 1;
 

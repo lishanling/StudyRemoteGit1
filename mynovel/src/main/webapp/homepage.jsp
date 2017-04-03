@@ -48,23 +48,8 @@
 <div id="left">
 <h4>图书分类</h4>
 <ul>
-<li class="item">
- <a href="#"><img src="images/dushi.png"> <span class="label">名著</span></a>
- <a href="#"><img src="images/yanqing.png"> <span class="label">名著</span></a>
- </li>
- <li class="item">
- <a href="#"><img src="images/lishi.png"> <span class="label">名著</span></a>
- <a href="#"><img src="images/wangyou.png"> <span class="label">女生</span></a>
- </li>
- <li class="item">
- <a href="#"><img src="images/wuxia.png"> <span class="label">名著</span> </a>
- <a href="#"><img  src="images/xuanhuan.png"> <span class="label">名著</span></a>
-</li>
-<li class="item">
- <a href="#"><img src="images/junshi.png"> <span class="label">名著</span></a>
- <a href="#"><img src="images/lingyi.png"> <span class="label">名著</span></a>
- 
-</li>
+
+
 </ul>
 </div>
 <div id="right">
