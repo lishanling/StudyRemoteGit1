@@ -21,9 +21,10 @@ public class UserHandler{
 	@RequestMapping("login")
  	public String login(Users user ,HttpServletRequest request){
 		 	user = usersService.login(user);
-			if(user == null){
+			if(user == null){//
 				request.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
 				return "/back/login.jsp";
+				
 			}else{
 				request.setAttribute( ServletUtil.LOGIN_USER, user);
 				LogManager.getLogger().debug("success");
