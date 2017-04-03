@@ -1,0 +1,674 @@
+@charset "utf-8";
+*{
+	margin:0px auto;
+	padding:0px;
+	font-style: normal;
+	font-size:14px;
+}
+
+body{
+	background-color:#FBFAF8;
+	-moz-text-size-adjust: none;
+    line-height: 1.5em;
+	font-family: arial,"Microsoft Yahei",sans-serif;
+}
+img, a, del, .m-readbook, .u-aimg {
+    -moz-user-select: none;
+}
+#box{
+	height:1000px;}
+a:hover{
+	color:#ed6c00;
+	test-decoration:none;
+}
+ul, li {
+    list-style: outside none none;
+}
+
+#header{
+	width:1184px;
+	height:32px;
+	border-bottom:#FFF 2px solid;
+	margin-left:83px;
+}
+
+
+#search{
+	margin-left:233px;
+}
+
+
+#header ul{
+	margin-left:800px;
+}
+.red a{
+	color:#999;
+	display:block;
+	text-decoration:none;
+	border-right:#999 1px solid;
+	}
+#header li{
+	float:left;
+	width:70px;
+	text-align:center;
+	margin-top:5px;
+	text-decoration:none;
+}
+#header li a:hover{
+	color:#F00;
+	text-decoration:none;
+}
+
+#search{
+	width:884px;
+	border-bottom:solid 1px #FBFAF8;
+}
+#search ul li{
+	display:inline-block;
+	float:left;
+}
+#search ul li input:first-child{
+	margin-left:250px;
+	margin-top:20px;
+	border-radius: 25px;　　/*设置输入框两边的边框半径，可以使两边变成弧形*/
+	outline: none;
+	color:#999;
+}
+#menu{
+	background-color:#F98235;
+	clear:both;
+	color:#FFF;
+	width:1084px;
+	height:48px;
+	margin-left:132px;
+}
+
+#menu ul{
+	margin-top:20px;
+	margin-left:95px;
+}
+#menu li{
+	width:150px;
+	height:50px;	
+	float:left;
+	text-align:center;
+}
+
+#menu li a{
+	display:inline-block;
+ 	color:#FFF;
+    font-size:18px;
+	padding-left:10px;
+	padding-top:10px;
+	text-decoration:none;/*去除超链接的下划线*/	
+}
+
+#menu li a:hover{
+	color:#666;
+}
+#left ul{
+	width:300px;
+	height:500px;
+	float:left;
+}
+#left ul li{
+	width:147px;
+	text-align:center;
+	}
+.item span{
+	display:block;
+	}
+
+#left li.ite{
+	background:#CF0;
+	}
+	
+/*头部完*/
+
+.g-bd1 .g-mnc {
+    margin-right: 266px;
+    width: 694px;
+}
+
+
+.f-cb::after, .g-ft .wrap::after, .g-wrap::after, .g-bd1::after, .g-bd2::after, .g-bd3::after, .u-aimg ul::after, .u-rating::after, .u-colslist ul::after, .u-colslist1 ul::after, .u-colslist2 ul::after, .u-bookitm1::after, .u-bookitm2::after, .u-slider-page ul::after, .u-comminfo .act::after, .u-readstep ul::after, .u-bookitm1 .act::after, .u-taglist ul::after, .u-bank .list::after, .u-bank .desc::after, .u-ttl1 .act::after, .u-layer .act::after, .u-commitm::after, .m-sitenav .wrap::after {
+	clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+	}
+
+.f-cb, .g-ft .wrap, .g-wrap, .g-bd1, .g-bd2, .g-bd3, .u-aimg ul, .u-rating, .u-colslist ul, .u-colslist1 ul, .u-colslist2 ul, .u-bookitm1, .u-bookitm2, .u-slider-page ul, .u-comminfo .act, .u-readstep ul, .u-bookitm1 .act, .u-taglist ul, .u-bank .list, .u-bank .desc, .u-ttl1 .act, .u-layer .act, .u-commitm, .m-sitenav .wrap {
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+.u-nav-tab {
+    line-height: 38px;
+}
+
+ .g-bd1{
+	margin: 0 auto;
+    position: relative;
+    text-align: left;
+    width: 1084px;
+	 }
+	 
+
+.g-bd, .g-bd1, .g-bd2, .g-bd3, .g-ft {
+    text-align: left;
+}
+
+.g-bd1 .g-mn, .g-bd2{
+    float: left;
+    width: 100%;
+}
+
+.u-nav-crumbs {
+    color: #555;
+    font-size: 14px;
+    padding: 20px 0 0;
+}
+
+.u-nav-crumbs a {
+    color: #555; 
+}
+a {
+    outline: 0 none;
+	text-decoration: none;
+	cursor: pointer;
+	-moz-user-select: none;
+}
+
+.u-nav-crumbs .sep {
+    font-family: "simsun";
+    margin: 0 10px;
+}
+
+
+.u-nav-crumbs em {
+    color: #a4a4a4;
+    font-weight: 400;
+}
+em, strong {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.g-wrap {
+    margin: 0 auto;
+    min-height: 400px;
+    padding-top: 30px;
+    width: 960px;
+}
+
+.m-bookdata {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.m-bookdata .u-btn2 {
+    width: 42px;
+}
+
+.m-bookdata .cover {
+    background-color: #f4f2ef;
+    float: left;
+    margin-right: -210px;
+}
+.m-bookdata .cover, .m-bookdata .cover img {
+    height: 240px;
+    width: 180px;
+}
+element.style {
+    display: block;
+    left: 29px;
+}
+a {
+    color: #613f23;
+    text-decoration: none;
+	outline: 0 none;
+}
+
+a,input{
+		cursor: pointer;
+	}
+	
+[hidefocus],  a {
+    outline: 0 none;
+}
+	
+.m-bookdata .desc {
+    margin-left: 210px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+
+.m-bookdata .data {
+    color: #666;
+    min-height: 84px;
+}
+.m-bookdata .pay {
+    background: #fbfaf8 none repeat scroll 0 0;
+    width: 484px;
+}
+
+.m-bookdata .data table {
+    width: 100%;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.m-bookdata .col0 {
+    width: 3em;
+}
+.m-bookdata td {
+    font-size: 12px;
+    line-height: 20px;
+    vertical-align: top;
+}
+.u-comminfo .act {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.m-bookdata .price {
+    color: #9a8069;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+.u-sep {
+    color: #dbd4cd;
+    font-size: 11px !important;
+    padding: 0 10px;
+}
+
+.m-bookdata .other a {
+    color: #9a8069;
+}
+
+.m-bookdata .price i, .m-bookdata .price a {
+    color: #a4a4a4;
+    font-size: 12px;
+    font-style: normal;
+    margin-right: 5px;
+}
+
+.m-bookdata .price del {
+    margin-left: 5px;
+}
+
+.u-sep {
+    color: #dbd4cd;
+    font-size: 11px !important;
+    padding: 0 10px;
+}
+
+.m-bookdata .act {
+    position: relative;
+}
+
+.m-bookdata .u-btn, .m-bookdata .u-btn1, .m-bookdata .u-btn2, .m-bookdata .u-btn-disable {
+    float: left;
+    margin-right: 5px;
+}
+
+a.u-btn, a.u-btn1, a.u-btn2, a.u-btn-disable {
+    display: block;
+    line-height: 30px;
+}
+
+.u-btn2 {
+    background: #4d87de none repeat scroll 0 0;
+    border: 1px solid #3d76de;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 2px 2px rgba(77, 153, 22, 0.1);
+    color: #fff;
+}
+.u-btn, .u-btn1, .u-btn2, .u-btn-disable {
+    border-radius: 3px;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+    height: 30px;
+    padding: 0 15px;
+    text-align: center;
+}
+.m-bookdata .act .u-btn {
+    color: #666;
+}
+
+.u-btn {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #f8f7f4, #f7f5f2) repeat scroll 0 0;
+    border: 1px solid #c2b3a7;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 2px 2px rgba(166, 151, 138, 0.2);
+}
+
+
+element.style {
+    display: none;
+}
+.m-bookdata .added {
+    color: #666;
+    line-height: 36px;
+    margin-left: 10px;
+}
+
+.m-bookdata .other {
+    margin-top: -9px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+.m-bookdata .other ul {
+    float: right;
+}
+
+.m-bookdata .other li {
+    color: #999;
+    float: left;
+}
+li {
+    list-style: outside none none;
+}
+
+.u-nav-tab {
+    border-bottom: 1px solid #dbd4cd;
+    height: 38px;
+    line-height: 38px;
+    position: relative;
+}
+.m-bookdetail .u-nav-tab .itm {
+    width: 5em;
+}
+
+.u-nav-tab li {
+    float: left;
+    font-size: 14px;
+    text-align: center;
+}
+
+.u-nav-tab .crt a {
+    color: #333;
+    cursor: default;
+    font-weight: 700;
+}
+.u-nav-tab .icn-arrow-top3 {
+    bottom: -1px;
+    font-size: 0;
+    position: absolute;
+}
+.icn-arrow-top3 {
+    height: 6px;
+    width: 12px;
+}
+.icn-arrow, .icn-triangle {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    overflow: hidden;
+    position: relative;
+}
+.icn-arrow-top3 .arrow0, .icn-arrow-top3 .arrow1 {
+    border-bottom-color: #dbd3cb;
+    border-width: 6px;
+    left: 0;
+    top: -6px;
+}
+.icn-arrow-top3 .arrow0 {
+    border-bottom-color: #fbfaf8;
+    top: -5px;
+}
+
+.icn-arrow .arrow0 {
+    z-index: 1;
+}
+.icn-arrow .arrow0, .icn-arrow .arrow1 {
+    border: 5px solid transparent;
+    position: absolute;
+    top: 0;
+}
+.m-bookdetail .cnt {
+    color: #666;
+    font-size: 14px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    padding: 24px 16px;
+}
+
+.m-bookdetail .toc h3 {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+.m-bookdetail .cnt .intro {
+    height: 310px;
+    overflow: hidden;
+}
+.m-bookdetail .cnt .intro p {
+    margin-bottom: 28px;
+}
+
+.m-bookdetail .more {
+    margin-top: 10px;
+    text-align: right;
+}
+.u-more1 {
+    display: inline-block;
+    line-height: 18px !important;
+    padding-right: 15px;
+    position: relative;
+}
+
+.u-more1 .icn-arrow-bottom, .u-more1 .icn-arrow-top {
+    top: 7px;
+}
+.u-more1 .icn-arrow {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.icn-arrow-top, .icn-arrow-bottom {
+    height: 5px;
+    width: 10px;
+}
+.icn-arrow-bottom .arrow0 {
+    border-top-color: #fbfaf8;
+    top: -2px;
+}
+.icn-arrow-bottom .arrow0, .icn-arrow-bottom .arrow1 {
+    border-top-color: #9a806a;
+    border-width: 5px;
+    left: 0;
+    top: 0;
+}
+
+.m-bookdetail .toc li {
+    margin-bottom: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+}
+.m-bookdetail .toc .brief {
+    font-size: 12px;
+    line-height: 22px;
+    text-indent: 2em;
+}
+
+.m-bookdetail .updated {
+    position: relative;
+}
+.m-comm .ttl {
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+.u-commlist {
+    min-height: 30px;
+    padding: 10px 0 0;
+}
+.u-comminfo {
+    color: #a6978a;
+    margin-top: 19px;
+    position: relative;
+}
+.u-commlist li {
+    border-bottom: 1px solid #e0dad5;
+    margin-bottom: 10px;
+    padding: 0 0 10px;
+}
+
+.u-comm-user * {
+    color: #a6978a;
+    vertical-align: middle;
+}
+.u-sep {
+    color: #dbd4cd;
+    font-size: 11px !important;
+    padding: 0 10px;
+}
+
+.u-commlist .article {
+    color: #666;
+    font-size: 14px;
+    line-height: 24px;
+    overflow: hidden;
+    width: 100%;
+}
+.u-commlist .u-comminfo {
+    height: 20px;
+}
+.u-commlist .u-comminfo {
+    margin: 0;
+}
+
+.u-commlist .article p {
+    margin-bottom: 6px;
+    white-space: pre-wrap;
+}
+.m-page {
+    height: 50px;
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+.m-page .u-page-go {
+    margin-top: 3px;
+}
+.m-page .u-page, .m-page .u-page-go {
+    float: right;
+    margin-left: 15px;
+}
+.u-page {
+    position: relative;
+}
+.u-page-go {
+    color: #a6978a;
+    position: relative;
+}
+.u-page-go * {
+    vertical-align: middle;
+}
+.u-page-go .txt {
+    border: 1px solid #e0dad5;
+    height: 18px;
+    line-height: 20px;
+    margin: 0 5px;
+    padding: 2px 3px;
+    text-align: center;
+    width: 30px;
+}
+body, textarea, select, input {
+    color: #333;
+    font-family: arial,"Microsoft Yahei",sans-serif;
+    font-size: 14px;
+}
+[hidefocus], input, textarea, a {
+    outline: 0 none;
+}
+
+.u-page-go .btn {
+    background: #e14e37 none repeat scroll 0 0;
+    color: #fff;
+    display: none;
+    height: 22px;
+    left: 29px;
+    line-height: 22px;
+    position: absolute;
+    text-align: center;
+    top: 24px;
+    width: 38px;
+}
+
+.u-page .init, .u-page .init:hover {
+    color: #aaa;
+    cursor: default;
+    text-decoration: none;
+}
+
+.u-page li {
+    float: left;
+    margin-right: 5px;
+}
+.m-comm .ttl {
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+element.style {
+    display: none;
+}
+.u-nav-tab {
+    border-bottom: 1px solid #dbd4cd;
+    height: 38px;
+    line-height: 38px;
+    position: relative;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+.m-comm .u-nav-tab .itm {
+    width: 4em;
+}
+.u-nav-tab li {
+    float: left;
+    font-size: 14px;
+    text-align: center;
+}
+.u-commlist .no_comment {
+    color: #999;
+    padding: 0 15px;
+}
+.u-page a {
+    color: #a6978a;
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.m-comm .ttl a {
+    border-left: 3px solid #ed6c00;
+    color: #333;
+    padding-left: 8px;
+}
+
