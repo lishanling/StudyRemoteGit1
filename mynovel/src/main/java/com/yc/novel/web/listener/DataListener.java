@@ -16,7 +16,6 @@ public class DataListener implements ServletContextListener {
     public void contextDestroyed(ServletContextEvent sce)  { 
          
     }
-
 	
     public void contextInitialized(ServletContextEvent sce)  { 
     	String deployName=sce.getServletContext().getContextPath();
@@ -26,5 +25,4 @@ public class DataListener implements ServletContextListener {
     	ServletUtil.UPLOAD_DIR=sce.getServletContext().getRealPath(ServletUtil.VIRTUAL_UPLOAD_DIR).replace(deployName.substring(1)+File.separator,"");
     }
 	
-   
 }
