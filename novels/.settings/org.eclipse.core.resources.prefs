@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/yc/novel/aspect/EncryptAspect.java=UTF-8
+encoding//src/main/java/com/yc/novel/entity/PaginationBean.java=UTF-8
+encoding//src/main/java/com/yc/novel/util/Encrypt.java=UTF-8
+encoding//src/main/java/com/yc/novel/web/listener/DataListener.java=UTF-8
+encoding//src/main/webapp/homepage.jsp=UTF-8
