@@ -24,4 +24,9 @@ public class CountImpl implements Count{
 		return result;
 	}
 
+	@Override
+	public int d() {
+		return 0;
+	}
+
 }
