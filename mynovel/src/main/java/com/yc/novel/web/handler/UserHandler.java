@@ -13,24 +13,39 @@ import com.yc.novel.util.ServletUtil;
 
 @Controller("userHandler")
 @RequestMapping("user")
-public class UserHandler{
-	
+public class UserHandler {
+
 	@Autowired
-	private UsersService usersService ;
-	
+	private UsersService usersService;
+
 	@RequestMapping("login")
- 	public String login(Users user ,HttpServletRequest request){
-		 	user = usersService.login(user);
-			if(user == null){
-				request.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
-				return "/back/login.jsp";
+	public String login(Users user, HttpServletRequest request) {
+		user = usersService.login(user);
+		if (user == null) {
+			request.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
+			return "/back/login.jsp";
+		} else {
+			request.setAttribute(ServletUtil.LOGIN_USER, user);
+			LogManager.getLogger().debug("success");
+			return "redirect:/homepage.jsp";
+		}
+	}
+
+	@RequestMapping("register")
+	public String register(Users user, HttpServletRequest request) {
+		System.out.println(user);
+		
+		if (usersService.login(user) == null) {
+			if (usersService.register(user)) {
+				return "redirect:/homepage.jsp";
 			}else{
-				request.setAttribute( ServletUtil.LOGIN_USER, user);
-				LogManager.getLogger().debug("success");
-				return "redirect:/homepage.jsp";	
+				request.setAttribute(ServletUtil.ERROR_MESSAGE, "服务器出错 ...");
+				return "/back/register.jsp";
 			}
- 	}
-	
-	
-			
+ 		} else {
+ 			request.setAttribute(ServletUtil.ERROR_MESSAGE, "该名称已注册...");
+			return "/back/register.jsp";
+		}
+	}
+
 }
