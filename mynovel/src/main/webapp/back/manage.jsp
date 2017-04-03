@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="/novel/">
+<base href="${deployName }">
 <meta charset="UTF-8">
 <title>manage</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">

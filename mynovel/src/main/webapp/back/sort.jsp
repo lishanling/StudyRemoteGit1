@@ -3,7 +3,7 @@
 <!doctype html>
 <html>
 <head>
-<base href="/novel/">
+<base href="${deployName }">
 <meta charset="utf-8">
 <title>分类</title>
 <link rel="stylesheet" type="text/css" href="css/sort.css"/>

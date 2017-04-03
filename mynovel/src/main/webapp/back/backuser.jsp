@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<base href="/novel/">
+<base href="${deployName }">
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet"	href="easyui/themes/default/easyui.css">
 </head>
