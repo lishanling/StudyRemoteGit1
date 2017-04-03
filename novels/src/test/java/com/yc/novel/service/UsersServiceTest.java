@@ -8,7 +8,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.yc.novel.entity.Users;
-import com.yc.novel.util.Encrypt;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring.xml")
 public class UsersServiceTest {
@@ -37,18 +36,6 @@ public class UsersServiceTest {
 		System.out.println(user);
 		assertNotNull(user);
 	}
-	
-	@Test
-	public void testRes01() {
-		Users user=new Users();
-		user.setUname("4��");
-		user.setUpwd("u");
-		user.setUemail("23955524@qq.com");
-		System.out.println(user);
-		user=users.register(user);
-		System.out.println(user);
-		System.out.println(user);
-		assertNotNull(user);
-	}
+
 }
 
