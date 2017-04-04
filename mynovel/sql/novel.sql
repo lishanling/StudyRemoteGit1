@@ -1,4 +1,4 @@
---删除
+-删除
   drop sequence seq_aid;
   drop sequence seq_usid;
   drop sequence seq_bid;
@@ -20,7 +20,7 @@ select * from users;
 select * from collects;
 select * from menu;
 select * from discuss;
-  
+ rollback 
 create SEQUENCE seq_aid START WITH 1001;--图书管理员编号序列 
 create SEQUENCE seq_usid START WITH 1001;--用户编号
 --图书管理员表
@@ -59,7 +59,7 @@ create table book(
        burl varchar2(70), --书的访问地址
        bauthor varchar2(50),--作者名
        ssid varchar2(20) REFERENCES types(ssid),--分类编号
-       bpic  blob    --书的封面
+       bpic  varchar2(400)    --书的封面  --作出修改字段类型
 );
 
 
@@ -119,7 +119,6 @@ insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国�
 insert into users values('U'||seq_usid.nextval,'李类','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'陈看','1441964048@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'ds','1441962248@qq.com','u');
-
 
 insert into collects values('U1001','B1001',to_date('2016-03-19','yyyy-MM-dd'));
 insert into collects values('U1001','B1002',to_date('2015-10-01','yyyy-MM-dd'));

@@ -1,5 +1,9 @@
 package com.yc.novel.service;
 
-public interface BookService {
+import com.yc.novel.entity.Book;
+import com.yc.novel.entity.PaginationBean;
 
+public interface BookService {
+	PaginationBean<Book> listPartBooks(String page, String rows);
+	boolean updateBooks(Book book);
 }
