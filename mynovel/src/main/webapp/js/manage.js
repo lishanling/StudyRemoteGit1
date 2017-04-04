@@ -29,6 +29,21 @@ $(".treeNav").tree({
 					closable:true,
 				});
 					
+
+		}else if (nodeContent=="管理员信息"){
+			$("#main").tabs('add',{
+				title:nodeContent,
+				href:"back/editadmin.jsp",//从URL加载远程数据内容填充到选项卡面板。
+				iconCls:"icon-mini-add",
+				closable:true,
+			});
+		}else if (nodeContent=="管理员添加"){
+			$("#main").tabs('add',{
+				title:nodeContent,
+				href:"back/addadmin.jsp",//从URL加载远程数据内容填充到选项卡面板。
+				iconCls:"icon-mini-add",
+				closable:true,
+			});
 		}else {
 		$("#main").tabs('add',{
 			title:nodeContent,

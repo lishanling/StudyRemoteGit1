@@ -101,7 +101,8 @@ create table discuss(
 
 
 --插入数据
-
+select * from ADMIN;
+update admin set apenname='Molds', apwd='a' where aid='A1001';
 insert into admin values('A'||seq_aid.nextval,'Mold','m');
 insert into admin values('A'||seq_aid.nextval,'Jol','m');
 insert into admin values('A'||seq_aid.nextval,'唐七公子','m');
