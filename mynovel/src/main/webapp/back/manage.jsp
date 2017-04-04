@@ -30,6 +30,7 @@
 			<div title="用户管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="treeNav">
 					<li><span>用户信息</span></li>
+					<li><span>添加用户</span></li>
 					</ul>
 			</div>
 			<div title="图书管理" data-options="iconCls:'icon-mini-add'">

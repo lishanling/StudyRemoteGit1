@@ -25,7 +25,7 @@ public class UserHandler{
 	@RequestMapping("login")
  	public String login(Users user ,HttpServletRequest request){
 		 	user = usersService.login(user);
-			if(user == null){//
+			if(user == null){
 				request.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
 				return "/back/login.jsp";
 
@@ -46,10 +46,6 @@ public class UserHandler{
 	@RequestMapping("modify")
 	@ResponseBody
 	public boolean modify(@RequestParam("picData")MultipartFile picData, Users users){
-
-
-		//暂未写完
-
 
 
 		return usersService.modifyUser(users);//异步数据响应
