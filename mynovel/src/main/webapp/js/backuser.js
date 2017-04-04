@@ -9,6 +9,7 @@ $('#backuser').datagrid({
     	columns:[[ 
         {field:'usid',title:'编号',width:50 ,align:'center'},    
         {field:'uname',title:'用户名',width:100,align:'center'} ,
+        {field:'uemail',title:'邮箱',width:100,align:'center'} ,
         {field:'operator',title:'操作',width:100,align:'center',
         	formatter: function(value,row,index){
         		return '<a class="detailBtn" href="javascript:void(0)" onclick="showDetail('+row.nid+')">详情</a>'+

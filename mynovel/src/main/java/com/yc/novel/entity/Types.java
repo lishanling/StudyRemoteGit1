@@ -1,9 +1,10 @@
 package com.yc.novel.entity;
 
-public class Sorts {
+public class Types {
 	
 	private String ssid;
 	private String sname;
+	private String imgsrc;
 	
 	public String getSsid() {
 		return ssid;
@@ -17,11 +18,16 @@ public class Sorts {
 	public void setSname(String sname) {
 		this.sname = sname;
 	}
-	@Override
-	public String toString() {
-		return "Sorts [ssid=" + ssid + ", sname=" + sname + "]";
+	public String getImgsrc() {
+		return imgsrc;
+	}
+	public void setImgsrc(String imgsrc) {
+		this.imgsrc = imgsrc;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Sorts [ssid=" + ssid + ", sname=" + sname + ", imgsrc=" + imgsrc + "]";
+	}
 
 }

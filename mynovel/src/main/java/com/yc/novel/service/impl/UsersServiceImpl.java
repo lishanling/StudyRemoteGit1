@@ -1,6 +1,7 @@
 package com.yc.novel.service.impl;
 
 
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
@@ -17,13 +18,17 @@ public class UsersServiceImpl implements UsersService{
 	private  UsersMapper usersMapper;
 	
 	@Override
-	public Users login(Users user ) {
+	public Users login(Users user){
 		   return usersMapper.find(user);
 	}
 
 	@Override
-	public Users register(Users user) {
-		return usersMapper.registerUser(user);
+	public boolean register(Users user) {
+		if ( usersMapper.registerUser(user)  ){
+			return true;
+  		}else{
+			return false;
+		}
 	}
 
 

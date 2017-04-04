@@ -12,6 +12,7 @@ import com.yc.novel.service.AdminService;
 @Controller("adminHandler")
 @RequestMapping("admin")
 public class AdminHandler {
+
 	@Autowired
 	private AdminService adminService;
 
@@ -35,4 +36,5 @@ public class AdminHandler {
 
 		return adminService.modifytAdmin(admin);
 	}
+
 }
