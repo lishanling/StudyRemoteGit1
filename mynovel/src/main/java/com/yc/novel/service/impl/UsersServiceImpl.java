@@ -15,13 +15,19 @@ public class UsersServiceImpl implements UsersService{
 	@Autowired
 	private  UsersMapper usersMapper;
 
+	public void setUsersMapper(UsersMapper usersMapper) {
+		this.usersMapper = usersMapper;
+	}
+
 	@Override
 	public Users login(Users user ) {
-		   return usersMapper.find(user);
+		System.out.println("用户进行登录操作 ===> " + user);
+		return usersMapper.find(user);
 	}
 
 	@Override
 	public Users register(Users user) {
+		System.out.println("用户进行注册操作 ===> " + user);
 		return usersMapper.registerUser(user);
 	}
 

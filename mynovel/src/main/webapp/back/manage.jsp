@@ -5,7 +5,7 @@
 <head>
 <base href="${deployName }">
 <meta charset="UTF-8">
-<title>manage</title>
+<title>后台管理</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet"
 	href="easyui/themes/default/easyui.css">
