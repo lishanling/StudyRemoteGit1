@@ -1,5 +1,10 @@
 package com.yc.novel.service;
 
-public interface TypesService {
+import java.util.List;
 
+import com.yc.novel.entity.Types;
+
+public interface TypesService {
+	List<Types> findAll();	
+ 	
 }

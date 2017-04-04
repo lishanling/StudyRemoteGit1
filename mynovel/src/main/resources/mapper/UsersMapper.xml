@@ -6,13 +6,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="find" parameterType="Users" resultType="Users">
 			select * from users where 
 				uname = #{uname} and upwd = #{upwd}
- 		</select>
+ 	</select>
  			
 	<insert id="registerUser" parameterType="Users">
-	 insert into users values(seq_usid.nextval,#{uname},#{uemail},#{upwd})
-	 <selectKey resultType="string" order="AFTER" keyProperty="uname">
-	 select * from
-	 </selectKey>
+	 	insert into users values ('U'||seq_usid.nextval , #{uname} , #{uemail} , #{upwd} )		 	
 	</insert>	
 	
 

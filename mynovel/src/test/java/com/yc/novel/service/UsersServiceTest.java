@@ -24,18 +24,19 @@ public class UsersServiceTest {
 		System.out.println(user);
 		assertNotNull(user);
 	}
+	
 	@Test
 	public void testRes() {
 		Users user=new Users();
-		user.setUname("4看");
+		user.setUname("leesin120");
 		user.setUpwd("u");
 		user.setUemail("23955524@qq.com");
-		System.out.println(user);
-		user=users.register(user);
-		System.out.println(user);
-		System.out.println(user);
-		assertNotNull(user);
-	}
+ 		if( users.register(user) ){
+ 			System.out.println("success");
+ 		}else{
+ 			System.out.println("failed");
+ 		}
+ 	} 
 
 }
 
