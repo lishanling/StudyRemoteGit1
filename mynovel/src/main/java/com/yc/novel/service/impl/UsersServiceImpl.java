@@ -20,15 +20,19 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
+
 	public Users login(Users user ) {
 		System.out.println("用户进行登录操作 ===> " + user);
 		return usersMapper.find(user);
 	}
 
 	@Override
-	public Users register(Users user) {
-		System.out.println("用户进行注册操作 ===> " + user);
-		return usersMapper.registerUser(user);
+	public boolean register(Users user) {
+		if ( usersMapper.registerUser(user)  ){
+			return true;
+  		}else{
+			return false;
+		}
 	}
 
 	@Override

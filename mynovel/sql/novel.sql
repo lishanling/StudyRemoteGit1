@@ -1,4 +1,4 @@
---删除
+-删除
   drop sequence seq_aid;
   drop sequence seq_usid;
   drop sequence seq_bid;
@@ -20,7 +20,7 @@ select * from users;
 select * from collects;
 select * from menu;
 select * from discuss;
-  
+ rollback 
 create SEQUENCE seq_aid START WITH 1001;--图书管理员编号序列 
 create SEQUENCE seq_usid START WITH 1001;--用户编号
 --图书管理员表
@@ -38,6 +38,7 @@ create TABLE users(
        upwd varchar2(80) NOT NULL--密码
 );
 
+select * from users;
 
 --分类表
 create sequence seq_ssid start with 1001  increment by 1;
@@ -46,6 +47,18 @@ create table types(
        ssid varchar2(20) primary key,--分类的编号
        sname varchar2(50)--书的类名
 );
+
+alter table types add imgsrc  varchar2(50);
+select * from types;
+
+update types set imgsrc = 'images/masterpiece.png' where ssid='S1002'
+update types set imgsrc = 'images/kehuan.png' where ssid='S1003'
+update types set imgsrc = 'images/love.png' where ssid='S1004'
+update types set imgsrc = 'images/inspirational.png' where ssid='S1005'
+update types set imgsrc = 'images/academic.png' where ssid='S1006'
+update types set imgsrc = 'images/history.png' where ssid='S1007'
+update types set imgsrc = 'images/biography.png' where ssid='S1008'
+update types set imgsrc = 'images/science.png' where ssid='S1009'
 
 --书表
 create sequence seq_bid start with 1001  increment by 1;
@@ -59,9 +72,8 @@ create table book(
        burl varchar2(70), --书的访问地址
        bauthor varchar2(50),--作者名
        ssid varchar2(20) REFERENCES types(ssid),--分类编号
-       bpic  blob    --书的封面
+       bpic  varchar2(400)    --书的封面  --作出修改字段类型
 );
-
 
 --收藏表
 create TABLE collects(
@@ -70,7 +82,7 @@ create TABLE collects(
        udate DATE --收藏日期    
 );
 
---目录表
+ --目录表
 create TABLE menu(
        mid varchar2(20),--章节编号
        mname varchar2(50),--章名
@@ -116,18 +128,24 @@ insert into  book values('B'||seq_bid.nextval,'明朝那些事','历史是什么
 insert into  book values('B'||seq_bid.nextval,'乖，摸摸头','一本让你舍不得读完的短篇故事集，时而含泪微笑，时而又掩卷长思。...',to_date('2014-10-01','yyyy-MM-dd'),'中南博集天卷文化传媒有限公司','http://www.duokan.com/reader?id=d6118fadb24b4dab8803562d18e2d1bd','大冰','S1006',null);
 insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国加利福利亚，知名作家阿富汗人阿米尔接到一个电话，将他带回了童年的岁月...',to_date('2013-06-18','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','【美】卡勒德·胡赛尼','S1005',null);
 
+
+
 insert into users values('U'||seq_usid.nextval,'李类','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'陈看','1441964048@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
-insert into users values('U'||seq_usid.nextval,'ds','1441962248@qq.com','u');
+insert into users values('U'||seq_usid.nextval,'leesin','1441962248@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 
-
-insert into collects values('U1001','B1001',to_date('2016-03-19','yyyy-MM-dd'));
-insert into collects values('U1001','B1002',to_date('2015-10-01','yyyy-MM-dd'));
-insert into collects values('U1001','B1003',to_date('2015-07-19','yyyy-MM-dd'));
-insert into collects values('U1002','B1001',to_date('2016-04-9','yyyy-MM-dd'));
-
+select * from users
 insert into discuss values('U1001','B1001','很有意思',to_date('2016-12-9','yyyy-MM-dd'));
 insert into discuss values('U1001','B1002','不错',to_date('2016-11-9','yyyy-MM-dd'));
+
+insert into collects values('U1004','B1004',to_date('2016-03-19','yyyy-MM-dd'));
+insert into collects values('U1004','B1002',to_date('2015-10-01','yyyy-MM-dd'));
+insert into collects values('U1004','B1003',to_date('2015-07-19','yyyy-MM-dd'));
+insert into collects values('U1004','B1007',to_date('2016-04-9','yyyy-MM-dd'));
+select * from COLLECTS
+
+insert into discuss values('U1004','B1004','很有意思',to_date('2016-12-9','yyyy-MM-dd'));
+insert into discuss values('U1004','B1003','不错',to_date('2016-11-9','yyyy-MM-dd'));
 
 insert into menu values('序','追忆文森特·梵高','B1001','海牙1872年至1873年——伦敦1873年6月至1875年5月——巴黎1875年5月至1876年3月——埃顿1876年4月——拉姆斯盖特和伊思莱沃斯1876年4月至12月——多德雷赫特1877年1月至4月 早期的这些信件的日期可追溯至1873年，那时文森特才20岁，他的弟弟提奥还在上学。通过曾任公……');
 insert into menu values('第一部分',' 无路可走','B1001','阿姆斯特丹1877年5月至1878年7月——埃顿、布鲁塞尔、博里纳日1878年7月至1880年7月 文森特想要追随父亲的脚步成为一名牧师，这一次，他很笃定。但是在进入大学学习神学之前，他必须通过入学考试。为此，他需要勤勉地学习至少两年的时间。整个梵高家族的人都给予了文森特帮助。他的叔叔——阿姆斯特丹……');
@@ -175,6 +193,12 @@ insert into menu values('第二章','我有一碗酒，可以慰风尘','B1010',
 insert into menu values('第三章','对不起','B1010','她哭着喊：对不起，对不起，对不起…… 它贴在地面上的脑袋猛地抬了一下，好像意识到了些什么，脖子开始拼命地使劲，努力地想回头看她一眼，腿使劲尾巴使劲全身都在使劲…… 终究没能回过头来。 白瓷盆里空空的，今天她还没来得及喂它吃东西。……');
 
 
+<<<<<<< HEAD
 insert into menu values('第一章','我成为今天的我','B1011','2001年12月 我成为今天的我，是在1975年某个阴云密布的寒冷冬日，那年我十二岁。我清楚地记得当时自己趴在一堵坍塌的泥墙后面，窥视着那条小巷，旁边是结冰的小溪。许多年过去了，人们说陈年旧事可以被埋葬，然而我终于明白这是错的，因为往事会自行爬上来。回首前尘，我意识到在过去二十六年里，自己始终在窥视……');
 insert into menu values('第二章','小时候','B1011','小时候，爸爸的房子有条车道，边上种着白杨树，哈桑和我经常爬上去，用一块镜子的碎片把阳光反照进邻居家里，惹得他们很恼火。在那高高的枝桠上，我们相对而坐，没穿鞋子的脚丫晃来荡去，裤兜里满是桑椹干和胡桃。我们换着玩那破镜子，边吃桑椹干，边用它们扔对方，忽而吃吃逗乐，忽而开怀大笑。我依然能记得哈桑坐在树上的……');
 insert into menu values('第三章','父亲的传说','B1011','传说我父亲曾经在俾路支赤手空拳，和一只黑熊搏斗。如果这是个关于别人的故事，肯定有人会斥之为笑话奇谈。阿富汗人总喜欢将事物夸大，很不幸，这几乎成了这个民族的特性。如果有人吹嘘说他儿子是医生，很可能是那孩子曾经在高中的生物学测验中考了个及格的分数。但凡涉及爸爸的故事，从来没人怀疑它们的真实性。倘使有人质……');
+=======
+insert into menu values('第一章','我成为今天的我','B10011','2001年12月 我成为今天的我，是在1975年某个阴云密布的寒冷冬日，那年我十二岁。我清楚地记得当时自己趴在一堵坍塌的泥墙后面，窥视着那条小巷，旁边是结冰的小溪。许多年过去了，人们说陈年旧事可以被埋葬，然而我终于明白这是错的，因为往事会自行爬上来。回首前尘，我意识到在过去二十六年里，自己始终在窥视……');
+insert into menu values('第二章','小时候','B10011','小时候，爸爸的房子有条车道，边上种着白杨树，哈桑和我经常爬上去，用一块镜子的碎片把阳光反照进邻居家里，惹得他们很恼火。在那高高的枝桠上，我们相对而坐，没穿鞋子的脚丫晃来荡去，裤兜里满是桑椹干和胡桃。我们换着玩那破镜子，边吃桑椹干，边用它们扔对方，忽而吃吃逗乐，忽而开怀大笑。我依然能记得哈桑坐在树上的……');
+insert into menu values('第三章','父亲的传说','B10011','传说我父亲曾经在俾路支赤手空拳，和一只黑熊搏斗。如果这是个关于别人的故事，肯定有人会斥之为笑话奇谈。阿富汗人总喜欢将事物夸大，很不幸，这几乎成了这个民族的特性。如果有人吹嘘说他儿子是医生，很可能是那孩子曾经在高中的生物学测验中考了个及格的分数。但凡涉及爸爸的故事，从来没人怀疑它们的真实性。倘使有人质……');
+>>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1

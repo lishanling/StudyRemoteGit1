@@ -1,6 +1,5 @@
 package com.yc.novel.entity;
 
-import java.sql.Blob;
 import java.sql.Date;
 
 public class Book {
@@ -13,7 +12,7 @@ public class Book {
 	private String burl;
 	private String bauthor;
 	private String ssid;
-	private Blob bpic;
+	private String bpic;
 	public String getBid() {
 		return bid;
 	}
@@ -63,10 +62,11 @@ public class Book {
 	public void setSsid(String ssid) {
 		this.ssid = ssid;
 	}
-	public Blob getBpic() {
+	
+	public String getBpic() {
 		return bpic;
 	}
-	public void setBpic(Blob bpic) {
+	public void setBpic(String bpic) {
 		this.bpic = bpic;
 	}
 	@Override

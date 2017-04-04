@@ -27,7 +27,5 @@ public class UsersServiceTest {
 		assertNotNull(user);
 	}
 
-
-
 }
 

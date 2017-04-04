@@ -13,15 +13,23 @@ $(".treeNav").tree({
 			$("#main").tabs('close',nodeContent)
 		}
 		if(nodeContent=="用户信息"){
-			
 			$("#main").tabs('add',{
 				title:nodeContent,
 				href:"back/backuser.jsp",//从URL加载远程数据内容填充到选项卡面板。
 				iconCls:"icon-mini-add",
 				closable:true,
 			});
+		}
+		if(nodeContent=="图书信息"){
+				
+				$("#main").tabs('add',{
+					title:nodeContent,
+					href:"back/book_info.jsp",//从URL加载远程数据内容填充到选项卡面板。
+					iconCls:"icon-mini-add",
+					closable:true,
+				});
 					
-		}else{
+		}else {
 		$("#main").tabs('add',{
 			title:nodeContent,
 			content:nodeContent,

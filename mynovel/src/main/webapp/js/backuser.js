@@ -9,8 +9,8 @@ $('#user_info').datagrid({
     	columns:[[ 
         {field:'usid',title:'编号',width:50 ,align:'center'},    
         {field:'uname',title:'用户名',width:100,align:'center'} ,
-        {field:'uemail',title:'邮箱',width:100,align:'center',
-        }]]
+        {field:'uemail',title:'邮箱',width:100,align:'center'} ,
+        ]]
 });
 
 $("#modifyDiv").dialog({

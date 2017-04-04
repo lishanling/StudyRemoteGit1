@@ -5,7 +5,7 @@
 	<artifactId>mynovel</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<dependencies>
 		<!-- 通用jar包依赖坐标 -->
 		<dependency>
@@ -34,6 +34,12 @@
 			<artifactId>mybatis</artifactId>
 			<version>3.4.1</version>
 			<scope>runtime</scope>
+		</dependency>
+		<!--  引入redis-->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.9.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.hynnet</groupId>
@@ -102,14 +108,14 @@
 			<version>1.2</version>
 			<scope>runtime</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
 			<version>4.3.2.RELEASE</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.blingblingbang</groupId>
 			<artifactId>ueditor</artifactId>
