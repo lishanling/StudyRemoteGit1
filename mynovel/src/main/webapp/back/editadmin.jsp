@@ -11,8 +11,25 @@
 <link type="text/css" rel="stylesheet" href="css/editadmin.css">
 </head>
 <body>
-	<table id="adminList"></table>
+	<table id="adminList">
+		<tr><a class="addadminBtn" href="javascript:void(0)" onclick="openAdd()">添加</a></tr>
+	
+	</table>
 
+	<div id="addDiv">
+		<form id="addForm" method="post" enctype="multipart/form-data">
+			<p>
+				姓名：<input id="aapenname" name="apenname" class="inputclass" />
+			</p>
+			<p>
+				密码：<input id="aapwd" name="apwd" class="inputclass" />
+			</p>
+			<p>
+				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; <a
+					class="addBtn" href="javascript:void(0)">添加</a>
+			</p>
+		</form>
+	</div>
 	<div id="modifyDiv">
 		<form id="modifyForm" method="post" enctype="multipart/form-data" >
 			<p>编号：<input id="uaid" name="aid" readonly="readonly" class="inputclass"/></p>

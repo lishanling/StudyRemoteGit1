@@ -36,7 +36,6 @@
 			<div title="管理员管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="treeNav">
 					<li><span>管理员信息</span></li>
-					<li><span>管理员添加</span></li>
 				</ul>
 			</div>
 			<div title="图书管理" data-options="iconCls:'icon-mini-add'">
