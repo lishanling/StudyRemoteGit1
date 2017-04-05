@@ -6,6 +6,14 @@ public class Types {
 	private String sname;
 	private String imgsrc;
 	
+	public Types() {
+		
+	}
+	public Types(String ssid, String sname, String imgsrc) {
+		this.ssid = ssid;
+		this.sname = sname;
+		this.imgsrc = imgsrc;
+	}
 	public String getSsid() {
 		return ssid;
 	}

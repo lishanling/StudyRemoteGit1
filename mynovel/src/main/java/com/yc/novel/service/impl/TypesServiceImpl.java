@@ -18,5 +18,4 @@ public class TypesServiceImpl implements TypesService {
 	public List<Types> findAll() {
  		 return typesMapper.getAll();
 	}
-
 }

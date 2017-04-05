@@ -1,17 +1,23 @@
 package com.yc.novel.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.yc.novel.entity.Book;
 import com.yc.novel.entity.PaginationBean;
+import com.yc.novel.entity.Types;
 import com.yc.novel.mapper.BookMapper;
+import com.yc.novel.mapper.TypesMapper;
 import com.yc.novel.service.BookService;
 
 @Service("bookService")
 public class BookServiceImpl implements BookService {
 	@Autowired
 	private BookMapper bookMapper;
+	@Autowired
+	private  TypesMapper typesMapper;
 
 	@Override
 	public PaginationBean<Book> listPartBooks(String page, String rows) {
@@ -33,6 +39,13 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public boolean addBook(Book book) {
 		return bookMapper.insertBook(book)>0;
+	}
+
+	@Override
+	public Book getBooks(String id) {
+		Book book=bookMapper.addBook(id);
+		
+		return book;
 	}
 
 	}

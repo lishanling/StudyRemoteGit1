@@ -1,16 +1,16 @@
+function openAdd(){
+	$("#addDiv").dialog("open");
+}
 $(".addadminBtn").linkbutton({
 	iconCls: "icon-ok",
 });
-
 $("#addDiv").dialog({
 	title:"管理员添加",
 	closable:false,
 	width:300,
 	modal:true,
 });
-
 $("#addDiv").dialog("close");
-
 
 $(".addBtn").linkbutton({
 	iconCls: "icon-ok",
@@ -18,7 +18,6 @@ $(".addBtn").linkbutton({
 		$("#addForm").submit();
 	} 	
 });
-
 
 $("#addForm").form({
 	url:"admin/add",    
@@ -44,21 +43,6 @@ $("#addForm").form({
     } 
 });
 
-function openAdd(){
-	$("#addDiv").dialog("open");
-	//var row = $("#adminList").datagrid("getRows")[index];
-	/*$("#aapenname").val(row.apenname);
-	$("#aapwd").val(row.apwd);*/
-}
-
-$(".closeBtn").linkbutton({
-	iconCls: "icon-cancel",
-	onClick: function(){
-		$("#addDiv").dialog("close");
-	} 	
-});
-
-
 $('#adminList').datagrid({
 	url : "admin/list",
 	fitColumns : true,
@@ -81,7 +65,6 @@ $('#adminList').datagrid({
 	} ] ]
 });
 
-
 $("#modifyDiv").dialog({
 	title:"管理员修改",
 	closable:false,
@@ -99,7 +82,6 @@ $("#detailDiv").dialog({
 });
 
 $("#detailDiv").dialog("close");
-
 
 $("#modifyForm").form({
 	url:"admin/modify", 
@@ -133,7 +115,7 @@ $(".closeBtn").linkbutton({
 	onClick: function(){
 		$("#modifyDiv").dialog("close");
 		$("#detailDiv").dialog("close");
-
+		$("#addDiv").dialog("close");
 	} 	
 });
 
