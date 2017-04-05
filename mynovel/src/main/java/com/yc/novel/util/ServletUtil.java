@@ -5,6 +5,7 @@ import java.io.File;
 public class ServletUtil {
 	public static String DEPOLY_NAME;
 	public static final String LOGIN_USER="loginUser";
+	public static final String LOGIN_ADMIN="loginAdmin";
 	public static final String ERROR_MESSAGE="errorMsg";
 	public static String UPLOAD_DIR;
 	public static final String VIRTUAL_UPLOAD_DIR="/upload/";

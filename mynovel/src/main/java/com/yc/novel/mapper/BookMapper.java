@@ -7,4 +7,5 @@ public interface BookMapper {
 
 	PaginationBean<Book> findPartBooks(PaginationBean<Book> pb);
 	int updateBook(Book book);
+	int insertBook(Book book);
 }

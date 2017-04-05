@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>图书信息</title>
 <base href="${deployName}">
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet"
@@ -20,14 +20,14 @@
 			<p>出版时间:<input id="bdate" name="bdate"/></p>
 			<p>访问地址:<input id="burl" name="burl"/></p>
 			<p>简  介 : &nbsp;<input id="bdesc" name="bdesc"/></p>
-			<p>分类编号:<input id="ssid" name="ssid"/></p>
-			<p> 封 面 :<input id="upicPath" type="file" name="picData" onchange="chgPic(this)"/><br>
-				<img src="images/not_pic.jpg" id="pic" width="100" height="100">
-			</p> 
+			 <p> 封 面 :<input id="upicPath" type="file" name="picData" onchange="chgPic(this)"/><br>
+			<img src="images/not_pic.jpg" id="pic" width="100" height="100">
+			</p>
 			<p><a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp;
 			<a class="updateBtn" href="javascript:void(0)">修改</a></p>
 		</form>
 	</div>
+	
 	<div id="detailDiv">
 			<p>&nbsp; 编 号 :<label id="dbid" ></label></p>
 			<p>&nbsp; 书 名 :<label id="dbname" ></label></p>
@@ -35,7 +35,8 @@
 			<p>&nbsp; 出版社:<label id="dbcopyright" ></label></p>
 			<p>&nbsp; 出版时间:<label id="dbdate" ></label></p>
 			<p>&nbsp; 访问地址:<label id="dburl" /></label></p>
-			<p>&nbsp; 简   介 : &nbsp;<label id="dbdesc" /></label></p><p>&nbsp; 封 面 :<img src="images/not_pic.jpg" id="pic" width="100" height="100" align="top"></p>
+			<p>&nbsp; 简   介 : &nbsp;<label id="dbdesc" /></label></p>
+			<p>&nbsp; 封 面 :<img src="images/not_pic.jpg" id="dpic" width="100" height="100" align="top"></p>
 			<p><a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp;
 	</div>
 	

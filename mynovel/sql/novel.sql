@@ -7,10 +7,10 @@
 
   drop table admin;
   drop table collects;
-  drop table users;
   drop table menu;
   drop table discuss;
   drop table book;
+  drop table users;
   drop table types;
 
 select * from book;

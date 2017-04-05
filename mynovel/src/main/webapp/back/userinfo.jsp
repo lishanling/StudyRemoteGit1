@@ -4,7 +4,7 @@
 <!doctype html>
 <html>
 <head>
-<base href="${deployName }">
+<base href="${deployName}">
 <meta charset="utf-8">
 <title>我的信息</title>
 <link rel="stylesheet" type="text/css" href="css/userinfo.css" />
@@ -49,9 +49,9 @@
 			<div id="left" class="tabnav">
 				<h1 align="center" style="color: #999">个人中心</h1>
 				<ul>
-					<li class="crt" id="a1" onClick="tab(1)"><a href="#">我的收藏</a>
+					<li class="crt" id="a1" onClick="tab(1)"><a href="javascript:void()">我的收藏</a>
 					</li>
-					<li class="" id="a2" onClick="tab(2)"><a href="#">账号设置</a></li>
+					<li class="" id="a2" onClick="tab(2)"><a href="javascript:void()">账号设置</a></li>
 				</ul>
 			</div>
 			<div id="right">
@@ -59,8 +59,6 @@
 					<h1 align="center" id="headinfo" style="color: #000">我 的</h1>
 				</div>
 				<div class="container" id="b1">
-
-
 					<div class="u-colslist">
 						<ul class="j-container">
 
@@ -179,7 +177,9 @@
 			</div>
 		</div>
 	</div>
-	
+	</div>
+
+	</div>
 	<div id="footer">
 		<div id="aboutUs">
 			<ul>
@@ -192,6 +192,7 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
-	
+	</div>
+	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 </html>

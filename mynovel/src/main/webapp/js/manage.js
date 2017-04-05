@@ -28,8 +28,7 @@ $(".treeNav").tree({
 					iconCls:"icon-mini-add",
 					closable:true,
 				});
-					
-
+		
 		}else if (nodeContent=="管理员信息"){
 			$("#main").tabs('add',{
 				title:nodeContent,

@@ -24,9 +24,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 <if test="bcopyright!=null">bcopyright=#{bcopyright},</if>
 	 <if test="burl!=null">burl=#{burl},</if>
 	 <if test="bauthor!=null">bauthor=#{bauthor},</if>
-	 <if test="ssid!=null">ssid=#{ssid},</if>
-	 <if test="bpic!=null">bpic=#{bpic}</if>
+	 <!-- <if test="ssid!=null">ssid=#{ssid},</if> -->
+	 <if test="bpic!=null">bpic=#{bpic}</if> 
 	 </set>
 	 where bid=#{bid}
 	</update>
+	
+	<insert id="insertBook" parameterType="Book">
+	<selectKey order="BEFORE" keyColumn="ssid" keyProperty="ssid">
+	select ssid from types where sname=#{sname}
+	</selectKey>
+	insert into book values()
+	</insert>
 </mapper>
