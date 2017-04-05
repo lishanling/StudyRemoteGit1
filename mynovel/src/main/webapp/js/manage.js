@@ -28,17 +28,22 @@ $(".treeNav").tree({
 					iconCls:"icon-mini-add",
 					closable:true,
 				});
-					
-		}
-		/*if(nodeContent=="图书添加"){
+		
+		}else if (nodeContent=="管理员信息"){
 			$("#main").tabs('add',{
 				title:nodeContent,
-				href:"back/book_add.jsp",//从URL加载远程数据内容填充到选项卡面板。
+				href:"back/editadmin.jsp",//从URL加载远程数据内容填充到选项卡面板。
 				iconCls:"icon-mini-add",
 				closable:true,
 			});
-	}*/
-		else {
+		}else if (nodeContent=="管理员添加"){
+			$("#main").tabs('add',{
+				title:nodeContent,
+				href:"back/addadmin.jsp",//从URL加载远程数据内容填充到选项卡面板。
+				iconCls:"icon-mini-add",
+				closable:true,
+			});
+		}else {
 		$("#main").tabs('add',{
 			title:nodeContent,
 			content:nodeContent,
