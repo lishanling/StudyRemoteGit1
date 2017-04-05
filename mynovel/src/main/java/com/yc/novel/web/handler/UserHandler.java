@@ -2,15 +2,13 @@ package com.yc.novel.web.handler;
 
 import javax.servlet.http.HttpServletRequest;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.yc.novel.entity.Book;
-import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.entity.Users;
 import com.yc.novel.service.UsersService;
 import com.yc.novel.util.ServletUtil;

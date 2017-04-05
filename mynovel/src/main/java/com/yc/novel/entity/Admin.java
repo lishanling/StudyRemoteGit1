@@ -4,8 +4,6 @@ public class Admin {
 	private String aid;
 	private String apenname;
 	private String apwd;
-	private Integer atel;
-	private String aemail;
 	public String getAid() {
 		return aid;
 	}
@@ -24,23 +22,12 @@ public class Admin {
 	public void setApwd(String apwd) {
 		this.apwd = apwd;
 	}
-	public Integer getAtel() {
-		return atel;
-	}
-	public void setAtel(Integer atel) {
-		this.atel = atel;
-	}
-	public String getAemail() {
-		return aemail;
-	}
-	public void setAemail(String aemail) {
-		this.aemail = aemail;
-	}
 	@Override
 	public String toString() {
-		return "Author [aid=" + aid + ", apenname=" + apenname + ", apwd=" + apwd + ", atel=" + atel + ", aemail="
-				+ aemail + "]";
+		return "Admin [aid=" + aid + ", apenname=" + apenname + ", apwd=" + apwd + "]";
 	}
+	
+	
 	
 
 	

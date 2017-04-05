@@ -25,8 +25,9 @@ public class BookServiceTest {
 	@Test
 	public void updateBooks() {
 		Book book=new Book();
-		book.setBid("B1002");
+		book.setBid(null);
 		book.setBauthor("三毛");
+		book.setBdate(null);
 		boolean result=bookService.updateBooks(book);
 		System.out.println(result);
 		assertNotNull(result);

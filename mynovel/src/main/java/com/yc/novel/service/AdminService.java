@@ -1,5 +1,7 @@
 package com.yc.novel.service;
 
-public interface AdminService {
+import com.yc.novel.entity.Admin;
 
+public interface AdminService {
+	Admin login(Admin admin);
 }

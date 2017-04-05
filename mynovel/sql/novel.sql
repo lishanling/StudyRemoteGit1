@@ -50,15 +50,17 @@ create table types(
 
 alter table types add imgsrc  varchar2(50);
 select * from types;
+update types set imgsrc = 'images/masterpiece.png' where ssid='S1001';
+update types set imgsrc = 'images/masterpiece.png' where ssid='S1002';
+update types set imgsrc = 'images/kehuan.png' where ssid='S1003';
+update types set imgsrc = 'images/love.png' where ssid='S1004';
+update types set imgsrc = 'images/inspirational.png' where ssid='S1005';
+update types set imgsrc = 'images/academic.png' where ssid='S1006';
+update types set imgsrc = 'images/history.png' where ssid='S1007';
+update types set imgsrc = 'images/biography.png' where ssid='S1008';
+update types set imgsrc = 'images/science.png' where ssid='S1009';
 
-update types set imgsrc = 'images/masterpiece.png' where ssid='S1002'
-update types set imgsrc = 'images/kehuan.png' where ssid='S1003'
-update types set imgsrc = 'images/love.png' where ssid='S1004'
-update types set imgsrc = 'images/inspirational.png' where ssid='S1005'
-update types set imgsrc = 'images/academic.png' where ssid='S1006'
-update types set imgsrc = 'images/history.png' where ssid='S1007'
-update types set imgsrc = 'images/biography.png' where ssid='S1008'
-update types set imgsrc = 'images/science.png' where ssid='S1009'
+
 
 --书表
 create sequence seq_bid start with 1001  increment by 1;
@@ -127,7 +129,18 @@ insert into  book values('B'||seq_bid.nextval,'我不喜欢这世界，只喜欢
 insert into  book values('B'||seq_bid.nextval,'明朝那些事','历史是什么？历史就是那些残台断瓦、古庙荒冢吗？就是那些枯燥的史料吗？不是，绝对不是...',to_date('2011-01-01','yyyy-MM-dd'),'北京磨铁数盟信息技术有限公司','http://www.duokan.com/reader?id=eb30aac8a5da44bfb5384e590ab03040','当年明月','S1007',null);
 insert into  book values('B'||seq_bid.nextval,'乖，摸摸头','一本让你舍不得读完的短篇故事集，时而含泪微笑，时而又掩卷长思。...',to_date('2014-10-01','yyyy-MM-dd'),'中南博集天卷文化传媒有限公司','http://www.duokan.com/reader?id=d6118fadb24b4dab8803562d18e2d1bd','大冰','S1006',null);
 insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国加利福利亚，知名作家阿富汗人阿米尔接到一个电话，将他带回了童年的岁月...',to_date('2013-06-18','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','【美】卡勒德·胡赛尼','S1005',null);
-
+select * from book
+update book set bpic = 'images/book1.jpg' where bid='B1001';
+update book set bpic = 'images/book6.jpg' where bid='B1004';
+update book set bpic = 'images/book7.jpg' where bid='B1005';
+update book set bpic = 'images/book9.jpg' where bid='B1006';
+update book set bpic = 'images/book10.jpg' where bid='B1007';
+update book set bpic = 'images/book4.jpg' where bid='B1003';
+update book set bpic = 'images/book3.jpg' where bid='B1002';
+update book set bpic = 'images/book12.jpg' where bid='B1008';
+update book set bpic = 'images/book14.jpg' where bid='B1009';
+update book set bpic = 'images/book15.jpg' where bid='B1010';
+update book set bpic = 'images/book5.jpg' where bid='B1011';
 
 
 insert into users values('U'||seq_usid.nextval,'李类','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');

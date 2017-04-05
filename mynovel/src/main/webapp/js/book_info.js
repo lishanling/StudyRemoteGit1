@@ -33,6 +33,7 @@ $('#book_info').datagrid({
 	        	  } ] ]
 });
 
+
 $("#modifyDiv").dialog({
 	title:"图书修改",
 	closable:false,
@@ -51,15 +52,13 @@ $("#detailDiv").dialog("close");
 $("#modifyForm").form({
 	url:'book/modify',
 	success:function(data){ 
-		alert(url);
-		alert(data.trim);
+		alert(JSON.stringify(data));
 		if(data == ""){
 			$.messager.alert('图书修改','当前用户没有修改图书的权限 ！','warning');
 			$("#modifyDiv").dialog("close"); //关闭修改框
 			return ;
 		}
-
-		if(data.trim()=="true"){
+		if(true){
 			$("#modifyDiv").dialog("close"); //关闭修改框
 			$("#book_info").datagrid("reload"); //刷新修改数据
 		}else{
@@ -101,7 +100,6 @@ function openUpdate(index){
 	$("#bdate").val(row.bdate);
 	$("#burl").val(row.burl);
 	$("#bdesc").val(row.bdesc);
-	$("#ssid").val(row.ssid);
 	$("#upicPath").val("");
 	if(row.bpic){
 		$("#pic").attr("src", row.bpic);
@@ -110,7 +108,6 @@ function openUpdate(index){
 	}
 }
 function openDatail(index){
-
 	$("#detailDiv").dialog("open");
 	var row = $("#book_info").datagrid("getRows")[index];
 	$("#dbid").html(row.bid);
@@ -120,11 +117,11 @@ function openDatail(index){
 	$("#dbdate").html(row.bdate);
 	$("#dburl").html(row.burl);
 	$("#dbdesc").html(row.bdesc);
-	$("#dupicPath").html("");
+	$("#dpic").html("");
 	if(row.bpic){
-		$("#pic").attr("src", row.bpic);
+		$("#dpic").attr("src", row.bpic);
 	}else{
-		$("#pic").attr("src", "images/not_pic.jpg");
+		$("#dpic").attr("src", "images/not_pic.jpg");
 	}
 	
 }
