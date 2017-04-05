@@ -42,8 +42,10 @@ $("#detailDiv").dialog("close");
 
 
 $("#modifyForm").form({
-	url:"admin/modify",    
+	url:"admin/modify", 
+	
     success:function(data){ 
+    	alert(data.trim());
     	if(data == ""){
     		$.messager.alert('用户修改主','当前用户没有修改用户的权限 ！','warning');
     		$("#modifyDiv").dialog("close"); //关闭修改框
