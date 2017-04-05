@@ -5,7 +5,7 @@
 <head>
 <base href="${deployName }">
 <meta charset="UTF-8">
-<title>manage</title>
+<title>后台管理</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
 <link type="text/css" rel="stylesheet"
 	href="easyui/themes/default/easyui.css">
@@ -30,6 +30,7 @@
 			<div title="用户管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="treeNav">
 					<li><span>用户信息</span></li>
+					<li><span>添加用户</span></li>
 					</ul>
 			</div>
 			<div title="管理员管理" data-options="iconCls:'icon-mini-add'">
