@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html>
@@ -52,7 +51,7 @@
 		</div>
 		<div id="left">
 			<h4>图书分类</h4>
-			<ul>
+			<!-- <ul>
 				<li class="item"><a href="#"><img src="images/dushi.png">
 						<span class="label">名著</span></a> <a href="#"><img
 						src="images/yanqing.png"> <span class="label">名著</span></a></li>
@@ -65,7 +64,7 @@
 				<li class="item"><a href="#"><img src="images/junshi.png">
 						<span class="label">名著</span></a> <a href="#"><img
 						src="images/lingyi.png"> <span class="label">名著</span></a></li>
-			</ul>
+			</ul> -->
 		</div>
 		<div id="right">
 			<a href="#"> <img src="images/1.jpg" width="750" height="330">

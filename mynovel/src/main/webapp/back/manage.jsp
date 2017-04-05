@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>后台管理</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
-<link type="text/css" rel="stylesheet"
-	href="easyui/themes/default/easyui.css">
+<link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 <link href="css/manage.css" rel="stylesheet" type="text/css" />
 </head>
