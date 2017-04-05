@@ -7,8 +7,7 @@
 <meta charset="UTF-8">
 <title>后台管理</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
-<link type="text/css" rel="stylesheet"
-	href="easyui/themes/default/easyui.css">
+<link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 <link href="css/manage.css" rel="stylesheet" type="text/css" />
 </head>
@@ -41,7 +40,7 @@
 			<div title="图书管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="treeNav">
 					<li><span>图书信息</span></li>
-
+					<!-- <li><span>图书添加</span></li> -->
 				</ul>
 			</div>
 			
@@ -57,7 +56,7 @@
   <div id="main" style="width: 500px; height: 250px;">
 			<div title="欢迎">
 				<h1 style="width: 100%; text-align: center; margin-top: 80px">
-					<label> 欢迎<span>${loginUser.uname}</span>进入后台图书管理
+					<label> 欢迎<span>${loginAdmin.apenname}</span>进入后台图书管理
 					</label>
 				</h1>
 			</div>

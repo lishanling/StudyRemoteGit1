@@ -4,6 +4,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.AdminMapper">
 
+	<select id="adminFind" parameterType="Admin" resultType="Admin">
+			select * from admin where 
+				apenname = #{apenname} and apwd = #{apwd}
+ 	</select>
+
+
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<collection property="rows" column="{pageSize=pageSize,currPage=currPage}" ofType="Admin" select="getAdmin"/>
 	</resultMap>

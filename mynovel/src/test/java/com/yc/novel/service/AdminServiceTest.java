@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.yc.novel.entity.Admin;
 
 
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring.xml")
 public class AdminServiceTest {
@@ -39,4 +40,5 @@ public class AdminServiceTest {
 	}
 
 	
+
 }

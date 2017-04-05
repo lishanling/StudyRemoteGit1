@@ -1,8 +1,6 @@
 package com.yc.novel.web.handler;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,6 +42,7 @@ public class BookHandler {
 		System.out.println("修改的书"+book);
 		return bookService.updateBooks(book);
 	}
+	
 	
 	
 		

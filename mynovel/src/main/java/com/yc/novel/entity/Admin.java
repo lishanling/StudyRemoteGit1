@@ -4,25 +4,17 @@ public class Admin {
 	private String aid;
 	private String apenname;
 	private String apwd;
-	
+
 	
 	public Admin() {
 		
 	}
-
 
 	public Admin(String aid, String apenname, String apwd) {
 		this.aid = aid;
 		this.apenname = apenname;
 		this.apwd = apwd;
 	}
-
-
-	public String getAid() {
-		return aid;
-	}
-
-
 	public void setAid(String aid) {
 		this.aid = aid;
 	}
@@ -43,13 +35,11 @@ public class Admin {
 	}
 
 
-	public void setApwd(String apwd) {
-		this.apwd = apwd;
+	public String getAid() {
+		return aid;
 	}
 
-
-	@Override
-	public String toString() {
-		return "Admin [aid=" + aid + ", apenname=" + apenname + ", apwd=" + apwd + "]";
+	public void setApwd(String apwd) {
+		this.apwd = apwd;
 	}
 }
