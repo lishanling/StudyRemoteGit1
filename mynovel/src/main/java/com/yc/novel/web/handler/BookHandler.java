@@ -1,5 +1,6 @@
 package com.yc.novel.web.handler;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,17 +18,23 @@ public class BookHandler {
 	@Autowired
 	private BookService bookService;
 	
-	//显示图书信息
+	//分页显示图书信息
 	@RequestMapping("list")
 	@ResponseBody
 	public PaginationBean<Book> list(String rows,String page){
 		return bookService.listPartBooks(page,rows);
 	}
 	
-	
+	//显示图书信息
+	@RequestMapping("recommendinfo")
+	@ResponseBody
+		public List<Book> bookInfo(){
+		System.out.println("进入。。。");
+			return bookService.findAllbook();
+	}
 	@RequestMapping("modify")
 	@ResponseBody
-	public boolean modify(@RequestParam("picData")MultipartFile picData,Book book){
+	public boolean modify(@RequestParam("picData") MultipartFile picData,Book book){
 		String bpic=null;
 		if(picData!=null&&!picData.isEmpty()){//判断是否有文件上传
 			try {
@@ -39,11 +46,6 @@ public class BookHandler {
 			}
 		}
 		book.setBpic(bpic);
-		System.out.println("修改的书"+book);
 		return bookService.updateBooks(book);
 	}
-	
-	
-	
-		
 }

@@ -1,7 +1,7 @@
 function tab(n) {
 		var tabnav = "a" + n;
 		var tabid = "b" + n;
-		alert(tabid);
+		
 		cleardisplay();
 		document.getElementById(tabid).style.display = "block";
 	}

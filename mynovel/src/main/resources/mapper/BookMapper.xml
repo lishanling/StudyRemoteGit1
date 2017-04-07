@@ -3,7 +3,9 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.BookMapper">
-	
+	<select id="findAllBooks" resultType="Book">
+	select * from book
+	</select>
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<collection property="rows" column="{pageSize=pageSize,currPage=currPage}" ofType="Book" select="getBooks"/>
 	</resultMap>
@@ -29,11 +31,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 </set>
 	 where bid=#{bid}
 	</update>
-	
 	<insert id="insertBook" parameterType="Book">
 	<selectKey order="BEFORE" keyColumn="ssid" keyProperty="ssid">
 	select ssid from types where sname=#{sname}
 	</selectKey>
 	insert into book values()
 	</insert>
+
 </mapper>

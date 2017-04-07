@@ -1,10 +1,9 @@
 $('#book_info').datagrid({    
 	url:'book/list',
-	fitColumns:true,
-	fit:true,
-	singleSelect:true,
-	border:false,
-	pagination:true,
+	pagination : true,
+	fitColumns : true,
+	singleSelect : true,
+	pageList : [ 5, 10, 15, 20, 25, 30 ],
 	loadMsg:'数据加载中,请稍后...',
 	columns:[[ 
 	          {field:'bid',title:'编号',width:50 ,align:'center'},    
@@ -32,22 +31,25 @@ $('#book_info').datagrid({
 	        		  }
 	        	  } ] ]
 });
-
-
+$(".closeBtn").linkbutton({
+	iconCls: "icon-cancel",
+	onClick: function(){
+		$("#detailDiv").dialog("close");
+		$("#modifyDiv").dialog("close");
+	} 	
+});
 $("#modifyDiv").dialog({
 	title:"图书修改",
 	closable:false,
 	modal:true,
 });
 $("#modifyDiv").dialog("close");
-
-$("#detailDiv").dialog({
-	title:"图书详情",
+$("#addDiv").dialog({
+	title:"图书修改",
 	closable:false,
-	width:320,
 	modal:true,
 });
-$("#detailDiv").dialog("close");
+$("#addDiv").dialog("close");
 
 $("#modifyForm").form({
 	url:'book/modify',
@@ -58,7 +60,7 @@ $("#modifyForm").form({
 			$("#modifyDiv").dialog("close"); //关闭修改框
 			return ;
 		}
-		if(true){
+		if(data.trim()=='true'){
 			$("#modifyDiv").dialog("close"); //关闭修改框
 			$("#book_info").datagrid("reload"); //刷新修改数据
 		}else{
@@ -74,21 +76,6 @@ $("#modifyForm").form({
 	} 
 });
 
-$(".closeBtn").linkbutton({
-	iconCls: "icon-cancel",
-	onClick: function(){
-		$("#modifyDiv").dialog("close");
-		$("#detailDiv").dialog("close");
-
-	} 	
-});
-
-$(".updateBtn").linkbutton({
-	iconCls: "icon-ok",
-	onClick: function(){
-		$("#modifyForm").submit();
-	} 	
-});
 
 function openUpdate(index){
 	$("#modifyDiv").dialog("open");
@@ -100,13 +87,29 @@ function openUpdate(index){
 	$("#bdate").val(row.bdate);
 	$("#burl").val(row.burl);
 	$("#bdesc").val(row.bdesc);
-	$("#upicPath").val("");
+	$("#picData").val("");
 	if(row.bpic){
 		$("#pic").attr("src", row.bpic);
 	}else{
 		$("#pic").attr("src", "images/not_pic.jpg");
 	}
 }
+$(".updateBtn").linkbutton({
+	iconCls: "icon-ok",
+	onClick: function(){
+		$("#modifyForm").submit();
+	} 	
+});
+
+
+$("#detailDiv").dialog({
+	title:"图书详情",
+	closable:false,
+	width:400,
+	modal:true,
+});
+$("#detailDiv").dialog("close");
+
 function openDatail(index){
 	$("#detailDiv").dialog("open");
 	var row = $("#book_info").datagrid("getRows")[index];
@@ -117,16 +120,37 @@ function openDatail(index){
 	$("#dbdate").html(row.bdate);
 	$("#dburl").html(row.burl);
 	$("#dbdesc").html(row.bdesc);
-	$("#dpic").html("");
+	$("#ddpic").html("");
 	if(row.bpic){
-		$("#dpic").attr("src", row.bpic);
+		$("#ddpic").attr("src", row.bpic);
 	}else{
-		$("#dpic").attr("src", "images/not_pic.jpg");
+		$("#ddpic").attr("src", "images/not_pic.jpg");
 	}
-	
+
 }
 
 function chgPic(obj){
-	$("#pic").attr("src", window.URL.createObjectURL(obj.files[0]));
+	$("#pic").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
-
+/*
+function editUsersInfo(){
+	var formData = new FormData($( "#modifyForm" )[0]);
+	$.ajax({
+	 	url:"book/modify",
+	 	data:formData,
+	 	type: 'POST',
+	 	dataType:"json",
+	 	async: false,  
+        cache: false,  
+        contentType: false,  
+        processData: false,  
+	 	success:function(data,status){
+		 	if(data){
+		 		
+		 	}else{
+		 		$.messager.alert("错误提示","会员修改失败...\n","error");
+		 	}
+	 	}
+	});
+}
+*/

@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="${deployName }">
+<base href="${deployName}">
 <meta charset="UTF-8">
 <title>后台管理</title>
 <link type="text/css" rel="stylesheet" href="easyui/themes/icon.css">
-<link type="text/css" rel="stylesheet"
-	href="easyui/themes/default/easyui.css">
-<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
+<link href="css/main.css" rel="stylesheet" type="text/css"/>
 <link href="css/manage.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="easyui-layout" style="width: 1100px; margin: 0px auto;">
@@ -42,7 +41,6 @@
 			<div title="图书管理" data-options="iconCls:'icon-mini-add'">
 				<ul class="treeNav">
 					<li><span>图书信息</span></li>
-					<!-- <li><span>图书添加</span></li> -->
 				</ul>
 			</div>
 			

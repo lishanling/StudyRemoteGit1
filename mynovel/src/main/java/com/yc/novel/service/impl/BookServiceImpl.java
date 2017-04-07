@@ -1,5 +1,7 @@
 package com.yc.novel.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,11 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public boolean addBook(Book book) {
 		return bookMapper.insertBook(book)>0;
+	}
+
+	@Override
+	public List<Book> findAllbook() {
+		return bookMapper.findAllBooks();
 	}
 
 	}
