@@ -1,6 +1,7 @@
 package com.yc.novel.web.handler;
 
 import javax.servlet.http.HttpServletRequest;
+
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -58,5 +59,11 @@ public class UserHandler {
 		return usersService.listPartUsers(page, rows);//异步数据响应
 	}
 
+	@RequestMapping("modify")
+	@ResponseBody
+	public boolean modify(Users user){
+
+		return usersService.modifyUsers(user);//异步数据响应
+	}
 
 }

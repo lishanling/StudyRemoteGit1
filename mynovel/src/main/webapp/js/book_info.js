@@ -27,7 +27,7 @@ $('#book_info').datagrid({
 	        			  '<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>' +
 	        			  '<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
 	        			  '$(".modifyBtn").linkbutton({iconCls: "icon-edit"});</script>';
-	        			 
+
 	        			  return oprStr;
 	        		  }
 	        	  } ] ]
@@ -123,7 +123,7 @@ function openDatail(index){
 	}else{
 		$("#dpic").attr("src", "images/not_pic.jpg");
 	}
-	
+
 }
 
 function chgPic(obj){

@@ -163,23 +163,17 @@
 				<div id='b2' style='display: none'>
 					<br />
 					<div class="infomation">
-
-						<form action="">
-							<span>用户名： </span><input><br />
-							<br />
-							<br /> <span>密 码：&nbsp;&nbsp; </span> <input><br />
-							<br />
-							<button>修改</button>
+						<form action="#" method="post">
+							<span>用户名： </span><input id="uname" style="border: 1px;" /><br /><br />
+							<span>密&nbsp;&nbsp; 码：</span> <input id="upwd" style="border: 1px;" /><br /><br />
+							<a class="updateBtn" href="javascript:void(0)">修改</a>
 						</form>
-
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
-
-	</div>
+	
 	<div id="footer">
 		<div id="aboutUs">
 			<ul>
@@ -192,7 +186,7 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
-	</div>
+	
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 </html>

@@ -20,7 +20,6 @@
 				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 			</ul>
 		</div>
-
 		<div id="search">
 			<ul>
 				<li><img src="images/logo.jpg">

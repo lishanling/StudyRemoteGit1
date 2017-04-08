@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="easyui/themes/default/easyui.css">
 </head>
 <body>
+
 	<div id="addDiv">
 		<form id="addForm" method="post" enctype="multipart/form-data">
 			<p>
