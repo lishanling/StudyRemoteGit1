@@ -21,10 +21,12 @@
 		}, "json");
 
 	}
+	
 	loadBookCommand();
+
 	function loadBookCommand(){
 		$.get('book/recommendinfo',function(data){
-			for(var i=1;i<10;i++){
+			for(var i = 0 ; i < data.length; i++){
 				$("#recommend ul").append("<li><a href='back/bookdetail.jsp?bid="+data[i].bid+"'><img src='"+data[i].bpic+"'/><span>"+data[i].bname+"</span></a></li>");
 			}
 		},"json");

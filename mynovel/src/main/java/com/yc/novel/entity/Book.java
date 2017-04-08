@@ -2,7 +2,6 @@ package com.yc.novel.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.List;
 
 public class Book implements Serializable{
 	private static final long serialVersionUID = -6765580454607657848L;

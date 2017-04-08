@@ -35,21 +35,18 @@ public class AdminHandler {
 	@RequestMapping("add")
 	@ResponseBody
 	public boolean add(Admin admin){
-
-		return adminService.addtAdmin(admin);
+ 		return adminService.addtAdmin(admin);
 	}
 
 	@RequestMapping("list")
 	@ResponseBody
 	public PaginationBean<Admin> list(String rows,String page){
-
-		return adminService.listPartAdmin(page,rows);
+ 		return adminService.listPartAdmin(page,rows);
 	}
 
 	@RequestMapping("modify")
 	@ResponseBody
 	public boolean modify(Admin admin){
-
 		return adminService.modifytAdmin(admin);
 	}
 }

@@ -20,11 +20,9 @@ select * from users;
 select * from collects;
 select * from menu;
 select * from discuss;
-
  
- 
-create SEQUENCE seq_aid START WITH 1001;--图书管理员编号序列 
-create SEQUENCE seq_usid START WITH 1001;--用户编号
+create SEQUENCE seq_aid START WITH 1000;--图书管理员编号序列 
+create SEQUENCE seq_usid START WITH 1000;--用户编号
 --图书管理员表
 create TABLE admin(
        aid VARCHAR2(20) PRIMARY KEY,--管理员编号
@@ -52,14 +50,14 @@ create table types(
 );
 
 
-update types set imgsrc = 'images/masterpiece.png' where ssid='S1002';
-update types set imgsrc = 'images/kehuan.png' where ssid='S1003';
-update types set imgsrc = 'images/love.png' where ssid='S1004';
-update types set imgsrc = 'images/inspirational.png' where ssid='S1005';
-update types set imgsrc = 'images/academic.png' where ssid='S1006';
-update types set imgsrc = 'images/history.png' where ssid='S1007';
-update types set imgsrc = 'images/biography.png' where ssid='S1008';
-update types set imgsrc = 'images/science.png' where ssid='S1009';
+	update types set imgsrc = 'images/masterpiece.png' where ssid='S1002';
+	update types set imgsrc = 'images/kehuan.png' where ssid='S1003';
+	update types set imgsrc = 'images/love.png' where ssid='S1004';
+	update types set imgsrc = 'images/inspirational.png' where ssid='S1005';
+	update types set imgsrc = 'images/academic.png' where ssid='S1006';
+	update types set imgsrc = 'images/history.png' where ssid='S1007';
+	update types set imgsrc = 'images/biography.png' where ssid='S1008';
+	update types set imgsrc = 'images/science.png' where ssid='S1009';
 
 --书表
 create sequence seq_bid start with 1001  increment by 1;
@@ -90,7 +88,7 @@ create TABLE menu(
        bid varchar2(20) REFERENCES book(bid),--书的编号
        bcontent varchar2(1000) --内容
 ); 
-select * from menu;
+select * from discuss;
 --评论表
 create table discuss(
        usid varchar2(50) REFERENCES users(usid),--用户编号
@@ -108,42 +106,44 @@ insert into admin values('A'||seq_aid.nextval,'Mold','m');
 insert into admin values('A'||seq_aid.nextval,'Jol','m');
 insert into admin values('A'||seq_aid.nextval,'唐七公子','m');
 
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'名著');
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'科幻');
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'爱情');
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'励志');
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'学术');
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'杂志');
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'传记');
-insert into types(ssid,sname) values('S'||seq_ssid.nextval,'科学');
+select * from types
+
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'名著','images/masterpiece.png');
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'科幻','images/kehuan.png');
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'爱情','images/love.png');
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'励志','images/inspirational.png');
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'学术','images/academic.png');
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'杂志','images/history.png');
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'传记','images/biography.png');
+insert into types(ssid,sname) values('S'||seq_ssid.nextval,'科学','images/science.png');
 
 
-insert into  book values('B'||seq_bid.nextval,'梵高传','梵高的每一幅画作基本上都在他给弟弟提奥和友人的信中用诗一般的语言描述出来，在他的信中，人们可以读到他对艺术的信仰和独到见解，他对感情的态度以及他对待这个世界的方式...',to_date('2016-11-01','yyyy-MM-dd'),'湖北长江传媒数字出版有限公司','http://www.duokan.com/reader?id=e90a1d5a7ab64915aa4edb232fd83206','【荷】文森特·威廉·梵高 【荷】约翰娜·梵高·邦格 ','S1001',null);
-insert into  book values('B'||seq_bid.nextval,'三生三世十里桃花','那一世，大荒之中一处荒山，成就她与他的初见。 桃花灼灼，枝叶蓁蓁，妖娆伤眼。 记忆可以封存，可心有时也会背叛，忘得了前世情缘，忘不了桃林十里，亦忘不了十里桃林中玄衣的少年。 这一世，东海水晶宫，他们不期而遇…… ',to_date('2012-10-01','yyyy-MM-dd'),'湖北长江传媒数字出版有限公司','http://www.duokan.com/reader?id=a4aa7c767bfe11e2904600163e0123ac','唐七公子','S1002',null);
-insert into  book values('B'||seq_bid.nextval,'半暖','未婚夫的劈腿，情敌嚣张的闹上门，让都市女子在失去恋人的同时，失去了对爱情的信仰，面对男朋友的狡辩，嚣张的情敌挑衅，女主忍无可忍的逆反，毫不犹豫地故意跟别的男人，表现恩爱，游离在爱情的游戏当中...',to_date('2012-10-01','yyyy-MM-dd'),'北京中作华文数字传媒股份有限公司','http://www.duokan.com/reader?id=52a52c93239a4d1aa02c9851b27fb35f','顾七兮','S1003',null);
-insert into  book values('B'||seq_bid.nextval,'皮囊','《皮囊》一文中的阿太，一位99岁的老太太，没文化，是个神婆。她却教给作者具有启示力量的生活态度：“肉体是拿来用的，不是拿来伺候的。”...',to_date('2014-12-09','yyyy-MM-dd'),'杭州果麦文化传媒有限公司','http://www.duokan.com/reader?id=55aa32cfd7914d5aad29334c717e28bb','蔡崇达','S1004',null);
-insert into  book values('B'||seq_bid.nextval,'钓愚','一个追求利润最大化的世界为何会充满内在危机？商家、政客、广告商、食品厂家、烟酒商、制药厂如何欺骗大众？我们应如何应对？...',to_date('2016-02-01','yyyy-MM-dd'),'中信出版集团股份有限公司','http://www.duokan.com/reader?id=fd231f4b007a46998e0c47d5ad3e3854','【美】乔治·阿克洛夫 【美】罗伯特·席勒','S1005',null);
-insert into  book values('B'||seq_bid.nextval,'安伯托','本系列包括20世纪后半叶最耀眼的意大利作家所著的《带着鲑鱼去旅行》《误读》《开放的作品》三本书。',to_date('2012-10-01','yyyy-MM-dd'),'中信出版集团股份有限公司','http://www.duokan.com/reader?id=60f20629c61945b2bba763954cf73aef','【意】安伯托·艾柯','S1006',null);
-insert into  book values('B'||seq_bid.nextval,'小风暴','这是一部年轻人的奋斗史，更是一类人对爱、梦想与青春交出的答卷。',to_date('2016-11-01','yyyy-MM-dd'),'中信出版集团股份有限公司','http://www.duokan.com/reader?id=511c100e100943cd93eb7a111524b51f','肖茉莉','S1007',null);
-insert into  book values('B'||seq_bid.nextval,'我不喜欢这世界，只喜欢你','这是一对恋人的爱情回忆录，记载了两位恋人之间又温暖又萌爱的小故事。',to_date('2015-05-01','yyyy-MM-dd'),'北京风行盛世文化传播有限公司','http://www.duokan.com/reader?id=55323fbe4dc345809ca75a252b2df84e','乔一','S1008',null);
-insert into  book values('B'||seq_bid.nextval,'明朝那些事','历史是什么？历史就是那些残台断瓦、古庙荒冢吗？就是那些枯燥的史料吗？不是，绝对不是...',to_date('2011-01-01','yyyy-MM-dd'),'北京磨铁数盟信息技术有限公司','http://www.duokan.com/reader?id=eb30aac8a5da44bfb5384e590ab03040','当年明月','S1007',null);
-insert into  book values('B'||seq_bid.nextval,'乖，摸摸头','一本让你舍不得读完的短篇故事集，时而含泪微笑，时而又掩卷长思。...',to_date('2014-10-01','yyyy-MM-dd'),'中南博集天卷文化传媒有限公司','http://www.duokan.com/reader?id=d6118fadb24b4dab8803562d18e2d1bd','大冰','S1006',null);
-insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国加利福利亚，知名作家阿富汗人阿米尔接到一个电话，将他带回了童年的岁月...',to_date('2013-06-18','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','【美】卡勒德·胡赛尼','S1005',null);
+insert into  book values('B'||seq_bid.nextval,'梵高传','梵高的每一幅画作基本上都在他给弟弟提奥和友人的信中用诗一般的语言描述出来，在他的信中，人们可以读到他对艺术的信仰和独到见解，他对感情的态度以及他对待这个世界的方式...',to_date('2016-11-01','yyyy-MM-dd'),'湖北长江传媒数字出版有限公司','http://www.duokan.com/reader?id=e90a1d5a7ab64915aa4edb232fd83206','【荷】文森特·威廉·梵高 【荷】约翰娜·梵高·邦格 ','S1001','images/book1.jpg');
+insert into  book values('B'||seq_bid.nextval,'三生三世十里桃花','那一世，大荒之中一处荒山，成就她与他的初见。 桃花灼灼，枝叶蓁蓁，妖娆伤眼。 记忆可以封存，可心有时也会背叛，忘得了前世情缘，忘不了桃林十里，亦忘不了十里桃林中玄衣的少年。 这一世，东海水晶宫，他们不期而遇…… ',to_date('2012-10-01','yyyy-MM-dd'),'湖北长江传媒数字出版有限公司','http://www.duokan.com/reader?id=a4aa7c767bfe11e2904600163e0123ac','唐七公子','S1002','images/book2.jpg');
+insert into  book values('B'||seq_bid.nextval,'半暖','未婚夫的劈腿，情敌嚣张的闹上门，让都市女子在失去恋人的同时，失去了对爱情的信仰，面对男朋友的狡辩，嚣张的情敌挑衅，女主忍无可忍的逆反，毫不犹豫地故意跟别的男人，表现恩爱，游离在爱情的游戏当中...',to_date('2012-10-01','yyyy-MM-dd'),'北京中作华文数字传媒股份有限公司','http://www.duokan.com/reader?id=52a52c93239a4d1aa02c9851b27fb35f','顾七兮','S1003','images/book3.jpg');
+insert into  book values('B'||seq_bid.nextval,'皮囊','《皮囊》一文中的阿太，一位99岁的老太太，没文化，是个神婆。她却教给作者具有启示力量的生活态度：“肉体是拿来用的，不是拿来伺候的。”...',to_date('2014-12-09','yyyy-MM-dd'),'杭州果麦文化传媒有限公司','http://www.duokan.com/reader?id=55aa32cfd7914d5aad29334c717e28bb','蔡崇达','S1004','images/book4.jpg');
+insert into  book values('B'||seq_bid.nextval,'钓愚','一个追求利润最大化的世界为何会充满内在危机？商家、政客、广告商、食品厂家、烟酒商、制药厂如何欺骗大众？我们应如何应对？...',to_date('2016-02-01','yyyy-MM-dd'),'中信出版集团股份有限公司','http://www.duokan.com/reader?id=fd231f4b007a46998e0c47d5ad3e3854','【美】乔治·阿克洛夫 【美】罗伯特·席勒','S1005','images/book5.jpg');
+insert into  book values('B'||seq_bid.nextval,'安伯托','本系列包括20世纪后半叶最耀眼的意大利作家所著的《带着鲑鱼去旅行》《误读》《开放的作品》三本书。',to_date('2012-10-01','yyyy-MM-dd'),'中信出版集团股份有限公司','http://www.duokan.com/reader?id=60f20629c61945b2bba763954cf73aef','【意】安伯托·艾柯','S1006','images/book6.jpg');
+insert into  book values('B'||seq_bid.nextval,'小风暴','这是一部年轻人的奋斗史，更是一类人对爱、梦想与青春交出的答卷。',to_date('2016-11-01','yyyy-MM-dd'),'中信出版集团股份有限公司','http://www.duokan.com/reader?id=511c100e100943cd93eb7a111524b51f','肖茉莉','S1007','images/book7.jpg');
+insert into  book values('B'||seq_bid.nextval,'我不喜欢这世界，只喜欢你','这是一对恋人的爱情回忆录，记载了两位恋人之间又温暖又萌爱的小故事。',to_date('2015-05-01','yyyy-MM-dd'),'北京风行盛世文化传播有限公司','http://www.duokan.com/reader?id=55323fbe4dc345809ca75a252b2df84e','乔一','S1008','images/book8.jpg');
+insert into  book values('B'||seq_bid.nextval,'明朝那些事','历史是什么？历史就是那些残台断瓦、古庙荒冢吗？就是那些枯燥的史料吗？不是，绝对不是...',to_date('2011-01-01','yyyy-MM-dd'),'北京磨铁数盟信息技术有限公司','http://www.duokan.com/reader?id=eb30aac8a5da44bfb5384e590ab03040','当年明月','S1007','images/book9.jpg');
+insert into  book values('B'||seq_bid.nextval,'乖，摸摸头','一本让你舍不得读完的短篇故事集，时而含泪微笑，时而又掩卷长思。...',to_date('2014-10-01','yyyy-MM-dd'),'中南博集天卷文化传媒有限公司','http://www.duokan.com/reader?id=d6118fadb24b4dab8803562d18e2d1bd','大冰','S1006','images/book10.jpg');
+insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国加利福利亚，知名作家阿富汗人阿米尔接到一个电话，将他带回了童年的岁月...',to_date('2013-06-18','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','【美】卡勒德·胡赛尼','S1005','images/book11.jpg');
 
-
+select * from book
 
 insert into users values('U'||seq_usid.nextval,'李类','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'陈看','1441964048@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'leesin','1441962248@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
+select * from users
 
-
-insert into discuss values('U1001','B1002','很有意思',to_date('2016-12-9','yyyy-MM-dd'));
+insert into discuss values('U1001','B1004','很有意思',to_date('2016-12-9','yyyy-MM-dd'));
 insert into discuss values('U1001','B1003','不错',to_date('2016-11-9','yyyy-MM-dd'));
 
-insert into collects values('U1003','B1004',to_date('2016-03-19','yyyy-MM-dd'));
-insert into collects values('U1003','B1002',to_date('2015-10-01','yyyy-MM-dd'));
-insert into collects values('U1003','B1003',to_date('2015-07-19','yyyy-MM-dd'));
-insert into collects values('U1003','B1007',to_date('2016-04-9','yyyy-MM-dd'));
+insert into collects values('U1001','B1004',to_date('2016-03-19','yyyy-MM-dd'));
+insert into collects values('U1001','B1005',to_date('2015-10-01','yyyy-MM-dd'));
+insert into collects values('U1001','B1003',to_date('2015-07-19','yyyy-MM-dd'));
+insert into collects values('U1001','B1007',to_date('2016-04-9','yyyy-MM-dd'));
 
 
 insert into discuss values('U1003','B1004','很有意思',to_date('2016-12-9','yyyy-MM-dd'));

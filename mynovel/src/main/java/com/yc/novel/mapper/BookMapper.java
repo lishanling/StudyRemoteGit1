@@ -1,6 +1,7 @@
 package com.yc.novel.mapper;
 
 import java.util.List;
+
 import com.yc.novel.entity.Book;
 import com.yc.novel.entity.PaginationBean;
 public interface BookMapper {

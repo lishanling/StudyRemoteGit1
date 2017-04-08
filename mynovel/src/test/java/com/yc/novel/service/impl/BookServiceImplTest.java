@@ -1,7 +1,5 @@
 package com.yc.novel.service.impl;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
 import org.junit.Test;
@@ -22,9 +20,17 @@ public class BookServiceImplTest {
 	private  BookService service;
 	//"select b.* from book b left join types where sname = "学术" "
 	@Test
-	public void testFindAll(){
+	public void testBooksByTypes(){
 		System.out.println("hello");
 		List<Book>  books = service.getBooksByTypes("学术");
+		for(Book book : books){
+			System.out.println("book==>>>"+book);
+		}
+	}
+	
+	@Test
+	public void testFindAll(){
+		List<Book>  books = service.findAllbook();
 		for(Book book : books){
 			System.out.println("book==>>>"+book);
 		}

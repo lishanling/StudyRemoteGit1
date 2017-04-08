@@ -49,7 +49,8 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public List<Book> findAllbook() {
-		return bookMapper.findAllBooks();
+		List<Book> result = bookMapper.findAllBooks();
+		return result;
 	}
 	
 	public Book getBooks(String id) {
