@@ -1,3 +1,75 @@
+//使用文本编辑器
+var contentEditor=UE.getEditor('bdesc',{
+	elementPathEnabled:false,
+	enableAutoSave:false,
+	aotuSyncData:false
+});
+
+function add(){
+	$("#addDiv").dialog("open");
+	$.post("book/get?ssid="+id,function(data){
+		//加载所有的主题数据
+		$.post("types/all",function(datat){
+			$("#ssid").empty();
+			for(var i=0;i<datat.length;i++){
+				if(data.topic.tname==datat[i].tname){
+					$("#ssid").append("<option value='"+datat[i].ssid+"'selected>"+datat[i].sname+"</option>");
+				}else{
+					$("#ssid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
+				}
+			}
+		});
+	},"json");
+}
+
+
+$("#addDiv").dialog({
+	title:"图书添加",
+	closable:false,
+	modal:true,
+});
+$("#addDiv").dialog("close");
+
+
+$("#addForm").form({
+	url:'book/add',
+	success:function(data){ 
+		alert(JSON.stringify(data));
+		if(data == ""){
+			$.messager.alert('图书添加','当前用户没有添加图书的权限 ！','warning');
+			$("#addDiv").dialog("close"); //关闭修改框
+			return ;
+		}
+		if(true){
+			$("#addDiv").dialog("close"); //关闭修改框
+			$("#book_info").datagrid("reload"); //刷新修改数据
+		}else{
+			$.messager.show({
+				title:'添加信息',
+				msg:'添加失败！！！',
+				showType:'show',
+				style:{
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+				}
+			});
+		}
+	} 
+});
+
+
+$(".addBook").linkbutton({
+	iconCls: "icon-ok",
+	onClick: function(){
+		$("#bdesc").val(contentEditor.getContent());
+		$("#addForm").submit();
+	} 	
+});
+
+
+
+
+
+
 $('#book_info').datagrid({    
 	url:'book/list',
 	fitColumns:true,
@@ -79,7 +151,7 @@ $(".closeBtn").linkbutton({
 	onClick: function(){
 		$("#modifyDiv").dialog("close");
 		$("#detailDiv").dialog("close");
-
+		$("#addDiv").dialog("close");
 	} 	
 });
 

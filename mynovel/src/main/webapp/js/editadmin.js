@@ -1,3 +1,47 @@
+function openAdd(){
+	$("#addDiv").dialog("open");
+}
+$(".addadminBtn").linkbutton({
+	iconCls: "icon-ok",
+});
+$("#addDiv").dialog({
+	title:"管理员添加",
+	closable:false,
+	width:300,
+	modal:true,
+});
+$("#addDiv").dialog("close");
+
+$(".addBtn").linkbutton({
+	iconCls: "icon-ok",
+	onClick: function(){
+		$("#addForm").submit();
+	} 	
+});
+
+$("#addForm").form({
+	url:"admin/add",    
+    success:function(data){ 
+    	if(data == ""){
+    		$.messager.alert('管理员添加','当前管理员没有添加的权限 ！','warning');
+    		$("#addDiv").dialog("close"); //关闭修改框
+    		return ;
+    	}
+    	if(data.trim() == "true"){
+    		$("#addDiv").dialog("close"); //关闭修改框
+    		$("#adminList").datagrid("reload"); //刷新修改数据
+    	}else{
+    		$.messager.show({
+    			title:'添加信息',
+    			msg:'添加失败！！！',
+    			showType:'show',
+    			style:{
+    				top:document.body.scrollTop+document.documentElement.scrollTop,
+    			}
+    		});
+    	}
+    } 
+});
 
 $('#adminList').datagrid({
 	url : "admin/list",
@@ -21,7 +65,6 @@ $('#adminList').datagrid({
 	} ] ]
 });
 
-
 $("#modifyDiv").dialog({
 	title:"管理员修改",
 	closable:false,
@@ -40,10 +83,11 @@ $("#detailDiv").dialog({
 
 $("#detailDiv").dialog("close");
 
-
 $("#modifyForm").form({
-	url:"admin/modify",    
+	url:"admin/modify", 
+	
     success:function(data){ 
+    	
     	if(data == ""){
     		$.messager.alert('用户修改主','当前用户没有修改用户的权限 ！','warning');
     		$("#modifyDiv").dialog("close"); //关闭修改框
@@ -71,7 +115,7 @@ $(".closeBtn").linkbutton({
 	onClick: function(){
 		$("#modifyDiv").dialog("close");
 		$("#detailDiv").dialog("close");
-
+		$("#addDiv").dialog("close");
 	} 	
 });
 
