@@ -11,4 +11,11 @@ public interface BookMapper {
 	int updateBook(Book book);
 	int insertBook(Book book);
 	List<Book> findAllBooks();
+	
+	Book bookSSid(String id);
+	
+	Book addBook(String id);
+	
+	Book bookTypes(String id);
+
 }

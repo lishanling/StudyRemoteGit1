@@ -7,4 +7,5 @@ import com.yc.novel.entity.Types;
 public interface TypesService {
 	List<Types> findAll();	
  	
+
 }
