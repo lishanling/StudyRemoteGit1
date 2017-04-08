@@ -1,5 +1,9 @@
 package com.yc.novel.service;
 
-public interface BookService {
+import java.util.List;
 
+import com.yc.novel.entity.Book;
+
+public interface BookService {
+		List<Book> getBooksByTypes(String bookTypesName) ;
 }

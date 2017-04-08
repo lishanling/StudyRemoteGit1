@@ -12,10 +12,10 @@
 
 	loadInfo();
 	
-	function loadInfo() {
+	function loadInfo(){
 		$.get("types/info", function(data) {
 	  		for (var i = 0 ; i < data.length; i++) {	 			 
-	 			$("#left ul").append("<li class='item'> <a href='#'>" +
+	 			$("#left ul").append("<li class='item'> <a href='back/sortdetail.jsp?bookSortName="+data[i].sname+"'>" +
 						" <img src='"+data[i].imgsrc+"'/><span class='label'>"+data[i].sname+"</span></a></li>");
 			}
 		}, "json");
