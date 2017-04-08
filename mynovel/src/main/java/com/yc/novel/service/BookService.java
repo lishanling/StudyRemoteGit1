@@ -11,11 +11,8 @@ public interface BookService {
 	PaginationBean<Book> listPartBooks(String page, String rows);
 	
 	boolean updateBooks(Book book);
-
-
-	
+	boolean insertBooks(Book book,String sname);
+	boolean delbook(String bid);
 	List<Book> findAllbook();
-	
-
 	boolean addBooks(Book book);
 }

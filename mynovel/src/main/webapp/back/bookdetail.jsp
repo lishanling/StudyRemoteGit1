@@ -13,7 +13,14 @@
 	<div id="box">
 		<div id="header">
 			<ul>
-				<li class="red"><a href="back/login.jsp">登录</a></li>
+				<li class="red"><c:choose>
+						<c:when test="${loginUser.uname eq null}">
+							<a href="back/login.jsp">登录</a>
+						</c:when>
+						<c:otherwise>
+							<a href="back/userinfo.jsp">${loginUser.uname}</a>
+						</c:otherwise>
+					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
@@ -114,8 +121,8 @@
 												<a class="u-btn2 j-free"
 													href="http://www.duokan.com/reader?id=75b83216dbed11e192a600163e0123ac"
 													hidefocus="hidefocus" target="_blank">阅读</a> <a
-													class="u-btn j-get" href="javascript:void(0);"
-													hidefocus="hidefocus">加入书架</a> <span class="added"
+													class="u-btn j-get" href="javascript:void(0);" hidefoc
+													us="hidefocus">加入书架</a> <span class="added"
 													style="display: none">已加入书架</span>
 											</div>
 											<div class="other j-action">
@@ -510,6 +517,7 @@
 
 
 
+
 															
 															<p>
 														</a>
@@ -649,7 +657,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>

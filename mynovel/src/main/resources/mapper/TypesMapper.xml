@@ -6,4 +6,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getAll" resultType="Types">
 		select * from Types
 	</select>
+	
 </mapper>

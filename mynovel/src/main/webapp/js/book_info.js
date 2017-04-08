@@ -15,21 +15,30 @@ $('#book_info').datagrid({
 	        			  return "<img width='80' src='" + value + "'/>"
 	        		  }
 	        	  }},
+	              
 	        	  {field:'bname',title:'书名',width:100,align:'center'} ,
-	        	  {field:'bauthor',title:'作者',width:100,align:'center'} ,
+	        	  {field:'bauthor',title:'作者',width:50,align:'center'} ,
 	        	  {field:'bcopyright',title:'出版社',width:100,align:'center'} ,
 	        	  {field:'bdate',title:'出版日期',width:100,align:'center'} ,
 
-	        	  {field : 'opr',title : '操作',width : 100,align : 'center',
+	        	  {field : 'opr',title : '操作',width : 150,align : 'center',
 	        		  formatter: function(value,row,index){
-	        			  var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;&nbsp;' + 
-	        			  '<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>' +
+	        			  var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;' + 
+	        			  '<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>&nbsp;' +
+	        			 '<a class="delBtn" href="javascript:void(0)" onclick="delDetail('+index+')">删除</a>'+
 	        			  '<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
-	        			  '$(".modifyBtn").linkbutton({iconCls: "icon-edit"});</script>';
+	        			  '$(".modifyBtn").linkbutton({iconCls: "icon-edit"});'+
+	        			  '$(".delBtn").linkbutton({iconCls:"icon-cancel"});</script>';
 	        			 
 	        			  return oprStr;
 	        		  }
-	        	  } ] ]
+	        	  } ] ],toolbar:[{
+	        		  text:"添加",
+	        		  iconCls: "icon-add",
+	        		  handler:function(){
+	        			  $("#addDiv").dialog("open");
+	        		  }
+	        	  }]
 });
 $(".closeBtn").linkbutton({
 	iconCls: "icon-cancel",
@@ -49,7 +58,6 @@ $("#modifyDiv").dialog("close");
 $("#modifyForm").form({
 	url:'book/modify',
 	success:function(data){ 
-		alert(JSON.stringify(data));
 		if(data == ""){
 			$.messager.alert('图书修改','当前用户没有修改图书的权限 ！','warning');
 			$("#modifyDiv").dialog("close"); //关闭修改框
@@ -57,6 +65,7 @@ $("#modifyForm").form({
 		}
 		if(data.trim()=='true'){
 			$("#modifyDiv").dialog("close"); //关闭修改框
+			$.messager.alert('图书修改','修改成功');
 			$("#book_info").datagrid("reload"); //刷新修改数据
 		}else{
 			$.messager.show({
@@ -96,7 +105,12 @@ $(".updateBtn").linkbutton({
 	} 	
 });
 
-
+function delDetail(index){
+	var row = $("#book_info").datagrid("getRows")[index];
+	$.post("book/delete?bid="+row.bid, function(data) {
+		$.messager.alert('图书删除','删除成功！');
+	}, "json");
+}
 $("#detailDiv").dialog({
 	title:"图书详情",
 	closable:false,
@@ -127,44 +141,8 @@ function openDatail(index){
 function chgPic(obj){
 	$("#pic").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
-/*
-function editUsersInfo(){
-	var formData = new FormData($( "#modifyForm" )[0]);
-	$.ajax({
-	 	url:"book/modify",
-	 	data:formData,
-	 	type: 'POST',
-	 	dataType:"json",
-	 	async: false,  
-        cache: false,  
-        contentType: false,  
-        processData: false,  
-	 	success:function(data,status){
-		 	if(data){
-		 		
-		 	}else{
-		 		$.messager.alert("错误提示","会员修改失败...\n","error");
-		 	}
-	 	}
-	});
-}
-*/
-
-function add(){
-	$("#addDiv").dialog("open");
-	//$.post("book/get?ssid="+id,function(data){
-		//加载所有的主题数据
-		$.post("types/info",function(datat){
-			$("#ssid").empty();
-			for(var i=0;i<datat.length;i++){
-				if(data.topic.tname==datat[i].tname){
-					$("#ssid").append("<option value='"+datat[i].ssid+"'selected>"+datat[i].sname+"</option>");
-				}else{
-					$("#ssid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
-				}
-			}
-		//});
-	},"json");
+function changPic(obj){
+	$("#apic").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
 
 
@@ -172,22 +150,25 @@ $("#addDiv").dialog({
 	title:"图书添加",
 	closable:false,
 	modal:true,
+	minimizable:true,
+	resizable:true,
+	maximizable:true,
+	
 });
 $("#addDiv").dialog("close");
 
 
 $("#addForm").form({
 	url:'book/add',
-	success:function(data){ 
-		alert(JSON.stringify(data));
+	success:function(data){
 		if(data == ""){
 			$.messager.alert('图书添加','当前用户没有添加图书的权限 ！','warning');
-			$("#addDiv").dialog("close"); //关闭修改框
+			$("#addDiv").dialog("close"); 
 			return ;
 		}
-		if(true){
-			$("#addDiv").dialog("close"); //关闭修改框
-			$("#book_info").datagrid("reload"); //刷新修改数据
+		if(data.trim()=="true"){
+			$("#addDiv").dialog("close"); 
+			$("#book_info").datagrid("reload"); //刷新数据
 		}else{
 			$.messager.show({
 				title:'添加信息',
@@ -206,9 +187,8 @@ $(".addBtn").linkbutton({
 	iconCls: "icon-ok",
 	onClick: function(){
 		$("#addForm").submit();
-	} 	
+	}
 });
-
 $(".addBook").linkbutton({
 	iconCls: "icon-add",
 });

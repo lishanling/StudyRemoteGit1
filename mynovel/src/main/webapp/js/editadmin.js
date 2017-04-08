@@ -145,24 +145,5 @@ function delDetail(index){
 	$("#adminList").datagrid("deleteRow",index);
 	$.post("admin/delete?aid="+row.aid, function(data) {
 		$.messager.alert('管理员删除','删除成功！');
-
 	}, "json");
 }
-
-/*
-function add(){
-	$.post("book/add?ssid="+id,function(data){
-		//加载所有的主题数据
-		$.post("types/sname",function(datat){
-			$("#assid").empty();
-			for(var i=0;i<datat.length;i++){
-				if(data.types.sname==datat[i].sname){
-					$("#assid").append("<option value='"+datat[i].ssid+"'selected>"+datat[i].sname+"</option>");
-				}else{
-					$("#assid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
-				}
-			}
-		});
-	},"json");
-}
-*/

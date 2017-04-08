@@ -51,7 +51,7 @@ create table types(
        imgsrc varchar2(50)
 );
 
-
+select * from types
 update types set imgsrc = 'images/masterpiece.png' where ssid='S1002';
 update types set imgsrc = 'images/kehuan.png' where ssid='S1003';
 update types set imgsrc = 'images/love.png' where ssid='S1004';

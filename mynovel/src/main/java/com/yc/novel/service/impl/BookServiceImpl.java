@@ -1,7 +1,8 @@
 package com.yc.novel.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -51,6 +52,19 @@ public class BookServiceImpl implements BookService {
 		List<Book> result = bookMapper.findAllBooks();
 		return result;
 	}
-	
 
+		@Override
+		public boolean insertBooks(Book book, String sname) {
+			Map<Object, Object> map = new HashMap<Object, Object>();
+			map.put("book", book);
+			System.out.println(book.getBauthor());
+			map.put("sname", sname);
+			return bookMapper.insertBook(map)>0;
+		}
+
+		@Override
+		public boolean delbook(String bid) {
+			return bookMapper.delBooks(bid)>0;
+		}
 	}
+	

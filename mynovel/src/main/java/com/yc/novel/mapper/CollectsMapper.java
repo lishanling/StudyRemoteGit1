@@ -1,5 +1,7 @@
 package com.yc.novel.mapper;
 
-public interface CollectsMapper {
+import com.yc.novel.entity.Collects;
 
+public interface CollectsMapper {
+	int add(Collects collects);
 }

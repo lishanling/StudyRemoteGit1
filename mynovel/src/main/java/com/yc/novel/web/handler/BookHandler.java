@@ -1,6 +1,7 @@
 package com.yc.novel.web.handler;
 
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -58,11 +59,10 @@ public class BookHandler {
 		book.setBpic(bpic);
 		return bookService.updateBooks(book);
 	}
-	
-
 	@RequestMapping("add")
 	@ResponseBody
-	public boolean add(@RequestParam("picData")MultipartFile picData,Book book){
+	public boolean add(@RequestParam("picData") MultipartFile picData,Book book){
+
 		String bpic=null;
 		if(picData!=null&&!picData.isEmpty()){//判断是否有文件上传
 			try {
@@ -74,7 +74,16 @@ public class BookHandler {
 			}
 		}
 		book.setBpic(bpic);
-		return bookService.addBooks(book);
+		HttpServletRequest request = null;
+		//String sname=request.getParameter("sname");
+		String sname="爱情";
+		return bookService.insertBooks(book, sname);
+		
+	}
+	@RequestMapping("delete")
+	@ResponseBody
+	public boolean del(String bid){
+		return bookService.delbook(bid);
 	}
 }
 

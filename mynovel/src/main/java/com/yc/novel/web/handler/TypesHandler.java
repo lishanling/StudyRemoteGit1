@@ -20,6 +20,7 @@ public class TypesHandler {
 	@ResponseBody
 	@RequestMapping("info")
 	public List<Types> sortsInfo(){
+		System.out.println("进入添加");
 		 return service.findAll();
 	}	
 }

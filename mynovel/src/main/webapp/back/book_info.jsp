@@ -11,10 +11,10 @@
 </head>
 <body>
 	<table id="book_info">
-	<tr>
+	<!-- <tr>
 	
 			<a class="addBook" href="javascript:void(0)" onclick="add()">添加</a>
-		</tr>
+		</tr> -->
 	</table>
 	
 	<div id="detailDiv">
@@ -49,45 +49,41 @@
 	</div>
 	<div id="addDiv">
 		<form id="addForm"  method="post" enctype="multipart/form-data">
+			<p> 封 面 :
+			 <input  type="file" name="picData" onchange="changPic(this)"/><br>
+			<img src="images/not_pic.jpg" id="apic" width="100" height="100">
+			</p>
+			<p>书 名 :&nbsp;<input id="abname" name="bname" /></p>
 			
-			<p>
-				书 名 :&nbsp;<input id="abname" name="bname" />
-			</p>
-			<p>
-				简 介 : &nbsp;<input id="abdesc" name="bdesc" />
-			</p>
-			<p>
-				出版时间:<input id="abdate" name="bdate" />
-			</p>
+			<p>简 介 : &nbsp;<input id="abdesc" name="bdesc" /></p>
 			
-			<p>
-				出版社:&nbsp;<input id="abcopyright" name="bcopyright" />
-			</p>
+			<p>出版时间:<input id="abdate" name="bdate" /></p>
 			
-			<p>
-				访问地址:<input id="aburl" name="burl" />
-			</p>
-			<p>
-				作 者 :&nbsp;<input id="abauthor" name="bauthor" />
-			</p>
-			<p>
-				类型 :&nbsp;<select name="ssid" id="assid"></select><option></potion>
-			</p>
-			<p>
-				封 面 :<input id="aupicPath" type="file" name="picData"
-					onchange="chgPic(this)" /><br> <img src="images/not_pic.jpg"
-					id="pic" width="100" height="100">
-			</p>
+			<p>出版社:&nbsp;<input id="abcopyright" name="bcopyright" /></p>
+			
+			<p>访问地址:<input id="aburl"  name="burl" /></p>
+			<p>作 者 :&nbsp;<input id="abauthor" name="bauthor" /></p>
 			<p>
 				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; 
 				<a class="addBtn" href="javascript:void(0)">添加</a>
 			</p>
 		</form>
+		<!-- <p>类型 :&nbsp;<select name="sname" id="asname">
+				<option selected="selected">名著</option>
+				<option >科幻</option>
+				<option id="S1003">爱情</option>
+				<option id="S1004">励志</option>
+				<option id="S1005">学术</option>
+				<option id="S1006">杂志</option>
+				<option id="S1007">传记</option>
+				<option id="S1008">科学</option>
+				</select>
+		</p> -->
 	</div>
 	
-	
-<!-- 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
- -->	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<!-- 	
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	 --><script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript" src="js/book_info.js"></script>
 </body>

@@ -19,7 +19,7 @@
 				姓名：<input id="aapenname" name="apenname" class="inputclass" />
 			</p>
 			<p>
-				密码：<input id="aapwd" name="apwd" class="inputclass" />
+				密码：<input id="aapwd" name="apwd" type="password" class="inputclass" />
 			</p>
 			<p>
 				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; <a

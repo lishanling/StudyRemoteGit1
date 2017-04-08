@@ -1,5 +1,7 @@
 package com.yc.novel.service;
 
-public interface CollectsService {
+import com.yc.novel.entity.Collects;
 
+public interface CollectsService {
+   boolean addCollects(Collects collects);
 }
