@@ -8,7 +8,6 @@
 <title>首页</title>
 <link rel="stylesheet" type="text/css" href="css/homepage.css" />
 </head>
-
 <body>
 	<div id="box">
 		<div id="header">
