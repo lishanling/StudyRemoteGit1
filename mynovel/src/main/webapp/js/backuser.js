@@ -1,5 +1,5 @@
 $('#user_info').datagrid({    
-	url:'user/list',
+//	url:'user/list',
 	fitColumns:true,
 	fit:true,
 	singleSelect:true,
