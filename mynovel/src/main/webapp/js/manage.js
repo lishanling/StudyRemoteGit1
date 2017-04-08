@@ -14,7 +14,6 @@ $(".treeNav").tree({
 		if($("#main").tabs('exists', nodeContent)){
 			$("#main").tabs('close', nodeContent)
 		}
-
 		if(nodeContent=="用户信息"){
 			$("#main").tabs('add',{
 				title:nodeContent,
@@ -23,14 +22,9 @@ $(".treeNav").tree({
 				closable:true,
 			});
 		}
-		else if(nodeContent=="图书信息"){
-			$("#main").tabs('add',{
-				title:nodeContent,
-				href:"back/book_info.jsp",//从URL加载远程数据内容填充到选项卡面板。
-				iconCls:"icon-mini-add",
-				closable:true,
-			});
-		}
+
+		//修改图书编辑结束
+
 		else if (nodeContent=="管理员信息"){
 			$("#main").tabs('add',{
 				title:nodeContent,
@@ -45,6 +39,7 @@ $(".treeNav").tree({
 				href:"back/book_info.jsp",//从URL加载远程数据内容填充到选项卡面板。
 				iconCls:"icon-mini-add",
 				closable:true,
+
 			});
 		}else {
 			$("#main").tabs('add',{
@@ -56,15 +51,7 @@ $(".treeNav").tree({
 		}
 
 	} 
-/*$("#main").tabs('add',{
-			title: nodeContent,
-			content: "<h1 style='text-align:center;'>" + nodeContent + "</h1>",
-			iconCls:"icon-mini-add",
-			closable:true,
-		});*/
-}
-);
-
+});	
 
 $.extend($.fn.layout.methods,{
 	full:function(jq){

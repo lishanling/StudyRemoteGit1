@@ -16,7 +16,7 @@
 			<p><label>${errorMsg }</label></p><c:remove var="errorMsg" scope="session"/>
 			<p><input name="uname" placeholder="请输入用户名" required="required"></p>
 			<p><input type="password" name="upwd" placeholder="请输入密码" required="required"></p>
-			<p><a id="btnLogin" href="javascript:void(0)">登录</a></p>
+			<p><a id="btnLogin" href="javascript:void(0)">登录</a></p>			
 		</form>
 	</div>
 

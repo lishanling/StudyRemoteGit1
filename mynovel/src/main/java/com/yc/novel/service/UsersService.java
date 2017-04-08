@@ -8,7 +8,7 @@ public interface UsersService {
 
 	PaginationBean<Users> listPartUsers(String page, String rows);
 
-	boolean modifyUser(Users user);
+	boolean modifyUsers(Users user);
 
 	 Users login(Users user);
 
