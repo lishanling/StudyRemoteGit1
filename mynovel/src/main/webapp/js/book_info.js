@@ -154,13 +154,13 @@ function add(){
 	$("#addDiv").dialog("open");
 	//$.post("book/get?ssid="+id,function(data){
 		//加载所有的主题数据
-		$.post("types/info",function(datat){
-			$("#ssid").empty();
-			for(var i=0;i<datat.length;i++){
-				if(data.topic.tname==datat[i].tname){
-					$("#ssid").append("<option value='"+datat[i].ssid+"'selected>"+datat[i].sname+"</option>");
+		$.post("types/info",function(data){
+			$("#assid").empty();
+			for(var i=0;i<data.length;i++){
+				if(data.types.sname==datat[i].sname){
+					$("#assid").append("<option value='"+datat[i].ssid+"' selected>"+datat[i].sname+"</option>");
 				}else{
-					$("#ssid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
+					$("#assid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
 				}
 			}
 		//});
