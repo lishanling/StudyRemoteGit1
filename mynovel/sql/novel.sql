@@ -82,7 +82,7 @@ create TABLE collects(
        bid  Varchar2(20) REFERENCES book(bid),--书编号
        udate DATE --收藏日期    
 );
-select * from book;
+
  --目录表
 create TABLE menu(
        mid varchar2(20),--章节编号
