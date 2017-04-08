@@ -12,6 +12,11 @@ import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.service.BookService;
 import com.yc.novel.util.ServletUtil;
 
+/**
+ * 
+ * @author 
+ * 
+ */
 @Controller("bookHandler")
 @RequestMapping("book")
 public class BookHandler {
@@ -47,5 +52,22 @@ public class BookHandler {
 		}
 		book.setBpic(bpic);
 		return bookService.updateBooks(book);
+	}
+	
+	@RequestMapping("add")
+	@ResponseBody
+	public boolean add(@RequestParam("picData")MultipartFile picData,Book book){
+		String bpic=null;
+		if(picData!=null&&!picData.isEmpty()){//判断是否有文件上传
+			try {
+				picData.transferTo(ServletUtil.getUploadFile(picData.getOriginalFilename()));
+				bpic=ServletUtil.VIRTUAL_UPLOAD_DIR+picData.getOriginalFilename();
+				System.out.println(bpic);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		book.setBpic(bpic);
+		return bookService.addBooks(book);
 	}
 }

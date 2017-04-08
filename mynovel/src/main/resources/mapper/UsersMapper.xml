@@ -36,9 +36,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="registerUser" parameterType="Users">
 		insert into users values(seq_usid.nextval,#{uname},#{uemail},#{upwd})
-		<selectKey resultType="string" order="AFTER" keyProperty="uname">
-			select * from 
-		</selectKey>
 	</insert>
 
 </mapper>

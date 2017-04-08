@@ -37,7 +37,6 @@ public class UserHandler {
 	@RequestMapping(value="{register}" , method=RequestMethod.POST)
 	public String register(Users user, HttpServletRequest request) {
 		System.out.println(user);
-
 		if (usersService.login(user) == null) {
 			if (usersService.register(user)) {
 				return "redirect:/homepage.jsp";
@@ -62,7 +61,6 @@ public class UserHandler {
 	@RequestMapping("modify")
 	@ResponseBody
 	public boolean modify(Users user){
-
 		return usersService.modifyUsers(user);//异步数据响应
 	}
 

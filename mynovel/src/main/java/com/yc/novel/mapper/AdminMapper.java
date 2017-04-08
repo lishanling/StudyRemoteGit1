@@ -13,5 +13,6 @@ public interface AdminMapper {
 	int updateAdmin(Admin admin);
 
 	int addAdmin(Admin admin);
+	int deleteAdmin(String aid);
 
 }

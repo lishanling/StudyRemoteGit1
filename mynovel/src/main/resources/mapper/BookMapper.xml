@@ -37,9 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</selectKey>
 	insert into book values()
 	</insert>
-
-	
-	<insert id="addBook" parameterType="Book" >
+	<insert id="addBooks" parameterType="Book" >
 		insert into  book values('B'||seq_bid.nextval,bname=#{bname},
 		bdesc=#{desc},bdate=#{bdate},bcopyright=#{bcopyright},burl=#{burl},
 		bauthor=#{bauthor},ssid=#{ssid},bpic=#{bpic}
@@ -52,4 +50,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="bookTypes" parameterType="Book" resultType="Book">
 		select * from types where tid=(select ssid from book where ssid=#{ssid})
 	</select>
+	
+	
 </mapper>

@@ -9,8 +9,8 @@ public interface BookService {
 	PaginationBean<Book> listPartBooks(String page, String rows);
 	boolean updateBooks(Book book);
 
-	boolean addBook(Book book);
 	List<Book> findAllbook();
 	
 	Book getBooks(String id);
+	boolean addBooks(Book book);
 }

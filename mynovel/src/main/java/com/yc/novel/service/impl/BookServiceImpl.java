@@ -37,10 +37,9 @@ public class BookServiceImpl implements BookService {
 	}
 
 	@Override
-	public boolean addBook(Book book) {
-		return bookMapper.insertBook(book)>0;
+	public boolean addBooks(Book book) {
+		return bookMapper.addBooks(book)>0;
 	}
-
 	@Override
 	public List<Book> findAllbook() {
 		return bookMapper.findAllBooks();
@@ -49,5 +48,6 @@ public class BookServiceImpl implements BookService {
 		Book book=bookMapper.addBook(id);
 		return book;
 	}
+
 
 	}

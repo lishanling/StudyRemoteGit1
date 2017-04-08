@@ -17,5 +17,6 @@ public interface BookMapper {
 	Book addBook(String id);
 	
 	Book bookTypes(String id);
+	int addBooks(Book book);
 
 }
