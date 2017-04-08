@@ -1,11 +1,12 @@
 package com.yc.novel.entity;
 
 public class Users {
-	
+
 	private String usid;
 	private String uname;
 	private String upwd;
 	private String uemail;
+
 	public String getUsid() {
 		return usid;
 	}
@@ -24,18 +25,30 @@ public class Users {
 	public void setUpwd(String upwd) {
 		this.upwd = upwd;
 	}
-	
+
 	public String getUemail() {
 		return uemail;
 	}
 	public void setUemail(String uemail) {
 		this.uemail = uemail;
 	}
+
+	public Users() {
+
+	}
+
+	public Users(String usid, String uname, String upwd, String uemail) {
+		this.usid = usid;
+		this.uname = uname;
+		this.upwd = upwd;
+		this.uemail = uemail;
+	}
+
 	@Override
 	public String toString() {
 		return "Users [usid=" + usid + ", uname=" + uname + ", upwd=" + upwd + ", uemail=" + uemail + "]";
 	}
-	
-		
+
+
 
 }

@@ -4,13 +4,11 @@
 <!doctype html>
 <html>
 <head>
-<base href="${deployName }">
+<base href="${deployName}">
 <meta charset="utf-8">
 <title>阅读</title>
 <link rel="stylesheet" type="text/css" href="css/bookdetail.css" />
-
 </head>
-
 <body>
 	<div id="box">
 		<div id="header">
@@ -19,7 +17,7 @@
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
-				<li class="red"><a href="back/manage.jsp">后台管理</a></li>
+				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 			</ul>
 		</div>
 		<div id="search">

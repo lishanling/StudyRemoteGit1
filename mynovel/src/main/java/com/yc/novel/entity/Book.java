@@ -1,10 +1,11 @@
 package com.yc.novel.entity;
 
-import java.sql.Blob;
+import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
-public class Book {
-
+public class Book implements Serializable{
+	private static final long serialVersionUID = -6765580454607657848L;
 	private String bid;
 	private String bname;
 	private String bdesc;
@@ -12,8 +13,9 @@ public class Book {
 	private String bcopyright;
 	private String burl;
 	private String bauthor;
-	private String ssid;
-	private Blob bpic;
+	private Types types;
+	private String bpic;
+	
 	public String getBid() {
 		return bid;
 	}
@@ -57,23 +59,43 @@ public class Book {
 	public void setBauthor(String bauthor) {
 		this.bauthor = bauthor;
 	}
-	public String getSsid() {
-		return ssid;
-	}
-	public void setSsid(String ssid) {
-		this.ssid = ssid;
-	}
-	public Blob getBpic() {
+	
+	public String getBpic() {
 		return bpic;
 	}
-	public void setBpic(Blob bpic) {
+	public void setBpic(String bpic) {
+		this.bpic = bpic;
+	}
+	
+	public Types getTypes() {
+		return types;
+	}
+	public void setTypes(Types types) {
+		this.types = types;
+	}
+	
+	public Book() {
+		
+	}
+	public Book(String bid, String bname, String bdesc, Date bdate, String bcopyright, String burl, String bauthor,
+			String bpic) {
+		
+		this.bid = bid;
+		this.bname = bname;
+		this.bdesc = bdesc;
+		this.bdate = bdate;
+		this.bcopyright = bcopyright;
+		this.burl = burl;
+		this.bauthor = bauthor;
 		this.bpic = bpic;
 	}
 	@Override
 	public String toString() {
-		return "Book [bid=" + bid + ", bname=" + bname + ", bdesc=" + bdesc + ", bdate=" + bdate + ", bcopyright="
-				+ bcopyright + ", burl=" + burl + ", bauthor=" + bauthor + ", ssid=" + ssid + ", bpic=" + bpic + "]";
+		return "\nBook [bid=" + bid + ", bname=" + bname + ", bdesc=" + bdesc + ", bdate=" + bdate + ", bcopyright="
+				+ bcopyright + ", burl=" + burl + ", bauthor=" + bauthor + ", types=" + types + ", bpic=" + bpic + "]";
 	}
+	
+	
 
 	
 	

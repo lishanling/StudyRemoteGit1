@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.entity.Users;
 import com.yc.novel.service.UsersService;
 import com.yc.novel.util.ServletUtil;
@@ -35,7 +37,7 @@ public class UserHandler {
 	@RequestMapping(value="{register}" , method=RequestMethod.POST)
 	public String register(Users user, HttpServletRequest request) {
 		System.out.println(user);
-		
+
 		if (usersService.login(user) == null) {
 			if (usersService.register(user)) {
 				return "redirect:/homepage.jsp";
@@ -47,6 +49,21 @@ public class UserHandler {
  			request.setAttribute(ServletUtil.ERROR_MESSAGE, "该名称已注册...");
 			return "/back/register.jsp";
 		}
+	}
+
+
+	@RequestMapping("list")
+	@ResponseBody
+	public PaginationBean<Users> list(String rows, String page){
+		System.out.println("list : rows ===> " + rows + ", page ===> " + page);
+		return usersService.listPartUsers(page, rows);//异步数据响应
+	}
+
+	@RequestMapping("modify")
+	@ResponseBody
+	public boolean modify(Users user){
+
+		return usersService.modifyUsers(user);//异步数据响应
 	}
 
 }
