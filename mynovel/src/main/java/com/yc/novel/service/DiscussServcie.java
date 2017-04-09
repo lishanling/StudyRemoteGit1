@@ -1,5 +1,9 @@
 package com.yc.novel.service;
 
-public interface DiscussServcie {
+import java.util.List;
 
+import com.yc.novel.entity.Discuss;
+
+public interface DiscussServcie {
+	List<Discuss> findAllDiscuss();
 }

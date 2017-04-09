@@ -14,7 +14,6 @@ $(".treeNav").tree({
 		if($("#main").tabs('exists', nodeContent)){
 			$("#main").tabs('close', nodeContent)
 		}
-		
 		if(nodeContent=="用户信息"){
 			$("#main").tabs('add',{
 				title:nodeContent,
@@ -23,6 +22,9 @@ $(".treeNav").tree({
 				closable:true,
 			});
 		}
+
+		//修改图书编辑结束
+
 		else if (nodeContent=="管理员信息"){
 			$("#main").tabs('add',{
 				title:nodeContent,
@@ -37,17 +39,19 @@ $(".treeNav").tree({
 				href:"back/book_info.jsp",//从URL加载远程数据内容填充到选项卡面板。
 				iconCls:"icon-mini-add",
 				closable:true,
-			});
-		} 
-		/*$("#main").tabs('add',{
-			title: nodeContent,
-			content: "<h1 style='text-align:center;'>" + nodeContent + "</h1>",
-			iconCls:"icon-mini-add",
-			closable:true,
-		});*/
-	}
-});
 
+			});
+		}else {
+			$("#main").tabs('add',{
+				title:nodeContent,
+				content:nodeContent,
+				iconCls:"icon-mini-add",//图标
+				closable:true,//显示一个关闭按钮
+			});
+		}
+
+	} 
+});	
 
 $.extend($.fn.layout.methods,{
 	full:function(jq){
@@ -56,7 +60,7 @@ $.extend($.fn.layout.methods,{
 			var center=layout.layout("panel","center");
 			center.panel("maximize");
 			center.parent().css("z-index",10);
-			
+
 			$(window).on("resize.full",function(){
 				layout.layout("unFull").layout("resize");
 			})
@@ -83,19 +87,19 @@ $("#personalInfo").dialog({
 });
 
 $('#modifyBtn').linkbutton({    
-    iconCls: 'icon-ok',
-    width: 80,
-    onClick: function(){    	
-    	/*$("#loginForm").submit();*/
-    }
+	iconCls: 'icon-ok',
+	width: 80,
+	onClick: function(){    	
+		/*$("#loginForm").submit();*/
+	}
 }); 
 
 $('#closeBtn').linkbutton({    
-    iconCls: 'icon-cancel',
-    width: 80,
-    onClick: function(){    	
-    	$("#personalInfo").dialog("close", true);
-    }
+	iconCls: 'icon-cancel',
+	width: 80,
+	onClick: function(){    	
+		$("#personalInfo").dialog("close", true);
+	}
 }); 
 
 $("#personalInfo input[type=password]").textbox({
@@ -115,7 +119,7 @@ function reLogin(){
 	//显示重新登录确认框
 	$.messager.confirm('', '您是否确定要切换用户吗？', function(r){
 		if (r){
-		    // 切换用户操作;
+			// 切换用户操作;
 			location.href="back/login.jsp";
 		}
 	});
@@ -130,7 +134,7 @@ function logoutFun() {
 	//显示退出系统确认框
 	$.messager.confirm('', '您确定要退出系统吗？', function(r){
 		if (r){
-		    //退出系统操作;
+			//退出系统操作;
 			location.replace("back/login.jsp");
 		}
 	});

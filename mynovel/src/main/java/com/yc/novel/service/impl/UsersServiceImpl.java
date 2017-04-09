@@ -20,7 +20,6 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-
 	public Users login(Users user ) {
 		System.out.println("用户进行登录操作 ===> " + user);
 		return usersMapper.find(user);
@@ -48,10 +47,12 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public boolean modifyUser(Users users) {
+	public boolean modifyUsers(Users users) {
 
-		return usersMapper.updateUser(users) > 0;
+		return usersMapper.updateUsers(users) > 0;
 	}
+
+
 
 
 }

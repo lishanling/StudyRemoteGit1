@@ -14,8 +14,16 @@
 
 <div id="header">
 <ul>
-<li class="red"><a href="back/login.jsp">登录</a></li>
-<li class="red"><a href="back/register.jsp">注册</a></li>
+<li class="red">
+			<c:choose>
+			<c:when test="${loginUser.uname eq null}">
+			<a href="back/login.jsp">登录</a>
+			</c:when>
+			<c:otherwise>
+			<a href="back/userinfo.jsp">${loginUser.uname}</a>
+			</c:otherwise>
+			</c:choose>
+			</li><li class="red"><a href="back/register.jsp">注册</a></li>
 <li class="red"><a href="#">作者中心</a></li>
 <li class="red"><a href="#">帮助</a></li>
 <li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
@@ -98,19 +106,7 @@
 </dl>
 </li>
 </a>
-
-<!--
-
-<li>历史</li>
-<li>传记</li>
-<li>科幻</li>
-<li>计算机</li>
-<li>杂志</li>
-<li>艺术</li>
-<li>外国文学</li>
-<li>小说</li>
-<li>生活</li>
--->
+ 
 </ul>
 
 <ul>

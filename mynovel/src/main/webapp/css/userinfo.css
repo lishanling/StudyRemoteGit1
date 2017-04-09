@@ -170,9 +170,15 @@ a:hover{
 	margin-left:150px;
 }
 
+.infomation span{
+	color:#FFF;
+	font-size:18px;
+}
+
 .infomation input{
 	font-size:18px;
 }
+
 .infomation button{
 	background-color:#F93;
 	padding:8px;
@@ -496,8 +502,3 @@ span{
 #allRight a{
 	margin-left:25px; 
    	}
-
-
-
-
-

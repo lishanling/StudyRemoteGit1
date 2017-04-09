@@ -38,16 +38,6 @@ public class AdminServiceTest {
 		System.out.println(admin);
 		assertEquals(result,true);
 	}
-	
-	@Test
-	public void testdelAdmin() {
-		Admin admin=new Admin();
-		admin.setAid("A1042");
-		boolean result=adminService.deleteAdmin(admin);
-		System.out.println(admin);
-		assertEquals(result,true);
-	}
-
-	
+		
 
 }

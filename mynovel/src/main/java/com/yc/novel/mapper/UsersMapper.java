@@ -8,8 +8,10 @@ public interface UsersMapper {
 
 		PaginationBean<Users> findPartUsers(PaginationBean<Users> pb);
 
-		int updateUser(Users users);
+		int updateUsers(Users users);
 
 		boolean registerUser(Users user);
+
+		//获取用户名和密码
 
 }

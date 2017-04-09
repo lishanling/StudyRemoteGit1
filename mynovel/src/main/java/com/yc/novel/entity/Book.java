@@ -2,7 +2,6 @@ package com.yc.novel.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.List;
 
 public class Book implements Serializable{
 	private static final long serialVersionUID = -6765580454607657848L;
@@ -90,7 +89,7 @@ public class Book implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return "Book [bid=" + bid + ", bname=" + bname + ", bdesc=" + bdesc + ", bdate=" + bdate + ", bcopyright="
+		return "\nBook [bid=" + bid + ", bname=" + bname + ", bdesc=" + bdesc + ", bdate=" + bdate + ", bcopyright="
 				+ bcopyright + ", burl=" + burl + ", bauthor=" + bauthor + ", types=" + types + ", bpic=" + bpic + "]";
 	}
 	

@@ -2,6 +2,8 @@ package com.yc.novel.service;
 
 import static org.junit.Assert.*;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +27,18 @@ public class BookServiceTest {
 	@Test
 	public void updateBooks() {
 		Book book=new Book();
-		book.setBid(null);
+		book.setBid("B1001");
 		book.setBauthor("三毛");
 		book.setBdate(null);
 		boolean result=bookService.updateBooks(book);
 		System.out.println(result);
 		assertNotNull(result);
+	}
+	@Test
+	public void testFindBooks() {
+		List<Book> book=bookService.findAllbook();
+		System.out.println(book);
+		assertNotNull(book);
 	}
 
 }

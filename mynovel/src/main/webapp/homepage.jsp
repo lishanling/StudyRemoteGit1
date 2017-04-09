@@ -8,19 +8,28 @@
 <title>首页</title>
 <link rel="stylesheet" type="text/css" href="css/homepage.css" />
 </head>
-
 <body>
 	<div id="box">
 		<div id="header">
 			<ul>
-				<li class="red"><a href="back/login.jsp">登录</a></li>
-				<li class="red"><a href="back/register.jsp">注册</a></li>
+			
+			<li class="red">
+			<c:choose>
+			<c:when test="${loginUser.uname eq null}">
+			<a href="back/login.jsp">登录</a>
+			</c:when>
+			<c:otherwise>
+			<a href="back/userinfo.jsp">${loginUser.uname}</a>
+			</c:otherwise>
+			</c:choose>
+			</li>
+ 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 			</ul>
 		</div>
-
+		
 		<div id="search">
 			<ul>
 				<li><img src="images/logo.jpg">
@@ -60,7 +69,7 @@
 		<div id="recommend">
 			<h5>推荐书籍</h5>
 			<ul>
-				<li class="rec"><a href="#"><img src="images/book1.jpg"><span>梵高传</span></a>
+				<!-- <li class="rec"><a href="#"><img src="images/book1.jpg"><span>梵高传</span></a>
 					<a href="back/bookdetail.jsp"><img src="images/luxun.png"><span>鲁迅全集</span></a>
 					<a href="#"><img src="images/book3.jpg"><span>三生三世十里桃花</span></a>
 					<a href="#"><img src="images/book4.jpg"><span>半暖</span></a> <a
@@ -75,7 +84,7 @@
 					<a href="#"><img src="images/book12.jpg"><span>我不喜欢这世界，我只喜欢你</span></a>
 					<a href="#"><img src="images/book14.jpg"><span>明朝那些事</span></a>
 					<a href="#"><img src="images/book15.jpg"><span>乖，摸摸头</span></a>
-				<li>
+				<li> -->
 			</ul>
 		</div>
 	</div>

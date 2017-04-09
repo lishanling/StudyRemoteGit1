@@ -81,7 +81,6 @@ ul,li{
 #menu li a{
 	display:inline-block;
  	color:#FFF;
-	
     font-size:18px;
 	padding-left:10px;
 	padding-top:10px;
@@ -90,88 +89,102 @@ ul,li{
 #menu li a:hover{
 	color:#666;
 }
-#left{
-	float:left;
-	margin-left:136px;}
-#left h4{
-	height:30px;
-	font-size:24px;
-	color:#F93;
-	}
-#left ul{
-	float:left;
-	margin-top:5px;
-}	
-#left ul li {
-	width:300px;
+#sortid{
+	float:none;
+	margin-left:138px;
+
 	
-}
-#left ul li a{
-	width:147px;
-	display:block;
-	line-height:80px;
-	border:solid 1px #FC9;
-	float:left;
-	text-decoration:none;
-	text-align:center;
-	}
-#left ul li a span{
-	text-decoration:none;
-	font-size:16px;
-	color:#666;
-	}
-#left ul li a:hover span{	
-	color:#F96;
-	
-	}
-#left ul li a:hover img{
-	transform:rotate(140deg);	
-}
-#right ul,li{
-	list-style:none;
 }
 
-#right  a img{
-	margin-top:35px;
-	margin-left:15px;
-	margin-bottom:20px;
-	float:left;
-}
-#recommend{
-	width:1000px;
-	margin-left:140px;
-	margin-top:10px; 
-	text-decoration:none;   
-}
-#recommend h5{
-	color:#F96;
-	font-size:18px;
-	color:#F63;
-	margin-top:35px;
-	border-bottom:solid 1px #FF9966;
-	margin-bottom:15px;
-}
-#recommend ul{
-	width:auto;
-}
-#recommend li{
-		float:left;
-		width:180px;
-		margin-top:10px;
-}
-#recommend li a {
+#sortid h2{
 	width:100px;
-	float:left;
-	margin-left:30px;
-	text-decoration:none;
-	margin-bottom:30px;
-	vertical-align:baseline;
-	}
-#recommend li a span{
+	height:40px;
 	position:relative;
-	left:17px;
+	left:-555px;
 	top:10px;
-	text-align:center;
-	vertical-align:baseline;
-	color:#666;
+	color:#F90;
+	font-size:18px;
+	float:none;
+	
+
 }
+
+#sortdetail {
+	float:left;
+	}
+#sortdetail ul li{
+	width:400px;
+	height:140px;
+	float:left;
+	margin-bottom:20px;
+
+}
+.sortchild{
+	font-size:16px;
+	color:#FC6;
+	
+}
+#sortdetail  ul li dl dt{
+	width:120px;
+	padding:2px;
+	float:left;
+	
+}
+#sortdetail  ul li dl dd{
+	width:145px;
+	font-size:14px;
+	margin-top:7px;
+	color:#999;
+	float:left;
+	
+	
+}
+#sortdetail  ul li dl dd span{
+	
+	color:#666;
+	
+	
+}
+
+
+#footer{
+	border-top:#FFF 10px solid;
+ 	width:1184px;
+ 	height:100px;
+	margin-top:30px;
+  	}	
+#aboutUs{
+	width:100%;
+	height:50px;
+	
+   	}
+		
+#aboutUs ul li{
+	float:left;
+	width:70px;
+	text-align:center;
+	margin-top:5px;
+	margin-left:20px;
+ 	}
+ 
+.qwer a{
+	color:#999;
+	display:block;
+	text-decoration:none;
+	border-right:#999 1px solid;
+ 	}
+.qwer a:hover{
+	color:#666;
+	display:block;
+	text-decoration:underline;
+  	}
+		
+#allRight{
+	width:100%;
+	height:50px;
+
+   	}
+#allRight a{
+	margin-left:25px; 
+   	}
+ 

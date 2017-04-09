@@ -15,7 +15,14 @@
 	<div id="box">
 		<div id="header">
 			<ul>
-				<li class="red"><a href="back/login.jsp">登录</a></li>
+				<li class="red"><c:choose>
+						<c:when test="${loginUser.uname eq null}">
+							<a href="back/login.jsp">登录</a>
+						</c:when>
+						<c:otherwise>
+							<a href="back/userinfo.jsp">${loginUser.uname}</a>
+						</c:otherwise>
+					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
@@ -165,45 +172,53 @@
 					</div>
 				</div>
 
-				<div id='b2' style='display: none'>
+				<div id='b2' style='display: true'>
 					<br />
 					<div class="infomation" id="modifyDiv">
 
 						<form id="modifyForm" method="post" enctype="multipart/form-data">
 							<p>
-								<label title="编号：">编号：</label><input id="usid" name="usid" 
-									class="inputclass" placeholder="请输入编号" /><br><br>
+								<label title="编号：">编号：</label><input id="usid" name="usid"
+									class="inputclass" placeholder="请输入编号" /><br> <br>
 							</p>
 							<p>
-								<label>姓名：</label><input id="uname" name="uname" class="inputclass" placeholder="请输入要修改的用户名..."/><br><br>
+								<label>姓名：</label><input id="uname" name="uname"
+									class="inputclass" placeholder="请输入要修改的用户名..." /><br> <br>
 							</p>
 							<p>
-								<label>密码：</label><input type="password" id="upwd" name="upwd" class="inputclass" placeholder="请输入要修改的密码..."/><br><br>
+								<label>密码：</label><input type="password" id="upwd" name="upwd"
+									class="inputclass" placeholder="请输入要修改的密码..." /><br> <br>
 							</p>
 							<p>
 								<button type="submit" value="修改">修改</button>
 							</p>
 						</form>
-
+						<%-- <div class="infomation">
+						<form action="#" method="post">
+							<span>用户名： </span><input id="uname" style="border: 1px;" value="${loginUser.uname}" /><br />
+							<br /> <span>密&nbsp;&nbsp; 码：</span> <input id="upwd"
+								style="border: 1px;" /><br />
+							<br /> <a class="updateBtn" href="javascript:void(0)">修改</a>
+						</form>
+					</div> --%>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div id="footer">
-		<div id="aboutUs">
-			<ul>
-				<li class="qwer"><a href="#">关于我们</a></li>
-				<li class="qwer"><a href="#">联系我们</a></li>
-				<li class="qwer"><a href="#">商务合作</a></li>
-			</ul>
-		</div>
-		<div id="allRight">
-			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
+		<div id="footer">
+			<div id="aboutUs">
+				<ul>
+					<li class="qwer"><a href="#">关于我们</a></li>
+					<li class="qwer"><a href="#">联系我们</a></li>
+					<li class="qwer"><a href="#">商务合作</a></li>
+				</ul>
+			</div>
+			<div id="allRight">
+				<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
+			</div>
 		</div>
 	</div>
-
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 </html>

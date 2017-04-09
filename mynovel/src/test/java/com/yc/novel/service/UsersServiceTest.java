@@ -34,7 +34,7 @@ public class UsersServiceTest {
 		user.setUname("陈浩");
 		user.setUpwd("u");
 		user.setUsid("U1021");
-		boolean result=userservice.modifyUser(user);
+		boolean result=userservice.modifyUsers(user);
 		System.out.println(result);
 		assertEquals(result,true);
 	}

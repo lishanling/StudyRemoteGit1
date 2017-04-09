@@ -1,5 +1,10 @@
 package com.yc.novel.mapper;
 
-public interface DiscussMapper {
+import java.util.List;
 
+import com.yc.novel.entity.Discuss;
+
+public interface DiscussMapper {
+	List<Discuss> findDiscuss();
+	
 }
