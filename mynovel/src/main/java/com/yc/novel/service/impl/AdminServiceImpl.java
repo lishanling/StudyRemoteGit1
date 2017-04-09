@@ -44,4 +44,10 @@ public class AdminServiceImpl implements AdminService {
 		
 	}
 
+
+	@Override
+	public boolean deleteAdmin(Admin admin) {
+		return adminMapper.deleteAdmin(admin)>0;
+	}
+
 }

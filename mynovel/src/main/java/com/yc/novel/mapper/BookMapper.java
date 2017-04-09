@@ -7,12 +7,11 @@ public interface BookMapper {
 
 	PaginationBean<Book> findPartBooks(PaginationBean<Book> pb);
 	int updateBook(Book book);
-	int insertBook(Book book);
+
+	int deleteBooks(Book book);
 	
-	Book bookSSid(String id);
+	int addBooks(Book book);
 	
-	Book addBook(String id);
 	
-	Book bookTypes(String id);
 
 }

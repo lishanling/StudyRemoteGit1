@@ -20,35 +20,38 @@
 	
 	<div id="addDiv">
 		<form id="addForm"  method="post" enctype="multipart/form-data">
+			
 			<p>
-				类型 :&nbsp;<select name="ssid" id="ssid"></select>
+				书 名 :&nbsp;<input id="abname" name="bname" />
 			</p>
 			<p>
-				书 名 :&nbsp;<input id="bname" name="bname" />
+				简 介 : &nbsp;<input id="abdesc" name="bdesc" />
 			</p>
 			<p>
-				作 者 :&nbsp;<input id="bauthor" name="bauthor" />
+				出版时间:<input id="abdate" name="bdate" />
+			</p>
+			
+			<p>
+				出版社:&nbsp;<input id="abcopyright" name="bcopyright" />
+			</p>
+			
+			<p>
+				访问地址:<input id="aburl" name="burl" />
 			</p>
 			<p>
-				出版社:&nbsp;<input id="bcopyright" name="bcopyright" />
+				作 者 :&nbsp;<input id="abauthor" name="bauthor" />
 			</p>
 			<p>
-				出版时间:<input id="bdate" name="bdate" />
+				类型 :&nbsp;<select id="assid" name="ssid"></select>
 			</p>
 			<p>
-				访问地址:<input id="burl" name="burl" />
-			</p>
-			<p>
-				简 介 : &nbsp;<input id="bdesc" name="bdesc" />
-			</p>
-			<p>
-				封 面 :<input id="upicPath" type="file" name="picData"
+				封 面 :<input id="aupicPath" type="file" name="picData"
 					onchange="chgPic(this)" /><br> <img src="images/not_pic.jpg"
 					id="pic" width="100" height="100">
 			</p>
 			<p>
-				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; 
-				<a class="updateBtn" href="javascript:void(0)">添加</a>
+				<a class="closeBtn" href="javascript:void(0)" >关闭</a>&nbsp;&nbsp; 
+				<a class="addBtn" href="javascript:void(0)" onclick="add()">添加</a>
 			</p>
 		</form>
 	</div>
@@ -116,15 +119,12 @@
 			&nbsp; 封 面 :<img src="images/not_pic.jpg" id="dpic" width="100" height="100" align="top">
 		</p>
 		<p>
-			<a class="closeBtn" href="javascript:void(0)">关闭</a>
+			<a class="closeBtn" href="javascript:void(0)" on>关闭</a>
 	</div>
 
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript" src="js/book_info.js"></script>
-	<script type="text/javascript" charset="utf-8" src="ueditor/ueditor.config.js"></script>
-	<script type="text/javascript" charset="utf-8" src="ueditor/ueditor.all.min.js"></script>
-	<script type="text/javascript" charset="utf-8" src="ueditor/lang/zh-cn/zh-cn.js"></script>
 </body>
 </html>

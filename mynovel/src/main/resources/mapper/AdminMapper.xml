@@ -39,4 +39,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="addAdmin" parameterType="Admin">
 		insert into admin values('A'||seq_aid.nextval,#{apenname},#{apwd})
 	</insert>
+	
+	<delete id="deleteAdmin" parameterType="Admin">
+		delete from admin where aid=#{aid}
+	</delete>
 </mapper>

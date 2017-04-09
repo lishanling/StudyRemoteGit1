@@ -49,9 +49,10 @@
 			<div id="left" class="tabnav">
 				<h1 align="center" style="color: #999">个人中心</h1>
 				<ul>
-					<li class="crt" id="a1" onClick="tab(1)"><a href="javascript:void()">我的收藏</a>
-					</li>
-					<li class="" id="a2" onClick="tab(2)"><a href="javascript:void()">账号设置</a></li>
+					<li class="crt" id="a1" onClick="tab(1)"><a
+						href="javascript:void()">我的收藏</a></li>
+					<li class="" id="a2" onClick="tab(2)"><a
+						href="javascript:void()">账号设置</a></li>
 				</ul>
 			</div>
 			<div id="right">
@@ -62,7 +63,7 @@
 					<div class="u-colslist">
 						<ul class="j-container">
 
-							<li class="u-bookitm1 u-bookitm1-1"><a class="book"
+							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -73,7 +74,7 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div>
+									</div> -->
 									<div class="act">
 										<a class="j-delete delete" hidefocus="hidefocus"
 											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
@@ -81,7 +82,7 @@
 									</div>
 								</div></li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><a class="book"
+							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -92,7 +93,7 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div>
+									</div> -->
 									<div class="act">
 										<a class="j-delete delete" hidefocus="hidefocus"
 											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
@@ -100,7 +101,7 @@
 									</div>
 								</div></li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><a class="book"
+							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -111,7 +112,7 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div>
+									</div> -->
 									<div class="act">
 										<a class="j-delete delete" hidefocus="hidefocus"
 											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
@@ -119,7 +120,7 @@
 									</div>
 								</div></li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><a class="book"
+							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -130,7 +131,7 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div>
+									</div> -->
 									<div class="act">
 										<a class="j-delete delete" hidefocus="hidefocus"
 											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
@@ -138,7 +139,7 @@
 									</div>
 								</div></li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><a class="book"
+							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -149,7 +150,7 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div>
+									</div> -->
 									<div class="act">
 										<a class="j-delete delete" href="javascript:void(0);">取消收藏</a>
 										<span class="u-sep">|</span> <a href="">去阅读</a>
@@ -165,10 +166,8 @@
 					<div class="infomation">
 
 						<form action="">
-							<span>用户名： </span><input><br />
-							<br />
-							<br /> <span>密 码：&nbsp;&nbsp; </span> <input><br />
-							<br />
+							<span>用户名： </span><input><br /> <br /> <br /> <span>密
+								码：&nbsp;&nbsp; </span> <input><br /> <br />
 							<button>修改</button>
 						</form>
 

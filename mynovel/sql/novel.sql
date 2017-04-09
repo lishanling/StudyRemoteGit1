@@ -12,7 +12,7 @@
   drop table book;
   drop table users;
   drop table types;
-
+delete from book
 select * from book;
 select * from types;
 select * from admin;
@@ -21,7 +21,10 @@ select * from collects;
 select * from menu;
 select * from discuss;
 
- 
+select b.bpic bpic ,b.bname bname,b.bauthor bauthor from book b join collects c on 
+		c.usid='U1003' and b.bid=c.bid;
+
+select b.bpic,b.bname,b.bauthor from book b,collects c where b.bid=c.bid and c.usid='U1003';
  
 create SEQUENCE seq_aid START WITH 1001;--图书管理员编号序列 
 create SEQUENCE seq_usid START WITH 1001;--用户编号
@@ -75,7 +78,17 @@ create table book(
        ssid varchar2(20) REFERENCES types(ssid),--分类编号
        bpic  varchar2(400)    --书的封面  --作出修改字段类型
 );
-
+update book set bpic = 'images/book1.jpg' where bid='B1001';
+update book set bpic = 'images/book3.jpg' where bid='B1002';
+update book set bpic = 'images/book4.jpg' where bid='B1003';
+update book set bpic = 'images/book6.jpg' where bid='B1004';
+update book set bpic = 'images/book7.jpg' where bid='B1005';
+update book set bpic = 'images/book9.jpg' where bid='B1006';
+update book set bpic = 'images/book10.jpg' where bid='B1007';
+update book set bpic = 'images/book12.jpg' where bid='B1008';
+update book set bpic = 'images/book14.jpg' where bid='B1009';
+update book set bpic = 'images/book15.jpg' where bid='B1010';
+update book set bpic = 'images/book5.jpg' where bid='B1011';
 --收藏表
 create TABLE collects(
        usid Varchar2(20) REFERENCES users(usid),--用户编号

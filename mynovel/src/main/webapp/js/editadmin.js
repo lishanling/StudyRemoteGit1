@@ -21,26 +21,26 @@ $(".addBtn").linkbutton({
 
 $("#addForm").form({
 	url:"admin/add",    
-    success:function(data){ 
-    	if(data == ""){
-    		$.messager.alert('管理员添加','当前管理员没有添加的权限 ！','warning');
-    		$("#addDiv").dialog("close"); //关闭修改框
-    		return ;
-    	}
-    	if(data.trim() == "true"){
-    		$("#addDiv").dialog("close"); //关闭修改框
-    		$("#adminList").datagrid("reload"); //刷新修改数据
-    	}else{
-    		$.messager.show({
-    			title:'添加信息',
-    			msg:'添加失败！！！',
-    			showType:'show',
-    			style:{
-    				top:document.body.scrollTop+document.documentElement.scrollTop,
-    			}
-    		});
-    	}
-    } 
+	success:function(data){ 
+		if(data == ""){
+			$.messager.alert('管理员添加','当前管理员没有添加的权限 ！','warning');
+			$("#addDiv").dialog("close"); //关闭修改框
+			return ;
+		}
+		if(data.trim() == "true"){
+			$("#addDiv").dialog("close"); //关闭修改框
+			$("#adminList").datagrid("reload"); //刷新修改数据
+		}else{
+			$.messager.show({
+				title:'添加信息',
+				msg:'添加失败！！！',
+				showType:'show',
+				style:{
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+				}
+			});
+		}
+	} 
 });
 
 $('#adminList').datagrid({
@@ -56,10 +56,10 @@ $('#adminList').datagrid({
 	}, {field : 'opr',title : '操作',width : 100,align : 'center',
 		formatter: function(value,row,index){
 			var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;&nbsp;' + 
-				'<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>&nbsp;&nbsp;' +
-				'<a class="delBtn" href="javascript:void(0)" onclick="showDetail('+index+')">删除</a>'+
-				'<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
-				'$(".modifyBtn").linkbutton({iconCls: "icon-edit"});$(".delBtn").linkbutton({iconCls:"icon-cancel"});</script>'; 
+			'<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>&nbsp;&nbsp;' +
+			'<a class="delBtn" href="javascript:void(0)" onclick="delDetail('+index+')">删除</a>'+
+			'<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
+			'$(".modifyBtn").linkbutton({iconCls: "icon-edit"});$(".delBtn").linkbutton({iconCls:"icon-cancel"});</script>'; 
 			return oprStr;
 		}
 	} ] ]
@@ -85,29 +85,29 @@ $("#detailDiv").dialog("close");
 
 $("#modifyForm").form({
 	url:"admin/modify", 
-	
-    success:function(data){ 
-    	
-    	if(data == ""){
-    		$.messager.alert('用户修改主','当前用户没有修改用户的权限 ！','warning');
-    		$("#modifyDiv").dialog("close"); //关闭修改框
-    		return ;
-    	}
 
-    	if(data.trim() == "true"){
-    		$("#modifyDiv").dialog("close"); //关闭修改框
-    		$("#adminList").datagrid("reload"); //刷新修改数据
-    	}else{
-    		$.messager.show({
-    			title:'修改信息',
-    			msg:'修改失败！！！',
-    			showType:'show',
-    			style:{
-    				top:document.body.scrollTop+document.documentElement.scrollTop,
-    			}
-    		});
-    	}
-    } 
+	success:function(data){ 
+
+		if(data == ""){
+			$.messager.alert('用户修改主','当前用户没有修改用户的权限 ！','warning');
+			$("#modifyDiv").dialog("close"); //关闭修改框
+			return ;
+		}
+
+		if(data.trim() == "true"){
+			$("#modifyDiv").dialog("close"); //关闭修改框
+			$("#adminList").datagrid("reload"); //刷新修改数据
+		}else{
+			$.messager.show({
+				title:'修改信息',
+				msg:'修改失败！！！',
+				showType:'show',
+				style:{
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+				}
+			});
+		}
+	} 
 });
 
 $(".closeBtn").linkbutton({
@@ -141,3 +141,17 @@ function openDatail(index){
 	$("#dapenname").html(row.apenname);
 	$("#dapwd").html(row.apwd);
 }
+
+
+function delDetail(index){
+	var row = $("#adminList").datagrid("getRows")[index];
+	$("#adminList").datagrid("deleteRow",index);
+	$.post("admin/delete?aid="+row.aid, function(data) {
+		$.messager.alert('管理员删除','删除成功！');
+
+	}, "json");
+}
+/*function delDetail(index){
+	var rowindex = $("#adminList").datagrid("getRows")[index];
+	$("#adminList").datagrid("deleteRow",rowindex);
+}*/

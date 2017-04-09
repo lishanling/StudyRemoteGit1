@@ -12,10 +12,13 @@ import com.yc.novel.service.TypesService;
 public class TypesServiceImpl implements TypesService {
 	
 	@Autowired
-	private  TypesMapper typesMapper;
+	public  TypesMapper typesMapper;
 	
+	
+
 	@Override
-	public List<Types> findAll() {
- 		 return typesMapper.getAll();
+	public List<Types> getTypes() {
+		
+		return typesMapper.getTypes();
 	}
 }

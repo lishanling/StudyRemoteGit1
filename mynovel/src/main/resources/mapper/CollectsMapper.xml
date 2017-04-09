@@ -3,5 +3,28 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.CollectsMapper">
-	
+
+	<resultMap type="Collects" id="CollectsMap">
+		<id column="bid" property="bid" />
+		<id column="usid" property="usid" />
+		<result column="udate" property="udate" />
+		<!-- 集合与多条记录映射，ofType是指集合泛型的类型 <collection property="book" ofType="Book"> 
+			<id column="bid" property="bid"/> <result column="bpic" property="bpic"/> 
+			<result column="bname" property="bname"/> <result column="bauther" property="bauther"/> 
+			</collection> -->
+
+		<association property="book" column="bid" javaType="Book">
+			<id column="bid" property="bid" />
+			<result column="bpic" property="bpic" />
+			<result column="bname" property="bname" />
+			<result column="bauther" property="bauther" />
+		</association>
+	</resultMap>
+	<select id="findCollects" resultType="Collects">
+		select b.bpic
+		bpic,b.bname
+		bname,b.bauthor bauthor from book b join collects c on
+		c.usid=#{usid}
+		and b.bid=c.bid
+	</select>
 </mapper>

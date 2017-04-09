@@ -52,4 +52,11 @@ public class AdminHandler {
 
 		return adminService.modifytAdmin(admin);
 	}
+	
+	@RequestMapping("delete")
+	@ResponseBody
+	public boolean delAdmin(Admin admin){
+
+		return adminService.deleteAdmin(admin);
+	}
 }
