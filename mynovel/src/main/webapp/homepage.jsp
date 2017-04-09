@@ -40,7 +40,7 @@
 		<div id="menu">
 			<ul>
 				<li><a href="#">首页</a></li>
-				<li><a href="back/list.jsp">榜单</a></li>
+				<li><a href="collect/toList.action">榜单</a></li>
 				<li><a href="back/sort.jsp">分类</a></li>
 				<li><a href="#">精品</a></li>
 				<li><a href="#">评论</a></li>

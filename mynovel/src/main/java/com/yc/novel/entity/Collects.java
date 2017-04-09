@@ -7,7 +7,7 @@ public class Collects {
 	private String usid;
 	private String bid;
 	private Date udate;
-	
+
 	public String getUsid() {
 		return usid;
 	}
@@ -28,9 +28,9 @@ public class Collects {
 	}
 	@Override
 	public String toString() {
-		return "Collects [usid=" + usid + ", bid=" + bid + ", udate=" + udate + "]";
+		return "\nCollects [usid=" + usid + ", bid=" + bid + ", udate=" + udate + "]";
 	}
-	
-	
-	
+
+
+
 }
