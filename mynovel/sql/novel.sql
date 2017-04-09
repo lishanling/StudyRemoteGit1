@@ -145,6 +145,7 @@ insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国�
 
 
 
+insert into users values('U'||seq_usid.nextval,'修改','2138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'李类','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'陈看','1441964048@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'leesin','1441962248@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');

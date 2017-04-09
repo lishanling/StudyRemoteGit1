@@ -117,7 +117,7 @@
 													href="http://www.duokan.com/reader?id=75b83216dbed11e192a600163e0123ac"
 													hidefocus="hidefocus" target="_blank">阅读</a> <a
 													class="u-btn j-get" href="javascript:void(0);"
-													hidefocus="hidefocus">加入书架</a> <span class="added"
+													hidefoc us="hidefocus">加入书架</a> <span class="added"
 													style="display: none">已加入书架</span>
 											</div>
 											<div class="other j-action">

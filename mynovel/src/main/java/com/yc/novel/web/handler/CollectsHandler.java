@@ -13,16 +13,16 @@ import com.yc.novel.entity.Collects;
 import com.yc.novel.service.CollectsService;
 
 @Controller("collectsHandler")
-@RequestMapping("collect")
+@RequestMapping("/collect")
 public class CollectsHandler {
 	@Autowired
 	private CollectsService collectsService;
 	
 	
 	@ResponseBody
-	@RequestMapping("bookinfo")
-	public List<Collects> collectInfo(){
-		 return collectsService.findCollects();
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
+	public List<Collects> collectInfo(@PathVariable("id")String id){
+		 return collectsService.findCollects(id);
 	}	
 
 }

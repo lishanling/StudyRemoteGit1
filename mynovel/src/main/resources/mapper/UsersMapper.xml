@@ -28,10 +28,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				uname = #{uname},
 			</if>
 			<if test="uemail != null">
-				uemail = #{uemail},
+				upwd = #{upwd}
 			</if>
 			</set>
-		where id = #{id}
+		where usid = #{usid}
 	</update>
 
 	<insert id="registerUser" parameterType="Users">

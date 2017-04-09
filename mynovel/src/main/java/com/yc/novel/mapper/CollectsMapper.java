@@ -6,6 +6,6 @@ import com.yc.novel.entity.Collects;
 
 public interface CollectsMapper {
 
-	List<Collects> findCollects();
+	List<Collects> findCollects(String id);
 
 }

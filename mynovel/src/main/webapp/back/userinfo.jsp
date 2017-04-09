@@ -60,10 +60,10 @@
 					<h1 align="center" id="headinfo" style="color: #000">我 的</h1>
 				</div>
 				<div class="container" id="b1">
-					<div class="u-colslist">
-						<ul class="j-container">
-
-							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
+					<div class="u-colslist" id="usercollects">
+						<ul class="j-container" id="usercollect">
+							<!-- <li class="u-bookitm1 u-bookitm1-1">
+								<a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -74,15 +74,16 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div> -->
-									<div class="act">
-										<a class="j-delete delete" hidefocus="hidefocus"
-											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-										<a hidefocus="hidefocus" href="">去阅读</a>
 									</div>
-								</div></li>
+								<div class="act">
+									<a class="j-delete delete" hidefocus="hidefocus"
+										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
+									<a hidefocus="hidefocus" href="">去阅读</a>
+								</div> </div>
+							</li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
+							<li class="u-bookitm1 u-bookitm1-1">
+								<a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -93,15 +94,16 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div> -->
-									<div class="act">
-										<a class="j-delete delete" hidefocus="hidefocus"
-											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-										<a hidefocus="hidefocus" href="">去阅读</a>
 									</div>
-								</div></li>
+								<div class="act">
+									<a class="j-delete delete" hidefocus="hidefocus"
+										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
+									<a hidefocus="hidefocus" href="">去阅读</a>
+								</div> </div>
+							</li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
+							<li class="u-bookitm1 u-bookitm1-1">
+								<a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -112,15 +114,16 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div> -->
-									<div class="act">
-										<a class="j-delete delete" hidefocus="hidefocus"
-											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-										<a hidefocus="hidefocus" href="">去阅读</a>
 									</div>
-								</div></li>
+								<div class="act">
+									<a class="j-delete delete" hidefocus="hidefocus"
+										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
+									<a hidefocus="hidefocus" href="">去阅读</a>
+								</div> </div>
+							</li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
+							<li class="u-bookitm1 u-bookitm1-1">
+								<a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -131,15 +134,16 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div> -->
-									<div class="act">
-										<a class="j-delete delete" hidefocus="hidefocus"
-											href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-										<a hidefocus="hidefocus" href="">去阅读</a>
 									</div>
-								</div></li>
+								<div class="act">
+									<a class="j-delete delete" hidefocus="hidefocus"
+										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
+									<a hidefocus="hidefocus" href="">去阅读</a>
+								</div> </div>
+							</li>
 
-							<li class="u-bookitm1 u-bookitm1-1"><!-- <a class="book"
+							<li class="u-bookitm1 u-bookitm1-1">
+								<a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
 									ondragstart="return false;" src="images/1.png">
@@ -150,25 +154,35 @@
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
-									</div> -->
-									<div class="act">
-										<a class="j-delete delete" href="javascript:void(0);">取消收藏</a>
-										<span class="u-sep">|</span> <a href="">去阅读</a>
 									</div>
-								</div></li>
-
+								<div class="act">
+									<a class="j-delete delete" href="javascript:void(0);">取消收藏</a>
+									<span class="u-sep">|</span> <a href="">去阅读</a>
+								</div> </div>
+							</li>
+ -->
 						</ul>
 					</div>
 				</div>
 
 				<div id='b2' style='display: none'>
 					<br />
-					<div class="infomation">
+					<div class="infomation" id="modifyDiv">
 
-						<form action="">
-							<span>用户名： </span><input><br /> <br /> <br /> <span>密
-								码：&nbsp;&nbsp; </span> <input><br /> <br />
-							<button>修改</button>
+						<form id="modifyForm" method="post" enctype="multipart/form-data">
+							<p>
+								<label title="编号：">编号：</label><input id="usid" name="usid" 
+									class="inputclass" placeholder="请输入编号" /><br><br>
+							</p>
+							<p>
+								<label>姓名：</label><input id="uname" name="uname" class="inputclass" placeholder="请输入要修改的用户名..."/><br><br>
+							</p>
+							<p>
+								<label>密码：</label><input type="password" id="upwd" name="upwd" class="inputclass" placeholder="请输入要修改的密码..."/><br><br>
+							</p>
+							<p>
+								<button type="submit" value="修改">修改</button>
+							</p>
 						</form>
 
 					</div>
@@ -176,9 +190,7 @@
 			</div>
 		</div>
 	</div>
-	</div>
 
-	</div>
 	<div id="footer">
 		<div id="aboutUs">
 			<ul>
@@ -191,7 +203,7 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
-	</div>
+
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 </html>
