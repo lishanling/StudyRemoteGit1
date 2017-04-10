@@ -31,6 +31,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</association> -->
 	</resultMap>
 	<select id="findCollects" resultMap="CollectsMap" parameterType="String">
-		select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on b.bid=c.bid join users u on c.usid=u.usid
+		select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on b.bid=c.bid join users u on u.uname=#{uname}
+		  and c.usid=u.usid
+	</select>
+	
+	<select id="findBook" resultType="Book">
+		select * from book
 	</select>
 </mapper>

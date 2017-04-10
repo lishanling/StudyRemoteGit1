@@ -8,4 +8,6 @@ public interface CollectsMapper {
 
 	List<Collects> findCollects(String id);
 
+	List<Collects> findBook();
+
 }

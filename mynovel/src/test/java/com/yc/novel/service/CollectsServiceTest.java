@@ -23,5 +23,12 @@ public class CollectsServiceTest {
 		System.out.println(result);
 		assertEquals(result,true);
 	}
+	
+	@Test
+	public void testFindCollects01() {
+		List<Collects> result=collectsService.findBook();
+		System.out.println(result);
+		
+	}
 
 }

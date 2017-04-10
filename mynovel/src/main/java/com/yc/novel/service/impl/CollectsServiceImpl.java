@@ -19,6 +19,12 @@ public class CollectsServiceImpl implements CollectsService {
 		return CollectsMapper.findCollects(id);
 	}
 
+	@Override
+	public List<Collects> findBook() {
+		
+		return CollectsMapper.findBook();
+	}
+
 	
 
 	
