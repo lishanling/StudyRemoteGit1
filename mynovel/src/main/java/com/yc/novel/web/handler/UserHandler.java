@@ -1,6 +1,7 @@
 package com.yc.novel.web.handler;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,13 @@ public class UserHandler {
 	private UsersService usersService;
 
 	@RequestMapping("login")
-	public String login(Users user, HttpServletRequest request) {
+	public String login(Users user, HttpSession session) {
 		user = usersService.login(user);
 		if (user == null) {
-			request.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
+			session.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
 			return "/back/login.jsp";
 		} else {
-			request.setAttribute(ServletUtil.LOGIN_USER, user);
+			session.setAttribute(ServletUtil.LOGIN_USER, user);
 			LogManager.getLogger().debug("success");
 			return "redirect:/homepage.jsp";
 		}
@@ -37,7 +38,6 @@ public class UserHandler {
 	@RequestMapping(value="{register}" , method=RequestMethod.POST)
 	public String register(Users user, HttpServletRequest request) {
 		System.out.println(user);
-
 		if (usersService.login(user) == null) {
 			if (usersService.register(user)) {
 				return "redirect:/homepage.jsp";
@@ -45,8 +45,8 @@ public class UserHandler {
 				request.setAttribute(ServletUtil.ERROR_MESSAGE, "服务器出错 ...");
 				return "/back/register.jsp";
 			}
- 		} else {
- 			request.setAttribute(ServletUtil.ERROR_MESSAGE, "该名称已注册...");
+		} else {
+			request.setAttribute(ServletUtil.ERROR_MESSAGE, "该名称已注册...");
 			return "/back/register.jsp";
 		}
 	}
@@ -63,5 +63,4 @@ public class UserHandler {
 	public boolean modify(Users user){
 		return usersService.modifyUsers(user);//异步数据响应
 	}
-
 }

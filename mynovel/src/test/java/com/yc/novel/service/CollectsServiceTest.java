@@ -1,5 +1,6 @@
 package com.yc.novel.service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
@@ -41,6 +42,13 @@ public class CollectsServiceTest {
 		List<Book> latest =collectsService.LatestList();
 		System.out.println(latest);
 		assertNotNull(latest);
+	}
+
+	@Test
+	public void testFindCollects() {
+		List<Collects> result=collectsService.findCollects("U1003");
+		System.out.println(result);
+		assertEquals(result,true);
 	}
 
 }

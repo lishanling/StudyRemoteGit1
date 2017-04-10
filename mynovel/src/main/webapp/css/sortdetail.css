@@ -1,0 +1,190 @@
+@charset "utf-8";
+
+*{
+	margin:0px auto;
+	padding:0px;
+	font-size:14px;
+	font-style:normal;
+}
+
+body{
+	background-color:#FBFAF8;
+}
+#box{
+	height:1000px;
+}
+ul,li{
+	list-style:none;
+}
+#header{
+	width:1184px;
+	height:32px;
+	border-bottom:#FFF 2px solid;
+}
+#header ul{
+	margin-left:800px;
+}
+.red a{
+	color:#999;
+	display:block;
+	text-decoration:none;
+	border-right:#999 1px solid;
+	}
+#header li{
+	float:left;
+	width:70px;
+	text-align:center;
+	margin-top:5px;
+	text-decoration:none;
+}
+#header li a:hover{
+	color:#F00;
+	text-decoration:none;
+}
+
+#search{
+	width:884px;
+	border-bottom:solid 1px #FBFAF8;
+}
+#search ul li{
+	display:inline-block;
+	float:left;
+}
+#search ul li input:first-child{
+	margin-left:250px;
+	margin-top:20px;
+	border-radius: 25px;　　/*设置输入框两边的边框半径，可以使两边变成弧形*/
+	outline: none;
+	color:#999;
+}
+#menu{
+	clear:both;
+	width:1084px;
+	height:48px;
+	margin-top:30px;
+	background-color:#F98235;
+	color:#FFF;
+
+}
+#menu ul{
+	margin-top:20px;
+	margin-left:95px;
+}
+#menu li{
+	width:150px;
+	height:50px;	
+	float:left;
+	
+	text-align:center;
+}
+
+#menu li a{
+	display:inline-block;
+ 	color:#FFF;
+    font-size:18px;
+	padding-left:10px;
+	padding-top:10px;
+	text-decoration:none;/*去除超链接的下划线*/	
+}
+#menu li a:hover{
+	color:#666;
+}
+#sortid{
+	float:none;
+	margin-left:138px;
+
+	
+}
+
+#sortid h2{
+	width:100px;
+	height:40px;
+	position:relative;
+	left:-555px;
+	top:10px;
+	color:#F90;
+	font-size:18px;
+	float:none;
+	
+
+}
+
+#sortdetail {
+	float:left;
+	}
+#sortdetail ul li{
+	width:400px;
+	height:140px;
+	float:left;
+	margin-bottom:20px;
+
+}
+.sortchild{
+	font-size:16px;
+	color:#FC6;
+	
+}
+#sortdetail  ul li dl dt{
+	width:120px;
+	padding:2px;
+	float:left;
+	
+}
+#sortdetail  ul li dl dd{
+	width:145px;
+	font-size:14px;
+	margin-top:7px;
+	color:#999;
+	float:left;
+	
+	
+}
+#sortdetail  ul li dl dd span{
+	
+	color:#666;
+	
+	
+}
+
+
+#footer{
+	border-top:#FFF 10px solid;
+ 	width:1184px;
+ 	height:100px;
+	margin-top:30px;
+  	}	
+#aboutUs{
+	width:100%;
+	height:50px;
+	
+   	}
+		
+#aboutUs ul li{
+	float:left;
+	width:70px;
+	text-align:center;
+	margin-top:5px;
+	margin-left:20px;
+ 	}
+ 
+.qwer a{
+	color:#999;
+	display:block;
+	text-decoration:none;
+	border-right:#999 1px solid;
+ 	}
+.qwer a:hover{
+	color:#666;
+	display:block;
+	text-decoration:underline;
+  	}
+		
+#allRight{
+	width:100%;
+	height:50px;
+
+   	}
+#allRight a{
+	margin-left:25px; 
+   	}
+ 

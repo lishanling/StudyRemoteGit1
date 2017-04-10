@@ -11,17 +11,19 @@ import com.yc.novel.service.AdminService;
 
 @Service("adminService")
 public class AdminServiceImpl implements AdminService {
+	
 	@Autowired
 	private AdminMapper adminMapper;
+	
 	@Override
 	public Admin login(Admin admin) {
 		return adminMapper.adminFind(admin);
 	}
-
 	
 	public void setAdminMapper(AdminMapper adminMapper){
 		this.adminMapper=adminMapper;
 	}
+	
 	@Override
 	public boolean modifytAdmin(Admin admin) {
 
@@ -38,10 +40,17 @@ public class AdminServiceImpl implements AdminService {
 		}
 		return adminMapper.findPartAdmin(pb);
 	}
+	
 	@Override
 	public boolean addtAdmin(Admin admin) {
 		return adminMapper.addAdmin(admin)>0;
 		
+	}
+	
+	
+	@Override
+	public boolean deleteAdmin(String aid) {
+		return adminMapper.deleteAdmin(aid)>0;
 	}
 
 }

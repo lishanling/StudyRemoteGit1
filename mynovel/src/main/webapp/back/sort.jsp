@@ -15,7 +15,14 @@
 
 		<div id="header">
 			<ul>
-				<li class="red"><a href="back/login.jsp">登录</a></li>
+				<li class="red"><c:choose>
+						<c:when test="${loginUser.uname eq null}">
+							<a href="back/login.jsp">登录</a>
+						</c:when>
+						<c:otherwise>
+							<a href="back/userinfo.jsp">${loginUser.uname}</a>
+						</c:otherwise>
+					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
@@ -128,7 +135,6 @@
 							<dd></dd>
 						</dl>
 				</a></li>
-
 				<!--
 
 <li>历史</li>
@@ -141,6 +147,24 @@
 <li>小说</li>
 <li>生活</li>
 -->
+			</ul>
+			<li><a>
+					<dl>
+						<dt>
+							<img src="images/book4.jpg">
+						</dt>
+						<dd>
+							书名:<span class="bookName">半暖</span>
+						</dd>
+						<dd>
+							作者:<span class="bookauthor">妃子一笑</span>
+						</dd>
+						<dd>
+							出版日期:</br> <span class="date">2012年5月4日</span>
+						</dd>
+						<dd></dd>
+					</dl></li> </a>
+
 			</ul>
 
 			<ul>
@@ -398,6 +422,5 @@
 		</div>
 	</div>
 
-	</div>
 </body>
 </html>

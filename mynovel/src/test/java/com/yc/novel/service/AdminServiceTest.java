@@ -38,7 +38,6 @@ public class AdminServiceTest {
 		System.out.println(admin);
 		assertEquals(result,true);
 	}
-
-	
+		
 
 }

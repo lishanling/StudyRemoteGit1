@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page isELIgnored="false"  %>
+<%@page isELIgnored="false"%>
 <!doctype html>
 <html>
 <head>
@@ -16,7 +16,14 @@
 
 		<div id="header">
 			<ul>
-				<li class="red"><a href="back/login.jsp">登录</a></li>
+				<li class="red"><c:choose>
+						<c:when test="${loginUser.uname eq null}">
+							<a href="back/login.jsp">登录</a>
+						</c:when>
+						<c:otherwise>
+							<a href="back/userinfo.jsp">${loginUser.uname}</a>
+						</c:otherwise>
+					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
@@ -63,29 +70,29 @@
 
 			<div id="right">
 				<ul>
-					<c:forEach items="${book}" var="item" >
+					<c:forEach items="${book}" var="item">
 						<li><a>
-							<dl>
-								<dt>
-									<img src="${item.bpic}" alt="${item.bpic}">
-								</dt>
-								<dd>
-									书名:<span class="bookName">${item.bname}</span>
-								</dd>
-								<dd>
-									作者:<span class="bookauthor">${item.bauthor}</span>
-								</dd>
-								<dd>
-									出版日期：<span class="date">${item.bdate}</span>
-								</dd>
-								<dd></dd>
-							</dl>
+								<dl>
+									<dt>
+										<img src="${item.bpic}" alt="${item.bpic}">
+									</dt>
+									<dd>
+										书名:<span class="bookName">${item.bname}</span>
+									</dd>
+									<dd>
+										作者:<span class="bookauthor">${item.bauthor}</span>
+									</dd>
+									<dd>
+										出版日期：<span class="date">${item.bdate}</span>
+									</dd>
+									<dd></dd>
+								</dl>
 
 						</a>
 						<li>
 					</c:forEach>
-					
-					
+
+
 				</ul>
 
 			</div>

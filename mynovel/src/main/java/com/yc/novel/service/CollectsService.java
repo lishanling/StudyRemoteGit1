@@ -15,5 +15,6 @@ public interface CollectsService {
 	List<Book> LatestList();
 
 
+	List<Collects> findCollects(String id);
 
 }

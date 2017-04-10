@@ -23,4 +23,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
 	</select>
 	
+	<resultMap type="Collects" id="CollectsMap">
+		<id column="bid" property="bid" />
+		<id column="usid" property="usid" />
+		<result column="udate" property="udate" />
+		<!-- 集合与多条记录映射，ofType是指集合泛型的类型 -->
+		<!-- <collection property="book" ofType="Book">
+			<id column="bid" property="bid" />
+			<result column="bpic" property="bpic" />
+			<result column="bname" property="bname" />
+			<result column="bauther" property="bauther" />
+		</collection> -->
+
+		<association property="book" column="bid" javaType="Book">
+			<id column="bid" property="bid" />
+			<result column="bpic" property="bpic" />
+			<result column="bname" property="bname" />
+			<result column="bauthor" property="bauthor" />
+		</association>
+		<!-- <association property="user" column=""usid"" javaType="Users">
+			<id column="usid" property=""usid"" />
+		</association> -->
+	</resultMap>
+	<select id="findCollects" resultMap="CollectsMap" parameterType="String">
+		select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on c.usid=#{usid}
+		 and b.bid=c.bid
+	</select>
 </mapper>

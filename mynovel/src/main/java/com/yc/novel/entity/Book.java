@@ -2,7 +2,6 @@ package com.yc.novel.entity;
 
 import java.io.Serializable;
 import java.sql.Date;
-import java.util.List;
 
 public class Book implements Serializable{
 	private static final long serialVersionUID = -6765580454607657848L;
@@ -70,15 +69,13 @@ public class Book implements Serializable{
 	public Types getTypes() {
 		return types;
 	}
-	public void setTypes(Types types) {
-		this.types = types;
-	}
+	
 	
 	public Book() {
 		
 	}
 	public Book(String bid, String bname, String bdesc, Date bdate, String bcopyright, String burl, String bauthor,
-			String bpic) {
+			String bpic,Types types) {
 		
 		this.bid = bid;
 		this.bname = bname;
@@ -88,6 +85,7 @@ public class Book implements Serializable{
 		this.burl = burl;
 		this.bauthor = bauthor;
 		this.bpic = bpic;
+		this.types=types;
 	}
 	@Override
 	public String toString() {
