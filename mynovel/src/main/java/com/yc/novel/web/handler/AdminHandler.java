@@ -49,6 +49,7 @@ public class AdminHandler {
 	public boolean modify(Admin admin){
 		return adminService.modifytAdmin(admin);
 	}
+
 	@RequestMapping("delete")
 	@ResponseBody
 	public boolean delAdmin(String aid){

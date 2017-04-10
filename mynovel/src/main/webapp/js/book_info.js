@@ -15,7 +15,7 @@ $('#book_info').datagrid({
 	        			  return "<img width='80' src='" + value + "'/>"
 	        		  }
 	        	  }},
-	              
+
 	        	  {field:'bname',title:'书名',width:100,align:'center'} ,
 	        	  {field:'bauthor',title:'作者',width:50,align:'center'} ,
 	        	  {field:'bcopyright',title:'出版社',width:100,align:'center'} ,
@@ -25,11 +25,10 @@ $('#book_info').datagrid({
 	        		  formatter: function(value,row,index){
 	        			  var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;' + 
 	        			  '<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>&nbsp;' +
-	        			 '<a class="delBtn" href="javascript:void(0)" onclick="delDetail('+index+')">删除</a>'+
+	        			  '<a class="delBtn" href="javascript:void(0)" onclick="delDetail('+index+')">删除</a>'+
 	        			  '<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
 	        			  '$(".modifyBtn").linkbutton({iconCls: "icon-edit"});'+
 	        			  '$(".delBtn").linkbutton({iconCls:"icon-cancel"});</script>';
-	        			 
 	        			  return oprStr;
 	        		  }
 	        	  } ] ],toolbar:[{
@@ -144,51 +143,93 @@ function chgPic(obj){
 function changPic(obj){
 	$("#apic").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
+	/*
+function editUsersInfo(){
+	var formData = new FormData($( "#modifyForm" )[0]);
+	$.ajax({
+	 	url:"book/modify",
+	 	data:formData,
+	 	type: 'POST',
+	 	dataType:"json",
+	 	async: false,  
+        cache: false,  
+        contentType: false,  
+        processData: false,  
+	 	success:function(data,status){
+		 	if(data){
 
+		 	}else{
+		 		$.messager.alert("错误提示","会员修改失败...\n","error");
+		 	}
+	 	}
+	});
+}
+	 */
 
-$("#addDiv").dialog({
-	title:"图书添加",
-	closable:false,
-	modal:true,
-	minimizable:true,
-	resizable:true,
-	maximizable:true,
-	
-});
-$("#addDiv").dialog("close");
+	/*function add(){
+	$("#addDiv").dialog("open");
+	//$.post("book/get?ssid="+id,function(data){
+	//加载所有的主题数据
+	$.post("types/sname",function(datat){
+		$("#ssid").empty();
+		for(var i=0;i<datat.length;i++){
+			if(data.types.sname==datat[i].sname){
+				$("#assid").append("<option value='"+datat[i].ssid+"'selected>"+datat[i].sname+"</option>");
+				$.post("types/info",function(data){
+					$("#assid").empty();
+					for(var i=0;i<data.length;i++){
+						if(data.types.sname==datat[i].sname){
+							$("#assid").append("<option value='"+datat[i].ssid+"' selected>"+datat[i].sname+"</option>");
+						}else{
+							$("#assid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
+						}
+					}
+				});
+			}
+		}			//});
+	},"json");
+}
+	 */
 
+	$("#addDiv").dialog({
+		title:"图书添加",
+		closable:false,
+		modal:true,
+		minimizable:true,
+		resizable:true,
+		maximizable:true,
 
-$("#addForm").form({
-	url:'book/add',
-	success:function(data){
-		if(data == ""){
-			$.messager.alert('图书添加','当前用户没有添加图书的权限 ！','warning');
-			$("#addDiv").dialog("close"); 
-			return ;
+	});
+	$("#addForm").form({
+		url:'book/add',
+		success:function(data){
+			if(data == ""){
+				$.messager.alert('图书添加','当前用户没有添加图书的权限 ！','warning');
+				$("#addDiv").dialog("close"); 
+				return ;
+			}
+			if(data.trim()=="true"){
+				$("#addDiv").dialog("close"); 
+				$("#book_info").datagrid("reload"); //刷新数据
+			}else{
+				$.messager.show({
+					title:'添加信息',
+					msg:'添加失败！！！',
+					showType:'show',
+					style:{
+						top:document.body.scrollTop+document.documentElement.scrollTop,
+					}
+				});
+			}
 		}
-		if(data.trim()=="true"){
-			$("#addDiv").dialog("close"); 
-			$("#book_info").datagrid("reload"); //刷新数据
-		}else{
-			$.messager.show({
-				title:'添加信息',
-				msg:'添加失败！！！',
-				showType:'show',
-				style:{
-					top:document.body.scrollTop+document.documentElement.scrollTop,
-				}
-			});
+	});
+	$(".addBtn").linkbutton({
+		iconCls: "icon-ok",
+		onClick: function(){
+			$("#addForm").submit();
 		}
-	} 
-});
-
-
-$(".addBtn").linkbutton({
-	iconCls: "icon-ok",
-	onClick: function(){
-		$("#addForm").submit();
-	}
-});
-$(".addBook").linkbutton({
-	iconCls: "icon-add",
-});
+	});
+	$("#addDiv").dialog("close");
+	$(".addBook").linkbutton({
+		iconCls: "icon-add",
+	});

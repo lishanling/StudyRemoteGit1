@@ -21,6 +21,7 @@ public class BookHandler {
   
 	@Autowired 	
 	private BookService bookService;
+
 	
 	@ResponseBody
 	@RequestMapping(value="{sorts}" , method=RequestMethod.GET)
@@ -59,6 +60,15 @@ public class BookHandler {
 		book.setBpic(bpic);
 		return bookService.updateBooks(book);
 	}
+	
+
+	//显示图书信息
+	@RequestMapping("delete")
+	@ResponseBody
+	public boolean delete(Book book){
+		return bookService.deleteBooks(book);
+	}
+
 	@RequestMapping("add")
 	@ResponseBody
 	public boolean add(@RequestParam("picData") MultipartFile picData,Book book){

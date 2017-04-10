@@ -46,8 +46,8 @@ public class AdminServiceImpl implements AdminService {
 		return adminMapper.addAdmin(admin)>0;
 		
 	}
-
-
+	
+	
 	@Override
 	public boolean deleteAdmin(String aid) {
 		return adminMapper.deleteAdmin(aid)>0;

@@ -51,10 +51,11 @@ public class UserHandler {
 		}
 	}
 
-
 	@RequestMapping("list")
 	@ResponseBody
 	public PaginationBean<Users> list(String rows, String page){
+
+		LogManager.getLogger().debug("list : rows ===> " + rows + ", page ===> " + page);
 		return usersService.listPartUsers(page, rows);//异步数据响应
 	}
 
@@ -62,9 +63,5 @@ public class UserHandler {
 	@ResponseBody
 	public boolean modify(Users user){
 		return usersService.modifyUsers(user);//异步数据响应
-	}
-
-	
-
-
+}
 }

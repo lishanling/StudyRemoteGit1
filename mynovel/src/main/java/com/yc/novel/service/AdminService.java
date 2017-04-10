@@ -8,6 +8,7 @@ public interface AdminService {
 	boolean modifytAdmin(Admin admin);
 	PaginationBean<Admin> listPartAdmin(String page, String rows);
 	boolean addtAdmin(Admin admin);
+
 	boolean deleteAdmin(String aid);
 
 }

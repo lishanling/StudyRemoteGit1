@@ -1,31 +1,31 @@
 package com.yc.novel.service.impl;
 
 import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.yc.novel.entity.Book;
-import com.yc.novel.mapper.BookMapper;
 import com.yc.novel.entity.PaginationBean;
+import com.yc.novel.mapper.BookMapper;
 import com.yc.novel.mapper.TypesMapper;
 import com.yc.novel.service.BookService;
 
 @Service("bookService")
 public class BookServiceImpl implements BookService {
 	@Autowired
- 	private BookMapper bookMapper;	
-	
+
+	private BookMapper bookMapper;
+	@Autowired
+	private  TypesMapper typesMapper;
+
 	@Override
 	public List<Book> getBooksByTypes(String bookTypesName){
-		   return bookMapper.findBookBySort(bookTypesName);
+		return bookMapper.findBookBySort(bookTypesName);
 	}
-	
- 	@Autowired
-	private  TypesMapper typesMapper;
- 
+
 	@Override
 	public PaginationBean<Book> listPartBooks(String page, String rows) {
 		PaginationBean<Book> pb=new PaginationBean<Book>();
@@ -43,10 +43,7 @@ public class BookServiceImpl implements BookService {
 		return bookMapper.updateBook(book)>0;
 	}
 
-	@Override
-	public boolean addBooks(Book book) {
-		return bookMapper.addBooks(book)>0;
-	}
+
 	@Override
 	public List<Book> findAllbook() {
 		List<Book> result = bookMapper.findAllBooks();
@@ -66,5 +63,9 @@ public class BookServiceImpl implements BookService {
 		public boolean delbook(String bid) {
 			return bookMapper.delBooks(bid)>0;
 		}
+
+	@Override
+	public boolean deleteBooks(Book book) {
+		return bookMapper.deleteBooks(book)>0;
 	}
-	
+}

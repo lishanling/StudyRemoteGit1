@@ -6,6 +6,7 @@ import com.yc.novel.entity.Types;
 
  
 public interface TypesMapper {
-	List<Types>	getAll();
+
+	List<Types> getTypes();
 
 }

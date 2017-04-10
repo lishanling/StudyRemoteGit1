@@ -20,7 +20,8 @@ public class TypesServiceImplTest {
 	@Test
 	public void testFindAll(){
 		System.out.println("hello");
-		List<Types>  sorts = service.findAll();
+		List<Types>  sorts = service.getTypes();
+
 		System.out.println("success");
 		assertNotNull(sorts);
 		for(Types s : sorts){

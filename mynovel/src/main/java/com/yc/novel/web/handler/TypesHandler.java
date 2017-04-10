@@ -15,12 +15,11 @@ import com.yc.novel.service.TypesService;
 public class TypesHandler {
 	
 	@Autowired 	
-	private TypesService service;
+	public TypesService service;
 	
 	@ResponseBody
-	@RequestMapping("info")
+	@RequestMapping("sname")
 	public List<Types> sortsInfo(){
-		System.out.println("进入添加");
-		 return service.findAll();
+		 return service.getTypes();
 	}	
 }

@@ -2,16 +2,16 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
 <mapper namespace="com.yc.novel.mapper.BookMapper">
+	<select id="findAllBooks" resultType="Book">
+	select * from book 
+	</select>
 
 	<select id="findBookBySort" parameterType="String" resultType="Book">
 		<!-- select * from books where bname = #{bname} -->
-		select b.*  from book b inner join types t on b.ssid = t.ssid and t.sname = #{bookSortName}
-	</select>
-
-
-	<select id="findAllBooks" resultType="Book" >
-	select * from book
+		select b.* from book b inner join types t on b.ssid = t.ssid and
+		t.sname = #{bookSortName}
 	</select>
 
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
@@ -26,8 +26,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<select id="getBooks" resultType="Book">
-		select * from (select n.*,rownum rn from
-		(select * from book order by 1) n where ${pageSize}*${currPage}>=rownum)
+		select * from (select
+		n.*,rownum rn from
+		(select * from book order by 1) n where
+		${pageSize}*${currPage}>=rownum)
 		where rn>${pageSize}*(${currPage}-1)
 	</select>
 
@@ -46,6 +48,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where bid=#{bid}
 	</update>
 
+	<!-- <insert id="insertBook" parameterType="Book"> <selectKey order="BEFORE" 
+		keyColumn="ssid" keyProperty="ssid"> select ssid from types where sname=#{sname} 
+		</selectKey> insert into book values() </insert> -->
+
 	<insert id="insertBook"  parameterType="java.util.Map">
 		<selectKey order="BEFORE" keyColumn="ssid" keyProperty="ssid" resultType="string">
 			select ssid from types where sname=#{sname}
@@ -54,12 +60,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{book.bdesc},#{book.bdate},#{book.bcopyright},#{book.burl},
 	#{book.bauthor},#{ssid},#{book.bpic})
 	</insert>
-	<!-- <insert id="addBooks" parameterType="Book" >
-		insert into  book values('B'||seq_bid.nextval,bname=#{bname},
-		bdesc=#{desc},bdate=#{bdate},bcopyright=#{bcopyright},burl=#{burl},
-		bauthor=#{bauthor},ssid=#{ssid},bpic=#{bpic})
-	</insert>
- -->
+
+	<delete id="deleteBooks" parameterType="Book">
+		delete from book where
+		bid=#{bid}
+	</delete>
+
+	<select id="bookSSid" parameterType="Book" resultType="Book">
+		select *
+		from book where ssid=#{ssid}
+	</select>
 
 	<select id="bookTypes" parameterType="Book" resultType="Book">
 		select *
@@ -69,4 +79,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	delete from book where bid=#{bid}
 	</delete>
 	
+
 </mapper>
