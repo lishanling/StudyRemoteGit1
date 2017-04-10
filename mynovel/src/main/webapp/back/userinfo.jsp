@@ -23,6 +23,7 @@
 							<a href="back/userinfo.jsp">${loginUser.uname}</a>
 						</c:otherwise>
 					</c:choose></li>
+					
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
@@ -67,7 +68,7 @@
 					<h1 align="center" id="headinfo" style="color: #000">我 的</h1>
 				</div>
 				<div class="container" id="b1">
-					<div class="u-colslist" id="usercollects">
+					<div class="u-colslist" >
 						<ul class="j-container" id="usercollect">
 							<!-- <li class="u-bookitm1 u-bookitm1-1">
 								<a class="book"

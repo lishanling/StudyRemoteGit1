@@ -21,10 +21,8 @@ select * from collects;
 select * from menu;
 select * from discuss;
 
-select b.bpic bpic ,b.bname bname,b.bauthor bauthor from book b join collects c on 
-		c.usid='U1003' and b.bid=c.bid;
-
-select b.bpic,b.bname,b.bauthor from book b,collects c where b.bid=c.bid and c.usid='U1003';
+select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on b.bid=c.bid join users u on u.uname='leesin'
+		  and c.usid=u.usid
  
 create SEQUENCE seq_aid START WITH 1001;--图书管理员编号序列 
 create SEQUENCE seq_usid START WITH 1001;--用户编号

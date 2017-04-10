@@ -19,7 +19,7 @@ public class CollectsServiceTest {
 	
 	@Test
 	public void testFindCollects() {
-		List<Collects> result=collectsService.findCollects("U1003");
+		List<Collects> result=collectsService.findCollects("leesin");
 		System.out.println(result);
 		assertEquals(result,true);
 	}
