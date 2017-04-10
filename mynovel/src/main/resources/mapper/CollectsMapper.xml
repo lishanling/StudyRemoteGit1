@@ -4,6 +4,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.CollectsMapper">
 
+	<!-- 获取图书的收藏量 -->
+	<select id="collectsCount" resultType="Collects">
+		select c.bid,count(*) a from collects c group by c.bid
+	</select>
+
+	<!-- 查询日榜单 -->
+	
+
+	<!-- 查询月榜单 -->
+	<select id="monthList" resultType="Book">
+		select substrb(b.bdate,-7,8) from book b group by substrb(b.bdate,-7,8)
+		
+	</select>
+
+	<!-- 查询最新榜单 -->
+	<select id="latestList" resultType="Book">
+		select b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
+	</select>
+	
 	<resultMap type="Collects" id="CollectsMap">
 		<id column="bid" property="bid" />
 		<id column="usid" property="usid" />

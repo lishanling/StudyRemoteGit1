@@ -5,7 +5,6 @@ import com.yc.novel.entity.Users;
 
 public interface UsersService {
 
-
 	PaginationBean<Users> listPartUsers(String page, String rows);
 
 	boolean modifyUsers(Users user);

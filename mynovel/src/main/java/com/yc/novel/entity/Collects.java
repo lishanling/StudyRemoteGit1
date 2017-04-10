@@ -1,7 +1,6 @@
 package com.yc.novel.entity;
 
 import java.sql.Date;
-import java.util.List;
 
 public class Collects {
 
@@ -11,8 +10,9 @@ public class Collects {
 	private Book book;
 	private Users user;
 	
+
 	public Collects() {
-		
+
 	}
 	public Collects(String usid, String bid, Date udate , Book book,Users user) {
 		this.usid = usid;
@@ -54,6 +54,6 @@ public class Collects {
 	}
 	@Override
 	public String toString() {
-		return "Collects [usid=" + usid + ", bid=" + bid + ", udate=" + udate + ", book=" + book + "]";
+		return "\nCollects [usid=" + usid + ", bid=" + bid + ", udate=" + udate + ", book=" + book + "]";
 	}
 }

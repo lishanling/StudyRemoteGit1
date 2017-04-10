@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.yc.novel.entity.Admin;
+
 import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.entity.Users;
 import com.yc.novel.service.UsersService;
@@ -51,10 +51,10 @@ public class UserHandler {
 		}
 	}
 
-
 	@RequestMapping("list")
 	@ResponseBody
 	public PaginationBean<Users> list(String rows, String page){
+		LogManager.getLogger().debug("list : rows ===> " + rows + ", page ===> " + page);
 		return usersService.listPartUsers(page, rows);//异步数据响应
 	}
 
