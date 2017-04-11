@@ -165,7 +165,6 @@ function delDetail(index){
 	$("#adminList").datagrid("deleteRow",index);
 	$.post("admin/delete?aid="+row.aid, function(data) {
 		$.messager.alert('管理员删除','删除成功！');
-
 	}, "json");
 }
 

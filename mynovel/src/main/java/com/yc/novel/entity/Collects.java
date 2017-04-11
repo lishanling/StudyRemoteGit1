@@ -8,15 +8,25 @@ public class Collects {
 	private String bid;
 	private Date udate;
 	private Book book;
+	private Users user;
+	
 
 	public Collects() {
 
 	}
-	public Collects(String usid, String bid, Date udate , Book book) {
+	public Collects(String usid, String bid, Date udate , Book book,Users user) {
 		this.usid = usid;
 		this.bid = bid;
 		this.udate = udate;
 		this.book = book;
+		this.user=user;
+	}
+	
+	public Users getUser() {
+		return user;
+	}
+	public void setUser(Users user) {
+		this.user = user;
 	}
 	public String getUsid() {
 		return usid;

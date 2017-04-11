@@ -67,29 +67,25 @@
 					<h1 align="center" id="headinfo" style="color: #000">我 的</h1>
 				</div>
 				<div class="container" id="b1">
-					<div class="u-colslist" id="usercollects">
-						<ul class="j-container" id="usercollect">
-							<!-- <li class="u-bookitm1 u-bookitm1-1">
-								<a class="book"
-								hidefocus="hidefocus" href=""> <img style="display: block;"
-									onload="onLoadImg(this)" oncontextmenu="return false;"
-									ondragstart="return false;" src="images/1.png">
+					<div class="u-colslist" id="bookinfo">
+						<ul class="j-container">
+							<li class="u-bookitm1 u-bookitm1-1"><a class="book" href="#">
+									<img style="display: block;" src="images/1.png">
 							</a>
 								<div class="info">
 									<div class="wrap">
-										<a class="title" hidefocus="hidefocus" href="">设计龙门阵（第三季）</a>
+										<a class="title" href="">设计龙门阵（第三季）</a>
 										<p class="u-author">
 											<span>ZCOOL站酷</span>
 										</p>
 									</div>
-								<div class="act">
-									<a class="j-delete delete" hidefocus="hidefocus"
-										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-									<a hidefocus="hidefocus" href="">去阅读</a>
-								</div> </div>
-							</li>
+									<div class="act">
+										<a class="j-delete delete" href="#">取消收藏</a> <span
+											class="u-sep">|</span> <a href="">去阅读</a>
+									</div>
+								</div></li>
 
-							<li class="u-bookitm1 u-bookitm1-1">
+							<!-- <li class="u-bookitm1 u-bookitm1-1">
 								<a class="book"
 								hidefocus="hidefocus" href=""> <img style="display: block;"
 									onload="onLoadImg(this)" oncontextmenu="return false;"
@@ -166,43 +162,33 @@
 									<a class="j-delete delete" href="javascript:void(0);">取消收藏</a>
 									<span class="u-sep">|</span> <a href="">去阅读</a>
 								</div> </div>
-							</li>
- -->
+							</li> -->
 						</ul>
 					</div>
 				</div>
 
-				<div id='b2' style='display: true'>
+				<%-- <div id='b2' style='display: true'>
 					<br />
-					<div class="infomation" id="modifyDiv">
 
-						<form id="modifyForm" method="post" enctype="multipart/form-data">
-							<p>
-								<label title="编号：">编号：</label><input id="usid" name="usid"
-									class="inputclass" placeholder="请输入编号" /><br> <br>
-							</p>
-							<p>
-								<label>姓名：</label><input id="uname" name="uname"
-									class="inputclass" placeholder="请输入要修改的用户名..." /><br> <br>
-							</p>
-							<p>
-								<label>密码：</label><input type="password" id="upwd" name="upwd"
-									class="inputclass" placeholder="请输入要修改的密码..." /><br> <br>
-							</p>
-							<p>
-								<button type="submit" value="修改">修改</button>
-							</p>
-						</form>
-						<%-- <div class="infomation">
+					<div class="infomation">
 						<form action="#" method="post">
-							<span>用户名： </span><input id="uname" style="border: 1px;" value="${loginUser.uname}" /><br />
-							<br /> <span>密&nbsp;&nbsp; 码：</span> <input id="upwd"
-								style="border: 1px;" /><br />
-							<br /> <a class="updateBtn" href="javascript:void(0)">修改</a>
+<<<<<<< HEAD
+							<span style="color:red"> 用户名：</span><input id="uname" style="border: 1px;" value="${loginUser.uname}" /><br />
+							<br /> <span style="color:red"> 密&nbsp;&nbsp; 码：</span>
+							 <input id="upwd" value="*"  style="border: 1px;"/>
+								<br/>
+				<span style="color:red">邮  &nbsp;箱：</span><input id="uemail" style="border: 1px;" value="${loginUser.uemail}" /><br />
+								
+							<br /> <a class="updateBtn" href="javascript:void(0)" onclick="updateMyself()">修改提交</a>
+=======
+							<span>用户名： </span><input id="uname" style="border: 1px;"
+								value="${loginUser.uname}" /><br /> <br /> <span>密&nbsp;&nbsp;
+								码：</span> <input id="upwd" style="border: 1px;" /><br /> <br /> <a
+								class="updateBtn" href="javascript:void(0)">修改</a>
+>>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 						</form>
-					</div> --%>
 					</div>
-				</div>
+				</div> --%>
 			</div>
 		</div>
 

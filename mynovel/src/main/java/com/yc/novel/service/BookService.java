@@ -11,11 +11,11 @@ public interface BookService {
 	PaginationBean<Book> listPartBooks(String page, String rows);
 	
 	boolean updateBooks(Book book);
-
-	boolean addBooks(Book book);
-	
+	boolean insertBooks(Book book,String sname);
+	boolean delbook(String bid);
 	boolean deleteBooks(Book book);
 
 	List<Book> findAllbook();
-	
+
+	Book getBookById(String bookId);
 }

@@ -12,9 +12,12 @@ import com.yc.novel.service.CollectsService;
 
 @Service
 public class CollectsServiceImpl implements CollectsService {
-
 	@Autowired
-	public CollectsMapper collectsMapper;
+	private CollectsMapper collectsMapper;
+	@Override
+	public boolean addCollects(Collects collects) {
+		return collectsMapper.add(collects)>0;
+	}
 
 	public void setCollectsmapper(CollectsMapper collectsmapper) {
 		this.collectsMapper = collectsmapper;
@@ -49,6 +52,12 @@ public class CollectsServiceImpl implements CollectsService {
 	@Override
 	public List<Book> MonthList() {
 		return collectsMapper.monthList();
+	}
+
+
+	@Override
+	public List<Collects> findBook() {
+		return collectsMapper.findBook();
 	}
 
 }

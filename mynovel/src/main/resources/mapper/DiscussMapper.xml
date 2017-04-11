@@ -4,7 +4,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.DiscussMapper">
 	
-	<select id="findDiscuss">
-		select * from discuss
-	</select>
+
+	<select id="findDiscussById" parameterType="String"  resultType="Discuss" >
+		 	select d.* from discuss d inner join book b on d.bid = b.bid and d.bid = #{id} 
+		</select> 
+ 	
+		<select id="findDiscuss" resultType="Discuss">
+			select * from discuss
+		</select>
+	
 </mapper>

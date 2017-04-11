@@ -7,7 +7,8 @@ import com.yc.novel.entity.Collects;
 
 public interface CollectsService {
 
-	List<Collects> findCollects(String id);
+
+   boolean addCollects(Collects collects);
 
 	List<Collects> CollectsBook();
 
@@ -18,5 +19,9 @@ public interface CollectsService {
 	List<Book> LatestList();
 
 	List<Book> AllList();
+
+	List<Collects> findCollects(String id);
+
+	List<Collects> findBook();
 
 }

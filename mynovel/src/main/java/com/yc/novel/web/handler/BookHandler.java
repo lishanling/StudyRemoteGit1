@@ -1,6 +1,9 @@
 package com.yc.novel.web.handler;
 
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +24,19 @@ public class BookHandler {
 	@Autowired 	
 	private BookService bookService;
 
+	@ResponseBody
+	@RequestMapping(value="{sortDetail}" , method=RequestMethod.GET)
+ 	public List<Book> getSortsDetails(String bookSortName){
+		LogManager.getLogger().debug("bookSortName ==>"+bookSortName);
+		return bookService.getBooksByTypes(bookSortName);
+   	} 
 	
+	@ResponseBody 
+	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
+ 	public Book getBookDetails(String bookId){
+		LogManager.getLogger().debug("bookId ==>"+bookId);
+		return bookService.getBookById(bookId);
+  	}  
 	@ResponseBody
 	@RequestMapping(value="{sorts}" , method=RequestMethod.GET)
  	public List<Book> getDetails(String bookSortName){
@@ -59,26 +74,7 @@ public class BookHandler {
 		book.setBpic(bpic);
 		return bookService.updateBooks(book);
 	}
-
-
-
-	/*@RequestMapping("add")
-	@ResponseBody
-	public boolean add(@RequestParam("picData")MultipartFile picData,Book book){
-		String bpic=null;
-		if(picData!=null&&!picData.isEmpty()){//判断是否有文件上传
-			try {
-				picData.transferTo(ServletUtil.getUploadFile(picData.getOriginalFilename()));
-				bpic=ServletUtil.VIRTUAL_UPLOAD_DIR+picData.getOriginalFilename();
-				System.out.println(bpic);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		book.setBpic(bpic);
-		return bookService.addBooks(book);
-	}*/
-
+	
 
 	//显示图书信息
 	@RequestMapping("delete")
@@ -89,7 +85,8 @@ public class BookHandler {
 
 	@RequestMapping("add")
 	@ResponseBody
-	public boolean add(@RequestParam("picData")MultipartFile picData,Book book){
+	public boolean add(@RequestParam("picData") MultipartFile picData,Book book){
+
 		String bpic=null;
 		if(picData!=null&&!picData.isEmpty()){//判断是否有文件上传
 			try {
@@ -101,7 +98,16 @@ public class BookHandler {
 			}
 		}
 		book.setBpic(bpic);
-		return bookService.addBooks(book);
+		HttpServletRequest request = null;
+		//String sname=request.getParameter("sname");
+		String sname="爱情";
+		return bookService.insertBooks(book, sname);
+		
+	}
+	@RequestMapping("delete")
+	@ResponseBody
+	public boolean del(String bid){
+		return bookService.delbook(bid);
 	}
 }
 

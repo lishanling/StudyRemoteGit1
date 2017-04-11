@@ -7,7 +7,10 @@ import com.yc.novel.entity.Collects;
 
 public interface CollectsMapper {
 
+
 	List<Collects> findCollects(String id);
+
+	int add(Collects collects);
 
 	List<Collects> collectsCount();
 
@@ -18,5 +21,7 @@ public interface CollectsMapper {
 	List<Book> latestList();
 
 	List<Book> allList();
+
+	List<Collects> findBook();
 
 }

@@ -2,6 +2,9 @@ package com.yc.novel.service;
 
 import static org.junit.Assert.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -39,6 +42,32 @@ public class BookServiceTest {
 		List<Book> book=bookService.findAllbook();
 		System.out.println(book);
 		assertNotNull(book);
+	}
+	@Test
+	public void testdelBooks() {
+		boolean result=bookService.delbook("B1025");
+		System.out.println(result);
+		assertNotNull(result);
+	}
+	
+	@Test
+	public void testinsertBooks() throws ParseException {
+		Book book=new Book();
+		book.setBname("sdaf");
+		book.setBauthor("dfasdf");
+		book.setBcopyright("sakjfwio");
+		book.setBdesc("djshfahk");
+		String a="2011-3-2";
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+		java.util.Date date=sdf.parse(a);
+		java.sql.Date date2=new java.sql.Date(date.getTime());
+		book.setBdate(date2);
+		book.setBpic("images/book5.jpg");
+		book.setBurl("http://dsfa.com");
+		
+		boolean result=bookService.insertBooks(book, "爱情");
+		System.out.println(result);
+		assertNotNull(result);
 	}
 
 }
