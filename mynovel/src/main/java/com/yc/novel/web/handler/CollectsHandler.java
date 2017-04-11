@@ -1,5 +1,4 @@
 package com.yc.novel.web.handler;
-
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -12,20 +11,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.yc.novel.entity.Book;
 import com.yc.novel.entity.Collects;
 import com.yc.novel.service.CollectsService;
 
 
+import com.yc.novel.entity.Book;
+
+
+
 @Controller()
 @RequestMapping("collect")
-
-
 public class CollectsHandler {
-	@Autowired
+	@Autowired 	
 	private CollectsService collectsService;
-
-
+	
+	@RequestMapping("get")
+	@ResponseBody
+ 	public boolean getDetails(String bid,String usid){
+		System.out.println("sdf");
+		System.out.println(bid);
+		/*
+		HttpSession session=null;
+		//String session.getAttribute("");
+		Collects collects=new Collects();
+		collects.setBid(bid);
+		Users user=(Users) session.getAttribute("loginUser");
+		collects.setUsid(user.getUsid());*/
+		 return true;
+  	} 
 
 	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	@ResponseBody

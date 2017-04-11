@@ -23,7 +23,6 @@
 							<a href="back/userinfo.jsp">${loginUser.uname}</a>
 						</c:otherwise>
 					</c:choose></li>
-
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
@@ -71,6 +70,7 @@
 					<div class="u-colslist" id="bookinfo">
 						<ul class="j-container">
 
+
 							<c:forEach items="${book}" var="item">
 								<li>
 									<a>
@@ -92,6 +92,7 @@
 									</a>
 								<li>
 							</c:forEach>
+
 							<li class="u-bookitm1 u-bookitm1-1"><a class="book" href="#">
 									<img style="display: block;" src="images/1.png">
 							</a>
@@ -195,10 +196,20 @@
 
 					<div class="infomation">
 						<form action="#" method="post">
+<<<<<<< HEAD
+							<span style="color:red"> 用户名：</span><input id="uname" style="border: 1px;" value="${loginUser.uname}" /><br />
+							<br /> <span style="color:red"> 密&nbsp;&nbsp; 码：</span>
+							 <input id="upwd" value="*"  style="border: 1px;"/>
+								<br/>
+				<span style="color:red">邮  &nbsp;箱：</span><input id="uemail" style="border: 1px;" value="${loginUser.uemail}" /><br />
+								
+							<br /> <a class="updateBtn" href="javascript:void(0)" onclick="updateMyself()">修改提交</a>
+=======
 							<span>用户名： </span><input id="uname" style="border: 1px;"
 								value="${loginUser.uname}" /><br /> <br /> <span>密&nbsp;&nbsp;
 								码：</span> <input id="upwd" style="border: 1px;" /><br /> <br /> <a
 								class="updateBtn" href="javascript:void(0)">修改</a>
+>>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 						</form>
 					</div>
 				</div> --%>

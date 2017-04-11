@@ -1,7 +1,6 @@
 package com.yc.novel.service.impl;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +11,12 @@ import com.yc.novel.service.CollectsService;
 
 @Service
 public class CollectsServiceImpl implements CollectsService {
-
 	@Autowired
 	private CollectsMapper collectsMapper;
+	@Override
+	public boolean addCollects(Collects collects) {
+		return collectsMapper.add(collects)>0;
+	}
 
 	public void setCollectsmapper(CollectsMapper collectsmapper) {
 		this.collectsMapper = collectsmapper;

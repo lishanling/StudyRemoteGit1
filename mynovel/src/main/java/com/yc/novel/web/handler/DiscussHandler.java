@@ -13,12 +13,20 @@ import com.yc.novel.service.DiscussServcie;
 public class DiscussHandler {
 	@Autowired
 	private DiscussServcie discussService;
-	
+
 	@RequestMapping("find")
 	@ResponseBody
-		public List<Discuss> bookInfo(){
-		System.out.println("进入。。。");
-			return discussService.findAllDiscuss();
+	public List<Discuss> bookInfo(){
+		return discussService.findAllDiscuss();
 	}
+
+	@ResponseBody 
+	@RequestMapping(value={"info"})
+	public List<Discuss> getInfo(String id){
+		System.out.println("id ==="+ id);
+		System.out.println(" i am your father");
+		return	discussService.getDiscussById(id);		 
+	}		
+
 
 }

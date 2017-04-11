@@ -1,6 +1,10 @@
 package com.yc.novel.service.impl;
 
+import java.util.HashMap;
+
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.yc.novel.entity.Book;
@@ -41,16 +45,24 @@ public class BookServiceImpl implements BookService {
 
 
 	@Override
-	public boolean addBooks(Book book) {
-		return bookMapper.addBooks(book)>0;
-	}
-
-	@Override
 	public List<Book> findAllbook() {
 		List<Book> result = bookMapper.findAllBooks();
 		return result;
 	}
 
+		@Override
+		public boolean insertBooks(Book book, String sname) {
+			Map<Object, Object> map = new HashMap<Object, Object>();
+			map.put("book", book);
+			System.out.println(book.getBauthor());
+			map.put("sname", sname);
+			return bookMapper.insertBook(map)>0;
+		}
+
+		@Override
+		public boolean delbook(String bid) {
+			return bookMapper.delBooks(bid)>0;
+		}
 
 	@Override
 	public boolean deleteBooks(Book book) {
@@ -63,5 +75,8 @@ public class BookServiceImpl implements BookService {
 		return bookMapper.selectBook(name);
 	}
 
+	public Book getBookById(String bookId) {
+		return bookMapper.findBookById();
+	}
 
 }

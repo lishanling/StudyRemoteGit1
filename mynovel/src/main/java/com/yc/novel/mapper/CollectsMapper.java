@@ -1,12 +1,13 @@
 package com.yc.novel.mapper;
 
+import com.yc.novel.entity.Collects;
 import java.util.List;
 
 import com.yc.novel.entity.Book;
-import com.yc.novel.entity.Collects;
 
 public interface CollectsMapper {
 
+	int add(Collects collects);
 	List<Collects> collectsCount();
 
 	List<Book> monthList();
