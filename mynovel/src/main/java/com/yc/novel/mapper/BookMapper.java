@@ -13,7 +13,7 @@ public interface BookMapper {
 	int updateBook(Book book);
 	int insertBook(Map<Object,Object> map);
 
-
+	Book findBookById();
 	int deleteBooks(Book book);
 	int insertBook(Book book);
 	List<Book> findAllBooks();

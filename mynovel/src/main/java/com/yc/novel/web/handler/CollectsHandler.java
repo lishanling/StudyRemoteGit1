@@ -24,9 +24,11 @@ public class CollectsHandler {
 	@Autowired 	
 	private CollectsService collectsService;
 	
-	@RequestMapping(value="get",method=RequestMethod.GET)
- 	public boolean getDetails(){
+	@RequestMapping("get")
+	@ResponseBody
+ 	public boolean getDetails(String bid,String usid){
 		System.out.println("sdf");
+		System.out.println(bid);
 		/*
 		HttpSession session=null;
 		//String session.getAttribute("");

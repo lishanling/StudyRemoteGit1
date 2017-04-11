@@ -16,5 +16,6 @@ public interface BookService {
 	boolean deleteBooks(Book book);
 
 	List<Book> findAllbook();
-	
+
+	Book getBookById(String bookId);
 }

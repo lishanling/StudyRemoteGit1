@@ -2,6 +2,8 @@ package com.yc.novel.web.handler;
 
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
+import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +24,19 @@ public class BookHandler {
 	@Autowired 	
 	private BookService bookService;
 
+	@ResponseBody
+	@RequestMapping(value="{sortDetail}" , method=RequestMethod.GET)
+ 	public List<Book> getSortsDetails(String bookSortName){
+		LogManager.getLogger().debug("bookSortName ==>"+bookSortName);
+		return bookService.getBooksByTypes(bookSortName);
+   	} 
 	
+	@ResponseBody 
+	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
+ 	public Book getBookDetails(String bookId){
+		LogManager.getLogger().debug("bookId ==>"+bookId);
+		return bookService.getBookById(bookId);
+  	}  
 	@ResponseBody
 	@RequestMapping(value="{sorts}" , method=RequestMethod.GET)
  	public List<Book> getDetails(String bookSortName){

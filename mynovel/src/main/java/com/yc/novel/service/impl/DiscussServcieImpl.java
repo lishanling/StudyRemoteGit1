@@ -18,5 +18,9 @@ public class DiscussServcieImpl implements DiscussServcie{
 	public List<Discuss> findAllDiscuss() {
 		return discussMapper.findDiscuss();
 	}
+	@Override
+	public List<Discuss> getDiscussById(String id) {
+		return discussMapper.findDiscussById(id);
+	}
 
 }

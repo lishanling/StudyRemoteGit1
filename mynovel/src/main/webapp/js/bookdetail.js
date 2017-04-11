@@ -12,15 +12,25 @@ function cleardisplay() {
 }
 
 function addCollects(){
+	var href=window.location.href;
+	var bid=(href.split('?')[1]).split('=')[1];//获取bid
+	
+	$.ajax({
+		type:"post",
+		url:"collects/get",
+		contentType:"application/json;charset=utf-8",
+		data:'{"bid":bid,"usid":"B1005"}',
+		success:function(data){
+			alert(data);
+		}
+	});
 
-		$.get("collects/get",function(data){
-			var href=window.location.href;
-			var bid=(href.split('?')[1]).split('=')[1];//获取bid
+		/*$.get("collects/get",function(data){
 			document.write(bid.length);
 			if(data.trim()=='true'){
 				document.getElementById("addsuccess").style.display = "block";
 				document.getElementById("noaddsuccess").style.display = "none";
 			}
-		},"json");
+		},"json");*/
 		
 	}
