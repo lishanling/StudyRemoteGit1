@@ -21,6 +21,14 @@ public class CollectsServiceTest {
 	public CollectsService collectsService;
 
 	@Test
+	public void testFindCollects() {
+		List<Collects> result=collectsService.findCollects("U1003");
+		System.out.println(result);
+		assertEquals(result,true);
+	}
+
+
+	@Test
 	public void testCollectsBook() {
 		System.out.println("开始执行  ===> testCollectsBook()");
 		List<Collects> count =collectsService.CollectsBook();
@@ -37,18 +45,26 @@ public class CollectsServiceTest {
 	}
 
 	@Test
-	public void testLatestList() {
-		System.out.println("开始执行  ===> testLatestList()");
-		List<Book> latest =collectsService.LatestList();
-		System.out.println(latest);
-		assertNotNull(latest);
+	public void testAllList() {
+		System.out.println("开始执行  ===> testAllList()");
+		List<Book> month =collectsService.MonthList();
+		System.out.println(month);
+		assertNotNull(month);
 	}
 
 	@Test
-	public void testFindCollects() {
-		List<Collects> result=collectsService.findCollects("U1003");
-		System.out.println(result);
-		assertEquals(result,true);
+	public void testLatestList() {
+		System.out.println("开始执行  ===> testlatestList()");
+		List<Book> month =collectsService.MonthList();
+		System.out.println(month);
+		assertNotNull(month);
 	}
 
+	@Test
+	public void testDayList() {
+		System.out.println("开始执行  ===> testMonthList()");
+		List<Book> month =collectsService.MonthList();
+		System.out.println(month);
+		assertNotNull(month);
+	}
 }

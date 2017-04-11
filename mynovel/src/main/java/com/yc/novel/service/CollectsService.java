@@ -7,14 +7,16 @@ import com.yc.novel.entity.Collects;
 
 public interface CollectsService {
 
+	List<Collects> findCollects(String id);
+
 	List<Collects> CollectsBook();
+
+	List<Book> DayList();
 
 	List<Book> MonthList();
 
-
 	List<Book> LatestList();
 
-
-	List<Collects> findCollects(String id);
+	List<Book> AllList();
 
 }

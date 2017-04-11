@@ -14,11 +14,17 @@ import com.yc.novel.service.CollectsService;
 public class CollectsServiceImpl implements CollectsService {
 
 	@Autowired
-	private CollectsMapper collectsMapper;
+	public CollectsMapper collectsMapper;
 
 	public void setCollectsmapper(CollectsMapper collectsmapper) {
 		this.collectsMapper = collectsmapper;
 	}
+
+	@Override
+	public List<Collects> findCollects(String id) {
+		return collectsMapper.findCollects(id);
+	}
+
 
 	@Override
 	public List<Collects> CollectsBook() {
@@ -31,16 +37,18 @@ public class CollectsServiceImpl implements CollectsService {
 	}
 
 	@Override
-	public List<Book> MonthList() {
-		return collectsMapper.monthList();
-
+	public List<Book> AllList() {
+		return collectsMapper.allList();
 	}
 
-	public CollectsMapper CollectsMapper;
+	@Override
+	public List<Book> DayList() {
+		return collectsMapper.dayList();
+	}
 
 	@Override
-	public List<Collects> findCollects(String id) {
-		return CollectsMapper.findCollects(id);
+	public List<Book> MonthList() {
+		return collectsMapper.monthList();
 	}
 
 }
