@@ -14,6 +14,6 @@ public interface CollectsMapper {
 	List<Book> latestList();
 	List<Collects> findCollects(String id);
 
-	List<Collects> findBook();
+	List<Book> findBook();
 
 }

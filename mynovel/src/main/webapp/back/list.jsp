@@ -87,7 +87,6 @@
 									</dd>
 									<dd></dd>
 								</dl>
-
 						</a>
 						<li>
 					</c:forEach>

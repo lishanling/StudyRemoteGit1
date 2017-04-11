@@ -17,6 +17,6 @@ public interface CollectsService {
 
 	List<Collects> findCollects(String id);
 
-	List<Collects> findBook();
+	List<Book> findBook();
 
 }

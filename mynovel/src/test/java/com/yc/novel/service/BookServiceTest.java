@@ -40,5 +40,12 @@ public class BookServiceTest {
 		System.out.println(book);
 		assertNotNull(book);
 	}
+	
+	@Test
+	public void testselectBook() {
+		List<Book> book=bookService.selectBook("七");
+		System.out.println(book);
+		assertNotNull(book);
+	}
 
 }

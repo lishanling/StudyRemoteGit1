@@ -3,6 +3,7 @@ package com.yc.novel.web.handler;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -102,6 +103,12 @@ public class BookHandler {
 		}
 		book.setBpic(bpic);
 		return bookService.addBooks(book);
+	}
+	
+	@RequestMapping(value="/{name}",method=RequestMethod.GET)
+	@ResponseBody
+	private List<Book> selectBook(@PathVariable("name")String name){
+		return bookService.selectBook(name);
 	}
 }
 

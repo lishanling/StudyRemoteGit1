@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.yc.novel.mapper.BookMapper">
 	<select id="findAllBooks" resultType="Book">
-	select * from book 
+		select * from book
 	</select>
 
 	<select id="findBookBySort" parameterType="String" resultType="Book">
@@ -52,19 +52,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		keyColumn="ssid" keyProperty="ssid"> select ssid from types where sname=#{sname} 
 		</selectKey> insert into book values() </insert> -->
 
-	<!-- <insert id="addBooks" parameterType="Book">
-		insert into book
-		values('B'||seq_bid.nextval,bname=#{bname},
-		<insert id="insertBook" parameterType="Book">
-			<selectKey order="BEFORE" keyColumn="ssid" keyProperty="ssid">
-				select ssid from types where sname=#{sname}
-			</selectKey>
-			insert into book values()
-		</insert>
-		<insert id="addBooks" parameterType="Book" > insert into book values('B'||seq_bid.nextval,bname=#{bname},
-		bdesc=#{desc},bdate=#{bdate},bcopyright=#{bcopyright},burl=#{burl},
-		bauthor=#{bauthor},ssid=#{ssid},bpic=#{bpic}
-	</insert> -->
+	<!-- <insert id="addBooks" parameterType="Book"> insert into book values('B'||seq_bid.nextval,bname=#{bname}, 
+		<insert id="insertBook" parameterType="Book"> <selectKey order="BEFORE" keyColumn="ssid" 
+		keyProperty="ssid"> select ssid from types where sname=#{sname} </selectKey> 
+		insert into book values() </insert> <insert id="addBooks" parameterType="Book" 
+		> insert into book values('B'||seq_bid.nextval,bname=#{bname}, bdesc=#{desc},bdate=#{bdate},bcopyright=#{bcopyright},burl=#{burl}, 
+		bauthor=#{bauthor},ssid=#{ssid},bpic=#{bpic} </insert> -->
 
 
 	<delete id="deleteBooks" parameterType="Book">
@@ -82,4 +75,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from types where tid=(select ssid from book where ssid=#{ssid})
 	</select>
 
+	<select id="selectBook" resultType="Book" parameterType="String">
+		select * from book
+		<where>
+			<choose>
+				<when test="'select * from book bname like %${_parameter}%'!=null">
+					bname like '%${_parameter}%'
+				</when>
+				<when test="'%${_parameter}%'!=null">
+					bauthor like '%${_parameter}%'
+				</when>
+			</choose>
+		</where>
+	</select>
 </mapper>

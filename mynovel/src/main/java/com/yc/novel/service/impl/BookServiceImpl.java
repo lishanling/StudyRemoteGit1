@@ -57,5 +57,11 @@ public class BookServiceImpl implements BookService {
 		return bookMapper.deleteBooks(book)>0;
 	}
 
+	@Override
+	public List<Book> selectBook(String name) {
+		
+		return bookMapper.selectBook(name);
+	}
+
 
 }

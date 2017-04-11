@@ -17,8 +17,8 @@ import com.yc.novel.entity.Collects;
 import com.yc.novel.service.CollectsService;
 
 
-@Controller("collectsHandler")
-@RequestMapping("collects")
+@Controller()
+@RequestMapping("collect")
 
 
 public class CollectsHandler {
@@ -33,11 +33,11 @@ public class CollectsHandler {
 		return collectsService.findCollects(id);
 	}
 
-	@RequestMapping("bookinfo")
+	/*@RequestMapping("bookinfo")
 	@ResponseBody
 	public List<Collects> collectBook(){
 		 return collectsService.findBook();
-	}	
+	}	*/
 
 	@Resource(name="collectsServiceImpl")
 	public void setCollectsService(CollectsService collectsService) {
@@ -56,11 +56,19 @@ public class CollectsHandler {
 		return collectsService.MonthList();
 	}
 
-	@RequestMapping("/toList.action")
+	/*@RequestMapping("/toList.action")
 	//@ResponseBody
 	public String LatestList(Model model){
 		List<Book> list= collectsService.LatestList();
 		model.addAttribute("book",list);
 		return "back/list";
+	}*/
+	
+	@RequestMapping("/toList.action")
+	//@ResponseBody
+	public String LatestList01(Model model){
+		List<Book> list= collectsService.findBook();
+		model.addAttribute("book",list);
+		return "back/userinfo";
 	}
 }

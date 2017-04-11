@@ -53,7 +53,7 @@ public class CollectsServiceTest {
 	
 	@Test
 	public void testFindCollects01() {
-		List<Collects> result=collectsService.findBook();
+		List<Book> result=collectsService.findBook();
 		System.out.println(result);
 		
 	}

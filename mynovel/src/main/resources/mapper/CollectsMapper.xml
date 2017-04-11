@@ -55,6 +55,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="findBook" resultType="Book">
-		select * from book
+		select b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
 	</select>
 </mapper>

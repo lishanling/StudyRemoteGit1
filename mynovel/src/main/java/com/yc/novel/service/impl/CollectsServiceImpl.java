@@ -45,7 +45,7 @@ public class CollectsServiceImpl implements CollectsService {
 
 
 	@Override
-	public List<Collects> findBook() {
+	public List<Book> findBook() {
 		
 		return CollectsMapper.findBook();
 	}
