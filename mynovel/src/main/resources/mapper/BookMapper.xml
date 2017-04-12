@@ -112,15 +112,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id="selectBook" resultType="Book" parameterType="String">
 		select * from book
-		<where>
 			<choose>
-				<when test="'select * from book bname like %${_parameter}%'!=null">
-					bname like '%${_parameter}%'
+				<when test="_parameter!=null">
+					<where> bname like '%${_parameter}%' </where>
 				</when>
-				<when test="'%${_parameter}%'!=null">
-					bauthor like '%${_parameter}%'
+				<when test="_parameter!=null">
+					<where> bauthor like '%${_parameter}%' </where>
 				</when>
 			</choose>
-		</where>
 	</select>
 </mapper>

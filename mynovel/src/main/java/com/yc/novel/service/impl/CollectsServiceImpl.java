@@ -1,6 +1,7 @@
 package com.yc.novel.service.impl;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,12 @@ public class CollectsServiceImpl implements CollectsService {
 	}
 
 	@Override
+	public List<Collects> findCollects(String id) {
+		return collectsMapper.findCollects(id);
+	}
+
+
+	@Override
 	public List<Collects> CollectsBook() {
 		return collectsMapper.collectsCount();
 	}
@@ -33,23 +40,34 @@ public class CollectsServiceImpl implements CollectsService {
 	}
 
 	@Override
-	public List<Book> MonthList() {
-		return collectsMapper.monthList();
-
+	public List<Book> AllList() {
+		return collectsMapper.allList();
 	}
-
-	public CollectsMapper CollectsMapper;
 
 	@Override
-	public List<Collects> findCollects(String id) {
-		return CollectsMapper.findCollects(id);
+	public List<Book> DayList() {
+		return collectsMapper.dayList();
 	}
 
+	@Override
+	public List<Book> MonthList() {
+		return collectsMapper.monthList();
+	}
 
 	@Override
 	public List<Book> findBook() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+/*	@Override*/
+	/*public List<Book> findBook() {
 		
 		return CollectsMapper.findBook();
-	}
+	}*/
+/*	public List<Collects> findBook() {
+		return collectsMapper.findBook();
+	}*/
 
 }

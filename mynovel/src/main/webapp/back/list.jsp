@@ -62,9 +62,9 @@
 			<div id="left">
 				<ul>
 					<h1>榜单导航</h1>
-					<li><a>日度榜</a></li>
-					<li><a>月度榜</a></li>
-					<li><a>新书榜</a></li>
+					<li><a id="day">日度榜</a></li>
+					<li><a id="month">月度榜</a></li>
+					<li><a id="latest">新书榜</a></li>
 				</ul>
 			</div>
 
@@ -74,7 +74,7 @@
 						<li><a>
 								<dl>
 									<dt>
-										<img src="${item.bpic}" alt="${item.bpic}">
+										<a><img src="${item.bpic}"></a>
 									</dt>
 									<dd>
 										书名:<span class="bookName">${item.bname}</span>
@@ -87,13 +87,14 @@
 									</dd>
 									<dd></dd>
 								</dl>
+
 						</a>
 						<li>
+
+						</a></li>
+						
 					</c:forEach>
-
-
 				</ul>
-
 			</div>
 		</div>
 	</div>
