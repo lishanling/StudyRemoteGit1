@@ -1,9 +1,10 @@
 package com.yc.novel.web.handler;
 
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 
-import org.apache.logging.log4j.LogManager;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,15 +28,21 @@ public class BookHandler {
 	@ResponseBody
 	@RequestMapping(value="{sortDetail}" , method=RequestMethod.GET)
  	public List<Book> getSortsDetails(String bookSortName){
-		LogManager.getLogger().debug("bookSortName ==>"+bookSortName);
 		return bookService.getBooksByTypes(bookSortName);
    	} 
 	
 	@ResponseBody 
 	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
- 	public Book getBookDetails(String bookId){
-		LogManager.getLogger().debug("bookId ==>"+bookId);
-		return bookService.getBookById(bookId);
+ 	public Book getBookDetails(String bookId,HttpSession session){
+		Book b=bookService.getBookById(bookId);
+		/*if(session.getAttribute(ServletUtil.B_URL)!=null){
+			session.setAttribute(ServletUtil.B_URL,"");
+			
+		}else{
+			session.setAttribute(ServletUtil.B_URL, b.getBurl());
+		}*/
+		
+		return b;
   	}  
 	@ResponseBody
 	@RequestMapping(value="{sorts}" , method=RequestMethod.GET)
@@ -49,12 +56,18 @@ public class BookHandler {
 	public PaginationBean<Book> list(String rows,String page){
 		return bookService.listPartBooks(page,rows);
 	}
+	//加载路径
+	/*@ResponseBody
+	@RequestMapping(value="{read}" , method=RequestMethod.POST)
+		
+		public Book read(String booksId){
+			return bookService.getBookById(booksId);
+		}*/
 	
 	//显示图书信息
 	@RequestMapping("recommendinfo")
 	@ResponseBody
 		public List<Book> bookInfo(){
-		System.out.println("进入。。。");
 			return bookService.findAllbook();
 	}
 	
@@ -73,14 +86,6 @@ public class BookHandler {
 		}
 		book.setBpic(bpic);
 		return bookService.updateBooks(book);
-	}
-	
-
-	//显示图书信息
-	@RequestMapping("delete")
-	@ResponseBody
-	public boolean delete(Book book){
-		return bookService.deleteBooks(book);
 	}
 
 	@RequestMapping("add")

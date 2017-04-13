@@ -49,6 +49,12 @@ public class BookServiceTest {
 		System.out.println(result);
 		assertNotNull(result);
 	}
+	@Test
+	public void test2() {
+		Book result=bookService.getBookById("B1002");
+		System.out.println(result);
+		assertNotNull(result);
+	}
 	
 	@Test
 	public void testinsertBooks() throws ParseException {

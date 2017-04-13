@@ -23,13 +23,10 @@ public class CollectsServiceTest {
 	@Test
 	public void testAddCollects() throws ParseException {
 		Collects c=new Collects();
-		c.setBid("B1005");
-		c.setUsid("U1001");
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");//设置日期格式
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-		java.util.Date date=sdf.parse(df.format(new Date()));
-		java.sql.Date date2=new java.sql.Date(date.getTime());
-		c.setUdate(date2);
+		c.setBid("B1006");
+		c.setUsid("U1004");
+		 java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
+	      c.setUdate(currentDate);
 		boolean result=collectsService.addCollects(c);
 		System.out.println(result);
 		assertNotNull(result);
@@ -71,5 +68,8 @@ public class CollectsServiceTest {
 		System.out.println(result);
 		
 	}
-
+	@Test
+	public void testTime() {
+	 
+	}
 }

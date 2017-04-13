@@ -3,5 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.MenuMapper">
-	<select id="findMenu" resultType="Menu"></select>
+	<select id="findMenu" resultType="Menu" parameterType="String">
+	select * from menu where bid=#{bid}
+	</select>
 </mapper>

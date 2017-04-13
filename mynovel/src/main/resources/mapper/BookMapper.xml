@@ -64,10 +64,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{book.bauthor},#{ssid},#{book.bpic})
 	</insert>
 
-	<delete id="deleteBooks" parameterType="Book">
-		delete from book where
-		bid=#{bid}
-	</delete>
 
 	<select id="bookSSid" parameterType="Book" resultType="Book">
 		select *
@@ -82,21 +78,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from book where bid=#{bid}
 	</delete>
 
-	<select id="findBookBySort" parameterType="String" resultType="Book">
-		<!-- select * from books where bname = #{bname} -->
-		select b.* from book b inner join types t on b.ssid = t.ssid and
-		t.sname = #{bookSortName}
-	</select>
-
+	
 
 	<select id="findBookById" parameterType="String" resultType="Book">
 		select * from book b where b.bid = #{bookId}
 	</select>
-
-
-
-
-
-
 
 </mapper>
