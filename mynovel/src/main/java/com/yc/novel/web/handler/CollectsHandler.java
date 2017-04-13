@@ -47,11 +47,6 @@ public class CollectsHandler {
 		return collectsService.findCollects(id);
 	}
 
-	@RequestMapping("bookinfo")
-	@ResponseBody
-	public List<Collects> collectBook(){
-		 return collectsService.findBook();
-	}	
 
 	@Resource(name="collectsServiceImpl")
 	public void setCollectsService(CollectsService collectsService) {
@@ -64,14 +59,28 @@ public class CollectsHandler {
 		return collectsService.CollectsBook();
 	}
 
-	@RequestMapping("monthList")
-	@ResponseBody
-	public List<Book> MonthList(){
-		return collectsService.MonthList();
+	@RequestMapping("/toDayList.action")
+	public String DayList(Model model){
+		List<Book> list= collectsService.DayList();
+		model.addAttribute("book",list);
+		return "back/list";
 	}
 
-	@RequestMapping("/toList.action")
-	//@ResponseBody
+	@RequestMapping("/toMonthList.action")
+	public String MonthList(Model model){
+		List<Book> list= collectsService.MonthList();
+		model.addAttribute("book",list);
+		return "back/list";
+	}
+
+	@RequestMapping("/toAllList.action")
+	public String AllList(Model model){
+		List<Book> list= collectsService.AllList();
+		model.addAttribute("book",list);
+		return "back/list";
+	}
+
+	@RequestMapping("/toLatestList.action")
 	public String LatestList(Model model){
 		List<Book> list= collectsService.LatestList();
 		model.addAttribute("book",list);

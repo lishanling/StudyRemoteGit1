@@ -1,6 +1,7 @@
 package com.yc.novel.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,6 +33,14 @@ public class CollectsServiceTest {
 		assertNotNull(result);
 	}
 	@Test
+	public void testFindCollects() {
+		List<Collects> result=collectsService.findCollects("U1003");
+		System.out.println(result);
+		assertEquals(result,true);
+	}
+
+
+	@Test
 	public void testCollectsBook() {
 		System.out.println("开始执行  ===> testCollectsBook()");
 		List<Collects> count =collectsService.CollectsBook();
@@ -48,28 +57,34 @@ public class CollectsServiceTest {
 	}
 
 	@Test
-	public void testLatestList() {
-		System.out.println("开始执行  ===> testLatestList()");
-		List<Book> latest =collectsService.LatestList();
-		System.out.println(latest);
-		assertNotNull(latest);
+	public void testAllList() {
+		System.out.println("开始执行  ===> testAllList()");
+		List<Book> month =collectsService.MonthList();
+		System.out.println(month);
+		assertNotNull(month);
 	}
 
 	@Test
-	public void testFindCollects() {
-		List<Collects> result=collectsService.findCollects("leesin");
-		System.out.println(result);
-		assertEquals(result,true);
+	public void testLatestList() {
+		System.out.println("开始执行  ===> testlatestList()");
+		List<Book> month =collectsService.MonthList();
+		System.out.println(month);
+		assertNotNull(month);
 	}
-	
+
+
 	@Test
 	public void testFindCollects01() {
-		List<Collects> result=collectsService.findBook();
+		List<Book> result=collectsService.findBook();
 		System.out.println(result);
-		
+
 	}
+
 	@Test
-	public void testTime() {
-	 
+	public void testDayList() {
+		System.out.println("开始执行  ===> testMonthList()");
+		List<Book> month =collectsService.MonthList();
+		System.out.println(month);
+		assertNotNull(month);
 	}
 }

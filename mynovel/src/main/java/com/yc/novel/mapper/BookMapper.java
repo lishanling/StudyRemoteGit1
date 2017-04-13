@@ -20,5 +20,5 @@ public interface BookMapper {
 	Book bookSSid(String id);
 	Book bookTypes(String id);
 
-
+	List<Book> selectBook(String name);
  }

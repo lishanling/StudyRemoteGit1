@@ -69,6 +69,30 @@
 				<div class="container" id="b1">
 					<div class="u-colslist" id="bookinfo">
 						<ul class="j-container">
+
+
+							<c:forEach items="${book}" var="item">
+								<li>
+									<a>
+										<dl>
+											<dt>
+												<img src="${item.bpic}" alt="${item.bpic}">
+											</dt>
+											<dd>
+												书名:<span class="bookName">${item.bname}</span>
+											</dd>
+											<dd>
+												作者:<span class="bookauthor">${item.bauthor}</span>
+											</dd>
+											<dd>
+												出版日期：<span class="date">${item.bdate}</span>
+											</dd>
+											<dd></dd>
+										</dl>
+									</a>
+								<li>
+							</c:forEach>
+
 							<li class="u-bookitm1 u-bookitm1-1"><a class="book" href="#">
 									<img style="display: block;" src="images/1.png">
 							</a>
