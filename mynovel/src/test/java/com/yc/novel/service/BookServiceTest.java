@@ -28,6 +28,12 @@ public class BookServiceTest {
 		assertNotNull(books);
 	}
 	@Test
+	public void test3() {
+		List<Book> b=bookService.getBooksByTypes("科幻");
+		System.out.println(b);
+		assertNotNull(b);
+	}
+	@Test
 	public void updateBooks() {
 		Book book=new Book();
 		book.setBid("B1001");

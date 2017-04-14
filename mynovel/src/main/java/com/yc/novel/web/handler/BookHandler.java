@@ -1,5 +1,8 @@
 package com.yc.novel.web.handler;
 
+import java.io.UnsupportedEncodingException;
+
+import java.net.URLDecoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,19 +39,15 @@ public class BookHandler {
 	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
  	public Book getBookDetails(String bookId,HttpSession session){
 		Book b=bookService.getBookById(bookId);
-		/*if(session.getAttribute(ServletUtil.B_URL)!=null){
-			session.setAttribute(ServletUtil.B_URL,"");
-			
-		}else{
-			session.setAttribute(ServletUtil.B_URL, b.getBurl());
-		}*/
 		
 		return b;
   	}  
 	@ResponseBody
-	@RequestMapping(value="{sorts}" , method=RequestMethod.GET)
- 	public List<Book> getDetails(String bookSortName){
-		 return bookService.getBooksByTypes("名著");
+	@RequestMapping(value="/sorts" , method=RequestMethod.POST)
+ 	public List<Book> getDetails(String bookSortName) throws UnsupportedEncodingException{
+		
+		bookSortName= URLDecoder.decode(bookSortName, "utf-8");
+		 return bookService.getBooksByTypes(bookSortName);
   	} 
 
 	//分页显示图书信息
@@ -57,14 +56,6 @@ public class BookHandler {
 	public PaginationBean<Book> list(String rows,String page){
 		return bookService.listPartBooks(page,rows);
 	}
-	//加载路径
-	/*@ResponseBody
-	@RequestMapping(value="{read}" , method=RequestMethod.POST)
-		
-		public Book read(String booksId){
-			return bookService.getBookById(booksId);
-		}*/
-	
 	//显示图书信息
 	@RequestMapping("recommendinfo")
 	@ResponseBody

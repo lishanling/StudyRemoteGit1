@@ -16,7 +16,7 @@ function addCollects(){
 	var bid=(href.split('?')[1]).split('=')[1];//获取bid
 	var usid=$("#first").html();
 	var datapa =bid+"&usid="+usid;
-	alert(datapa);
+	
 	$.post("collect/get?bid="+datapa,function(data){
 		if(data){
 			document.getElementById("addsuccess").style.display = "none";
@@ -24,25 +24,13 @@ function addCollects(){
 		
 		}
 	},"json");
-}/*
-function changeurl(){
-	//加载阅读路径
-	var href=window.location.href;
-	var booksId=(href.split('?')[1]).split('=')[1];//获取bid
-	$("#readdetail").href();
-	alert("Aa");
-  	$.post("book/read?booksId="+booksId,function(data){
-  		$("#readdetail").href(data);
-  	},"json");
-  	
-}*/
+}
 		
 loadInfo()
 
 function loadInfo(){
 	 	var addStr= window.location.href;
 	  	var url=decodeURI(addStr.substring(addStr.lastIndexOf('=')+1));
-	  	 alert(url);
 	  	//加载位置
  	  	$.post("",function(){
  	  			
@@ -54,8 +42,7 @@ function loadInfo(){
  	   
 	  	//加载评论
 	  	$.post("discuss/info?id="+url,function(data){
- 	  		alert("discuss/info?id="+url);	
-	  		alert(JSON.stringify(data));
+ 	  		
 	  			for(var i= 0 ;i < data.length ; i++){ 
 	  				$("#commemtby").append('<li class="itm"><div class="article">'+
 	  						'<p>'+data[i].dcontent+'</p></div>'+

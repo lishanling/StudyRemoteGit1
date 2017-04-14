@@ -77,11 +77,7 @@
 
 							<!-- 封面的位置 -->
 							<div id="cover-img" class="cover">
-								<!-- <a hidefocus="hifefocus"> <img src="images/luxun.png"
-									alt="鲁迅全集" ondragstart="return false;"
-									oncontextmenu="return false;" onload="onLoadImg(this);"
-									style="display: block;">
-								</a> -->
+								
 							</div>
 
 							
@@ -91,14 +87,7 @@
  								<div class="cnt">
 									<!-- 作者、版权、出版 -->
 									<div class="data">
-										<!-- <table><tbody>
-												<tr><td class="col0">作者：</td>
-													<td class="author" itemprop="author"><a
-														href="/author/8504/1-1" target="_blank">鲁迅</a></td></tr>
-												<tr><td class="col0">版权：</td><td class="published" itemprop="copyrightHolder"><a
-														target="_blank">北京多看科技有限公司</a></td></tr>
-												<tr><td class="col0">出版：</td><td itemprop="datePublished">'+data.bdate+'</td></tr>
-											</tbody></table> -->
+										
 									</div>
 									<div class="pay">
 										
@@ -143,14 +132,7 @@
 									<article id="book-content" class="intro" hidefocus="hidefocus"
 										style="height: 310px; overflow: hidden;">
 									</article>
-									<div class="more" style="">
-										<a class="u-more1 j-more" href="javascript:void(0);"
-											hidefocus="hidefocus"> 显示全部
-											<div class="icn-arrow icn-arrow-bottom">
-												<span class="arrow0"></span> <span class="arrow1"></span>
-											</div>
-										</a>
-									</div>
+									
 								</section>
 
 								<section class="cnt j-cnt" style="display: none" id="b2">
