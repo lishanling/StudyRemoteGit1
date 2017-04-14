@@ -76,7 +76,7 @@
 						<li><a>
 								<dl>
 									<dt>
-										<a href="back/bookdetail.jsp?bid='${item.bid}'"><img  src="${item.bpic}"></a>
+										<a href="back/bookdetail.jsp?bid=${item.bid}"><img  src="${item.bpic}"></a>
 									</dt>
 									<dd>
 										书名:<span class="bookName">${item.bname}</span>
@@ -109,6 +109,3 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
-		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-	
-	<script type="text/javascript" src="js/list.js"></script>

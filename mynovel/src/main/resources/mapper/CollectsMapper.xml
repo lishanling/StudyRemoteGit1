@@ -50,8 +50,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 查询所有书籍信息 -->
 	<select id="allList" resultType="Book">
-		select
-		b.bname,b.bauthor,b.bdate,b.bpic from book b
+		select b.bid,b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bid desc
 	</select>
 
 	<!-- 查询日榜单 -->
