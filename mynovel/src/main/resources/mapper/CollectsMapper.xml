@@ -46,21 +46,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 查询日榜单 -->
 	<select id="dayList" resultType="Book">
 		select	b.bid,b.bname,b.bdate,b.bpic from book b where 
-		(substrb(to_char(b.bdate,'dd'),	1,6)) in (select	to_char(sysdate,'dd') from dual);
-
+		(substrb(to_char(b.bdate,'dd'),	1,6)) in (select	to_char(sysdate,'dd') from dual)
 	</select>
 
 	<!-- 查询月榜单 -->
 	<select id="monthList" resultType="Book">
 		select
-		b.bid,b.bname,b.bdate,b.bpic from book b where
-		 (substrb(to_char(b.bdate,'mm'), 1, 6)) in (select	to_char(sysdate,'mm') from dual);
+		b.bid,b.bname,b.bdate,b.bpic,b.bauthor from book b where
+		 (substrb(to_char(b.bdate,'mm'), 1, 6)) in (select	to_char(sysdate,'mm') from dual)
 	</select>
 
 	<!-- 查询最新榜单 -->
 	<select id="latestList" resultType="Book">
-		select
-		b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
+		select b.bid,b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
 	</select>
 	
 	<select id="findBook" resultType="Book">

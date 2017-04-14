@@ -99,7 +99,7 @@ ul,li{
 	margin-left:120px; }
 #left{
 	width:200px;
-	height:1000px;
+	height:5000px;
 	float:left;
 	margin-left:85px;
 	text-align:center;
@@ -107,28 +107,31 @@ ul,li{
 #left h1{
 	font-size:30px;
 	margin-left:10px;
+	color:#F93;
 	}
 #left ul{
 	float:left;
 }
-#left ul li{	
+#left ul li{
+	color:#666;
+	list-style:none;
 	display:block;
 	line-height:45px;
 	font-size:22px;
-	color:#666;
 }
  #left li:first-child{
 		position:relative;
 		left:-850px;
 } 
 #left li a{
+	color:#666;
+	text-decoration:none;
 	margin-left:50px;
 	font-size:20px;
 
 	}
 #left li  a:hover{
 	color:#F63;
-	border-right:1px solid #F90;
 	}
 #right ul{
 	margin-left:55px;
