@@ -24,7 +24,6 @@
 						</c:otherwise>
 					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
-				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/manage.jsp">后台管理</a></li>
 			</ul>
@@ -46,10 +45,9 @@
 		<div id="menu">
 			<ul>
 				<li><a href="homepage.jsp">首页</a></li>
-				<li><a href="list.jsp">榜单</a></li>
-				<li><a href="sort.jsp">分类</a></li>
-				<li><a href="#">精品</a></li>
-				<li><a href="#">评论</a></li>
+				<li><a href="collect/toAllList.action">榜单</a></li>
+				<li><a href="back/us.jsp">关于我们</a></li>
+				<li><a href="#">客户端</a></li>
 			</ul>
 		</div>
 		<div id="wk">

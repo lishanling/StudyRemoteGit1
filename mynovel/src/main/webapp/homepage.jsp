@@ -24,7 +24,6 @@
 			</c:choose>
 			</li>
  				<li class="red"><a href="back/register.jsp">注册</a></li>
-				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 			</ul>
@@ -50,11 +49,11 @@
 
 		<div id="menu">
 			<ul>
-				<li><a href="#">首页</a></li>
+				<li><a href="homepage.jsp">首页</a></li>
 				<li><a href="collect/toAllList.action">榜单</a></li>
-				<li><a href="back/sort.jsp">分类</a></li>
-				<li><a href="#">精品</a></li>
-				<li><a href="#">评论</a></li>
+				<li><a href="back/us.jsp">关于我们</a></li>
+				<li><a></a></li>
+				<li><a href="#">客户端</a></li>
 			</ul>
 		</div>
 		<div id="left">
@@ -69,22 +68,7 @@
 		<div id="recommend">
 			<h5>推荐书籍</h5>
 			<ul>
-				<!-- <li class="rec"><a href="#"><img src="images/book1.jpg"><span>梵高传</span></a>
-					<a href="back/bookdetail.jsp"><img src="images/luxun.png"><span>鲁迅全集</span></a>
-					<a href="#"><img src="images/book3.jpg"><span>三生三世十里桃花</span></a>
-					<a href="#"><img src="images/book4.jpg"><span>半暖</span></a> <a
-					href="#"><img src="images/book5.jpg"><span>行者</span></a> <a
-					href="#"><img src="images/book6.jpg"><span>皮囊</span></a> <a
-					href="#"><img src="images/book7.jpg"><span>钓愚</span></a>
-				<li>
-				<li class="rec"><a href="#"><img src="images/book8.jpg"><span>诗经</span></a>
-					<a href="#"><img src="images/book9.jpg"><span>安伯托</span></a>
-					<a href="#"><img src="images/book10.jpg"><span>小风暴</span></a>
-					<a href="#"><img src="images/book11.jpg"><span>秦腔</span></a>
-					<a href="#"><img src="images/book12.jpg"><span>我不喜欢这世界，我只喜欢你</span></a>
-					<a href="#"><img src="images/book14.jpg"><span>明朝那些事</span></a>
-					<a href="#"><img src="images/book15.jpg"><span>乖，摸摸头</span></a>
-				<li> -->
+				
 			</ul>
 		</div>
 	</div>

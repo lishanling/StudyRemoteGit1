@@ -25,7 +25,6 @@
 						</c:otherwise>
 					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
-				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 			</ul>
@@ -52,10 +51,9 @@
 		<div id="menu">
 			<ul>
 				<li><a href="homepage.jsp">首页</a></li>
-				<li><a href="#">榜单</a></li>
-				<li><a href="back/sort.jsp">分类</a></li>
-				<li><a href="#">精品</a></li>
-				<li><a href="#">评论</a></li>
+				<li><a href="collect/toAllList.action">榜单</a></li>
+				<li><a href="back/us.jsp">关于我们</a></li>
+				<li><a href="#">客户端</a></li>
 			</ul>
 		</div>
 
@@ -76,7 +74,7 @@
 						<li><a>
 								<dl>
 									<dt>
-										<a href="back/bookdetail.jsp?bid='${item.bid}'"><img  src="${item.bpic}"></a>
+										<a href="back/bookdetail.jsp?bid=${item.bid}"><img  src="${item.bpic}"></a>
 									</dt>
 									<dd>
 										书名:<span class="bookName">${item.bname}</span>
@@ -111,4 +109,3 @@
 	</div>
 		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	
-	<script type="text/javascript" src="js/list.js"></script>
