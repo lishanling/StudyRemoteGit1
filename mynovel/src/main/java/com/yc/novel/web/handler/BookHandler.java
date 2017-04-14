@@ -1,18 +1,12 @@
 package com.yc.novel.web.handler;
 
-
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
-
 import java.net.URLDecoder;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.apache.logging.log4j.LogManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,28 +31,23 @@ public class BookHandler {
 
 	@ResponseBody
 	@RequestMapping(value="{sortDetail}" , method=RequestMethod.GET)
-	public List<Book> getSortsDetails(String bookSortName){
+ 	public List<Book> getSortsDetails(String bookSortName){
 		return bookService.getBooksByTypes(bookSortName);
-	}
+   	}
 
 	@ResponseBody
 	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
-	public Book getBookDetails(String bookId){
-		return bookService.getBookById(bookId);
-	}
-
-	public Book getBookDetails(String bookId,HttpSession session){
+ 	public Book getBookDetails(String bookId,HttpSession session){
 		Book b=bookService.getBookById(bookId);
 
 		return b;
-	}
-
+  	}
+	@ResponseBody
 	@RequestMapping(value="/sorts" , method=RequestMethod.POST)
-	public List<Book> getDetails(String bookSortName) throws UnsupportedEncodingException{
-
+ 	public List<Book> getDetails(String bookSortName) throws UnsupportedEncodingException{
 		bookSortName= URLDecoder.decode(bookSortName, "utf-8");
-		return bookService.getBooksByTypes(bookSortName);
-	}
+		 return bookService.getBooksByTypes(bookSortName);
+  	}
 
 	//分页显示图书信息
 	@RequestMapping("list")
@@ -66,13 +55,11 @@ public class BookHandler {
 	public PaginationBean<Book> list(String rows,String page){
 		return bookService.listPartBooks(page,rows);
 	}
-
-
 	//显示图书信息
 	@RequestMapping("recommendinfo")
 	@ResponseBody
-	public List<Book> bookInfo(){
-		return bookService.findAllbook();
+		public List<Book> bookInfo(){
+			return bookService.findAllbook();
 	}
 
 	@RequestMapping("modify")

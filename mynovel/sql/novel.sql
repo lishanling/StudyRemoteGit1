@@ -207,10 +207,4 @@ update book set bpic = 'images/book14.jpg' where bid='B1009';
 update book set bpic = 'images/book15.jpg' where bid='B1010';
 update book set bpic = 'images/book5.jpg' where bid='B1011';
 update book set bpic = 'images/bailu.jpg' where bid='B1012';
-
-select	b.bid,b.bname,b.bdate,b.bpic from book b where 
-		(substrb(to_char(b.bdate,'dd'),	1,6)) in (select	to_char(sysdate,'dd') from dual);
-
-select	b.bid,b.bname,b.bdate,b.bpic from book b where
-		 (substrb(to_char(b.bdate,'mm'), 1, 6)) in (select	to_char(sysdate,'mm') from dual);
 		 
