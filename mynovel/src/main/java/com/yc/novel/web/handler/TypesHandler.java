@@ -13,13 +13,13 @@ import com.yc.novel.service.TypesService;
 @Controller("typesHandler")
 @RequestMapping("types")
 public class TypesHandler {
-	
-	@Autowired 	
+
+	@Autowired
 	public TypesService service;
-	
+
 	@ResponseBody
-	@RequestMapping("sname")
+	@RequestMapping("info")
 	public List<Types> sortsInfo(){
 		 return service.getTypes();
-	}	
+	}
 }

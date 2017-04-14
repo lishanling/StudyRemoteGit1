@@ -14,22 +14,22 @@
 <body>
 	<div id="box">
 
-<div id="header">
-<ul>
-<li class="red">
-			<c:choose>
-			<c:when test="${loginUser.uname eq null}">
-			<a href="back/login.jsp">登录</a>
-			</c:when>
-			<c:otherwise>
-			<a href="back/userinfo.jsp">${loginUser.uname}</a>
-			</c:otherwise>
-			</c:choose>
-			</li><li class="red"><a href="back/register.jsp">注册</a></li>
-<li class="red"><a href="#">作者中心</a></li>
-<li class="red"><a href="#">帮助</a></li>
-<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
-</ul>
+		<div id="header">
+			<ul>
+				<li class="red"><c:choose>
+						<c:when test="${loginUser.uname eq null}">
+							<a href="back/login.jsp">登录</a>
+						</c:when>
+						<c:otherwise>
+							<a href="back/userinfo.jsp">${loginUser.uname}</a>
+						</c:otherwise>
+					</c:choose></li>
+				<li class="red"><a href="back/register.jsp">注册</a></li>
+				<li class="red"><a href="#">作者中心</a></li>
+				<li class="red"><a href="#">帮助</a></li>
+				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
+			</ul>
+		</div>
 
 		<div id="search">
 			<ul>
@@ -58,23 +58,25 @@
 				<li><a href="#">评论</a></li>
 			</ul>
 		</div>
+
 		<div id="listdetail">
 			<div id="left">
 				<ul>
 					<h1>榜单导航</h1>
-					<li><a id="day">日度榜</a></li>
-					<li><a id="month">月度榜</a></li>
-					<li><a id="latest">新书榜</a></li>
+					<li><a id="day" href="collect/toDayList.action">日度榜</a></li>
+					<li><a id="month" href="collect/toMonthList.action">月度榜</a></li>
+					<li><a id="latest" href="collect/toLatestList.action">新书榜</a></li>
 				</ul>
 			</div>
 
 			<div id="right">
 				<ul>
+					
 					<c:forEach items="${book}" var="item">
 						<li><a>
 								<dl>
 									<dt>
-										<a><img src="${item.bpic}"></a>
+										<a href="back/bookdetail.jsp?bid='${item.bid}'"><img  src="${item.bpic}"></a>
 									</dt>
 									<dd>
 										书名:<span class="bookName">${item.bname}</span>
@@ -88,7 +90,7 @@
 									<dd></dd>
 								</dl>
 						</a></li>
-						
+
 					</c:forEach>
 				</ul>
 			</div>
@@ -107,3 +109,6 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	
+	<script type="text/javascript" src="js/list.js"></script>

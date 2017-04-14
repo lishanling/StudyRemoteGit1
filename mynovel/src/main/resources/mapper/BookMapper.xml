@@ -8,12 +8,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from book
 	</select>
 
-	<select id="findBookBySort" parameterType="String" resultType="Book">
-		<!-- select * from books where bname = #{bname} -->
-		select b.* from book b inner join types t on b.ssid = t.ssid and
-		t.sname = #{bookSortName}
-	</select>
-
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<collection property="rows"
 			column="{pageSize=pageSize,currPage=currPage}" ofType="Book" select="getBooks" />

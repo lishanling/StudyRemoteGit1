@@ -73,14 +73,14 @@ public class CollectsHandler {
 		return "back/list";
 	}
 
-	@RequestMapping("/toList.action")
+	@RequestMapping("/toAllList.action")
 	public String AllList(Model model){
 		List<Book> list= collectsService.AllList();
 		model.addAttribute("book",list);
 		return "back/list";
 	}
 
-	@RequestMapping("/toAllList.action")
+	@RequestMapping("/toLatestList.action")
 	public String LatestList(Model model){
 		List<Book> list= collectsService.LatestList();
 		model.addAttribute("book",list);

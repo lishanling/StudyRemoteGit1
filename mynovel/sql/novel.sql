@@ -12,7 +12,7 @@
   drop table book;
   drop table users;
   drop table types;
-delete from book
+
 select * from book;
 select * from types;
 select * from admin;
@@ -21,8 +21,7 @@ select * from collects;
 select * from menu;
 select * from discuss;
 
-select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on b.bid=c.bid join users u on u.uname='leesin'
-		  and c.usid=u.usid
+
  
 create SEQUENCE seq_aid START WITH 1001;--Í¼Êé¹ÜÀíÔ±±àºÅĞòÁĞ 
 create SEQUENCE seq_usid START WITH 1001;--ÓÃ»§±àºÅ
@@ -41,7 +40,6 @@ create TABLE users(
        upwd varchar2(80) NOT NULL--ÃÜÂë
 );
 
-select * from users;
 
 --·ÖÀà±í
 create sequence seq_ssid start with 1001  increment by 1;
@@ -52,7 +50,7 @@ create table types(
        imgsrc varchar2(50)
 );
 
-
+update types set imgsrc = 'images/masterpiece.png' where ssid='S1001';
 update types set imgsrc = 'images/masterpiece.png' where ssid='S1002';
 update types set imgsrc = 'images/kehuan.png' where ssid='S1003';
 update types set imgsrc = 'images/love.png' where ssid='S1004';
@@ -76,19 +74,6 @@ create table book(
        ssid varchar2(20) REFERENCES types(ssid),--·ÖÀà±àºÅ
        bpic  varchar2(400)    --ÊéµÄ·âÃæ  --×÷³öĞŞ¸Ä×Ö¶ÎÀàĞÍ
 );
-update book set bpic = 'images/book1.jpg' where bid='B1001';
-update book set bpic = 'images/book3.jpg' where bid='B1002';
-update book set bpic = 'images/book4.jpg' where bid='B1003';
-update book set bpic = 'images/book6.jpg' where bid='B1004';
-update book set bpic = 'images/book7.jpg' where bid='B1005';
-update book set bpic = 'images/book9.jpg' where bid='B1006';
-update book set bpic = 'images/book10.jpg' where bid='B1007';
-update book set bpic = 'images/book12.jpg' where bid='B1008';
-update book set bpic = 'images/book14.jpg' where bid='B1009';
-update book set bpic = 'images/book15.jpg' where bid='B1010';
-update book set bpic = 'images/book5.jpg' where bid='B1011';
-update book set bpic = 'images/not_pic.jpg' where bid='B1023';
-update book set bpic = 'images/hlm.jpg' where bid='B1024';
 
 --ÊÕ²Ø±í
 create TABLE collects(
@@ -104,7 +89,7 @@ create TABLE menu(
        bid varchar2(20) REFERENCES book(bid),--ÊéµÄ±àºÅ
        bcontent varchar2(1000) --ÄÚÈİ
 ); 
-select * from menu;
+
 --ÆÀÂÛ±í
 create table discuss(
        usid varchar2(50) REFERENCES users(usid),--ÓÃ»§±àºÅ
@@ -113,11 +98,9 @@ create table discuss(
        dtime date--ÆÀÂÛÊ±¼ä
 );
 
-select * from book;
 
 --²åÈëÊı¾İ
-select * from ADMIN;
-update admin set apenname='Molds', apwd='a' where aid='A1001';
+
 insert into admin values('A'||seq_aid.nextval,'Mold','m');
 insert into admin values('A'||seq_aid.nextval,'Jol','m');
 insert into admin values('A'||seq_aid.nextval,'ÌÆÆß¹«×Ó','m');
@@ -143,8 +126,7 @@ insert into  book values('B'||seq_bid.nextval,'ÎÒ²»Ï²»¶ÕâÊÀ½ç£¬Ö»Ï²»¶Äã','ÕâÊÇÒ»
 insert into  book values('B'||seq_bid.nextval,'Ã÷³¯ÄÇĞ©ÊÂ','ÀúÊ·ÊÇÊ²Ã´£¿ÀúÊ·¾ÍÊÇÄÇĞ©²ĞÌ¨¶ÏÍß¡¢¹ÅÃí»ÄÚ£Âğ£¿¾ÍÊÇÄÇĞ©¿İÔïµÄÊ·ÁÏÂğ£¿²»ÊÇ£¬¾ø¶Ô²»ÊÇ...',to_date('2011-01-01','yyyy-MM-dd'),'±±¾©Ä¥ÌúÊıÃËĞÅÏ¢¼¼ÊõÓĞÏŞ¹«Ë¾','http://www.duokan.com/reader?id=eb30aac8a5da44bfb5384e590ab03040','µ±ÄêÃ÷ÔÂ','S1007',null);
 insert into  book values('B'||seq_bid.nextval,'¹Ô£¬ÃşÃşÍ·','Ò»±¾ÈÃÄãÉá²»µÃ¶ÁÍêµÄ¶ÌÆª¹ÊÊÂ¼¯£¬Ê±¶øº¬ÀáÎ¢Ğ¦£¬Ê±¶øÓÖÑÚ¾í³¤Ë¼¡£...',to_date('2014-10-01','yyyy-MM-dd'),'ÖĞÄÏ²©¼¯Ìì¾íÎÄ»¯´«Ã½ÓĞÏŞ¹«Ë¾','http://www.duokan.com/reader?id=d6118fadb24b4dab8803562d18e2d1bd','´ó±ù','S1006',null);
 insert into  book values('B'||seq_bid.nextval,'Ã»ÓĞÈË','2000ÄêÃÀ¹ú¼ÓÀû¸£ÀûÑÇ£¬ÖªÃû×÷¼Ò°¢¸»º¹ÈË°¢Ã×¶û½Óµ½Ò»¸öµç»°£¬½«Ëû´ø»ØÁËÍ¯ÄêµÄËêÔÂ...',to_date('2017-04-10','yyyy-MM-dd'),'±±¾©ÊÀ¼ÍÎÄ¾°ÎÄ»¯´«²¥ÓĞÏŞÔğÈÎ¹«Ë¾','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','none','S1005',null);
-insert into  book values('B'||seq_bid.nextval,'ºìÂ¥ÃÎ','ÃÀ¹ú¼ÓÀû¸£ÀûÑÇ×÷¼Ò°¢¸»º¹ÈË°¢Ã×¶ûµÄÈËÍ¯ÄêµÄËêÔÂ...',to_date('2017-04-11','yyyy-MM-dd'),'±±¾©ÊÀ¼ÍÎÄ¾°ÎÄ»¯´«²¥ÓĞÏŞÔğÈÎ¹«Ë¾','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','²ÜÑ©ÇÛ','S1005',null);
-
+insert into  book values('B'||seq_bid.nextval,'ºìÂ¥ÃÎ','ÃÀ¹ú¼ÓÀû¸£ÀûÑÇ×÷¼Ò°¢¸»º¹ÈË°¢Ã×¶ûµÄÈËÍ¯ÄêµÄËêÔÂ...',to_date('2017-04-13','yyyy-MM-dd'),'±±¾©ÊÀ¼ÍÎÄ¾°ÎÄ»¯´«²¥ÓĞÏŞÔğÈÎ¹«Ë¾','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','²ÜÑ©ÇÛ','S1005',null);
 
 insert into users values('U'||seq_usid.nextval,'ĞŞ¸Ä','2138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'ÀîÀà','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
@@ -212,3 +194,23 @@ insert into menu values('µÚÈıÕÂ','¶Ô²»Æğ','B1010','Ëı¿Ş×Åº°£º¶Ô²»Æğ£¬¶Ô²»Æğ£¬¶Ô²
 insert into menu values('µÚÒ»ÕÂ','ÎÒ³ÉÎª½ñÌìµÄÎÒ','B1011','2001Äê12ÔÂ ÎÒ³ÉÎª½ñÌìµÄÎÒ£¬ÊÇÔÚ1975ÄêÄ³¸öÒõÔÆÃÜ²¼µÄº®Àä¶¬ÈÕ£¬ÄÇÄêÎÒÊ®¶şËê¡£ÎÒÇå³şµØ¼ÇµÃµ±Ê±×Ô¼ºÅ¿ÔÚÒ»¶ÂÌ®ËúµÄÄàÇ½ºóÃæ£¬¿úÊÓ×ÅÄÇÌõĞ¡Ïï£¬ÅÔ±ßÊÇ½á±ùµÄĞ¡Ïª¡£Ğí¶àÄê¹ıÈ¥ÁË£¬ÈËÃÇËµ³ÂÄê¾ÉÊÂ¿ÉÒÔ±»ÂñÔá£¬È»¶øÎÒÖÕÓÚÃ÷°×ÕâÊÇ´íµÄ£¬ÒòÎªÍùÊÂ»á×ÔĞĞÅÀÉÏÀ´¡£»ØÊ×Ç°³¾£¬ÎÒÒâÊ¶µ½ÔÚ¹ıÈ¥¶şÊ®ÁùÄêÀï£¬×Ô¼ºÊ¼ÖÕÔÚ¿úÊÓ¡­¡­');
 insert into menu values('µÚ¶şÕÂ','Ğ¡Ê±ºò','B1011','Ğ¡Ê±ºò£¬°Ö°ÖµÄ·¿×ÓÓĞÌõ³µµÀ£¬±ßÉÏÖÖ×Å°×ÑîÊ÷£¬¹şÉ£ºÍÎÒ¾­³£ÅÀÉÏÈ¥£¬ÓÃÒ»¿é¾µ×ÓµÄËéÆ¬°ÑÑô¹â·´ÕÕ½øÁÚ¾Ó¼ÒÀï£¬ÈÇµÃËûÃÇºÜÄÕ»ğ¡£ÔÚÄÇ¸ß¸ßµÄÖ¦èâÉÏ£¬ÎÒÃÇÏà¶Ô¶ø×ø£¬Ã»´©Ğ¬×ÓµÄ½ÅÑ¾»ÎÀ´µ´È¥£¬¿ã¶µÀïÂúÊÇÉ£é©¸ÉºÍºúÌÒ¡£ÎÒÃÇ»»×ÅÍæÄÇÆÆ¾µ×Ó£¬±ß³ÔÉ£é©¸É£¬±ßÓÃËüÃÇÈÓ¶Ô·½£¬ºö¶ø³Ô³Ô¶ºÀÖ£¬ºö¶ø¿ª»³´óĞ¦¡£ÎÒÒÀÈ»ÄÜ¼ÇµÃ¹şÉ£×øÔÚÊ÷ÉÏµÄ¡­¡­');
 insert into menu values('µÚÈıÕÂ','¸¸Ç×µÄ´«Ëµ','B1011','´«ËµÎÒ¸¸Ç×Ôø¾­ÔÚÙÂÂ·Ö§³àÊÖ¿ÕÈ­£¬ºÍÒ»Ö»ºÚĞÜ²«¶·¡£Èç¹ûÕâÊÇ¸ö¹ØÓÚ±ğÈËµÄ¹ÊÊÂ£¬¿Ï¶¨ÓĞÈË»á³âÖ®ÎªĞ¦»°ÆæÌ¸¡£°¢¸»º¹ÈË×ÜÏ²»¶½«ÊÂÎï¿ä´ó£¬ºÜ²»ĞÒ£¬Õâ¼¸ºõ³ÉÁËÕâ¸öÃñ×åµÄÌØĞÔ¡£Èç¹ûÓĞÈË´µĞêËµËû¶ù×ÓÊÇÒ½Éú£¬ºÜ¿ÉÄÜÊÇÄÇº¢×ÓÔø¾­ÔÚ¸ßÖĞµÄÉúÎïÑ§²âÑéÖĞ¿¼ÁË¸ö¼°¸ñµÄ·ÖÊı¡£µ«·²Éæ¼°°Ö°ÖµÄ¹ÊÊÂ£¬´ÓÀ´Ã»ÈË»³ÒÉËüÃÇµÄÕæÊµĞÔ¡£ÌÈÊ¹ÓĞÈËÖÊ¡­¡­');
+
+update book set bpic = 'images/book1.jpg' where bid='B1001';
+update book set bpic = 'images/book3.jpg' where bid='B1002';
+update book set bpic = 'images/book4.jpg' where bid='B1003';
+update book set bpic = 'images/book6.jpg' where bid='B1004';
+update book set bpic = 'images/book7.jpg' where bid='B1005';
+update book set bpic = 'images/book9.jpg' where bid='B1006';
+update book set bpic = 'images/book10.jpg' where bid='B1007';
+update book set bpic = 'images/book12.jpg' where bid='B1008';
+update book set bpic = 'images/book14.jpg' where bid='B1009';
+update book set bpic = 'images/book15.jpg' where bid='B1010';
+update book set bpic = 'images/book5.jpg' where bid='B1011';
+update book set bpic = 'images/bailu.jpg' where bid='B1012';
+
+select	b.bid,b.bname,b.bdate,b.bpic from book b where 
+		(substrb(to_char(b.bdate,'dd'),	1,6)) in (select	to_char(sysdate,'dd') from dual);
+
+select	b.bid,b.bname,b.bdate,b.bpic from book b where
+		 (substrb(to_char(b.bdate,'mm'), 1, 6)) in (select	to_char(sysdate,'mm') from dual);
+		 
