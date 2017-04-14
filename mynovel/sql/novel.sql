@@ -31,7 +31,7 @@ create TABLE admin(
        apenname VARCHAR2(30) UNIQUE NOT NULL,--用户名
        apwd varchar2(20) NOT NULL--密码
 );
-
+select * from book where bname like '%风%' or bauthor like '%风%';
 --用户表
 create TABLE users(
        usid Varchar2(20) PRIMARY KEY,--用户编号

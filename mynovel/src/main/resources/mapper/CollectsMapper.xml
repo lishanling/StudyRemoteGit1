@@ -7,33 +7,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	insert into collects(usid,bid,udate) values(#{usid},#{bid},#{udate})
 	</insert>
 
-
 	<resultMap type="Collects" id="CollectsMap">
 		<id column="bid" property="bid" />
 		<id column="usid" property="usid" />
 		<result column="udate" property="udate" />
-		<!-- 集合与多条记录映射，ofType是指集合泛型的类型 -->
-		<!-- <collection property="book" ofType="Book"> <id column="bid" property="bid" 
-			/> <result column="bpic" property="bpic" /> <result column="bname" property="bname" 
-			/> <result column="bauther" property="bauther" /> </collection> -->
-
+		
 		<association property="book" column="bid" javaType="Book">
 			<id column="bid" property="bid" />
 			<result column="bpic" property="bpic" />
 			<result column="bname" property="bname" />
 			<result column="bauthor" property="bauthor" />
 		</association>
-
-		<!-- <association property="user" column=""usid"" javaType="Users"> <id 
-			column="usid" property=""usid"" /> </association> -->
-
 		<association property="user" column="usid" javaType="Users">
 			<id column="usid" property="usid" />
 			<result column="uname" property="uname" />
 		</association>
-		<!-- <association property="user" column=""usid"" javaType="Users">
-			<id column="usid" property=""usid"" />
-		</association> -->
+	
 	</resultMap>
 	<select id="findCollects" resultMap="CollectsMap" parameterType="String">
 		select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from
