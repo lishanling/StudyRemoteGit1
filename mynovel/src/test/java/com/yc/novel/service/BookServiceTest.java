@@ -28,6 +28,12 @@ public class BookServiceTest {
 		assertNotNull(books);
 	}
 	@Test
+	public void test3() {
+		List<Book> b=bookService.getBooksByTypes("科幻");
+		System.out.println(b);
+		assertNotNull(b);
+	}
+	@Test
 	public void updateBooks() {
 		Book book=new Book();
 		book.setBid("B1001");
@@ -43,9 +49,23 @@ public class BookServiceTest {
 		System.out.println(book);
 		assertNotNull(book);
 	}
+
+	
+	@Test
+	public void testselectBook() {
+		List<Book> book=bookService.selectBook("七");
+		System.out.println(book);
+		assertNotNull(book);
+	}
 	@Test
 	public void testdelBooks() {
 		boolean result=bookService.delbook("B1025");
+		System.out.println(result);
+		assertNotNull(result);
+	}
+	@Test
+	public void test2() {
+		Book result=bookService.getBookById("B1002");
 		System.out.println(result);
 		assertNotNull(result);
 	}

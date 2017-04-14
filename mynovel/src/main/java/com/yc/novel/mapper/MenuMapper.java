@@ -5,6 +5,6 @@ import java.util.List;
 import com.yc.novel.entity.Menu;
 
 public interface MenuMapper {
-	List<Menu> findMenu();
+	List<Menu> findMenu(String bid);
 
 }

@@ -37,7 +37,6 @@ public class UserHandler {
 
 	@RequestMapping(value="{register}" , method=RequestMethod.POST)
 	public String register(Users user, HttpServletRequest request) {
-		System.out.println(user);
 		if (usersService.login(user) == null) {
 			if (usersService.register(user)) {
 				return "redirect:/homepage.jsp";
@@ -55,7 +54,6 @@ public class UserHandler {
 	@ResponseBody
 	public PaginationBean<Users> list(String rows, String page){
 
-		LogManager.getLogger().debug("list : rows ===> " + rows + ", page ===> " + page);
 		return usersService.listPartUsers(page, rows);//异步数据响应
 	}
 

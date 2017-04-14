@@ -8,6 +8,7 @@ public class ServletUtil {
 	public static final String LOGIN_ADMIN="loginAdmin";
 	public static final String ERROR_MESSAGE="errorMsg";
 	public static String UPLOAD_DIR;
+	public static String B_URL="bUrl";
 	public static final String VIRTUAL_UPLOAD_DIR="/upload/";
 	
 	

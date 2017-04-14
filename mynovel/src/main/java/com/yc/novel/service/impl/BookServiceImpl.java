@@ -64,14 +64,16 @@ public class BookServiceImpl implements BookService {
 			return bookMapper.delBooks(bid)>0;
 		}
 
-	@Override
-	public boolean deleteBooks(Book book) {
-		return bookMapper.deleteBooks(book)>0;
-	}
+	
 
 	@Override
+	public List<Book> selectBook(String name) {
+		
+		return bookMapper.selectBook(name);
+	}
+
 	public Book getBookById(String bookId) {
-		return bookMapper.findBookById();
+		return bookMapper.findBookById(bookId);
 	}
 
 }

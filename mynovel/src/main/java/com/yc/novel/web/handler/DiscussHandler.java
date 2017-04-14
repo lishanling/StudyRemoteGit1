@@ -21,10 +21,8 @@ public class DiscussHandler {
 	}
 
 	@ResponseBody 
-	@RequestMapping(value={"info"})
+	@RequestMapping(value="info")
 	public List<Discuss> getInfo(String id){
-		System.out.println("id ==="+ id);
-		System.out.println(" i am your father");
 		return	discussService.getDiscussById(id);		 
 	}		
 

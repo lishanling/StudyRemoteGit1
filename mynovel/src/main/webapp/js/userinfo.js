@@ -11,7 +11,7 @@ function cleardisplay(){
 		document.getElementById(cleartabid).style.display="none"; //不显示对象
 	} 
 } 
-loadBook();
+/*loadBook();
 function loadBook(){
 	$.get("collects/bookinfo", function(data) {
 		for (var i = 0 ; i <4; i++) {	 			 
@@ -19,7 +19,7 @@ function loadBook(){
 		}
 	}, "json");
 
-}
+}*/
 
 /*loadCollectInfo('${loginUser.uname}');
 

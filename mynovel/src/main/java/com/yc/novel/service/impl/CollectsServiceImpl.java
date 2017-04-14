@@ -54,10 +54,20 @@ public class CollectsServiceImpl implements CollectsService {
 		return collectsMapper.monthList();
 	}
 
-
 	@Override
-	public List<Collects> findBook() {
-		return collectsMapper.findBook();
+	public List<Book> findBook() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+
+/*	@Override*/
+	/*public List<Book> findBook() {
+		
+		return CollectsMapper.findBook();
+	}*/
+/*	public List<Collects> findBook() {
+		return collectsMapper.findBook();
+	}*/
 
 }

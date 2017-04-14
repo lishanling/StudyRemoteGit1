@@ -22,6 +22,6 @@ public interface CollectsMapper {
 
 	List<Book> allList();
 
-	List<Collects> findBook();
+	List<Book> findBook();
 
 }

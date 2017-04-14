@@ -23,10 +23,10 @@
 			<a href="back/userinfo.jsp">${loginUser.uname}</a>
 			</c:otherwise>
 			</c:choose>
-			</li><li class="red"><a href="#">注册</a></li>
-<li class="red"><a href="#">作者中心</a></li>
+			</li><li class="red"><a href="back/register.jsp">注册</a></li>
+<li class="red"><a href="#">中心</a></li>
 <li class="red"><a href="#">帮助</a></li>
-<li class="red"><a href="#">关于版本</a></li>
+<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 </ul>
 </div>
 
@@ -43,18 +43,18 @@
 </li>
 </ul>
 </div>
-
 <div id="menu">
-<ul>
-<li><a href="homepage.html">首页</a></li>
-<li><a href="list.html">榜单</a></li>
-<li><a href="sort.html">分类</a></li>
-<li><a href="#">精品</a></li>
-<li><a href="#">评论</a></li>
-</ul>
-</div>
+			<ul>
+				<li><a href="homepage.jsp">首页</a></li>
+				<li><a href="back/list.jsp">榜单</a></li>
+				<li><a href="#">分类</a></li>
+				<li><a href="#">精品</a></li>
+				<li><a href="#">评论</a></li>
+			</ul>
+		</div>
 <div id="sortid">
-<h2>历史</h2><br><br>
+<h2></h2>
+<br/><br>
 
 <div id="sortdetail">
 		<ul>
@@ -83,9 +83,7 @@
              </ul>
          </div>
         
-        <div id="allRight">         
-        	 <a>Copyright&copy;Duokan. All Rights Reserved</a> 
-        </div>
+       
     </div>
 
 </body>
