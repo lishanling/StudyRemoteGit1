@@ -30,8 +30,6 @@ public class CollectsHandler {
 	@ResponseBody
  	public boolean getDetails(String bid,String usid){
 	
-	     System.out.println(usid);
-		System.out.println(bid);
 		usid=usid.trim();
 		Collects collects=new Collects();
 		collects.setBid(bid);
