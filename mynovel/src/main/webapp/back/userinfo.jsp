@@ -67,168 +67,46 @@
 					<h1 align="center" id="headinfo" style="color: #000">我 的</h1>
 				</div>
 				<div class="container" id="b1">
-					<div class="u-colslist" id="bookinfo">
+					<div class="u-colslist" id="cls">
 						<ul class="j-container">
-
-
-							<c:forEach items="${book}" var="item">
-								<li>
-									<a>
-										<dl>
-											<dt>
-												<img src="${item.bpic}" alt="${item.bpic}">
-											</dt>
-											<dd>
-												书名:<span class="bookName">${item.bname}</span>
-											</dd>
-											<dd>
-												作者:<span class="bookauthor">${item.bauthor}</span>
-											</dd>
-											<dd>
-												出版日期：<span class="date">${item.bdate}</span>
-											</dd>
-											<dd></dd>
-										</dl>
-									</a>
-								<li>
-							</c:forEach>
-
-							<li class="u-bookitm1 u-bookitm1-1"><a class="book" href="#">
-									<img style="display: block;" src="images/1.png">
-							</a>
-								<div class="info">
-									<div class="wrap">
-										<a class="title" href="">设计龙门阵（第三季）</a>
-										<p class="u-author">
-											<span>ZCOOL站酷</span>
-										</p>
-									</div>
-									<div class="act">
-										<a class="j-delete delete" href="#">取消收藏</a> <span
-											class="u-sep">|</span> <a href="">去阅读</a>
-									</div>
-								</div></li>
-
-							<!-- <li class="u-bookitm1 u-bookitm1-1">
-								<a class="book"
-								hidefocus="hidefocus" href=""> <img style="display: block;"
-									onload="onLoadImg(this)" oncontextmenu="return false;"
-									ondragstart="return false;" src="images/1.png">
-							</a>
-								<div class="info">
-									<div class="wrap">
-										<a class="title" hidefocus="hidefocus" href="">设计龙门阵（第三季）</a>
-										<p class="u-author">
-											<span>ZCOOL站酷</span>
-										</p>
-									</div>
-								<div class="act">
-									<a class="j-delete delete" hidefocus="hidefocus"
-										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-									<a hidefocus="hidefocus" href="">去阅读</a>
-								</div> </div>
-							</li>
-
-							<li class="u-bookitm1 u-bookitm1-1">
-								<a class="book"
-								hidefocus="hidefocus" href=""> <img style="display: block;"
-									onload="onLoadImg(this)" oncontextmenu="return false;"
-									ondragstart="return false;" src="images/1.png">
-							</a>
-								<div class="info">
-									<div class="wrap">
-										<a class="title" hidefocus="hidefocus" href="">设计龙门阵（第三季）</a>
-										<p class="u-author">
-											<span>ZCOOL站酷</span>
-										</p>
-									</div>
-								<div class="act">
-									<a class="j-delete delete" hidefocus="hidefocus"
-										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-									<a hidefocus="hidefocus" href="">去阅读</a>
-								</div> </div>
-							</li>
-
-							<li class="u-bookitm1 u-bookitm1-1">
-								<a class="book"
-								hidefocus="hidefocus" href=""> <img style="display: block;"
-									onload="onLoadImg(this)" oncontextmenu="return false;"
-									ondragstart="return false;" src="images/1.png">
-							</a>
-								<div class="info">
-									<div class="wrap">
-										<a class="title" hidefocus="hidefocus" href="">设计龙门阵（第三季）</a>
-										<p class="u-author">
-											<span>ZCOOL站酷</span>
-										</p>
-									</div>
-								<div class="act">
-									<a class="j-delete delete" hidefocus="hidefocus"
-										href="javascript:void(0);">取消收藏</a> <span class="u-sep">|</span>
-									<a hidefocus="hidefocus" href="">去阅读</a>
-								</div> </div>
-							</li>
-
-							<li class="u-bookitm1 u-bookitm1-1">
-								<a class="book"
-								hidefocus="hidefocus" href=""> <img style="display: block;"
-									onload="onLoadImg(this)" oncontextmenu="return false;"
-									ondragstart="return false;" src="images/1.png">
-							</a>
-								<div class="info">
-									<div class="wrap">
-										<a class="title" hidefocus="hidefocus" href="">设计龙门阵（第三季）</a>
-										<p class="u-author">
-											<span>ZCOOL站酷</span>
-										</p>
-									</div>
-								<div class="act">
-									<a class="j-delete delete" href="javascript:void(0);">取消收藏</a>
-									<span class="u-sep">|</span> <a href="">去阅读</a>
-								</div> </div>
-							</li> -->
 						</ul>
 					</div>
 				</div>
-
-				<%-- <div id='b2' style='display: true'>
+				<div id='b2' style='display: none'>
 					<br />
 
 					<div class="infomation">
 						<form action="#" method="post">
-<<<<<<< HEAD
-							<span style="color:red"> 用户名：</span><input id="uname" style="border: 1px;" value="${loginUser.uname}" /><br />
-							<br /> <span style="color:red"> 密&nbsp;&nbsp; 码：</span>
-							 <input id="upwd" value="*"  style="border: 1px;"/>
-								<br/>
-				<span style="color:red">邮  &nbsp;箱：</span><input id="uemail" style="border: 1px;" value="${loginUser.uemail}" /><br />
-								
-							<br /> <a class="updateBtn" href="javascript:void(0)" onclick="updateMyself()">修改提交</a>
-=======
-							<span>用户名： </span><input id="uname" style="border: 1px;"
-								value="${loginUser.uname}" /><br /> <br /> <span>密&nbsp;&nbsp;
-								码：</span> <input id="upwd" style="border: 1px;" /><br /> <br /> <a
-								class="updateBtn" href="javascript:void(0)">修改</a>
->>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
+							<span style="color: red"> 用户名：</span><input id="uname"
+								style="border: 1px;" value="${loginUser.uname}" /><br /> <br />
+							<span style="color: red"> 密&nbsp;&nbsp; 码：</span> <input
+								id="upwd" value="*" style="border: 1px;" /> <br /> <span
+								style="color: red">邮 &nbsp;箱：</span><input id="uemail"
+								style="border: 1px;" value="${loginUser.uemail}" /><br /> <br />
+							<a class="updateBtn" href="javascript:void(0)"
+								onclick="updateMyself()">修改提交</a>
 						</form>
 					</div>
-				</div> --%>
-			</div>
-		</div>
-
-		<div id="footer">
-			<div id="aboutUs">
-				<ul>
-					<li class="qwer"><a href="#">关于我们</a></li>
-					<li class="qwer"><a href="#">联系我们</a></li>
-					<li class="qwer"><a href="#">商务合作</a></li>
-				</ul>
-			</div>
-			<div id="allRight">
-				<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
+				</div>
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="js/userinfo.js"></script>
+
+	<div id="footer">
+		<div id="aboutUs">
+			<span id="ddd">${loginUser.usid}</span>
+			<ul>
+				<li class="qwer"><a href="#">关于我们</a></li>
+				<li class="qwer"><a href="#">联系我们</a></li>
+				<li class="qwer"><a href="#">商务合作</a></li>
+			</ul>
+		</div>
+		<div id="allRight">
+			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
+		</div>
+	</div>
+
 </body>
+<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript" src="js/userinfo.js"></script>
 </html>

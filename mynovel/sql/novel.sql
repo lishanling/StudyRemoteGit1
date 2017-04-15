@@ -20,9 +20,7 @@ select * from users;
 select * from collects;
 select * from menu;
 select * from discuss;
-
-select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on b.bid=c.bid join users u on u.uname='leesin'
-		  and c.usid=u.usid
+select b.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on c.usid='1003' and b.bid=c.bid 
  
 create SEQUENCE seq_aid START WITH 1001;--图书管理员编号序列 
 create SEQUENCE seq_usid START WITH 1001;--用户编号
@@ -156,6 +154,9 @@ insert into collects values('U1003','B1004',to_date('2016-03-19','yyyy-MM-dd'));
 insert into collects values('U1003','B1002',to_date('2015-10-01','yyyy-MM-dd'));
 insert into collects values('U1003','B1003',to_date('2015-07-19','yyyy-MM-dd'));
 insert into collects values('U1003','B1007',to_date('2016-04-9','yyyy-MM-dd'));
+insert into collects values('U1003','B1001',to_date('2016-04-9','yyyy-MM-dd'));
+insert into collects values('U1003','B1005',to_date('2016-04-9','yyyy-MM-dd'));
+insert into collects values('U1003','B1006',to_date('2016-04-9','yyyy-MM-dd'));
 
 
 insert into discuss values('U1003','B1004','很有意思',to_date('2016-12-9','yyyy-MM-dd'));

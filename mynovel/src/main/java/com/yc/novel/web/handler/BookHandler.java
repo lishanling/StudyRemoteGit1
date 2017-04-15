@@ -1,6 +1,8 @@
 package com.yc.novel.web.handler;
 
 import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.logging.log4j.LogManager;
@@ -75,14 +77,6 @@ public class BookHandler {
 		book.setBpic(bpic);
 		return bookService.updateBooks(book);
 	}
-	
-
-	//显示图书信息
-	@RequestMapping("delete")
-	@ResponseBody
-	public boolean delete(Book book){
-		return bookService.deleteBooks(book);
-	}
 
 	@RequestMapping("add")
 	@ResponseBody
@@ -111,10 +105,6 @@ public class BookHandler {
 		return bookService.delbook(bid);
 	}
 	
-	@RequestMapping(value="/{name}",method=RequestMethod.GET)
-	@ResponseBody
-	private List<Book> selectBook(@PathVariable("name")String name){
-		return bookService.selectBook(name);
-	}
+	
 }
 

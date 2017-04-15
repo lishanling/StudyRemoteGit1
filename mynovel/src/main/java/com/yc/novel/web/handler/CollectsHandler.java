@@ -1,23 +1,22 @@
-/*package com.yc.novel.web.handler;
+package com.yc.novel.web.handler;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.yc.novel.entity.Book;
 import com.yc.novel.entity.Collects;
+import com.yc.novel.entity.Users;
 import com.yc.novel.service.CollectsService;
 
-
-
-@Controller
+@Controller("collectsHandler")
 @RequestMapping("collect")
 public class CollectsHandler {
 	@Autowired
@@ -38,21 +37,24 @@ public class CollectsHandler {
 		return true;
 	}
 
-	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	@ResponseBody
-	public List<Collects> collectInfo(@PathVariable("id")String id){
-		return collectsService.findCollects(id);
+	@RequestMapping(value="collectbookinfo",method=RequestMethod.POST)
+	public List<Book> collectInfo(String usid){
+		return collectsService.findCollects(usid);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="delcollect",method=RequestMethod.POST)
+	public boolean delCollect(String bid){
+		return collectsService.delCollect(bid);
 	}
 
 	@RequestMapping("bookinfo")
 	@ResponseBody
-	public List<Collects> collectBook(){
-<<<<<<< HEAD
+	public List<Book> collectBook(){
 		 return collectsService.findBook();
 	}	
 
-		return collectsService.findBook();
-	}
 
 	@Resource(name="collectsServiceImpl")
 	public void setCollectsService(CollectsService collectsService) {
@@ -79,11 +81,8 @@ public class CollectsHandler {
 		return "back/list";
 	}
 
-<<<<<<< HEAD
 	@RequestMapping("/toList.action")
 	//@ResponseBody
-=======
-	@RequestMapping("/toList.action")
 	public String AllList(Model model){
 		List<Book> list= collectsService.AllList();
 		model.addAttribute("book",list);
@@ -91,19 +90,10 @@ public class CollectsHandler {
 	}
 
 	@RequestMapping("/toAllList.action")
->>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 	public String LatestList(Model model){
 		List<Book> list= collectsService.LatestList();
 		model.addAttribute("book",list);
 		return "back/list";
 	}
-	
-	@RequestMapping("/toList.action")
-	//@ResponseBody
-	public String LatestList01(Model model){
-		List<Book> list= collectsService.findBook();
-		model.addAttribute("book",list);
-		return "back/userinfo";
-	}
+
 }
-*/

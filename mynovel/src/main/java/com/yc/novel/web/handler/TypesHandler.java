@@ -18,7 +18,7 @@ public class TypesHandler {
 	public TypesService service;
 	
 	@ResponseBody
-	@RequestMapping("sname")
+	@RequestMapping("info")
 	public List<Types> sortsInfo(){
 		 return service.getTypes();
 	}	

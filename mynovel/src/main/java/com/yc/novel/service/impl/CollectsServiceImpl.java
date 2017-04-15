@@ -24,8 +24,8 @@ public class CollectsServiceImpl implements CollectsService {
 	}
 
 	@Override
-	public List<Collects> findCollects(String id) {
-		return collectsMapper.findCollects(id);
+	public List<Book> findCollects(String usid) {
+		return collectsMapper.findCollects(usid);
 	}
 
 
@@ -56,18 +56,14 @@ public class CollectsServiceImpl implements CollectsService {
 
 	@Override
 	public List<Book> findBook() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return collectsMapper.findBook();
 	}
 
+	@Override
+	public boolean delCollect(String bid) {
+		return collectsMapper.delCollect(bid)>0;
+	}
 
-/*	@Override*/
-	/*public List<Book> findBook() {
-		
-		return CollectsMapper.findBook();
-	}*/
-/*	public List<Collects> findBook() {
-		return collectsMapper.findBook();
-	}*/
 
 }

@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Test;
@@ -47,9 +46,9 @@ public class BookServiceTest {
 	
 	@Test
 	public void testselectBook() {
-		List<Book> book=bookService.selectBook("七");
-		System.out.println(book);
-		assertNotNull(book);
+		List<Book> re=bookService.selectBook("风");
+		System.out.println(re);
+		assertNotNull(re);
 	}
 	@Test
 	public void testdelBooks() {

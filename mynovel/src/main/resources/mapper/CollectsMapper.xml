@@ -8,40 +8,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 
-	<resultMap type="Collects" id="CollectsMap">
+	<!-- <resultMap type="Collects" id="CollectsMap">
 		<id column="bid" property="bid" />
 		<id column="usid" property="usid" />
-		<result column="udate" property="udate" />
-		<!-- 集合与多条记录映射，ofType是指集合泛型的类型 -->
-		<!-- <collection property="book" ofType="Book"> <id column="bid" property="bid" 
-			/> <result column="bpic" property="bpic" /> <result column="bname" property="bname" 
-			/> <result column="bauther" property="bauther" /> </collection> -->
-
+		<result column="udate" property="udate" />	
 		<association property="book" column="bid" javaType="Book">
 			<id column="bid" property="bid" />
 			<result column="bpic" property="bpic" />
 			<result column="bname" property="bname" />
 			<result column="bauthor" property="bauthor" />
 		</association>
-
-		<!-- <association property="user" column=""usid"" javaType="Users"> <id 
-			column="usid" property=""usid"" /> </association> -->
-
-		<association property="user" column="usid" javaType="Users">
-			<id column="usid" property="usid" />
-			<result column="uname" property="uname" />
-		</association>
-		<!-- <association property="user" column=""usid"" javaType="Users">
-			<id column="usid" property=""usid"" />
-		</association> -->
-	</resultMap>
-	<select id="findCollects" resultMap="CollectsMap" parameterType="String">
-		select c.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from
-		book b join collects c on c.usid=#{usid}
-		and b.bid=c.bid
+	</resultMap> -->
+	<select id="findCollects" resultType="Book" parameterType="String">
+		select b.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from
+		book b join collects c on c.usid=#{usid} and
+		 b.bid=c.bid
 	</select>
 
-
+	
 	<!-- 获取图书的收藏量 -->
 	<select id="collectsCount" resultType="Collects">
 		select c.bid,count(*) a
@@ -77,4 +61,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findBook" resultType="Book">
 		select b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
 	</select>
+	
+	<delete id="delCollect" parameterType="String">
+		delete from collects where bid=#{bid}
+	</delete>
 </mapper>
