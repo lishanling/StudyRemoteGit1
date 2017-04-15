@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html>
@@ -24,7 +24,6 @@
 						</c:otherwise>
 					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
-				<li class="red"><a href="#">作者中心</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/manage.jsp">后台管理</a></li>
 			</ul>
@@ -33,23 +32,17 @@
 			<ul>
 				<li><img src="images/logo.jpg"></li>
 				<li class="s">
-					<form method="post">
-						<input
-							style="width: 400px; height: 40px; border: solid 3px #F98235;"
-							type="text" placeholder="请输入小说名、作者" /> <input type="submit"
-							style="width: 50px; height: 40px; background-color: #F98235; border: solid 3px #F98235; color: #fff; font-family: 微软雅黑; border-radius: 15px;"
-							value="搜索" />
-					</form>
+					
 				</li>
 			</ul>
 		</div>
 		<div id="menu">
 			<ul>
 				<li><a href="homepage.jsp">首页</a></li>
-				<li><a href="list.jsp">榜单</a></li>
-				<li><a href="sort.jsp">分类</a></li>
-				<li><a href="#">精品</a></li>
-				<li><a href="#">评论</a></li>
+				<li><a href="collect/toAllList.action">榜单</a></li>
+				<li><a href="back/search.jsp">去搜索</a></li>
+				<li><a href="back/us.jsp">关于我们</a></li>
+				<li><a href="#">客户端</a></li>
 			</ul>
 		</div>
 		<div id="wk">
@@ -69,14 +62,16 @@
 				<div class="container" id="b1">
 					<div class="u-colslist" id="cls">
 						<ul class="j-container">
+
 						</ul>
 					</div>
 				</div>
-				<div id='b2' style='display: none'>
+				 <div id='b2' style='display: none'>
 					<br />
 
 					<div class="infomation">
 						<form action="#" method="post">
+
 							<span style="color: red"> 用户名：</span><input id="uname"
 								style="border: 1px;" value="${loginUser.uname}" /><br /> <br />
 							<span style="color: red"> 密&nbsp;&nbsp; 码：</span> <input
@@ -87,14 +82,19 @@
 								onclick="updateMyself()">修改提交</a>
 						</form>
 					</div>
+
 				</div>
+
+				</div> 
 			</div>
 		</div>
-	</div>
+
+		
+
 
 	<div id="footer">
 		<div id="aboutUs">
-			<span id="ddd">${loginUser.usid}</span>
+			<span id="ddd" style="display: none">${loginUser.usid}</span>
 			<ul>
 				<li class="qwer"><a href="#">关于我们</a></li>
 				<li class="qwer"><a href="#">联系我们</a></li>
@@ -106,7 +106,9 @@
 		</div>
 	</div>
 
+
+		<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
-<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-<script type="text/javascript" src="js/userinfo.js"></script>
+
 </html>

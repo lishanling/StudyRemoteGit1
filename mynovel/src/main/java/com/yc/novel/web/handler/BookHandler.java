@@ -1,14 +1,12 @@
 package com.yc.novel.web.handler;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-
-import org.apache.logging.log4j.LogManager;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,27 +21,28 @@ import com.yc.novel.util.ServletUtil;
 @Controller("bookHandler")
 @RequestMapping("book")
 public class BookHandler {
-  
-	@Autowired 	
+
+	@Autowired
 	private BookService bookService;
 
 	@ResponseBody
 	@RequestMapping(value="{sortDetail}" , method=RequestMethod.GET)
  	public List<Book> getSortsDetails(String bookSortName){
-		LogManager.getLogger().debug("bookSortName ==>"+bookSortName);
 		return bookService.getBooksByTypes(bookSortName);
-   	} 
-	
-	@ResponseBody 
-	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
- 	public Book getBookDetails(String bookId){
-		LogManager.getLogger().debug("bookId ==>"+bookId);
-		return bookService.getBookById(bookId);
-  	}  
+   	}
+
 	@ResponseBody
-	@RequestMapping(value="{sorts}" , method=RequestMethod.GET)
- 	public List<Book> getDetails(String bookSortName){
-		 return bookService.getBooksByTypes("名著");
+	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
+ 	public Book getBookDetails(String bookId,HttpSession session){
+		Book b=bookService.getBookById(bookId);
+
+		return b;
+  	}
+	@ResponseBody
+	@RequestMapping(value="/sorts" , method=RequestMethod.POST)
+ 	public List<Book> getDetails(String bookSortName) throws UnsupportedEncodingException{
+		bookSortName= URLDecoder.decode(bookSortName, "utf-8");
+		return bookService.getBooksByTypes(bookSortName);
   	} 
 
 	//分页显示图书信息
@@ -52,15 +51,13 @@ public class BookHandler {
 	public PaginationBean<Book> list(String rows,String page){
 		return bookService.listPartBooks(page,rows);
 	}
-	
 	//显示图书信息
 	@RequestMapping("recommendinfo")
 	@ResponseBody
 		public List<Book> bookInfo(){
-		System.out.println("进入。。。");
 			return bookService.findAllbook();
 	}
-	
+
 	@RequestMapping("modify")
 	@ResponseBody
 	public boolean modify(@RequestParam("picData") MultipartFile picData,Book book){
@@ -77,6 +74,8 @@ public class BookHandler {
 		book.setBpic(bpic);
 		return bookService.updateBooks(book);
 	}
+
+	
 
 	@RequestMapping("add")
 	@ResponseBody
@@ -97,14 +96,21 @@ public class BookHandler {
 		//String sname=request.getParameter("sname");
 		String sname="爱情";
 		return bookService.insertBooks(book, sname);
-		
+
 	}
 	@RequestMapping("delete")
 	@ResponseBody
 	public boolean del(String bid){
 		return bookService.delbook(bid);
 	}
-	
-	
+
+	//搜索
+	@ResponseBody
+	@RequestMapping(value="/search" , method=RequestMethod.POST)
+	public List<Book> search(String contend) throws UnsupportedEncodingException{
+		contend= URLDecoder.decode(contend, "utf-8");
+		System.out.println(contend);
+		return bookService.selectBook(contend);
+	}
 }
 

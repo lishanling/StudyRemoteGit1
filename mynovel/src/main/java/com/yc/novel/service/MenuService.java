@@ -6,6 +6,6 @@ import com.yc.novel.entity.Menu;
 
 public interface MenuService {
 
-	List<Menu> getMenuById(String id);
+	List<Menu> getMenuById(String bid);
 
 }

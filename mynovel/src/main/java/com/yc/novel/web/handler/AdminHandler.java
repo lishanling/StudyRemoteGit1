@@ -25,11 +25,11 @@ public class AdminHandler {
 		System.out.println(admin);
 		if (admin == null) {
 			request.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
-			return  "/back/adminlogin.jsp";
+			return  "/back/adminlogin";
 		} else {
 			request.setAttribute(ServletUtil.LOGIN_ADMIN, admin);
 			LogManager.getLogger().debug("success");
-			return "/back/manage.jsp";
+			return "/back/manage";
 		}
 	}
 	@RequestMapping("add")

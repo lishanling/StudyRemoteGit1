@@ -81,6 +81,7 @@ ul,li{
 #menu li a{
 	display:inline-block;
  	color:#FFF;
+	
     font-size:18px;
 	padding-left:10px;
 	padding-top:10px;
@@ -89,63 +90,20 @@ ul,li{
 #menu li a:hover{
 	color:#666;
 }
-#sortid{
-	float:none;
-	margin-left:138px;
-
-	
+#us h3{
+	margin-right:200px;
+	font-size:22px;
 }
-
-#sortid h2{
-	width:100px;
-	height:40px;
-	position:relative;
-	left:-555px;
-	top:10px;
-	color:#F90;
+#us{
+	width:700px;
+	margin:center;
 	font-size:18px;
-	float:none;
-	
-
-}
-
-#sortdetail {
-	float:left;
-	}
-#sortdetail ul li{
-	width:400px;
-	height:140px;
-	float:left;
-	margin-bottom:20px;
-
-}
-.sortchild{
-	font-size:16px;
-	color:#FC6;
+	color:#5A5A5A;
+} 
+#us p{
+	margin-top:20px;
 	
 }
-#sortdetail  ul li dl dt{
-	width:120px;
-	padding:2px;
-	float:left;
-	
-}
-#sortdetail  ul li dl dd{
-	width:145px;
-	font-size:14px;
-	margin-top:7px;
-	color:#999;
-	float:left;
-	
-	
-}
-#sortdetail  ul li dl dd span{
-	
-	color:#666;
-	
-}
-
-
 #footer{
 	border-top:#FFF 10px solid;
  	width:1184px;

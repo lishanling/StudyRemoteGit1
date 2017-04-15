@@ -23,7 +23,7 @@ function tab(n){
 
 function cleardisplay(){ 
 	for ( var i=1;i<3;i++) { 
-		var cleartabid="b"+i; 
+		var cleartabid="b"+i;
 		document.getElementById(cleartabid).style.display="none"; //不显示对象
 	} 
 } 

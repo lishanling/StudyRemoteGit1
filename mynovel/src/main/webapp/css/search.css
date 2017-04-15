@@ -81,7 +81,6 @@ ul,li{
 #menu li a{
 	display:inline-block;
  	color:#FFF;
-	
     font-size:18px;
 	padding-left:10px;
 	padding-top:10px;
@@ -96,11 +95,12 @@ ul,li{
 
 	
 }
+
 #sortid h2{
-	width:100px;
+	width:150px;
 	height:40px;
 	position:relative;
-	left:-555px;
+	left:-505px;
 	top:10px;
 	color:#F90;
 	font-size:18px;
@@ -109,8 +109,11 @@ ul,li{
 
 }
 
-#sortid ul li{
-	width:300px;
+#sortdetail {
+	float:left;
+	}
+#sortdetail ul li{
+	width:400px;
 	height:140px;
 	float:left;
 	margin-bottom:20px;
@@ -121,13 +124,13 @@ ul,li{
 	color:#FC6;
 	
 }
-#sortid ul li dl dt{
+#sortdetail  ul li dl dt{
 	width:120px;
 	padding:2px;
 	float:left;
 	
 }
-#sortid ul li dl dd{
+#sortdetail  ul li dl dd{
 	width:145px;
 	font-size:14px;
 	margin-top:7px;
@@ -136,11 +139,12 @@ ul,li{
 	
 	
 }
-#sortid ul li dl dd span{
+#sortdetail h2{
+	margin-left:200px;
+}
+#sortdetail  ul li dl dd span{
 	
 	color:#666;
-	
-	
 }
 
 

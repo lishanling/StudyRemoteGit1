@@ -12,7 +12,7 @@
   drop table book;
   drop table users;
   drop table types;
-delete from book
+
 select * from book;
 select * from types;
 select * from admin;
@@ -20,7 +20,8 @@ select * from users;
 select * from collects;
 select * from menu;
 select * from discuss;
-select b.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from book b join collects c on c.usid='1003' and b.bid=c.bid 
+
+
  
 create SEQUENCE seq_aid START WITH 1001;--图书管理员编号序列 
 create SEQUENCE seq_usid START WITH 1001;--用户编号
@@ -39,7 +40,6 @@ create TABLE users(
        upwd varchar2(80) NOT NULL--密码
 );
 
-select * from users;
 
 --分类表
 create sequence seq_ssid start with 1001  increment by 1;
@@ -50,7 +50,7 @@ create table types(
        imgsrc varchar2(50)
 );
 
-
+update types set imgsrc = 'images/masterpiece.png' where ssid='S1001';
 update types set imgsrc = 'images/masterpiece.png' where ssid='S1002';
 update types set imgsrc = 'images/kehuan.png' where ssid='S1003';
 update types set imgsrc = 'images/love.png' where ssid='S1004';
@@ -74,17 +74,7 @@ create table book(
        ssid varchar2(20) REFERENCES types(ssid),--分类编号
        bpic  varchar2(400)    --书的封面  --作出修改字段类型
 );
-update book set bpic = 'images/book1.jpg' where bid='B1001';
-update book set bpic = 'images/book3.jpg' where bid='B1002';
-update book set bpic = 'images/book4.jpg' where bid='B1003';
-update book set bpic = 'images/book6.jpg' where bid='B1004';
-update book set bpic = 'images/book7.jpg' where bid='B1005';
-update book set bpic = 'images/book9.jpg' where bid='B1006';
-update book set bpic = 'images/book10.jpg' where bid='B1007';
-update book set bpic = 'images/book12.jpg' where bid='B1008';
-update book set bpic = 'images/book14.jpg' where bid='B1009';
-update book set bpic = 'images/book15.jpg' where bid='B1010';
-update book set bpic = 'images/book5.jpg' where bid='B1011';
+
 --收藏表
 create TABLE collects(
        usid Varchar2(20) REFERENCES users(usid),--用户编号
@@ -99,7 +89,7 @@ create TABLE menu(
        bid varchar2(20) REFERENCES book(bid),--书的编号
        bcontent varchar2(1000) --内容
 ); 
-select * from menu;
+
 --评论表
 create table discuss(
        usid varchar2(50) REFERENCES users(usid),--用户编号
@@ -108,11 +98,9 @@ create table discuss(
        dtime date--评论时间
 );
 
-select * from book;
 
 --插入数据
-select * from ADMIN;
-update admin set apenname='Molds', apwd='a' where aid='A1001';
+
 insert into admin values('A'||seq_aid.nextval,'Mold','m');
 insert into admin values('A'||seq_aid.nextval,'Jol','m');
 insert into admin values('A'||seq_aid.nextval,'唐七公子','m');
@@ -137,9 +125,8 @@ insert into  book values('B'||seq_bid.nextval,'小风暴','这是一部年轻人
 insert into  book values('B'||seq_bid.nextval,'我不喜欢这世界，只喜欢你','这是一对恋人的爱情回忆录，记载了两位恋人之间又温暖又萌爱的小故事。',to_date('2015-05-01','yyyy-MM-dd'),'北京风行盛世文化传播有限公司','http://www.duokan.com/reader?id=55323fbe4dc345809ca75a252b2df84e','乔一','S1008',null);
 insert into  book values('B'||seq_bid.nextval,'明朝那些事','历史是什么？历史就是那些残台断瓦、古庙荒冢吗？就是那些枯燥的史料吗？不是，绝对不是...',to_date('2011-01-01','yyyy-MM-dd'),'北京磨铁数盟信息技术有限公司','http://www.duokan.com/reader?id=eb30aac8a5da44bfb5384e590ab03040','当年明月','S1007',null);
 insert into  book values('B'||seq_bid.nextval,'乖，摸摸头','一本让你舍不得读完的短篇故事集，时而含泪微笑，时而又掩卷长思。...',to_date('2014-10-01','yyyy-MM-dd'),'中南博集天卷文化传媒有限公司','http://www.duokan.com/reader?id=d6118fadb24b4dab8803562d18e2d1bd','大冰','S1006',null);
-insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国加利福利亚，知名作家阿富汗人阿米尔接到一个电话，将他带回了童年的岁月...',to_date('2013-06-18','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','【美】卡勒德·胡赛尼','S1005',null);
-
-
+insert into  book values('B'||seq_bid.nextval,'没有人','2000年美国加利福利亚，知名作家阿富汗人阿米尔接到一个电话，将他带回了童年的岁月...',to_date('2017-04-10','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','none','S1005',null);
+insert into  book values('B'||seq_bid.nextval,'红楼梦','美国加利福利亚作家阿富汗人阿米尔的人童年的岁月...',to_date('2017-04-13','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','曹雪芹','S1005',null);
 
 insert into users values('U'||seq_usid.nextval,'修改','2138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'李类','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
@@ -154,9 +141,6 @@ insert into collects values('U1003','B1004',to_date('2016-03-19','yyyy-MM-dd'));
 insert into collects values('U1003','B1002',to_date('2015-10-01','yyyy-MM-dd'));
 insert into collects values('U1003','B1003',to_date('2015-07-19','yyyy-MM-dd'));
 insert into collects values('U1003','B1007',to_date('2016-04-9','yyyy-MM-dd'));
-insert into collects values('U1003','B1001',to_date('2016-04-9','yyyy-MM-dd'));
-insert into collects values('U1003','B1005',to_date('2016-04-9','yyyy-MM-dd'));
-insert into collects values('U1003','B1006',to_date('2016-04-9','yyyy-MM-dd'));
 
 
 insert into discuss values('U1003','B1004','很有意思',to_date('2016-12-9','yyyy-MM-dd'));
@@ -211,3 +195,16 @@ insert into menu values('第一章','我成为今天的我','B1011','2001年12�
 insert into menu values('第二章','小时候','B1011','小时候，爸爸的房子有条车道，边上种着白杨树，哈桑和我经常爬上去，用一块镜子的碎片把阳光反照进邻居家里，惹得他们很恼火。在那高高的枝桠上，我们相对而坐，没穿鞋子的脚丫晃来荡去，裤兜里满是桑椹干和胡桃。我们换着玩那破镜子，边吃桑椹干，边用它们扔对方，忽而吃吃逗乐，忽而开怀大笑。我依然能记得哈桑坐在树上的……');
 insert into menu values('第三章','父亲的传说','B1011','传说我父亲曾经在俾路支赤手空拳，和一只黑熊搏斗。如果这是个关于别人的故事，肯定有人会斥之为笑话奇谈。阿富汗人总喜欢将事物夸大，很不幸，这几乎成了这个民族的特性。如果有人吹嘘说他儿子是医生，很可能是那孩子曾经在高中的生物学测验中考了个及格的分数。但凡涉及爸爸的故事，从来没人怀疑它们的真实性。倘使有人质……');
 
+update book set bpic = 'images/book1.jpg' where bid='B1001';
+update book set bpic = 'images/book3.jpg' where bid='B1002';
+update book set bpic = 'images/book4.jpg' where bid='B1003';
+update book set bpic = 'images/book6.jpg' where bid='B1004';
+update book set bpic = 'images/book7.jpg' where bid='B1005';
+update book set bpic = 'images/book9.jpg' where bid='B1006';
+update book set bpic = 'images/book10.jpg' where bid='B1007';
+update book set bpic = 'images/book12.jpg' where bid='B1008';
+update book set bpic = 'images/book14.jpg' where bid='B1009';
+update book set bpic = 'images/book15.jpg' where bid='B1010';
+update book set bpic = 'images/book5.jpg' where bid='B1011';
+update book set bpic = 'images/bailu.jpg' where bid='B1012';
+		 
