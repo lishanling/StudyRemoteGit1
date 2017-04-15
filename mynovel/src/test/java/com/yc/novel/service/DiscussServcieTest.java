@@ -30,5 +30,17 @@ public class DiscussServcieTest {
 		System.out.println(ds);
 		assertNotNull(ds);
 	}
+	@Test
+	public void test3() {
+		Discuss discuss=new Discuss();
+		java.sql.Date currentDate = new java.sql.Date(System.currentTimeMillis());
+		discuss.setDtime(currentDate);
+		discuss.setBid("B1003");;
+		discuss.setUsid("U1002");
+		discuss.setDcontent("不好看");
+		boolean result=discussServcie.insertDiscuss(discuss);
+		System.out.println(result);
+		assertNotNull(result);
+	}
 
 }

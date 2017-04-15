@@ -1,9 +1,14 @@
 package com.yc.novel.web.handler;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.logging.log4j.LogManager;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -55,6 +60,15 @@ public class UserHandler {
 	public PaginationBean<Users> list(String rows, String page){
 
 		return usersService.listPartUsers(page, rows);//异步数据响应
+	}
+	//退出登录
+	@RequestMapping(value="/outlogin",method=RequestMethod.POST)
+	@ResponseBody
+	public boolean out(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
+		 HttpSession session = request.getSession(false);//防止创建Session  
+	     session.removeAttribute(ServletUtil.LOGIN_USER);  
+	    // response.sendRedirect("../back/outlogin.jsp");
+	     return true;
 	}
 
 	@RequestMapping("modify")

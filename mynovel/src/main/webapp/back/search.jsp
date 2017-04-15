@@ -24,9 +24,10 @@
 			</c:otherwise>
 			</c:choose>
 			</li><li class="red"><a href="back/register.jsp">注册</a></li>
-<li class="red"><a href="#">中心</a></li>
 <li class="red"><a href="#">帮助</a></li>
 <li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
+<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
+
 </ul>
 </div>
 
@@ -47,20 +48,16 @@
 				<li><a href="homepage.jsp">首页</a></li>
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/us.jsp">关于我们</a></li>
-				<li><a></a></li>
-				<li><a href="#">客户端</a></li>
+				<li><a>搜索</a></li>
+				<li><a href="back/client.jsp">客户端</a></li>
 			</ul>
 		</div>
-<div id="sortid">
-<h2></h2>
-<br/><br>
+
 
 <div id="sortdetail">
-<h3 style="font-size:18px;">你查询的结果如下：</h3><br/>
+<h3 style="font-size:18px;color:#CDCDCD;margin-right:400px">你查询的结果如下：</h3><br/>
 		<ul>
-			
  		</ul>
- 			</div>
 		</div>
 	</div>
 

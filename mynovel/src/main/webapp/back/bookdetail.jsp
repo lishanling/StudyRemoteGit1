@@ -24,6 +24,8 @@
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
+				<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
+			
 			</ul>
 		</div>
 		<div id="search">
@@ -136,14 +138,7 @@
 											<div class="brief brief0"><p></p></div></li> -->
  										</ol>
 									</article>
-									<div class="more j-close" style="visibility: hidden;">
-										<a class="u-more1 j-more" href="javascript:void(0);"
-											hidefocus="hidefocus"> 显示全部
-											<div class="icn-arrow icn-arrow-bottom">
-												<span class="arrow0"></span> <span class="arrow1"></span>
-											</div>
-										</a>
-									</div>
+									
 
 								</section>
 
@@ -174,7 +169,7 @@
 								<h3 class="ttl">
 									<a>最新评论</a>
 								</h3>
-								 <span id="first">${loginUser.usid}</span>
+								 <span id="first" style="display:none">${loginUser.usid}</span>
 								<div class="cnt">
   									<div class="u-commlist">
  										<div id="commemtby">
@@ -200,7 +195,13 @@
 									
 							</section>
 						</div>
+					
+					<div>
+					<h3>添加评论</h3>
+					<input id="discuss" placeholder="20字以内" type="text" style="font-size:16px; width:440px; heitht:auto" />
+					<br/><button style="color:#ED6C00;width:70px" onclick="addDiscuss()"> 发 表 </button>
 					</div>
+					</div><br/><br/><br/><br/>
 				</div>
 			</div>
 		</div>

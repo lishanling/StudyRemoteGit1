@@ -26,6 +26,7 @@
  				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
+				<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
 			</ul>
 		</div>
 		
@@ -44,7 +45,7 @@
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/us.jsp">关于我们</a></li>
 				<li><a href="back/search.jsp">去搜索</a></li>
-				<li><a href="#">客户端</a></li>
+				<li><a href="back/client.jsp">客户端</a></li>
 			</ul>
 		</div>
 		<div id="left">
@@ -60,9 +61,12 @@
 			<h5>推荐书籍</h5>
 			<ul>
 			</ul>
+			<span id="dd" style="display:none">${loginUser.uname}</span>
 		</div>
 	</div>
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	
 	<script type="text/javascript" src="js/homepage.js"></script>
 </body>
 </html>
