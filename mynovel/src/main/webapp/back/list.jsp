@@ -69,12 +69,13 @@
 
 			<div id="right">
 				<ul>
-					
+
 					<c:forEach items="${book}" var="item">
 						<li><a>
 								<dl>
 									<dt>
-										<a href="back/bookdetail.jsp?bid=${item.bid}"><img  src="${item.bpic}"></a>
+										<a href="back/bookdetail.jsp?bid=${item.bid}"><img
+											src="${item.bpic}"></a>
 									</dt>
 									<dd>
 										书名:<span class="bookName">${item.bname}</span>
@@ -107,8 +108,4 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
-		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
-	
->>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
