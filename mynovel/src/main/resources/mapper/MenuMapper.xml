@@ -6,4 +6,39 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findMenu" resultType="Menu" parameterType="String">
 	select * from menu where bid=#{bid}
 	</select>
+	
+
+	<resultMap type="PaginationBean" id="PaginationBeanMap">
+		<collection property="rows" column="{pageSize=pageSize,currPage=currPage}" ofType="Menu" select="getMenu"/>
+	</resultMap>
+	
+	<select id="findPartMenu" parameterType="PaginationBean" resultMap="PaginationBeanMap">
+		select count(1) total,ceil(count(1)/${pageSize}) totalPage,${pageSize} pageSize,${currPage} currPage from menu
+			where Exists(select bid,mid from menu group by bid,mid) order by bid,mid DESC
+	</select>
+	
+	<select id="getMenu" resultType="Menu">
+	select * from (select n.*,rownum rn from 
+		(select * from menu order by 1) n where ${pageSize}*${currPage}>=rownum)
+		where rn>${pageSize}*(${currPage}-1) and Exists(select bid,mid from menu group by bid,mid) order by bid,mid DESC
+	</select>
+
+	<update id="modifytMenu" parameterType="Menu">
+		update menu
+		<set>
+			<if test="mname!=null">
+				mname=#{mname},
+			</if>
+			<if test="bcontent!=null">
+				bcontent=#{bcontent}
+			</if>			
+		</set>
+		where mid=#{mid} and bid=#{bid}
+	</update>
+	<delete id="deleteMenu" parameterType="Menu">
+		delete from menu where mid=#{mid} and bid=#{bid}
+	</delete>
+	<insert id="addMenu" parameterType="Menu">
+		insert into menu values(#{mid},#{mname},#{bid},#{bcontent})
+	</insert>
 </mapper>

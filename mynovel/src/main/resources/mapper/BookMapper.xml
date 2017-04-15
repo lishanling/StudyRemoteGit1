@@ -39,7 +39,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<!-- <if test="ssid!=null">ssid=#{ssid},</if> -->
 			<if test="bpic!=null">bpic=#{bpic}</if>
 		</set>
-		where bid=#{bid}
+		where bid=#{bid} 
 	</update>
 
 	<!-- <insert id="insertBook" parameterType="Book"> <selectKey order="BEFORE" 

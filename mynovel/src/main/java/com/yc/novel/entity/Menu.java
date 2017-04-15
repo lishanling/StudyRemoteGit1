@@ -33,7 +33,7 @@ public class Menu {
 	}
 	@Override
 	public String toString() {
-		return "Menu [mid=" + mid + ", mname=" + mname + ", bid=" + bid + ", bcontent=" + bcontent + "]";
+		return "\nMenu [mid=" + mid + ", mname=" + mname + ", bid=" + bid + ", bcontent=" + bcontent + "]";
 	}
 	
 	
