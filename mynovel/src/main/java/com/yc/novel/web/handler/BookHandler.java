@@ -1,7 +1,6 @@
 package com.yc.novel.web.handler;
 
 import java.io.UnsupportedEncodingException;
-
 import java.net.URLDecoder;
 import java.util.List;
 
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.yc.novel.entity.Book;
 import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.service.BookService;
@@ -25,28 +25,27 @@ import com.yc.novel.util.ServletUtil;
 @Controller("bookHandler")
 @RequestMapping("book")
 public class BookHandler {
-  
-	@Autowired 	
+
+	@Autowired
 	private BookService bookService;
 
 	@ResponseBody
 	@RequestMapping(value="{sortDetail}" , method=RequestMethod.GET)
  	public List<Book> getSortsDetails(String bookSortName){
 		return bookService.getBooksByTypes(bookSortName);
-   	} 
-	
-	@ResponseBody 
+   	}
+
+	@ResponseBody
 	@RequestMapping(value="{bookinfo}" , method=RequestMethod.POST)
  	public Book getBookDetails(String bookId,HttpSession session){
 		Book b=bookService.getBookById(bookId);
-		
+
 		return b;
-  	}  
+  	}
 	@ResponseBody
 	@RequestMapping(value="/sorts" , method=RequestMethod.POST)
  	public List<Book> getDetails(String bookSortName) throws UnsupportedEncodingException{
 		bookSortName= URLDecoder.decode(bookSortName, "utf-8");
-		System.out.println(bookSortName);
 		return bookService.getBooksByTypes(bookSortName);
   	} 
 
@@ -62,7 +61,7 @@ public class BookHandler {
 		public List<Book> bookInfo(){
 			return bookService.findAllbook();
 	}
-	
+
 	@RequestMapping("modify")
 	@ResponseBody
 	public boolean modify(@RequestParam("picData") MultipartFile picData,Book book){
@@ -99,7 +98,7 @@ public class BookHandler {
 		//String sname=request.getParameter("sname");
 		String sname="爱情";
 		return bookService.insertBooks(book, sname);
-		
+
 	}
 	@RequestMapping("delete")
 	@ResponseBody
@@ -114,7 +113,5 @@ public class BookHandler {
 		System.out.println(contend);
 		return bookService.selectBook(contend);
 	}
-	
-	
 }
 

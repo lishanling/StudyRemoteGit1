@@ -101,5 +101,8 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
 		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	
+>>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
