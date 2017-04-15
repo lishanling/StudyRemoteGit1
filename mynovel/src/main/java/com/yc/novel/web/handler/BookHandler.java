@@ -46,7 +46,8 @@ public class BookHandler {
 	@RequestMapping(value="/sorts" , method=RequestMethod.POST)
  	public List<Book> getDetails(String bookSortName) throws UnsupportedEncodingException{
 		bookSortName= URLDecoder.decode(bookSortName, "utf-8");
-		 return bookService.getBooksByTypes(bookSortName);
+		System.out.println(bookSortName);
+		return bookService.getBooksByTypes(bookSortName);
   	} 
 
 	//分页显示图书信息
@@ -105,11 +106,15 @@ public class BookHandler {
 	public boolean del(String bid){
 		return bookService.delbook(bid);
 	}
-	
-	@RequestMapping(value="/{name}",method=RequestMethod.GET)
+	//搜索
 	@ResponseBody
-	private List<Book> selectBook(@PathVariable("name")String name){
-		return bookService.selectBook(name);
+	@RequestMapping(value="/search" , method=RequestMethod.POST)
+	public List<Book> search(String contend) throws UnsupportedEncodingException{
+		contend= URLDecoder.decode(contend, "utf-8");
+		System.out.println(contend);
+		return bookService.selectBook(contend);
 	}
+	
+	
 }
 

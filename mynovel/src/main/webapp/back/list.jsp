@@ -36,13 +36,6 @@
 				<li>
 				<li class="s">
 
-					<form method="post">
-						<input
-							style="width: 400px; height: 40px; border: solid 3px #F98235;"
-							type="text" placeholder="请输入小说名、作者"> <input type="submit"
-							style="width: 50px; height: 40px; background-color: #F98235; border: solid 3px #F98235; color: #fff; font-family: 微软雅黑; border-radius: 15px;"
-							value="搜索" />
-					</form>
 
 				</li>
 			</ul>
@@ -53,6 +46,7 @@
 				<li><a href="homepage.jsp">首页</a></li>
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/us.jsp">关于我们</a></li>
+				<li><a href="back/search.jsp">去搜索</a></li>
 				<li><a href="#">客户端</a></li>
 			</ul>
 		</div>

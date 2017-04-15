@@ -6,7 +6,7 @@
 <base href="${deployName }">
 <meta charset="utf-8">
 <title>分类</title>
-<link type="text/css" rel="stylesheet"  href="css/sortdetail.css" />
+<link type="text/css" rel="stylesheet"  href="css/search.css" />
 </head>
 
 <body>
@@ -36,10 +36,9 @@
 <li class="s">
 
 <form method="post">
-<input style="width:400px; height:40px; border:solid 3px #F98235;" type="text" placeholder="请输入小说名、作者">
-<input type="submit" style="width:50px; height:40px; background-color:#F98235; border:solid 3px #F98235;color:#fff; font-family:微软雅黑;border-radius: 15px;　" value="搜索"/>
+<input style="width:400px; height:40px; border:solid 3px #F98235;" type="text" placeholder="请输入小说名、作者" id="contends">
+<input  type="button"  onclick="searchall()" style="width:50px; height:40px; background-color:#F98235; border:solid 3px #F98235;color:#fff; font-family:微软雅黑;border-radius: 15px;　" value="搜索" />
 </form>
-
 </li>
 </ul>
 </div>
@@ -48,7 +47,7 @@
 				<li><a href="homepage.jsp">首页</a></li>
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/us.jsp">关于我们</a></li>
-				<li><a href="back/search.jsp">去搜索</a></li>
+				<li><a></a></li>
 				<li><a href="#">客户端</a></li>
 			</ul>
 		</div>
@@ -57,6 +56,7 @@
 <br/><br>
 
 <div id="sortdetail">
+<h3 style="font-size:18px;">你查询的结果如下：</h3><br/>
 		<ul>
 			
  		</ul>
@@ -76,7 +76,8 @@
        
     </div>
 
+
+    <script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="js/search.js"></script>
 </body>
-	<script type="text/javascript" src="easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="js/sortdetail.js"></script>
 </html>

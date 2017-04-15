@@ -97,10 +97,10 @@ ul,li{
 }
 
 #sortid h2{
-	width:100px;
+	width:150px;
 	height:40px;
 	position:relative;
-	left:-555px;
+	left:-505px;
 	top:10px;
 	color:#F90;
 	font-size:18px;
@@ -139,10 +139,12 @@ ul,li{
 	
 	
 }
+#sortdetail h2{
+	margin-left:200px;
+}
 #sortdetail  ul li dl dd span{
 	
 	color:#666;
-	
 }
 
 
