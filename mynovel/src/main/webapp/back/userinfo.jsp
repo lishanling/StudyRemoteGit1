@@ -26,6 +26,8 @@
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/manage.jsp">后台管理</a></li>
+				<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
+			
 			</ul>
 		</div>
 		<div id="search">

@@ -52,7 +52,6 @@ $('#adminList').datagrid({
 	pageList : [ 5, 10, 15, 20, 25, 30 ],
 	columns : [ [ {field : 'aid',title : '编号',width : 50,align : 'center'
 	}, {field : 'apenname',title : '姓名',width : 100,align : 'center'
-	}, {field : 'apwd',title : '密码',width : 50,align : 'center',
 	}, {field : 'opr',title : '操作',width : 100,align : 'center',
 		formatter: function(value,row,index){
 			var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;&nbsp;' + 

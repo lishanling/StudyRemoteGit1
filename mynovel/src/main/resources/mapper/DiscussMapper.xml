@@ -12,5 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<select id="findDiscuss" resultType="Discuss">
 			select * from discuss
 		</select>
-	
+	<insert id="addDiscuss" parameterType="Discuss">
+	insert into discuss values(#{usid},#{bid},#{dcontent},#{dtime})
+	</insert>
 </mapper>

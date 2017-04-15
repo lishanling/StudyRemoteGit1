@@ -16,14 +16,18 @@ function addCollects(){
 	var bid=(href.split('?')[1]).split('=')[1];//获取bid
 	var usid=$("#first").html();
 	var datapa =bid+"&usid="+usid;
+	if(usid==null||usid==""){
+		alert("请先登录！");
+	}else{
+		$.post("collect/get?bid="+datapa,function(data){
+			if(data){
+				document.getElementById("addsuccess").style.display = "none";
+				document.getElementById("noaddsuccess").style.display = "block";
+			
+			}
+		},"json");
+	}
 	
-	$.post("collect/get?bid="+datapa,function(data){
-		if(data){
-			document.getElementById("addsuccess").style.display = "none";
-			document.getElementById("noaddsuccess").style.display = "block";
-		
-		}
-	},"json");
 }
 		
 loadInfo()
@@ -50,7 +54,7 @@ function loadInfo(){
 	  						'<div class="u-comm-user">'+
 	  						'<div class="u-stargrade">'+
 	  						'<div class="icon grade6"></div></div>'+
-	  						'<span class="autor j-xm-1197146305">'+data[i].usid+'</span> <span class="u-sep">-</span> <span class="times">'+data[i].dtime+'</span>'+
+	  						'<span class="autor j-xm-1197146305">'+(i+1)+'楼网友</span> <span class="u-sep">-</span> <span class="times">'+data[i].dtime+'</span>'+
 	  						'</div></div></li>');
 	  					}														
 		},"json");	 										 	  	
@@ -84,6 +88,36 @@ function loadInfo(){
  		},"json");
 		
  	}
+function addDiscuss(){
+	var dcontent=document.getElementById("discuss").value;
+	dcontent=encodeURI(encodeURI(dcontent));
+	var href=window.location.href;
+	var bid=(href.split('?')[1]).split('=')[1];//获取bid
+	var usid=$("#first").html();
+	var dataAll=bid+"&usid="+usid+"&dcontent="+dcontent;
+	if(usid.trim()==null||usid==''){
+		alert("尚未登录，不可发表评论！");
+	}else{
+		$.post("discuss/add?bid="+dataAll,function(data){
+			if(data){
+				alert("发表成功");
+				$('#discuss').val("");  
+				history.go(0); 			}
+		});
+	}
 	
 	
+}
+
+function outLogin(){
+	var uname=$("#dd").html();
+	if(uname==null||uname==undefined||uname==''){
+		alert("未登录，无需退出");
+	}else{
+		$.post("user/outlogin",function(data){
+			alert("退出成功！");
+			window.location.replace("back/outlogin.jsp"); 
+		});
+	}
+}
 	

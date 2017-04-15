@@ -6,7 +6,7 @@
 <base href="${deployName }">
 <meta charset="utf-8">
 <title>分类</title>
-<link type="text/css" rel="stylesheet"  href="css/sortdetail.css" />
+<link type="text/css" rel="stylesheet"  href="css/search.css" />
 </head>
 
 <body>
@@ -27,8 +27,6 @@
 <li class="red"><a href="#">中心</a></li>
 <li class="red"><a href="#">帮助</a></li>
 <li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
-<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
-
 </ul>
 </div>
 
@@ -36,11 +34,6 @@
 <ul>
 <li><img src="images/logo.jpg"><li>
 <li class="s">
-
-<form method="post">
-<input style="width:400px; height:40px; border:solid 3px #F98235;" type="text" placeholder="请输入小说名、作者">
-<input type="submit" style="width:50px; height:40px; background-color:#F98235; border:solid 3px #F98235;color:#fff; font-family:微软雅黑;border-radius: 15px;　" value="搜索"/>
-</form>
 
 </li>
 </ul>
@@ -54,17 +47,9 @@
 				<li><a href="back/client.jsp">客户端</a></li>
 			</ul>
 		</div>
-<div id="sortid">
-<h2></h2>
-<br/><br>
-
-<div id="sortdetail">
-		<ul>
-			
- 		</ul>
- 			</div>
-		</div>
-	</div>
+<div id="sortid" >
+<img align="center" src="images/us.png" alt="加入我们！" width="300px" height="500px">
+</div>
 
  	<div id="footer">    	
         <div id="aboutUs">
@@ -79,6 +64,4 @@
     </div>
 
 </body>
-	<script type="text/javascript" src="easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="js/sortdetail.js"></script>
 </html>

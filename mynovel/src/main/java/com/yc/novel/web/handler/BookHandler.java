@@ -81,7 +81,7 @@ public class BookHandler {
 
 	@RequestMapping("add")
 	@ResponseBody
-	public boolean add(@RequestParam("picData") MultipartFile picData,Book book){
+	public boolean add(@RequestParam("picData") MultipartFile picData,Book book,String sname){
 
 		String bpic=null;
 		if(picData!=null&&!picData.isEmpty()){//判断是否有文件上传
@@ -94,9 +94,10 @@ public class BookHandler {
 			}
 		}
 		book.setBpic(bpic);
-		HttpServletRequest request = null;
-		//String sname=request.getParameter("sname");
-		String sname="爱情";
+	//	HttpServletRequest request = null;
+		/*String sname=request.getParameter("sname");
+		//String sname="爱情";
+*/		System.out.println(sname);
 		return bookService.insertBooks(book, sname);
 
 	}

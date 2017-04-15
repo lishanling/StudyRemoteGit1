@@ -17,4 +17,5 @@ public class EncryptAspect {
 		LogManager.getLogger().debug("对密码加密前==》"+user);
 		user.setUpwd(Encrypt.md5AndSha(user.getUpwd()));
  	}
+	
 }
