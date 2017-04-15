@@ -75,18 +75,11 @@ public class Book implements Serializable{
 	public Book() {
 		
 	}
-	public Book(String bid, String bname, String bdesc, Date bdate, String bcopyright, String burl, String bauthor,
-			String bpic,Types types) {
+	public Book( String bname,String bauthor) {
 		
-		this.bid = bid;
 		this.bname = bname;
-		this.bdesc = bdesc;
-		this.bdate = bdate;
-		this.bcopyright = bcopyright;
-		this.burl = burl;
 		this.bauthor = bauthor;
-		this.bpic = bpic;
-		this.types=types;
+	
 	}
 	@Override
 	public String toString() {

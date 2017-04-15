@@ -60,11 +60,6 @@ $('#adminList').datagrid({
 			'<a class="delBtn" href="javascript:void(0)" onclick="delDetail('+index+')">删除</a>'+
 			'<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
 			'$(".modifyBtn").linkbutton({iconCls: "icon-edit"});$(".delBtn").linkbutton({iconCls:"icon-cancel"});</script>'; 
-
-			/*'<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>&nbsp;&nbsp;' +
-				'<a class="delBtn" href="javascript:void(0)" onclick="delDetail('+index+')">删除</a>'+
-				'<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
-				'$(".modifyBtn").linkbutton({iconCls: "icon-edit"});$(".delBtn").linkbutton({iconCls:"icon-cancel"});</script>'; */
 			return oprStr;
 		}
 	} ] ]
@@ -96,9 +91,6 @@ $("#modifyForm").form({
 			$("#modifyDiv").dialog("close"); //关闭修改框
 			return ;
 		}
-
-
-
 		if(data.trim() == "true"){
 			$("#modifyDiv").dialog("close"); //关闭修改框
 			$("#adminList").datagrid("reload"); //刷新修改数据
@@ -156,32 +148,7 @@ function delDetail(index){
 
 	}, "json");
 }
-/*function delDetail(index){
-	var rowindex = $("#adminList").datagrid("getRows")[index];
-	$("#adminList").datagrid("deleteRow",rowindex);
-}*/
-function delDetail(index){
-	var row = $("#adminList").datagrid("getRows")[index];
-	$("#adminList").datagrid("deleteRow",index);
-	$.post("admin/delete?aid="+row.aid, function(data) {
-		$.messager.alert('管理员删除','删除成功！');
-	}, "json");
-}
 
-/*
-function add(){
-	$.post("book/add?ssid="+id,function(data){
-		//加载所有的主题数据
-		$.post("types/sname",function(datat){
-			$("#assid").empty();
-			for(var i=0;i<datat.length;i++){
-				if(data.types.sname==datat[i].sname){
-					$("#assid").append("<option value='"+datat[i].ssid+"'selected>"+datat[i].sname+"</option>");
-				}else{
-					$("#assid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
-				}
-			}
-		});
-	},"json");
-}
- */
+
+
+

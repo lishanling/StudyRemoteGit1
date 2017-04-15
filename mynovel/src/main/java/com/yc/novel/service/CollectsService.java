@@ -20,8 +20,10 @@ public interface CollectsService {
 
 	List<Book> AllList();
 
-	List<Collects> findCollects(String id);
+	List<Book> findCollects(String usid);
 
 	List<Book> findBook();
+
+	boolean delCollect(String bid);
 
 }

@@ -53,7 +53,7 @@ public class AdminHandler {
 	@RequestMapping("delete")
 	@ResponseBody
 	public boolean delAdmin(String aid){
-		System.out.println("dsf ");
+		//System.out.println("dsf ");
 		return adminService.deleteAdmin(aid);
 	}
 }
