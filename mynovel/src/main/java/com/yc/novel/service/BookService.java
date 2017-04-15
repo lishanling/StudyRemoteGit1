@@ -16,10 +16,7 @@ public interface BookService {
 
 	List<Book> findAllbook();
 
-	
-	List<Book> selectBook(String name);
-	
-
-
 	Book getBookById(String bookId);
+
+	List<Book> selectBook(String name);
 }

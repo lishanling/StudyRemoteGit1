@@ -34,10 +34,17 @@ public class CollectsServiceTest {
 	}
 	@Test
 	public void testFindCollects() {
-		List<Collects> result=collectsService.findCollects("U1003");
+		List<Book> result=collectsService.findCollects("U1003");
 		System.out.println(result);
-		assertEquals(result,true);
 	}
+	
+	@Test
+	public void testDelCollects() {
+		boolean result=collectsService.delCollect("B1001");
+		System.out.println(result);
+		assertNotNull(result);
+	}
+
 
 
 	@Test

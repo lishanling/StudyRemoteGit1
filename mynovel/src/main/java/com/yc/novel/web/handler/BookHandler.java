@@ -3,19 +3,15 @@ package com.yc.novel.web.handler;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.yc.novel.entity.Book;
 import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.service.BookService;
@@ -79,6 +75,8 @@ public class BookHandler {
 		return bookService.updateBooks(book);
 	}
 
+	
+
 	@RequestMapping("add")
 	@ResponseBody
 	public boolean add(@RequestParam("picData") MultipartFile picData,Book book,String sname){
@@ -106,6 +104,7 @@ public class BookHandler {
 	public boolean del(String bid){
 		return bookService.delbook(bid);
 	}
+
 	//搜索
 	@ResponseBody
 	@RequestMapping(value="/search" , method=RequestMethod.POST)

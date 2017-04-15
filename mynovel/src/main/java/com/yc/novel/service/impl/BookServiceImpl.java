@@ -66,14 +66,14 @@ public class BookServiceImpl implements BookService {
 
 	
 
-	@Override
-	public List<Book> selectBook(String name) {
-		
-		return bookMapper.selectBook(name);
-	}
 
 	public Book getBookById(String bookId) {
 		return bookMapper.findBookById(bookId);
+	}
+
+	@Override
+	public List<Book> selectBook(String name) {
+		return bookMapper.selectBook(name);
 	}
 
 }

@@ -1,3 +1,19 @@
+
+loadBook();
+function loadBook(){
+	var s=$("#ddd").html();
+	$.post("collect/collectbookinfo?usid="+s, function(data) {
+		for (var i = 0 ; i <data.length; i++) {
+			$(".u-colslist ul").append('<li class="u-bookitm1 u-bookitm1-1"><a class="book" href="back/bookdetail.jsp?bid='+data[i].bid+'"><img style="display: block;" src="'+data[i].bpic+'"/></a>'+
+					'<div class="info"><div class="wrap"><a class="title" href="back/bookdetail.jsp?bid='+data[i].bid+'">'+data[i].bname+'</a>'+
+					'<p class="u-author"><span>'+data[i].bauthor+'</span></p></div>'+
+					'<p  style="display: none"><span id="copybid">'+data[i].bid+'</span></p>'+
+					'<div class="act"><a class="j-delete delete"  href="javascript:void(0);" onclick="delCollect()">取消收藏</a>'+
+					'<span class="u-sep">|</span><a href="back/bookdetail.jsp?bid='+data[i].bid+'">去阅读</a></div></div>');
+		}
+	}, "json");
+}
+
 function tab(n){ 
 	var tabnav="a"+n; 
 	var tabid="b"+n; 
@@ -11,36 +27,17 @@ function cleardisplay(){
 		document.getElementById(cleartabid).style.display="none"; //不显示对象
 	} 
 } 
-/*loadBook();
-function loadBook(){
-	$.get("collects/bookinfo", function(data) {
-		for (var i = 0 ; i <4; i++) {	 			 
-			$('#bookinfo ul').append("<span>jj</span>");
-		}
+
+function delCollect(){
+	var bid=$("#copybid").html();
+	$.post("collect/delcollect?bid="+bid, function(data) {
+		alert("ssss");
+		$.messager.alert('删除收藏','删除成功！');
+
 	}, "json");
-
-}*/
-
-/*loadCollectInfo('${loginUser.uname}');
-
-//加载网站信息内容
-
-function loadCollectInfo(id){
-	$.get("collect/"+id, function(data){
-		
-		var favStr = "";
-		for (var i = 0; i < data.length; i++) {
-			favStr+='<li class="u-bookitm1 u-bookitm1-1"><a href="back/bookdetail.jsp?bid="'+data[i].bid+'"></a>';
-			favStr+='<img style="display: block;" src="'+data[i].bpic+'"/>';
-			favStr+='<div class="info"><div class="wrap"><a class="title" hidefocus="hidefocus" href="back/bookdetail.jsp?bid="'+data[i].bid+'">'+data[i].bname+'</a>';
-			favStr+='<p class="u-author"><span>'+data[i].bauthor+'</span></p></div>';
-			favStr+='<div class="act"><a class="j-delete delete" hidefocus="hidefocus href="javascript:void(0);">取消收藏</a> ';
-			favStr+='<span class="u-sep">|</span><a hidefocus="hidefocus" href="back/bookdetail.jsp?bid="'+data[i].bid+'">去阅读</a></div></div>';
-		}
-		$("#usercollect ul").html(favStr);
-	}, "json");
+	$("#cls ul").empty();
+	loadBook();
 }
-*/
 function outLogin(){
 	var uname=$("#dd").html();
 	if(uname==null||uname==undefined||uname==''){
@@ -53,4 +50,8 @@ function outLogin(){
 	}
 }
 	
+
+
+
+
 
