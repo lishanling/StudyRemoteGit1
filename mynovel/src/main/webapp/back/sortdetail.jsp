@@ -24,7 +24,6 @@
 			</c:otherwise>
 			</c:choose>
 			</li><li class="red"><a href="back/register.jsp">注册</a></li>
-<li class="red"><a href="#">中心</a></li>
 <li class="red"><a href="#">帮助</a></li>
 <li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 <li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
@@ -37,10 +36,7 @@
 <li><img src="images/logo.jpg"><li>
 <li class="s">
 
-<form method="post">
-<input style="width:400px; height:40px; border:solid 3px #F98235;" type="text" placeholder="请输入小说名、作者">
-<input type="submit" style="width:50px; height:40px; background-color:#F98235; border:solid 3px #F98235;color:#fff; font-family:微软雅黑;border-radius: 15px;　" value="搜索"/>
-</form>
+
 
 </li>
 </ul>
@@ -66,18 +62,19 @@
 		</div>
 	</div>
 
- 	<div id="footer">    	
-        <div id="aboutUs">
-              <ul>
-            	<li class="qwer"><a href="#">关于我们</a></li>
-            	<li class="qwer"><a href="#">联系我们</a></li>
-            	<li class="qwer"><a href="#">商务合作</a></li>
-             </ul>
-         </div>
-        
-       
-    </div>
-
+ 	<div id="footer">
+		<div id="aboutUs">
+			<span id="ddd" style="display: none">${loginUser.usid}</span>
+			<ul>
+				<li class="qwer"><a href="#">关于我们</a></li>
+				<li class="qwer"><a href="#">联系我们</a></li>
+				<li class="qwer"><a href="#">商务合作</a></li>
+			</ul>
+		</div>
+		<div id="allRight">
+			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
+		</div>
+	</div>
 </body>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="js/sortdetail.js"></script>

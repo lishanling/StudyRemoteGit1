@@ -52,9 +52,7 @@
 			<!-- 当前位置 -->
 
 			<div class="u-nav-crumbs">
-				<!-- <span>当前位置：</span> <a href="homepage.jsp" hidefocus="hidefocus">首页</a> <span
-					class="sep"></span> <a   href=""
-					hidefocus="hidefocus"> 文学</a> <span class="sep"></span>  -->
+				
 			</div>
 
 			<!-- 正文部分 wrap -->
@@ -91,6 +89,8 @@
 												<%-- <a id="readdetail" class="u-btn2 j-free"
  													href="${bUrl}"
  												hidefocus="hidefocus" target="_blank">阅读</a>  --%>
+												<p id="ss"></p>
+
 												<a class="u-btn j-get" href="javascript:void(0);"
 													hidefocus="hidefocus" onclick="addCollects()"
 													id="addsuccess">加入书架</a> <span class="added"
@@ -140,22 +140,7 @@
 								</section>
 
 								<section class="cnt j-cnt" style="display: none;" id="b3">
-									<article class="data">
-										<!-- <ul>
-											<li>作者： <span class="u-author"> <span
-													itemprop="author">鲁迅</span>
-											</span>
-											</li>
-											<li>字数： <span class="size">160.5万字</span>
-											</li>
-											<li>大小： <span class="size">7.70MB</span>
-											</li>
-											<li>出版： <span itemprop="datePublished">2012-08-01</span>
-											</li>
-											<li class="updated f-cb"><label>更新：</label> <span
-												class="date" itemprop="dateModified">2016-04-25</span></li>
-										</ul> -->
-									</article>
+									<article class="data"></article>
 								</section>
 
 							</div>
@@ -171,6 +156,7 @@
 									<div class="u-commlist">
 										<div id="commemtby">
 											<ul class="j-commentlist">
+<<<<<<< HEAD
 												<!-- <li class="itm">
 \													<div class="article">
  														<p>看不懂《起死》的内涵</p> 														
@@ -186,6 +172,9 @@
 														
 													</div>
 												</li>	 -->
+=======
+
+>>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 											</ul>
 										</div>
 									</div>
@@ -208,7 +197,20 @@
 			</div>
 		</div>
 	</div>
-
+	<div id="footer">
+		<div id="aboutUs">
+			<span id="ddd" style="display: none">${loginUser.usid}</span>
+			<ul>
+				<li class="qwer"><a href="#">关于我们</a></li>
+				<li class="qwer"><a href="#">联系我们</a></li>
+				<li class="qwer"><a href="#">商务合作</a></li>
+			</ul>
+		</div>
+		<div id="allRight">
+			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
+		</div>
+	</div>
+	
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>

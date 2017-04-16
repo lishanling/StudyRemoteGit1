@@ -14,7 +14,7 @@ body{
 	font-style:normal;
 }
 #box{
-	height:1000px;
+	height:800px;
 	font-style:normal;}
 ul,li{
 	list-style:none;
@@ -470,7 +470,8 @@ span{
 	margin-top:20px;
   	}	
 #aboutUs{
-	width:100%;
+	text-align:center;
+	width:280px;
 	height:50px;
    	}
 		
@@ -495,6 +496,7 @@ span{
   	}
 		
 #allRight{
+	text-align:center;
 	width:100%;
 	height:50px;
 
