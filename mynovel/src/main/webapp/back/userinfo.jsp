@@ -26,16 +26,15 @@
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/manage.jsp">后台管理</a></li>
-				<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
-			
+				<li class="red"><a href="javascript:void(0)"
+					onclick="outLogin()">退出登录</a></li>
+
 			</ul>
 		</div>
 		<div id="search">
 			<ul>
 				<li><img src="images/logo.jpg"></li>
-				<li class="s">
-					
-				</li>
+				<li class="s"></li>
 			</ul>
 		</div>
 		<div id="menu">
@@ -68,31 +67,24 @@
 						</ul>
 					</div>
 				</div>
-				 <div id='b2' style='display: none'>
+				<div id='b2' style='display: none'>
 					<br />
 
 					<div class="infomation">
 						<form action="#" method="post">
-
-							<span style="color: red"> 用户名：</span><input id="uname"
-								style="border: 1px;" value="${loginUser.uname}" /><br /> <br />
-							<span style="color: red"> 密&nbsp;&nbsp; 码：</span> <input
-								id="upwd" value="*" style="border: 1px;" /> <br /> <span
-								style="color: red">邮 &nbsp;箱：</span><input id="uemail"
-								style="border: 1px;" value="${loginUser.uemail}" /><br /> <br />
-							<a class="updateBtn" href="javascript:void(0)"
-								onclick="updateMyself()">修改提交</a>
+				<span style="color: black"> 用户名：${loginUser.uname}</span>
+						<br/><br/>
+							<span style="color: black">邮 &nbsp;箱：${loginUser.uemail}</span> 
+						<br /> <br />
+							<span style="color: black">身 &nbsp;份：锦书阅读会员</span>
 						</form>
 					</div>
 
 				</div>
 
-				</div> 
 			</div>
 		</div>
-
-		
-
+	</div>
 
 	<div id="footer">
 		<div id="aboutUs">
@@ -109,7 +101,7 @@
 	</div>
 
 
-		<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 

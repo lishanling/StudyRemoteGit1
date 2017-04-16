@@ -31,7 +31,6 @@ function cleardisplay(){
 function delCollect(){
 	var bid=$("#copybid").html();
 	$.post("collect/delcollect?bid="+bid, function(data) {
-		alert("ssss");
 		$.messager.alert('删除收藏','删除成功！');
 
 	}, "json");
