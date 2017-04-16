@@ -77,6 +77,7 @@
 							<span style="color: black">邮 &nbsp;箱：${loginUser.uemail}</span> 
 						<br /> <br />
 							<span style="color: black">身 &nbsp;份：锦书阅读会员</span>
+
 						</form>
 					</div>
 
@@ -85,6 +86,12 @@
 			</div>
 		</div>
 	</div>
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 
 	<div id="footer">
 		<div id="aboutUs">

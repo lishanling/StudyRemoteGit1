@@ -99,7 +99,7 @@ ul,li{
 	margin-left:120px; }
 #left{
 	width:200px;
-	height:5000px;
+	height:2500px;
 	float:left;
 	margin-left:85px;
 	text-align:center;
@@ -174,15 +174,15 @@ ul,li{
 	
 }
 #footer{
-	border-top:#FFF 10px solid;
+	border-top:1px solid #c0c0c0;
  	width:1184px;
  	height:100px;
-	margin-top:30px;
+	margin-top:20px;
   	}	
 #aboutUs{
-	width:100%;
+	text-align:center;
+	width:280px;
 	height:50px;
-	
    	}
 		
 #aboutUs ul li{
@@ -206,6 +206,7 @@ ul,li{
   	}
 		
 #allRight{
+	text-align:center;
 	width:100%;
 	height:50px;
 
@@ -213,4 +214,3 @@ ul,li{
 #allRight a{
 	margin-left:25px; 
    	}
- 

@@ -62,18 +62,19 @@
 		</div>
 	</div>
 
- 	<div id="footer">    	
-        <div id="aboutUs">
-              <ul>
-            	<li class="qwer"><a href="#">关于我们</a></li>
-            	<li class="qwer"><a href="#">联系我们</a></li>
-            	<li class="qwer"><a href="#">商务合作</a></li>
-             </ul>
-         </div>
-        
-       
-    </div>
-
+ 	<div id="footer">
+		<div id="aboutUs">
+			<span id="ddd" style="display: none">${loginUser.usid}</span>
+			<ul>
+				<li class="qwer"><a href="#">关于我们</a></li>
+				<li class="qwer"><a href="#">联系我们</a></li>
+				<li class="qwer"><a href="#">商务合作</a></li>
+			</ul>
+		</div>
+		<div id="allRight">
+			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
+		</div>
+	</div>
 </body>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="js/sortdetail.js"></script>

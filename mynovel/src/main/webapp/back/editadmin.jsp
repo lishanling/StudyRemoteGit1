@@ -25,7 +25,7 @@
 				姓名：<input id="aapenname" name="apenname" class="inputclass" />
 			</p>
 			<p>
-				密码：<input type="password" id="aapwd" name="apwd" class="inputclass" />
+				密码：<input id="aapwd" type="password" name="apwd" class="inputclass" />
 			</p>
 			<p>
 				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp;
@@ -42,7 +42,7 @@
 				姓名：<input  id="uapenname" name="apenname" class="inputclass" />
 			</p>
 			<p>
-				密码：<input type="password" id="uapwd" name="apwd" class="inputclass" />
+				密码：<input id="uapwd" type="password" name="apwd" class="inputclass" />
 			</p>
 			<p>
 				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; 

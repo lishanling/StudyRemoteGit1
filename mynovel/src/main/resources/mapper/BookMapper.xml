@@ -39,22 +39,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<!-- <if test="ssid!=null">ssid=#{ssid},</if> -->
 			<if test="bpic!=null">bpic=#{bpic}</if>
 		</set>
-		where bid=#{bid}
+		where bid=#{bid} 
 	</update>
-
-	<!-- <insert id="insertBook" parameterType="Book"> <selectKey order="BEFORE" 
-		keyColumn="ssid" keyProperty="ssid"> select ssid from types where sname=#{sname} 
-		</selectKey> insert into book values() </insert> -->
-
-	<!-- <insert id="addBooks" parameterType="Book"> insert into book values('B'||seq_bid.nextval,bname=#{bname}, 
-		<insert id="insertBook" parameterType="Book"> <selectKey order="BEFORE" keyColumn="ssid" 
-		keyProperty="ssid"> select ssid from types where sname=#{sname} </selectKey> 
-		insert into book values() </insert> <insert id="addBooks" parameterType="Book" 
-		> insert into book values('B'||seq_bid.nextval,bname=#{bname}, bdesc=#{desc},bdate=#{bdate},bcopyright=#{bcopyright},burl=#{burl}, 
-		bauthor=#{bauthor},ssid=#{ssid},bpic=#{bpic} </insert> -->
-
-
-	<!-- </selectKey> insert into book values() </insert> -->
 
 	<insert id="insertBook" parameterType="java.util.Map">
 		<selectKey order="BEFORE" keyColumn="ssid" keyProperty="ssid"
