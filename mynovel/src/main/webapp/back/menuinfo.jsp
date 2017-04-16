@@ -79,6 +79,7 @@
 			<a class="closeBtn" href="javascript:void(0)">关闭</a>
 	</div>
 
+	
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>

@@ -26,16 +26,15 @@
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/manage.jsp">后台管理</a></li>
-				<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
-			
+				<li class="red"><a href="javascript:void(0)"
+					onclick="outLogin()">退出登录</a></li>
+
 			</ul>
 		</div>
 		<div id="search">
 			<ul>
 				<li><img src="images/logo.jpg"></li>
-				<li class="s">
-					
-				</li>
+				<li class="s"></li>
 			</ul>
 		</div>
 		<div id="menu">
@@ -68,7 +67,7 @@
 						</ul>
 					</div>
 				</div>
-				 <div id='b2' style='display: none'>
+				<div id='b2' style='display: none'>
 					<br />
 
 					<div class="infomation">
@@ -87,11 +86,11 @@
 
 				</div>
 
-				</div> 
 			</div>
 		</div>
+	</div>
 
-		
+
 
 
 	<div id="footer">
@@ -109,7 +108,7 @@
 	</div>
 
 
-		<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 
