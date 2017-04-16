@@ -115,20 +115,21 @@
 			<p>
 				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; <a
 					class="addBtn" href="javascript:void(0)" onclick="add()">添加</a>
-
 			</p>
-		</form>
-		<!-- <p>类型 :&nbsp;<select name="sname" id="asname">
-				<option selected="selected">名著</option>
-				<option >科幻</option>
-				<option id="S1003">爱情</option>
-				<option id="S1004">励志</option>
-				<option id="S1005">学术</option>
-				<option id="S1006">杂志</option>
-				<option id="S1007">传记</option>
-				<option id="S1008">科学</option>
+			 <p>
+		类型 :&nbsp;<select name="sname" >
+				<option selected="selected" value="名著">名著</option>
+				<option value="科幻">科幻</option>
+				<option value="爱情">爱情</option>
+				<option value="励志">励志</option>
+				<option value="学术">学术</option>
+				<option value="杂志">杂志</option>
+				<option value="传记">传记</option>
+				<option value="科学">科学</option>
 				</select>
-		</p> -->
+		</p> 
+		</form>
+		
 	</div>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 

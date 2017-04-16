@@ -89,28 +89,9 @@ ul,li{
 #menu li a:hover{
 	color:#666;
 }
-#sortid{
-	float:none;
-	margin-left:138px;
-
-	
-}
-
-#sortid h2{
-	width:150px;
-	height:40px;
-	position:relative;
-	left:-505px;
-	top:10px;
-	color:#F90;
-	font-size:18px;
-	float:none;
-	
-
-}
-
 #sortdetail {
 	float:left;
+	margin-left:100px;
 	}
 #sortdetail ul li{
 	width:400px;

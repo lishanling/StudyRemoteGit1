@@ -7,5 +7,5 @@ import com.yc.novel.entity.Discuss;
 public interface DiscussMapper {
 	List<Discuss> findDiscuss();
 List<Discuss> findDiscussById(String id);
-	
+	int	addDiscuss(Discuss discuss);
 }

@@ -27,6 +27,8 @@
 			</li><li class="red"><a href="back/register.jsp">注册</a></li>
 <li class="red"><a href="#">帮助</a></li>
 <li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
+<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
+
 </ul>
 </div>
 
@@ -47,7 +49,7 @@
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/us.jsp">关于我们</a></li>
 				<li><a href="back/search.jsp">去搜索</a></li>
-				<li><a href="#">客户端</a></li>
+				<li><a href="back/client.jsp">客户端</a></li>
 			</ul>
 		</div>
 		<div id="us">
@@ -84,6 +86,19 @@
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
-
+<script type="text/javascript">
+function outLogin(){
+	var uname=$("#dd").html();
+	if(uname==null||uname==undefined||uname==''){
+		alert("未登录，无需退出");
+	}else{
+		$.post("user/outlogin",function(data){
+			alert("退出成功！");
+			window.location.replace("back/outlogin.jsp"); 
+		});
+	}
+}
+	
+</script>
 </body>
 </html>
