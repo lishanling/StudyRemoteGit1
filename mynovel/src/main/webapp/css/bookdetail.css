@@ -266,6 +266,8 @@ h3 {
     width: 100%;
 }
 table {
+	margin: 0;
+    padding: 0;
     border-collapse: collapse;
     border-spacing: 0;
 }

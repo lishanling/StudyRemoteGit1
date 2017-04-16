@@ -1,11 +1,11 @@
 function openAdd(){
 	$("#addDiv").dialog("open");
 }
-$(".addadminBtn").linkbutton({
+$(".addmenuBtn").linkbutton({
 	iconCls: "icon-ok",
 });
 $("#addDiv").dialog({
-	title:"管理员添加",
+	title:"目录添加",
 	closable:false,
 	width:300,
 	modal:true,
@@ -20,16 +20,16 @@ $(".addBtn").linkbutton({
 });
 
 $("#addForm").form({
-	url:"admin/add",    
+	url:"menu/add",    
 	success:function(data){ 
 		if(data == ""){
-			$.messager.alert('管理员添加','当前管理员没有添加的权限 ！','warning');
+			$.messager.alert('目录添加','当前目录没有添加的权限 ！','warning');
 			$("#addDiv").dialog("close"); //关闭修改框
 			return ;
 		}
 		if(data.trim() == "true"){
 			$("#addDiv").dialog("close"); //关闭修改框
-			$("#adminList").datagrid("reload"); //刷新修改数据
+			$("#menuList").datagrid("reload"); //刷新修改数据
 		}else{
 			$.messager.show({
 				title:'添加信息',
@@ -43,17 +43,18 @@ $("#addForm").form({
 	} 
 });
 
-$('#adminList').datagrid({
-	url : "admin/list",
+$('#menuList').datagrid({
+	url : "menu/list",
 	pagination : true,
 	fitColumns : true,
 	singleSelect : true,
 	pageList : [ 5, 10, 15, 20, 25, 30 ],
 	loadMsg:'数据加载中,请稍后...',
-	columns : [ [ {field : 'aid',title : '编号',width : 50,align : 'center'
-	}, {field : 'apenname',title : '姓名',width : 100,align : 'center'
-	}, {field : 'apwd',title : '密码',width : 50,align : 'center'
-	}, {field : 'opr',title : '操作',width : 100,align : 'center',
+	columns : [ [ {field : 'mid',title : '章节',width : 50,align : 'center'
+	}, {field : 'mname',title : '章节名',width : 50,align : 'center'
+	}, {field : 'bid',title : '书的编号',width : 50,align : 'center'
+	}, {field : 'bcontent',title : '章节内容',width : 200,align : 'center'
+	}, {field : 'opr',title : '操作',width : 150,align : 'center',
 		formatter: function(value,row,index){
 			var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;&nbsp;' + 
 			'<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>&nbsp;&nbsp;' +
@@ -66,7 +67,7 @@ $('#adminList').datagrid({
 });
 
 $("#modifyDiv").dialog({
-	title:"管理员修改",
+	title:"目录修改",
 	closable:false,
 	width:300,
 	modal:true,
@@ -75,7 +76,7 @@ $("#modifyDiv").dialog({
 $("#modifyDiv").dialog("close");
 
 $("#detailDiv").dialog({
-	title:"管理员详情",
+	title:"目录详情",
 	closable:false,
 	width:300,
 	modal:true,
@@ -84,7 +85,7 @@ $("#detailDiv").dialog({
 $("#detailDiv").dialog("close");
 
 $("#modifyForm").form({
-	url:"admin/modify", 
+	url:"menu/modify", 
 	success:function(data){ 
 		if(data == ""){
 			$.messager.alert('用户修改主','当前用户没有修改用户的权限 ！','warning');
@@ -93,7 +94,7 @@ $("#modifyForm").form({
 		}
 		if(data.trim() == "true"){
 			$("#modifyDiv").dialog("close"); //关闭修改框
-			$("#adminList").datagrid("reload"); //刷新修改数据
+			$("#menuList").datagrid("reload"); //刷新修改数据
 		}else{
 			$.messager.show({
 				title:'修改信息',
@@ -125,29 +126,38 @@ $(".updateBtn").linkbutton({
 
 function openUpdate(index){
 	$("#modifyDiv").dialog("open");
-	var row = $("#adminList").datagrid("getRows")[index];
-	$("#uaid").val(row.aid);
-	$("#uapenname").val(row.apenname);
-	$("#uapwd").val(row.apwd);
+	var row = $("#menuList").datagrid("getRows")[index];
+	$("#umid").val(row.mid);
+	$("#umname").val(row.mname);
+	$("#ubid").val(row.bid);
+	$("#ubcontent").val(row.bcontent);
 }
 
 function openDatail(index){
 	$("#detailDiv").dialog("open");	
-	var row = $("#adminList").datagrid("getRows")[index];
-	$("#daid").html(row.aid);
-	$("#dapenname").html(row.apenname);
-	$("#dapwd").html(row.apwd);
+	var row = $("#menuList").datagrid("getRows")[index];
+	$("#dmid").val(row.mid);
+	$("#dmname").val(row.mname);
+	$("#dbid").val(row.bid);
+	$("#dbcontent").val(row.bcontent);
 }
 
 
 function delDetail(index){
-	var row = $("#adminList").datagrid("getRows")[index];
-	$("#adminList").datagrid("deleteRow",index);
-	$.post("admin/delete?aid="+row.aid, function(data) {
-		$.messager.alert('管理员删除','删除成功！');
+	var row = $("#menuList").datagrid("getRows")[index];
+	$("#menuList").datagrid("deleteRow",index);
+	var del=("('"+row.mid+"'"+','+"'"+row.bid+"')");
+	alert(del);
+	$.post("menu/delete?menuid="+del, function(data) {
+		alert(sss);
+		$.messager.alert('目录删除','删除成功！');
 
 	}, "json");
 }
+
+
+
+
 
 
 

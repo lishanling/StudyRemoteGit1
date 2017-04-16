@@ -40,7 +40,11 @@
 					<li><span>图书信息</span></li>
 				</ul>
 			</div>
-			
+			<div title="目录管理" data-options="iconCls:'icon-mini-add'">
+				<ul class="treeNav">
+					<li><span>目录信息</span></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 	<div data-options="region:'center', title:'主界面',tools: [{    

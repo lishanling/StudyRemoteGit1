@@ -41,6 +41,15 @@ $(".treeNav").tree({
 				closable:true,
 
 			});
+		}
+		else if(nodeContent=="目录信息"){
+			$("#main").tabs('add',{
+				title:nodeContent,
+				href:"back/menuinfo.jsp",//从URL加载远程数据内容填充到选项卡面板。
+				iconCls:"icon-mini-add",
+				closable:true,
+
+			});
 		}else {
 			$("#main").tabs('add',{
 				title:nodeContent,

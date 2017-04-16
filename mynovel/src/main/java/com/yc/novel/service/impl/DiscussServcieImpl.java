@@ -22,5 +22,9 @@ public class DiscussServcieImpl implements DiscussServcie{
 	public List<Discuss> getDiscussById(String id) {
 		return discussMapper.findDiscussById(id);
 	}
+	@Override
+	public boolean insertDiscuss(Discuss discuss) {
+		return discussMapper.addDiscuss(discuss)>0;
+	}
 
 }

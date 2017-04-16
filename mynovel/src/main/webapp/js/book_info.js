@@ -143,53 +143,7 @@ function chgPic(obj){
 function changPic(obj){
 	$("#apic").attr("src",window.URL.createObjectURL(obj.files[0]));
 }
-	/*
-function editUsersInfo(){
-	var formData = new FormData($( "#modifyForm" )[0]);
-	$.ajax({
-	 	url:"book/modify",
-	 	data:formData,
-	 	type: 'POST',
-	 	dataType:"json",
-	 	async: false,  
-        cache: false,  
-        contentType: false,  
-        processData: false,  
-	 	success:function(data,status){
-		 	if(data){
-
-		 	}else{
-		 		$.messager.alert("错误提示","会员修改失败...\n","error");
-		 	}
-	 	}
-	});
-}
-	 */
-
-	/*function add(){
-	$("#addDiv").dialog("open");
-	//$.post("book/get?ssid="+id,function(data){
-	//加载所有的主题数据
-	$.post("types/sname",function(datat){
-		$("#ssid").empty();
-		for(var i=0;i<datat.length;i++){
-			if(data.types.sname==datat[i].sname){
-				$("#assid").append("<option value='"+datat[i].ssid+"'selected>"+datat[i].sname+"</option>");
-				$.post("types/info",function(data){
-					$("#assid").empty();
-					for(var i=0;i<data.length;i++){
-						if(data.types.sname==datat[i].sname){
-							$("#assid").append("<option value='"+datat[i].ssid+"' selected>"+datat[i].sname+"</option>");
-						}else{
-							$("#assid").append("<option value='"+datat[i].ssid+"'>"+datat[i].sname+"</option>");
-						}
-					}
-				});
-			}
-		}			//});
-	},"json");
-}
-	 */
+	
 
 	$("#addDiv").dialog({
 		title:"图书添加",

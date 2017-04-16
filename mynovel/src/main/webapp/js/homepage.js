@@ -27,10 +27,19 @@ loadBookCommand();
 function loadBookCommand(){
 	
 	$.get('book/recommendinfo',function(data){
-	
-		for(var i=1;i<10;i++){
+		for(var i=0;i<5;i++){
 			$("#recommend ul").append("<li><a href='back/bookdetail.jsp?bid="+data[i].bid+"'><img src='"+data[i].bpic+"'/><span>"+data[i].bname+"</span></a></li>");
 		}
 	},"json");
 }
-
+function outLogin(){
+	var uname=$("#dd").html();
+	if(uname==null||uname==undefined||uname==''){
+		alert("未登录，无需退出");
+	}else{
+		$.post("user/outlogin",function(data){
+			alert("退出成功！");
+			window.location.replace("back/outlogin.jsp"); 
+		});
+	}
+}

@@ -24,13 +24,15 @@
 				<li class="red"><a href="back/register.jsp">注册</a></li>
 				<li class="red"><a href="#">帮助</a></li>
 				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
+				<li class="red"><a href="javascript:void(0)"
+					onclick="outLogin()">退出登录</a></li>
+
 			</ul>
 		</div>
 		<div id="search">
 			<ul>
 				<li><img src="images/logo.jpg"></li>
-				<li class="s">
-				</li>
+				<li class="s"></li>
 			</ul>
 		</div>
 
@@ -48,7 +50,7 @@
 
 		<div class="g-bd1">
 			<!-- 当前位置 -->
-			
+
 			<div class="u-nav-crumbs">
 				<!-- <span>当前位置：</span> <a href="homepage.jsp" hidefocus="hidefocus">首页</a> <span
 					class="sep"></span> <a   href=""
@@ -67,36 +69,34 @@
 						<!-- 书和旁边的简介以及收藏 -->
 						<div class="m-bookdata j-bookdata f-cb" itemscope=""
 							itemtype="http://schema.org/Book">
+							
 
 							<!-- 封面的位置 -->
-							<div id="cover-img" class="cover">
-								
-							</div>
+							<div id="cover-img" class="cover"></div>
 
-							
+
 							<!-- 书的描述 -->
 							<div class="desc">
 								<!-- <h3>鲁迅全集</h3> -->
- 								<div class="cnt">
+								<div class="cnt">
 									<!-- 作者、版权、出版 -->
-									<div class="data">
-										
-									</div>
+									<div class="data"></div>
 									<div class="pay">
-										
+
 										<div class="act j-act f-cb">
 											<div class="btn j-buyarea f-cb">
-											<br/>
-											<p id="ss" ></p>
-											
+												<br />
+												<a id="ss"></a>
+											<!-- 	<a id="collect"></a> -->
 												<%-- <a id="readdetail" class="u-btn2 j-free"
  													href="${bUrl}"
  												hidefocus="hidefocus" target="_blank">阅读</a>  --%>
- 												<a class="u-btn j-get" href="javascript:void(0);"
-											 hidefocus="hidefocus" onclick="addCollects()" id="addsuccess">加入书架</a> <span
-													class="added" style="display: none" id="noaddsuccess">已加入书架</span>
+												<a class="u-btn j-get" href="javascript:void(0);"
+													hidefocus="hidefocus" onclick="addCollects()"
+													id="addsuccess">加入书架</a> <span class="added"
+													style="display: none" id="noaddsuccess">已加入书架</span>
 											</div>
-											
+
 										</div>
 									</div>
 								</div>
@@ -123,27 +123,19 @@
 
 								<section class="cnt j-cnt" style="display: block;" id="b1">
 									<article id="book-content" class="intro" hidefocus="hidefocus"
-										style="height: 310px; overflow: hidden;">
-									</article>
-									
+										style="height: 310px; overflow: hidden;"></article>
+
 								</section>
 
 								<section class="cnt j-cnt" style="display: none" id="b2">
-									<article id="toc"	class="toc">
+									<article id="toc" class="toc">
 										<ol>
 											<!-- <li >
 											<h3 class="title">01 坟</h3>
 											<div class="brief brief0"><p></p></div></li> -->
- 										</ol>
+										</ol>
 									</article>
-									<div class="more j-close" style="visibility: hidden;">
-										<a class="u-more1 j-more" href="javascript:void(0);"
-											hidefocus="hidefocus"> 显示全部
-											<div class="icn-arrow icn-arrow-bottom">
-												<span class="arrow0"></span> <span class="arrow1"></span>
-											</div>
-										</a>
-									</div>
+
 
 								</section>
 
@@ -170,14 +162,14 @@
 						</div>
 
 						<div id="hot-comment">
- 							<section id="new-comment" class="m-comm j-comment" style="">
+							<section id="new-comment" class="m-comm j-comment" style="">
 								<h3 class="ttl">
 									<a>最新评论</a>
 								</h3>
-								 <span id="first">${loginUser.usid}</span>
+								<span id="first" style="display: none">${loginUser.usid}</span>
 								<div class="cnt">
-  									<div class="u-commlist">
- 										<div id="commemtby">
+									<div class="u-commlist">
+										<div id="commemtby">
 											<ul class="j-commentlist">
 												<!-- <li class="itm">
 \													<div class="article">
@@ -193,14 +185,25 @@
 														</div>
 														
 													</div>
-												</li>	 -->								
+												</li>	 -->
 											</ul>
 										</div>
 									</div>
-									
 							</section>
 						</div>
+
+						<div>
+							<h3>添加评论</h3>
+							<input id="discuss" placeholder="20字以内" type="text"
+								style="font-size: 16px; width: 440px; heitht: auto" /> <br />
+							<button style="color: #ED6C00; width: 70px"
+								onclick="addDiscuss()">发 表</button>
+						</div>
 					</div>
+					<br />
+					<br />
+					<br />
+					<br />
 				</div>
 			</div>
 		</div>
