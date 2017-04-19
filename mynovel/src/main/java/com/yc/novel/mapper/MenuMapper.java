@@ -16,4 +16,6 @@ public interface MenuMapper {
 
 	boolean deleteMenu(Menu menuid);
 
+	List<Menu> searchMenu(Menu menu);
+
 }

@@ -71,13 +71,14 @@
 					<br />
 
 					<div class="infomation">
-						<form action="#" method="post">
-				<span style="color: black"> 用户名：${loginUser.uname}</span>
-						<br/><br/>
-							<span style="color: black">邮 &nbsp;箱：${loginUser.uemail}</span> 
-						<br /> <br />
-							<span style="color: black">身 &nbsp;份：锦书阅读会员</span>
-
+						<form id="updateUserForm" method="post">
+							<span style="color: red"> 用户名：</span><input id="uname" name="uname"
+								style="border: 1px;" value="${loginUser.uname}" class="inputclass"/><br /> <br />
+							<span style="color: red"> 密&nbsp;&nbsp; 码：</span> <input
+								id="upwd" name="upwd" value="*" style="border: 1px;" class="inputclass"/> <br /> <span
+								style="color: red">邮 &nbsp;箱：</span><input id="uemail" name="uemail"
+								style="border: 1px;" value="${loginUser.uemail}" class="inputclass"/><br /> <br />
+							<a class="updateBtn" href="javascript:void(0)">修改提交</a>
 						</form>
 					</div>
 
@@ -102,7 +103,11 @@
 	</div>
 
 
+<!-- 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script> -->
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 
