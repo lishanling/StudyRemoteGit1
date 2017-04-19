@@ -86,12 +86,6 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 
 	<div id="footer">
 		<div id="aboutUs">
