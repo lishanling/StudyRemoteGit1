@@ -47,6 +47,7 @@ $('#adminList').datagrid({
 	url : "admin/list",
 	pagination : true,
 	fitColumns : true,
+	fit:true,
 	singleSelect : true,
 	pageList : [ 5, 10, 15, 20, 25, 30 ],
 	loadMsg:'数据加载中,请稍后...',

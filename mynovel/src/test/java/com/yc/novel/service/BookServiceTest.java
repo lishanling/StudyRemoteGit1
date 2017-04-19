@@ -57,7 +57,7 @@ public class BookServiceTest {
 	}
 	@Test
 	public void testdelBooks() {
-		boolean result=bookService.delbook("B1025");
+		boolean result=bookService.delbook("B1015");
 		System.out.println(result);
 		assertNotNull(result);
 	}

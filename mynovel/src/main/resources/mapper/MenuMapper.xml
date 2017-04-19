@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where mid=#{mid} and bid=#{bid}
 	</update>
 	<delete id="deleteMenu" parameterType="Menu">
-		delete from menu where mid=#{mid} and bid=#{bid}
+		delete  menu where mid=#{mid} and bid=#{bid}
 	</delete>
 	<insert id="addMenu" parameterType="Menu">
 		insert into menu values(#{mid},#{mname},#{bid},#{bcontent})

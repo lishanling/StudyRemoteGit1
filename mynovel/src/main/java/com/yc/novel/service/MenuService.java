@@ -15,6 +15,6 @@ public interface MenuService {
 
 	boolean modifytMenu(Menu menu);
 
-	boolean deleteMenu(Menu menuid);
+	boolean deleteMenu(Menu menu);
 
 }

@@ -32,7 +32,7 @@ public class UserHandler {
 		user = usersService.login(user);
 		if (user == null) {
 			session.setAttribute(ServletUtil.ERROR_MESSAGE, "用户名或密码错误");
-			return "/back/login.jsp";
+			return "/back/login";
 		} else {
 			session.setAttribute(ServletUtil.LOGIN_USER, user);
 			LogManager.getLogger().debug("success");

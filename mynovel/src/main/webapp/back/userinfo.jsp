@@ -86,12 +86,6 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 
 	<div id="footer">
 		<div id="aboutUs">
@@ -103,11 +97,12 @@
 			</ul>
 		</div>
 		<div id="allRight">
+		<span id="dd" style="display:none">${loginUser.uname}</span>
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
 
-
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>

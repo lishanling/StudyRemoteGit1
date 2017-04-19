@@ -83,9 +83,12 @@
 		</div>
 
 		<div id="allRight">
+				<span id="dd" style="display:none">${loginUser.uname}</span>
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	
 <script type="text/javascript">
 function outLogin(){
 	var uname=$("#dd").html();

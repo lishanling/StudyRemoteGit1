@@ -2,7 +2,7 @@ function openAdd(){
 	$("#addDiv").dialog("open");
 }
 $(".addmenuBtn").linkbutton({
-	iconCls: "icon-ok",
+	iconCls: "icon-add",
 });
 $("#addDiv").dialog({
 	title:"目录添加",
@@ -47,6 +47,7 @@ $('#menuList').datagrid({
 	url : "menu/list",
 	pagination : true,
 	fitColumns : true,
+	pagePosition:'bottom',
 	singleSelect : true,
 	pageList : [ 5, 10, 15, 20, 25, 30 ],
 	loadMsg:'数据加载中,请稍后...',
@@ -146,11 +147,12 @@ function openDatail(index){
 function delDetail(index){
 	var row = $("#menuList").datagrid("getRows")[index];
 	$("#menuList").datagrid("deleteRow",index);
-	var del=("('"+row.mid+"'"+','+"'"+row.bid+"')");
-	alert(del);
-	$.post("menu/delete?menuid="+del, function(data) {
-		alert(sss);
-		$.messager.alert('目录删除','删除成功！');
+	menumid=encodeURI(encodeURI(row.mid));
+	var del=menumid+"&menubid="+row.bid;
+	$.post("menu/delete?menumid="+del, function(data) {
+		if(data){
+			$.messager.alert('目录删除','删除成功！');
+		}
 
 	}, "json");
 }
