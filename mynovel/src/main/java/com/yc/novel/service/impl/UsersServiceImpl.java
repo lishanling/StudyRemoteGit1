@@ -1,6 +1,7 @@
 package com.yc.novel.service.impl;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class UsersServiceImpl implements UsersService{
 
 	@Autowired
 	private  UsersMapper usersMapper;
+
 
 	public void setUsersMapper(UsersMapper usersMapper) {
 		this.usersMapper = usersMapper;
@@ -51,6 +53,8 @@ public class UsersServiceImpl implements UsersService{
 
 		return usersMapper.updateUsers(users) > 0;
 	}
+
+	
 
 
 

@@ -24,7 +24,6 @@
 			</c:otherwise>
 			</c:choose>
 			</li><li class="red"><a href="back/register.jsp">注册</a></li>
-<li class="red"><a href="#">中心</a></li>
 <li class="red"><a href="#">帮助</a></li>
 <li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 <li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
@@ -37,10 +36,7 @@
 <li><img src="images/logo.jpg"><li>
 <li class="s">
 
-<form method="post">
-<input style="width:400px; height:40px; border:solid 3px #F98235;" type="text" placeholder="请输入小说名、作者">
-<input type="submit" style="width:50px; height:40px; background-color:#F98235; border:solid 3px #F98235;color:#fff; font-family:微软雅黑;border-radius: 15px;　" value="搜索"/>
-</form>
+
 
 </li>
 </ul>

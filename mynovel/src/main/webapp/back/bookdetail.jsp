@@ -67,6 +67,7 @@
 						<!-- 书和旁边的简介以及收藏 -->
 						<div class="m-bookdata j-bookdata f-cb" itemscope=""
 							itemtype="http://schema.org/Book">
+							
 
 							<!-- 封面的位置 -->
 							<div id="cover-img" class="cover"></div>
@@ -83,6 +84,11 @@
 										<div class="act j-act f-cb">
 											<div class="btn j-buyarea f-cb">
 												<br />
+												<a id="ss"></a>
+											<!-- 	<a id="collect"></a> -->
+												<%-- <a id="readdetail" class="u-btn2 j-free"
+ 													href="${bUrl}"
+ 												hidefocus="hidefocus" target="_blank">阅读</a>  --%>
 												<p id="ss"></p>
 
 												<a class="u-btn j-get" href="javascript:void(0);"
@@ -150,7 +156,25 @@
 									<div class="u-commlist">
 										<div id="commemtby">
 											<ul class="j-commentlist">
+<<<<<<< HEAD
+												<!-- <li class="itm">
+\													<div class="article">
+ 														<p>看不懂《起死》的内涵</p> 														
+													</div>
+													<div class="u-comminfo">
+														<div class="u-comm-user">
+															<div class="u-stargrade">
+																<div class="icon grade6"></div>
+															</div>
+															<span class="autor j-xm-1197146305">1197146305</span> <span
+																class="u-sep">-</span> <span class="times">03-20</span>
+														</div>
+														
+													</div>
+												</li>	 -->
+=======
 
+>>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 											</ul>
 										</div>
 									</div>

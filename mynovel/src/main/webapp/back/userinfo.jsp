@@ -88,9 +88,6 @@
 		</div>
 	</div>
 
-
-
-
 	<div id="footer">
 		<div id="aboutUs">
 			<span id="ddd" style="display: none">${loginUser.usid}</span>
