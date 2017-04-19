@@ -17,4 +17,6 @@ public interface MenuService {
 
 	boolean deleteMenu(Menu menuid);
 
+	List<Menu> searchMenu(Menu menu);
+
 }

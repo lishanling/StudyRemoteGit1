@@ -50,4 +50,10 @@ public class MenuHandler {
 		return menuService.deleteMenu(menuid);
 	}
 	
+	@RequestMapping("search")
+	@ResponseBody
+	public List<Menu> searchBid(Menu menu){
+		return menuService.searchMenu(menu);
+	}
+	
 }

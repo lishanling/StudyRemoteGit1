@@ -48,4 +48,9 @@ public class MenuServiceImpl implements MenuService{
 		return menuMapper.deleteMenu(menuid);
 	}
 
+	@Override
+	public List<Menu> searchMenu(Menu menu) {
+		return menuMapper.searchMenu(menu);
+	}
+
 }

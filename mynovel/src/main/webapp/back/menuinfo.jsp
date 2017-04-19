@@ -14,6 +14,11 @@
 	<table id="menuList">
 		<tr>
 			<a class="addmenuBtn" href="javascript:void(0)" onclick="openAdd()">添加</a>
+			&nbsp;&nbsp;&nbsp;
+			<form id="searchMenuForm" method="post" enctype="multipart/form-data">
+					<input placeholder="请输入书的编号" id="bid" name="bid" class="inputclass"/>
+					<a class="searchMenuBtn" href="javascript:void(0)" >搜索</a>
+			</form>
 		</tr>
 
 	</table>
@@ -42,13 +47,15 @@
 	<div id="modifyDiv">
 		<form id="modifyForm" method="post" enctype="multipart/form-data">
 			<p>
-				章&nbsp;节：<input id="umid" name="mid" readonly="readonly" class="inputclass" />
+				章&nbsp;节：<input id="umid" name="mid" readonly="readonly"
+					class="inputclass" />
 			</p>
 			<p>
 				章节名：<input id="umname" name="mname" class="inputclass" />
 			</p>
 			<p>
-				书编号：<input id="ubid" name="bid" readonly="readonly" class="inputclass" />
+				书编号：<input id="ubid" name="bid" readonly="readonly"
+					class="inputclass" />
 			</p>
 			<p>
 				内容：
@@ -79,7 +86,7 @@
 			<a class="closeBtn" href="javascript:void(0)">关闭</a>
 	</div>
 
-	
+
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
