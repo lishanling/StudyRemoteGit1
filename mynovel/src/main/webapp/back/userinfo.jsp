@@ -71,14 +71,14 @@
 					<br />
 
 					<div class="infomation">
-						<form id="updateUserForm" method="post">
+						<form id="updateUserForm" method="post" enctype="multipart/form-data">
 							<span style="color: red"> 用户名：</span><input id="uname" name="uname"
 								style="border: 1px;" value="${loginUser.uname}" class="inputclass"/><br /> <br />
 							<span style="color: red"> 密&nbsp;&nbsp; 码：</span> <input
 								id="upwd" name="upwd" value="*" style="border: 1px;" class="inputclass"/> <br /> <span
 								style="color: red">邮 &nbsp;箱：</span><input id="uemail" name="uemail"
 								style="border: 1px;" value="${loginUser.uemail}" class="inputclass"/><br /> <br />
-							<a class="updateBtn" href="javascript:void(0)">修改提交</a>
+							<a class="updateBtn" href="javascript:void(0)" onclick="updUser()">修改提交</a>
 						</form>
 					</div>
 
@@ -98,16 +98,14 @@
 			</ul>
 		</div>
 		<div id="allRight">
+		<span id="dd" style="display:none">${loginUser.uname}</span>
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>
 
 
-<!-- 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.11.3.js"></script> -->
-	<script type="text/javascript" src="easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 

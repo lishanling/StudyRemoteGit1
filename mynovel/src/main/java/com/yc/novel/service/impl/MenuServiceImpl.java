@@ -45,7 +45,7 @@ public class MenuServiceImpl implements MenuService{
 
 	@Override
 	public boolean deleteMenu(Menu menuid) {
-		return menuMapper.deleteMenu(menuid);
+		return menuMapper.deleteMenu(menuid)>0;
 	}
 
 	@Override

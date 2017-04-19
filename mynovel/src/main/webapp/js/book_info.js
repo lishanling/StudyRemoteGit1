@@ -1,6 +1,8 @@
 $('#book_info').datagrid({    
 	url:'book/list',
 	pagination : true,
+	fit:true,
+	pagePosition:'bottom',
 	fitColumns : true,
 	singleSelect : true,
 	pageList : [ 5, 10, 15, 20, 25, 30 ],
