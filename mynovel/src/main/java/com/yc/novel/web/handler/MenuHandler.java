@@ -1,5 +1,7 @@
 package com.yc.novel.web.handler;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.List;
 
 
@@ -46,8 +48,12 @@ public class MenuHandler {
 
 	@RequestMapping(value="delete",method=RequestMethod.POST)
 	@ResponseBody
-	public boolean delMenu(Menu menuid){
-		return menuService.deleteMenu(menuid);
+	public boolean delMenu(String menumid,String menubid) throws UnsupportedEncodingException{
+		Menu menu=new Menu();
+		menu.setBid(menubid);
+		menumid=URLDecoder.decode(menumid, "utf-8");
+		menu.setMid(menumid);
+		return menuService.deleteMenu(menu);
 	}
 	
 	@RequestMapping("search")

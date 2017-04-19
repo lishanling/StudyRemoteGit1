@@ -98,6 +98,7 @@
 			</ul>
 		</div>
 		<div id="allRight">
+		<span id="dd" style="display:none">${loginUser.uname}</span>
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>

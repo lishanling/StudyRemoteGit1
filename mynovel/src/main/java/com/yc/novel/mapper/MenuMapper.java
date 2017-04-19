@@ -14,7 +14,7 @@ public interface MenuMapper {
 
 	int modifytMenu(Menu menu);
 
-	boolean deleteMenu(Menu menuid);
+	int deleteMenu(Menu menuid);
 
 	List<Menu> searchMenu(Menu menu);
 
