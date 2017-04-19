@@ -41,4 +41,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="addMenu" parameterType="Menu">
 		insert into menu values(#{mid},#{mname},#{bid},#{bcontent})
 	</insert>
+	
+	<select id="searchMenu" parameterType="Menu" resultType="Menu">
+		select * from menu where bid=#{bid}
+	</select>
 </mapper>

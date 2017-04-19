@@ -43,6 +43,40 @@ $("#addForm").form({
 	} 
 });
 
+$(".searchMenuBtn").linkbutton({
+	iconCls: "icon-search",
+	onClick: function(){
+		alert("aaa");
+		$("#searchMenuForm").submit();
+		alert($("#searchMenuForm"));
+	} 
+});
+$("#searchMenuForm").form({
+	url:"menu/search",    
+	success:function(data){ 
+		alert(data.trim());
+		if(data == ""){
+			$.messager.alert('没有输入要查询的值','请输入要查询的值','warning');
+			return ;
+		}
+		if(data.trim() == "true"){
+			$("#bid").empty();
+			$("#menuList").datagrid("reload"); //刷新修改数据
+		}else{
+			$.messager.show({
+				title:'查询信息',
+				msg:'查询失败！！！',
+				showType:'show',
+				style:{
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+				}
+			});
+		}
+	} 
+});
+
+
+
 $('#menuList').datagrid({
 	url : "menu/list",
 	pagination : true,
@@ -89,7 +123,7 @@ $("#modifyForm").form({
 	url:"menu/modify", 
 	success:function(data){ 
 		if(data == ""){
-			$.messager.alert('用户修改主','当前用户没有修改用户的权限 ！','warning');
+			$.messager.alert('目录修改','当前目录不能修改 ！','warning');
 			$("#modifyDiv").dialog("close"); //关闭修改框
 			return ;
 		}

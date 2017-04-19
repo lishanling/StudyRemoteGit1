@@ -74,6 +74,7 @@ function loadInfo(){
 			 
   			$(".data").append('<h3>'+data.bname+'</h3>');
   			$("#ss").append('<a href="'+data.burl+'">阅读</a>');
+  	/*		$("#collect").append('<a href="'+data.burl+'">阅读</a>');*/
   			$(".data").append('<table><tbody>'+
   				'<tr><td class="col0">作者：</td>'+
 				'<td class="author" itemprop="author">'+ 

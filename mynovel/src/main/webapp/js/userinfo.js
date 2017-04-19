@@ -48,7 +48,37 @@ function outLogin(){
 		});
 	}
 }
-	
+
+$(".updateBtn").linkbutton({
+	iconCls: "icon-edit",
+	onClick: function(){
+		$("#updateUserForm").submit();
+		alert(www);
+	} 
+});
+$("#updateUserForm").form({
+	url:"user/modify", 
+	success:function(data){ 
+		if(data == ""){
+			$.messager.alert('用户修改','当前用户没有修改用户的权限 ！','warning');
+			return ;
+		}
+		if(data.trim() == "true"){
+			$("#menuList").datagrid("reload"); //刷新修改数据
+			$(".inputclass").empty();
+		}else{
+			$.messager.show({
+				title:'修改信息',
+				msg:'修改失败！！！',
+				showType:'show',
+				style:{
+					top:document.body.scrollTop+document.documentElement.scrollTop,
+				}
+			});
+		}
+	} 
+});
+
 
 
 
