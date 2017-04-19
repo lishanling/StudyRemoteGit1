@@ -17,7 +17,7 @@
 			&nbsp;&nbsp;&nbsp;
 			<form id="searchMenuForm" method="post" enctype="multipart/form-data">
 					<input placeholder="请输入书的编号" id="bid" name="bid" class="inputclass"/>
-					<a class="searchMenuBtn" href="javascript:void(0)" >搜索</a>
+					<a class="searchMenuBtn" href="javascript:void(0)"  >搜索</a>
 			</form>
 		</tr>
 
