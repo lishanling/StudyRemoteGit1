@@ -1,3 +1,5 @@
+$("#register").attr("style","background:url('images/register.jpg') no-repeat;width:1366px;height:768px;");
+
 $("#RegisterDiv").dialog({
 	width:300,
 	title:"",

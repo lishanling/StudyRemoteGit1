@@ -11,8 +11,10 @@
 <link type="text/css" rel="stylesheet" href="css/register.css">
 </head>
 <body>
+<div id="register">
 	<div id="RegisterDiv" >
 		<form id="RegisterForm" method="POST"	action="user/register">
+			<p><h2>欢迎注册锦书阅读</h2>
 			<p><label>${errorMsg }</label></p><c:remove var="errorMsg" scope="session"/>
 			<p><input name="uname" placeholder="请输入用户名" required="required"></p>
 			<p><input type="password" name="upwd" placeholder="请输入密码" required="required"></p>
@@ -20,7 +22,7 @@
 			<p><button id="btnRegister" href="javascript:void(0)">注册</button></p>
 		</form>
 	</div>
-
+</div>
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
