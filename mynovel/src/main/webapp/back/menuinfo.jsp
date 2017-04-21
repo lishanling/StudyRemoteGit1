@@ -17,6 +17,7 @@
 			&nbsp;&nbsp;&nbsp;
 					<input placeholder="请输入书的编号" id="bid" name="bid"/>
 				<a class="searchMenuBtn" href="javascript:void(0)" onclick="find()" >搜索</a>
+			
 		</tr>
 
 	</table>
