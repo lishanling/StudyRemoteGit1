@@ -18,6 +18,7 @@ select * from types;
 select * from admin;
 select * from users;
 select * from collects;
+
 select * from menu;
 select * from discuss;
 

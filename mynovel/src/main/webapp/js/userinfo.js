@@ -1,4 +1,3 @@
-
 loadBook();
 function loadBook(){
 	var s=$("#ddd").html();
@@ -31,7 +30,7 @@ function cleardisplay(){
 function delCollect(){
 	var bid=$("#copybid").html();
 	$.post("collect/delcollect?bid="+bid, function(data) {
-		$.messager.alert('删除收藏','删除成功！');
+		alert('取消收藏成功');
 
 	}, "json");
 	$("#cls ul").empty();
@@ -49,38 +48,23 @@ function outLogin(){
 	}
 }
 
-$(".updateBtn").linkbutton({
-	iconCls: "icon-edit",
-	onClick: function(){
-		$("#updateUserForm").submit();
-		alert(www);
-	} 
-});
-$("#updateUserForm").form({
-	url:"user/modify", 
-	success:function(data){ 
-		if(data == ""){
-			$.messager.alert('用户修改','当前用户没有修改用户的权限 ！','warning');
-			return ;
+function updUser(){
+	var uname=$("#uname").val();
+	uname=encodeURI(encodeURI(uname));
+	var upwd=$("#upwd").val();
+	var uemail=$("#uemail").val();
+	var usid=$("#ddd").html();
+	var dataparams=usid+"&uname="+uname+"&upwd="+upwd+"&uemail="+uemail;
+	$.post("user/modify?usid="+dataparams, function(data) {
+		if(data){
+		$.post("user/outlogin",function(data){
+			alert('修改成功，自动退出！');
+			window.location.replace("back/outlogin.jsp"); 
+		},"json");
 		}
-		if(data.trim() == "true"){
-			$("#menuList").datagrid("reload"); //刷新修改数据
-			$(".inputclass").empty();
-		}else{
-			$.messager.show({
-				title:'修改信息',
-				msg:'修改失败！！！',
-				showType:'show',
-				style:{
-					top:document.body.scrollTop+document.documentElement.scrollTop,
-				}
-			});
-		}
-	} 
-});
-
-
-
+	}, "json");
+	/*$(".inputclass").empty();*/
+}
 
 
 

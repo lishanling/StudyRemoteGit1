@@ -17,6 +17,7 @@
 				<img src="images/manage.jpg" alt="锦书阅读" id="friend_logo" style="width:1092px;height:auto;" />
 			</div>
 		</div>
+		<a href="homepage.jsp">回到首页</a>
 	</div>
 		
 	<div data-options="region:'east',title:'工具栏'" style="width: 182px;">

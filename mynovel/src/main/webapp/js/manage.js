@@ -48,9 +48,11 @@ $(".treeNav").tree({
 				href:"back/menuinfo.jsp",//从URL加载远程数据内容填充到选项卡面板。
 				iconCls:"icon-mini-add",
 				closable:true,
-
+				
 			});
-		}else {
+		}
+		
+		else {
 			$("#main").tabs('add',{
 				title:nodeContent,
 				content:nodeContent,

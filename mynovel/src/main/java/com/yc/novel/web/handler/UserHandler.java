@@ -1,6 +1,8 @@
 package com.yc.novel.web.handler;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.entity.Users;
 import com.yc.novel.service.UsersService;
+import com.yc.novel.util.Encrypt;
 import com.yc.novel.util.ServletUtil;
 
 @Controller("userHandler")
@@ -73,7 +76,13 @@ public class UserHandler {
 
 	@RequestMapping("modify")
 	@ResponseBody
-	public boolean modify(Users user){
-		return usersService.modifyUsers(user);//异步数据响应
-}
+	public boolean modify(String uname,String upwd,String uemail,String usid) throws UnsupportedEncodingException{
+		Users users=new Users();
+		uname=URLDecoder.decode(uname, "utf-8");
+		users.setUname(uname);
+		users.setUemail(uemail);
+		users.setUpwd(Encrypt.md5AndSha(upwd));
+		users.setUsid(usid);
+		return usersService.modifyUsers(users);//异步数据响应
+	}
 }

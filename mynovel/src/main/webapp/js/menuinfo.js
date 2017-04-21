@@ -43,37 +43,6 @@ $("#addForm").form({
 	} 
 });
 
-$(".searchMenuBtn").linkbutton({
-	iconCls: "icon-search",
-	onClick: function(){
-		alert("aaa");
-		$("#searchMenuForm").submit();
-		alert($("#searchMenuForm"));
-	} 
-});
-$("#searchMenuForm").form({
-	url:"menu/search",    
-	success:function(data){ 
-		alert(data.trim());
-		if(data == ""){
-			$.messager.alert('没有输入要查询的值','请输入要查询的值','warning');
-			return ;
-		}
-		if(data.trim() == "true"){
-			$("#bid").empty();
-			$("#menuList").datagrid("reload"); //刷新修改数据
-		}else{
-			$.messager.show({
-				title:'查询信息',
-				msg:'查询失败！！！',
-				showType:'show',
-				style:{
-					top:document.body.scrollTop+document.documentElement.scrollTop,
-				}
-			});
-		}
-	} 
-});
 
 
 
@@ -191,10 +160,35 @@ function delDetail(index){
 	}, "json");
 }
 
-
-
-
-
-
+$(".searchMenuBtn").linkbutton({
+	iconCls: "icon-search",
+});
+function find(){
+	var bid=$("#bid").val();	
+		$('#menuList').datagrid({
+			url : "menu/search?bid="+bid,
+			pagination : true,
+			fitColumns : true,
+			fit:true,
+			pagePosition:'bottom',
+			singleSelect : true,
+			pageList : [ 5, 10, 15, 20, 25, 30 ],
+			loadMsg:'数据加载中,请稍后...',
+			columns : [ [ {field : 'mid',title : '章节',width : 50,align : 'center'
+			}, {field : 'mname',title : '章节名',width : 50,align : 'center'
+			}, {field : 'bid',title : '书的编号',width : 50,align : 'center'
+			}, {field : 'bcontent',title : '章节内容',width : 200,align : 'center'
+			}, {field : 'opr',title : '操作',width : 150,align : 'center',
+				formatter: function(value,row,index){
+					var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;&nbsp;' + 
+					'<a class="modifyBtn" href="javascript:void(0)" onclick="openUpdate(' + index + ')">修改</a>&nbsp;&nbsp;' +
+					'<a class="delBtn" href="javascript:void(0)" onclick="delDetail('+index+')">删除</a>'+
+					'<script>$(".detailBtn").linkbutton({iconCls: "icon-search"});' +
+					'$(".modifyBtn").linkbutton({iconCls: "icon-edit"});$(".delBtn").linkbutton({iconCls:"icon-cancel"});</script>'; 
+					return oprStr;
+				}
+			} ] ]
+		});
+}
 
 

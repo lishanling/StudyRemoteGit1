@@ -43,7 +43,7 @@
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/search.jsp">去搜索</a></li>
 				<li><a href="back/us.jsp">关于我们</a></li>
-				<li><a href="#">客户端</a></li>
+				<li><a href="back/client.jsp">客户端</a></li>
 			</ul>
 		</div>
 		<div id="wk">
@@ -51,9 +51,9 @@
 				<h1 align="center" style="color: #999">个人中心</h1>
 				<ul>
 					<li class="crt" id="a1" onClick="tab(1)"><a
-						href="javascript:void()">我的收藏</a></li>
+						href="javascript:void(0)">我的收藏</a></li>
 					<li class="" id="a2" onClick="tab(2)"><a
-						href="javascript:void()">账号设置</a></li>
+						href="javascript:void(0)">账号设置</a></li>
 				</ul>
 			</div>
 			<div id="right">
@@ -71,14 +71,14 @@
 					<br />
 
 					<div class="infomation">
-						<form id="updateUserForm" method="post">
+						<form id="updateUserForm" method="post" enctype="multipart/form-data">
 							<span style="color: red"> 用户名：</span><input id="uname" name="uname"
 								style="border: 1px;" value="${loginUser.uname}" class="inputclass"/><br /> <br />
-							<span style="color: red"> 密&nbsp;&nbsp; 码：</span> <input
-								id="upwd" name="upwd" value="*" style="border: 1px;" class="inputclass"/> <br /> <span
+							<span style="color: red"> 密&nbsp;&nbsp; 码：</span> <input type="password"
+								id="upwd" name="upwd" value="u" style="border: 1px;" class="inputclass"/> <br /> <span
 								style="color: red">邮 &nbsp;箱：</span><input id="uemail" name="uemail"
 								style="border: 1px;" value="${loginUser.uemail}" class="inputclass"/><br /> <br />
-							<a class="updateBtn" href="javascript:void(0)">修改提交</a>
+							<a class="updateBtn" href="javascript:void(0)" onclick="updUser()">修改提交</a>
 						</form>
 					</div>
 
@@ -103,12 +103,8 @@
 		</div>
 	</div>
 
-
-<!-- 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.11.3.js"></script> -->
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!doctype html>
 <html>
-<head>
+<head  runat="server">
 <base href="${deployName}">
 <meta charset="utf-8">
 <title>阅读</title>
@@ -42,7 +42,7 @@
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/us.jsp">关于我们</a></li>
 				<li><a href="back/search.jsp">去搜索</a></li>
-				<li><a href="#">客户端</a></li>
+				<li><a href="back/client.jsp">客户端</a></li>
 			</ul>
 		</div>
 
@@ -95,6 +95,9 @@
 													hidefocus="hidefocus" onclick="addCollects()"
 													id="addsuccess">加入书架</a> <span class="added"
 													style="display: none" id="noaddsuccess">已加入书架</span>
+											 <br /><br />
+<!--         <a href="http://down2.txt99.com/d/file/p/txt/2012/12/三生三世枕上书（两卷全）.txt" >点击下载文件</a>
+ -->   
 											</div>
 
 										</div>
@@ -156,25 +159,7 @@
 									<div class="u-commlist">
 										<div id="commemtby">
 											<ul class="j-commentlist">
-<<<<<<< HEAD
-												<!-- <li class="itm">
-\													<div class="article">
- 														<p>看不懂《起死》的内涵</p> 														
-													</div>
-													<div class="u-comminfo">
-														<div class="u-comm-user">
-															<div class="u-stargrade">
-																<div class="icon grade6"></div>
-															</div>
-															<span class="autor j-xm-1197146305">1197146305</span> <span
-																class="u-sep">-</span> <span class="times">03-20</span>
-														</div>
-														
-													</div>
-												</li>	 -->
-=======
 
->>>>>>> branch 'master' of ssh://git@github.com/lishanling/StudyRemoteGit1
 											</ul>
 										</div>
 									</div>

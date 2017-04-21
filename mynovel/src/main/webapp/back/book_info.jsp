@@ -112,10 +112,7 @@
 			<p>
 				作 者 :&nbsp;<input id="abauthor" name="bauthor" />
 			</p>
-			<p>
-				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; <a
-					class="addBtn" href="javascript:void(0)" onclick="add()">添加</a>
-			</p>
+			
 			 <p>
 		类型 :&nbsp;<select name="sname" >
 				<option selected="selected" value="名著">名著</option>
@@ -128,8 +125,11 @@
 				<option value="科学">科学</option>
 				</select>
 		</p> 
+		<p>
+				<a class="closeBtn" href="javascript:void(0)">关闭</a>&nbsp;&nbsp; <a
+					class="addBtn" href="javascript:void(0)" onclick="add()">添加</a>
+			</p>
 		</form>
-		
 	</div>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
 

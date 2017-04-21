@@ -56,9 +56,11 @@ public class MenuHandler {
 		return menuService.deleteMenu(menu);
 	}
 	
-	@RequestMapping("search")
+	@RequestMapping(value="search",method=RequestMethod.POST)
 	@ResponseBody
-	public List<Menu> searchBid(Menu menu){
+	public List<Menu> searchBid(String bid){
+		Menu menu=new Menu();
+		menu.setBid(bid);
 		return menuService.searchMenu(menu);
 	}
 	
