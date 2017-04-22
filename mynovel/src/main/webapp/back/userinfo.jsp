@@ -24,8 +24,6 @@
 						</c:otherwise>
 					</c:choose></li>
 				<li class="red"><a href="back/register.jsp">注册</a></li>
-				<li class="red"><a href="#">帮助</a></li>
-				<li class="red"><a href="back/manage.jsp">后台管理</a></li>
 				<li class="red"><a href="javascript:void(0)"
 					onclick="outLogin()">退出登录</a></li>
 
@@ -42,8 +40,8 @@
 				<li><a href="homepage.jsp">首页</a></li>
 				<li><a href="collect/toAllList.action">榜单</a></li>
 				<li><a href="back/search.jsp">去搜索</a></li>
-				<li><a href="back/us.jsp">关于我们</a></li>
-				<li><a href="back/client.jsp">客户端</a></li>
+				<li><a href="back/us.jsp">关于</a></li>
+				<li><a href="back/client.jsp">关注</a></li>
 			</ul>
 		</div>
 		<div id="wk">
@@ -105,7 +103,6 @@
 
 	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="easyui/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/userinfo.js"></script>
 </body>
 

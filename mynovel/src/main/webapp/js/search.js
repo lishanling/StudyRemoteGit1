@@ -19,7 +19,7 @@ function outLogin(){
 	}else{
 		$.post("user/outlogin",function(data){
 			alert("退出成功！");
-			window.location.replace("back/outlogin.jsp"); 
+			document.location = 'http://localhost:8080/mynovel/';
 		});
 	}
 }

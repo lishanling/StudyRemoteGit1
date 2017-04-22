@@ -52,4 +52,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="delCollect" parameterType="String">
 		delete from collects where bid=#{bid}
 	</delete>
+	<select id="cnki" parameterType="Collects" resultType="int">
+	select count(1) from collects where bid=#{bid} and usid=#{usid}
+	</select>
 </mapper>

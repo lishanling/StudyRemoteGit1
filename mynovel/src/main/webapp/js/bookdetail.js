@@ -23,15 +23,12 @@ function addCollects(){
 			if(data){
 				document.getElementById("addsuccess").style.display = "none";
 				document.getElementById("noaddsuccess").style.display = "block";
-			
 			}
 		},"json");
 	}
-	
 }
 		
 loadInfo()
-
 function loadInfo(){
 	 	var addStr= window.location.href;
 	  	var url=decodeURI(addStr.substring(addStr.lastIndexOf('=')+1));
@@ -73,7 +70,7 @@ function loadInfo(){
 			'oncontextmenu="return false;" style="display: block;"></a>'); 
 			 
   			$(".data").append('<h3>'+data.bname+'</h3>');
-  			$("#ss").append('<a href="'+data.burl+'">阅读</a>');
+  			$("#ss").append('<a href="back/read.jsp">阅读</a>');
   	/*		$("#collect").append('<a href="'+data.burl+'">阅读</a>');*/
   			$(".data").append('<table><tbody>'+
   				'<tr><td class="col0">作者：</td>'+
@@ -83,7 +80,6 @@ function loadInfo(){
 				'<a target="_blank">'+data.bcopyright+'</a></td></tr>'+
 				'<tr><td class="col0">出版：</td><td itemprop="datePublished">'+data.bdate+'</td></tr>'+
 				'</tbody></table>');
-    			 
     			$("#book-content").append('<p>'+data.bdesc+'</p>');
      			 
  		},"json");
@@ -117,8 +113,22 @@ function outLogin(){
 	}else{
 		$.post("user/outlogin",function(data){
 			alert("退出成功！");
-			window.location.replace("back/outlogin.jsp"); 
+			document.location = 'http://localhost:8080/mynovel/';
 		});
 	}
 }
-	
+cnki()
+function cnki(){
+	var href=window.location.href;
+	var bid=(href.split('?')[1]).split('=')[1];//获取bid
+	var usid=$("#first").html();
+	var datapa =bid+"&usid="+usid;
+	if(bid!=''&&usid!=''){
+	$.post("collect/cnki?bid="+datapa,function(data){
+		if(data){
+			document.getElementById("addsuccess").style.display = "none";
+			document.getElementById("noaddsuccess").style.display = "block";
+		}
+	});
+	}
+}

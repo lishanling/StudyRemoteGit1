@@ -71,7 +71,8 @@ create TABLE collects(
        bid  Varchar2(20) REFERENCES book(bid),--书编号
        udate DATE --收藏日期    
 );
-
+select * from (
+select * from menu where bid='B1020') where mid='第一章'
  --目录表
 create TABLE menu(
        mid varchar2(20),--章节编号
@@ -90,11 +91,15 @@ create table discuss(
 
 
 --插入数据
+insert into admin values('A1001','Mold','m');
 
 insert into admin values('A'||seq_aid.nextval,'Mold','m');
 insert into admin values('A'||seq_aid.nextval,'Jol','m');
-insert into admin values('A'||seq_aid.nextval,'唐七公子','m');
+insert into admin values('A'||seq_aid.nextval,'KOl','m');
+insert into admin values('A'||seq_aid.nextval,'All','m');
+insert into admin values('A'||seq_aid.nextval,'Pol','m');
 
+select * from admin
 insert into types(ssid,sname) values('S'||seq_ssid.nextval,'名著');
 insert into types(ssid,sname) values('S'||seq_ssid.nextval,'科幻');
 insert into types(ssid,sname) values('S'||seq_ssid.nextval,'爱情');
@@ -120,8 +125,7 @@ insert into  book values('B'||seq_bid.nextval,'乖，摸摸头','一本让你舍
 insert into  book values('B'||seq_bid.nextval,'追风筝的人','2000年美国加利福利亚，知名作家阿富汗人阿米尔接到一个电话，将他带回了童年的岁月......',to_date('2013-06-18','yyyy-MM-dd'),'北京世纪文景文化传播有限责任公司','http://www.duokan.com/reader?id=a89dc87bc6134be598610a04f0d62026','【美】卡勒德·胡赛尼','S1007',null);
 insert into  book values('B'||seq_bid.nextval,'富兰克林自传','无论从自传的角度还是从美国思想史的角度来看，都具有划时代的意义。 ',to_date('2014-3-12','yyyy-MM-dd'),'江苏译林出版有限公司','http://www.duokan.com/reader?id=641d109daba64305b750d4a6e8f14f9b','[美]本杰明·富兰克林江苏','S1007',null);
 insert into  book values('B'||seq_bid.nextval,'文殊菩萨传','七佛之师，诸佛之母',to_date('2013-01-01','yyyy-MM-dd'),'现代出版社有限公司','http://www.duokan.com/reader?id=75b83216dbed11e192a600163e0123ac','明一居士','S1007',null);
-
-
+insert into  book values('B'||seq_bid.nextval,'人道至尊','宅猪',to_date('2017-03-01','yyyy-MM-dd'),'现代出版社有限公司','http://www.duokan.com/reader?id=75b83216dbed11e192a600163e0123ac','点吧士','S1007','images/book20.png');
 
 insert into users values('U'||seq_usid.nextval,'修改','2138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
 insert into users values('U'||seq_usid.nextval,'李类','1138864456@qq.com','405bef64f90e39ddc8f8c9655f480e82dfddd60c');
@@ -202,6 +206,14 @@ insert into menu values('致读者','文雅的读者','B1013','我听说一名�
 insert into menu values('摩揭陀国','印度最富饶的国家','B1014','位于恒河中游的摩揭陀国，是古印度最富饶的国家，也是佛教发祥地，与佛陀有着甚深因缘。释迦牟尼佛出家后，从六年苦行到菩提树下证道，都是在这个国度完成的。其首都王舍城周边的每一寸土地，都深深镌刻着佛教的烙印。竹林精舍，是佛教的第一所寺院；城东北的灵鹫山（简称灵山），更是佛教圣地。 王舍城地处恒河平原，沃野……');
 insert into menu values('懵懂','一加一不是二','B1014','浙东多名山。山岳神秀者，人文荟萃有天台，自然超拔数括苍。 天台山周回八百里，群峰竞秀，其峻极之状，嘉祥之美，穷山海之瑰富，尽人神之壮丽，古来乃是圣贤所游化、仙隐之窟宅，巍巍然积淀成中国历史文化名山。括苍山逶迤盘结，气势宏阔，超拔为浙东南第一高峰，其主峰米筛浪直插云霄，昂扬如王，亿万斯年。 山为原野之……');
 insert into menu values('开窍','逃学反而契入智慧王国','B1014','王安石曾经问前辈丞相张方平：孔子百年之后而有孟子，为何孟子之后再无贤者？张方平道：“岂为无人，亦有过孟子者。”王安石追问何人？张方平道：“马祖道一、汾阳无业、雪峰义存、岩头全奯、丹霞天然、云门文偃。”王安石不解其意，张方平接着说：“儒门淡薄，收拾不住，皆归释氏。”王安石颔首叹服。他将此语转述给后来也……');
+
+
+insert into menu values('第一章','大梦几千秋','B1020','B1020/a001.txt');
+insert into menu values('第二章','薪火传承','B1020','B1020/a002.txt');
+insert into menu values('第三章','火祭','B1020','B1020/a003.txt');
+insert into menu values('第四章','图腾','B1020','B1020/a004.txt');
+insert into menu values('第五章','人中豪杰','B1020','B1020/a005.txt');
+
 
 update book set bpic = 'images/anbotuo.jpg' where bid='B1001';
 update book set bpic = 'images/taohua.png' where bid='B1002';

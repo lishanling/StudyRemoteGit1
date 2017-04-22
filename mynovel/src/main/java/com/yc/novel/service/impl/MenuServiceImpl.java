@@ -53,4 +53,9 @@ public class MenuServiceImpl implements MenuService{
 		return menuMapper.searchMenu(menu);
 	}
 
+	@Override
+	public Menu findByMid(Menu menu) {
+		return menuMapper.findByMid(menu);
+	}
+
 }

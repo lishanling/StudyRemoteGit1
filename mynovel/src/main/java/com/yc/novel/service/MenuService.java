@@ -18,5 +18,6 @@ public interface MenuService {
 	boolean deleteMenu(Menu menu);
 
 	List<Menu> searchMenu(Menu menu);
+	Menu findByMid(Menu menu);
 
 }

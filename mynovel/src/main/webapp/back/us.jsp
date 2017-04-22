@@ -25,10 +25,7 @@
 			</c:otherwise>
 			</c:choose>
 			</li><li class="red"><a href="back/register.jsp">注册</a></li>
-<li class="red"><a href="#">帮助</a></li>
-<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
 <li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
-
 </ul>
 </div>
 
@@ -38,7 +35,6 @@
 				<li>
 				<li class="s">
 
-
 				</li>
 			</ul>
 		</div>
@@ -47,9 +43,9 @@
 			<ul>
 				<li><a href="homepage.jsp">首页</a></li>
 				<li><a href="collect/toAllList.action">榜单</a></li>
-				<li><a href="back/us.jsp">关于我们</a></li>
 				<li><a href="back/search.jsp">去搜索</a></li>
-				<li><a href="back/client.jsp">客户端</a></li>
+				<li><a href="back/us.jsp">关于</a></li>
+				<li><a href="back/client.jsp">关注</a></li>
 			</ul>
 		</div>
 		<div id="us">

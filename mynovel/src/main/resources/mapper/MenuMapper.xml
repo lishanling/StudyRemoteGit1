@@ -6,7 +6,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="findMenu" resultType="Menu" parameterType="String">
 		select * from menu where bid=#{bid}
 	</select>
-
+<select id="findByMid" parameterType="Menu" resultType="Menu">
+select * from (
+select * from menu where bid=#{bid}) where mid=#{mid}
+</select>
 
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<collection property="rows"

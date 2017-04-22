@@ -1,3 +1,8 @@
+var href=window.location.href;
+if(href=='http://localhost:8080/mynovel/back/manage.jsp'){
+	alert("不可直接进入后台，请先登录！");
+	document.location = 'http://localhost:8080/mynovel/back/adminlogin.jsp';
+}
 $("#main").tabs({
 	fit:true,
 	border:false,
