@@ -12,6 +12,7 @@ function searchall(){
 		  		}
 	},"json");
 }
+
 function outLogin(){
 	var uname=$("#dd").html();
 	if(uname==null||uname==undefined||uname==''){

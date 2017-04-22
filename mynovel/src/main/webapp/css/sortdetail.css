@@ -92,8 +92,6 @@ ul,li{
 #sortid{
 	float:none;
 	margin-left:138px;
-
-	
 }
 
 #sortid h2{
@@ -131,7 +129,7 @@ ul,li{
 	
 }
 #sortdetail  ul li dl dd{
-	width:145px;
+	width:170px;
 	font-size:14px;
 	margin-top:7px;
 	color:#999;

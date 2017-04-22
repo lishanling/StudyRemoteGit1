@@ -78,9 +78,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from book b where b.bid = #{bookId}
 	</select>
 
-	<select id="selectBook" resultType="Book" parameterType="String"> select
+	<select id="selectBook" resultType="Book" parameterType="String"> 
+	select
 		* from book where bname like '%${_parameter}%' or bauthor like
 		'%${_parameter}%'
 	</select>
+	
+	<!-- 查询所有书籍信息 -->
+	<select id="searchAllBooks" resultType="Book">
+		select	b.bid,b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate	desc
+	</select>
 
+	
 </mapper>

@@ -4,18 +4,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.CollectsMapper">
 	<insert id="add" parameterType="Collects">
-	insert into collects(usid,bid,udate) values(#{usid},#{bid},#{udate})
+		insert into collects(usid,bid,udate) values(#{usid},#{bid},#{udate})
 	</insert>
 
 
-	
 	<select id="findCollects" resultType="Book" parameterType="String">
 		select b.bid bid, b.bpic bpic,b.bname bname,b.bauthor bauthor from
 		book b join collects c on c.usid=#{usid} and
-		 b.bid=c.bid
+		b.bid=c.bid
 	</select>
 
-	
+
 	<!-- 获取图书的收藏量 -->
 	<select id="collectsCount" resultType="Collects">
 		select c.bid,count(*) a
@@ -24,32 +23,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- 查询所有书籍信息 -->
 	<select id="allList" resultType="Book">
-		select b.bid,b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bid desc
+		select
+		b.bid,b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate
+		desc
 	</select>
 
 	<!-- 查询日榜单 -->
 	<select id="dayList" resultType="Book">
-		select	b.bid,b.bname,b.bdate,b.bpic from book b where 
-		(substrb(to_char(b.bdate,'dd'),	1,6)) in (select	to_char(sysdate,'dd') from dual)
+		select
+		b.bid,b.bname,b.bdate,b.bpic,b.bauthor from book b
+		where (to_char(bdate,'yyyy') = to_char(sysdate,'yyyy')) and
+		(to_char(bdate,'mm') = to_char(sysdate,'mm'))
+		and (to_char(bdate,'dd') = to_char(sysdate,'dd'))
+
 	</select>
 
 	<!-- 查询月榜单 -->
 	<select id="monthList" resultType="Book">
-		select
-		b.bid,b.bname,b.bdate,b.bpic,b.bauthor from book b where
-		 (substrb(to_char(b.bdate,'mm'), 1, 6)) in (select	to_char(sysdate,'mm') from dual)
+		select b.bid,b.bname,b.bdate,b.bpic,b.bauthor from book b
+		where (to_char(bdate,'yyyy') = to_char(sysdate,'yyyy')) and
+		(to_char(bdate,'mm') = to_char(sysdate,'mm'))
 	</select>
 
-	<!-- 查询最新榜单 -->
+	<!-- 查询最新榜单（最近三个月上新的书） -->
 	<select id="latestList" resultType="Book">
-		select b.bid,b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
+		select
+		bdate,b.bname,b.bauthor,b.bdate,b.bpic from book b
+		where to_char(sysdate,'mm') - to_char(bdate,'mm') in (2,1,0)
+		and (to_char(bdate,'yyyy') = to_char(sysdate,'yyyy'))
+		order by b.bdate desc
 	</select>
-	
+
 	<select id="findBook" resultType="Book">
-		select b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
+		select
+		b.bname,b.bauthor,b.bdate,b.bpic from book b order by b.bdate desc
 	</select>
-	
+
 	<delete id="delCollect" parameterType="String">
-		delete from collects where bid=#{bid}
+		delete from collects where
+		bid=#{bid}
 	</delete>
 </mapper>
