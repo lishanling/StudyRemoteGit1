@@ -1,6 +1,5 @@
 package com.yc.novel.mapper;
 import java.util.List;
-
 import java.util.Map;
 
 import com.yc.novel.entity.Book;
@@ -15,10 +14,12 @@ public interface BookMapper {
 
 	Book findBookById(String bookId);
 	List<Book> findAllBooks();
+
 	int delBooks(String bid);
 
 	Book bookSSid(String id);
 	Book bookTypes(String id);
 
 	List<Book> selectBook(String name);
+	List<Book> searchAllBooks();
  }

@@ -44,8 +44,8 @@
 		<div id="menu">
 			<ul>
 				<li><a href="homepage.jsp">首页</a></li>
-				<li><a href="collect/toAllList.action">榜单</a></li>
-				<li><a href="back/search.jsp">去搜索</a></li>
+				<li><a href="collect/toDayList.action">榜单</a></li>
+				<li><a href="book/toAll">去搜索</a></li>
 				<li><a href="back/us.jsp">关于</a></li>
 				<li><a href="back/client.jsp">关注</a></li>
 			</ul>
@@ -58,12 +58,12 @@
 					<li><a id="day" href="collect/toDayList.action">日度榜</a></li>
 					<li><a id="month" href="collect/toMonthList.action">月度榜</a></li>
 					<li><a id="latest" href="collect/toLatestList.action">新书榜</a></li>
+					<li><a id="all" href="collect/toAllList.action">全部</a></li>
 				</ul>
 			</div>
 
 			<div id="right">
 				<ul>
-
 					<c:forEach items="${book}" var="item">
 						<li><a>
 								<dl>
@@ -72,10 +72,10 @@
 											src="${item.bpic}"></a>
 									</dt>
 									<dd>
-										书名:<span class="bookName">${item.bname}</span>
+										书名：<span class="bookName">${item.bname}</span>
 									</dd>
 									<dd>
-										作者:<span class="bookauthor">${item.bauthor}</span>
+										作者：<span class="bookauthor">${item.bauthor}</span>
 									</dd>
 									<dd>
 										出版日期：<span class="date">${item.bdate}</span>

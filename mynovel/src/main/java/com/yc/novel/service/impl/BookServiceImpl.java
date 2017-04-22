@@ -1,12 +1,12 @@
 package com.yc.novel.service.impl;
 
 import java.util.HashMap;
-
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.yc.novel.entity.Book;
 import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.mapper.BookMapper;
@@ -64,9 +64,10 @@ public class BookServiceImpl implements BookService {
 			return bookMapper.delBooks(bid)>0;
 		}
 
-	
 
 
+
+	@Override
 	public Book getBookById(String bookId) {
 		return bookMapper.findBookById(bookId);
 	}
@@ -75,5 +76,11 @@ public class BookServiceImpl implements BookService {
 	public List<Book> selectBook(String name) {
 		return bookMapper.selectBook(name);
 	}
+
+	@Override
+	public List<Book> searchAllBook() {
+		return bookMapper.searchAllBooks();
+	}
+
 
 }

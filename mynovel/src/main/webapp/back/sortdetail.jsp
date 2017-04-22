@@ -42,11 +42,10 @@
 <div id="menu">
 			<ul>
 				<li><a href="homepage.jsp">首页</a></li>
-				<li><a href="collect/toAllList.action">榜单</a></li>
-				<li><a href="back/search.jsp">去搜索</a></li>
+				<li><a href="collect/toDayList.action">榜单</a></li>
+				<li><a href="book/toAll">去搜索</a></li>
 				<li><a href="back/us.jsp">关于</a></li>
-				<li><a href="back/client.jsp">关注</a></li>
-			</ul>
+				<li><a href="back/client.jsp">关注</a></li></ul>
 		</div>
 <div id="sortid">
 <h2></h2>

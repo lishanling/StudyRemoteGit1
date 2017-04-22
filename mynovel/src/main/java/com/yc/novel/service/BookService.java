@@ -7,9 +7,9 @@ import com.yc.novel.entity.PaginationBean;
 
 public interface BookService {
 	List<Book> getBooksByTypes(String bookTypesName) ;
- 
+
 	PaginationBean<Book> listPartBooks(String page, String rows);
-	
+
 	boolean updateBooks(Book book);
 	boolean insertBooks(Book book,String sname);
 	boolean delbook(String bid);
@@ -19,4 +19,5 @@ public interface BookService {
 	Book getBookById(String bookId);
 
 	List<Book> selectBook(String name);
+	List<Book> searchAllBook();
 }

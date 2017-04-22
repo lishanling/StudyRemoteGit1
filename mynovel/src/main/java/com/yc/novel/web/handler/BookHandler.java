@@ -3,15 +3,18 @@ package com.yc.novel.web.handler;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.List;
-import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+
 import com.yc.novel.entity.Book;
 import com.yc.novel.entity.PaginationBean;
 import com.yc.novel.service.BookService;
@@ -43,7 +46,7 @@ public class BookHandler {
  	public List<Book> getDetails(String bookSortName) throws UnsupportedEncodingException{
 		bookSortName= URLDecoder.decode(bookSortName, "utf-8");
 		return bookService.getBooksByTypes(bookSortName);
-  	} 
+  	}
 
 	//分页显示图书信息
 	@RequestMapping("list")
@@ -75,7 +78,7 @@ public class BookHandler {
 		return bookService.updateBooks(book);
 	}
 
-	
+
 
 	@RequestMapping("add")
 	@ResponseBody
@@ -113,5 +116,20 @@ public class BookHandler {
 		System.out.println(contend);
 		return bookService.selectBook(contend);
 	}
+
+	//默认显示所有图书信息
+	@RequestMapping(value="allBooks",method=RequestMethod.POST)
+	@ResponseBody
+		public List<Book> booksInfo(){
+			return bookService.searchAllBook();
+	}
+
+	@RequestMapping("/toAll")
+	public String DayList(Model model){
+		List<Book> list= bookService.searchAllBook();
+		model.addAttribute("book",list);
+		return "back/search";
+	}
+
 }
 

@@ -2,30 +2,29 @@ package com.yc.novel.web.handler;
 import java.util.List;
 
 import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.yc.novel.entity.Collects;
-import com.yc.novel.service.CollectsService;
-
-
 
 import com.yc.novel.entity.Book;
+import com.yc.novel.entity.Collects;
+import com.yc.novel.service.CollectsService;
 
 
 @Controller("collectsHandler")
 @RequestMapping("collect")
 public class CollectsHandler {
-	@Autowired 	
+	@Autowired
 	private CollectsService collectsService;
-	
+
 	@RequestMapping("/get")
 	@ResponseBody
  	public boolean getDetails(String bid,String usid){
-	
+
 		usid=usid.trim();
 		Collects collects=new Collects();
 		collects.setBid(bid);
@@ -49,7 +48,7 @@ public class CollectsHandler {
 	public List<Book> collectInfo(String usid){
 		return collectsService.findCollects(usid);
 	}
-	
+
 	@ResponseBody
 	@RequestMapping(value="delcollect",method=RequestMethod.POST)
 	public boolean delCollect(String bid){
@@ -61,7 +60,7 @@ public class CollectsHandler {
 	@ResponseBody
 	public List<Book> collectBook(){
 		 return collectsService.findBook();
-	}	
+	}
 
 	@Resource(name="collectsServiceImpl")
 	public void setCollectsService(CollectsService collectsService) {
@@ -88,10 +87,6 @@ public class CollectsHandler {
 		return "back/list";
 	}
 
-
-
-
-
 	@RequestMapping("/toAllList.action")
 	public String AllList(Model model){
 		List<Book> list= collectsService.AllList();
@@ -99,14 +94,10 @@ public class CollectsHandler {
 		return "back/list";
 	}
 
-
-
 	@RequestMapping("/toLatestList.action")
 	public String LatestList(Model model){
 		List<Book> list= collectsService.LatestList();
 		model.addAttribute("book",list);
 		return "back/list";
 	}
-
-
 }
