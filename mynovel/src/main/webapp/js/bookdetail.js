@@ -97,7 +97,7 @@ function addDiscuss(){
 	var usid=$("#first").html();
 	var dataAll=bid+"&usid="+usid+"&dcontent="+dcontent;
 	if(usid.trim()==null||usid==''){
-		alert("尚未登录，不可发表评论！");
+		alert("您尚未登录，不可发表评论！");
 	}else{
 		$.post("discuss/add?bid="+dataAll,function(data){
 			if(data){
@@ -106,8 +106,6 @@ function addDiscuss(){
 				history.go(0); 			}
 		});
 	}
-	
-	
 }
 
 function outLogin(){

@@ -4,9 +4,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yc.novel.mapper.MenuMapper">
 	<select id="findMenu" resultType="Menu" parameterType="String">
-		select * from menu where bid=#{bid}
+		select *
+		from menu where bid=#{bid}
 	</select>
-
 
 	<resultMap type="PaginationBean" id="PaginationBeanMap">
 		<collection property="rows"
@@ -17,15 +17,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		resultMap="PaginationBeanMap">
 		select count(1) total,ceil(count(1)/${pageSize})
 		totalPage,${pageSize} pageSize,${currPage} currPage from menu
-		where Exists(select bid,mid from menu group by bid,mid) order by bid,mid
+		where
+		Exists(select bid,mid from menu group by bid,mid) order by bid,mid
 		DESC
 	</select>
 
-	<select id="getMenu" resultType="Menu">
-		select * from (select n.*,rownum rn from
-		(select * from menu order by 1) n where ${pageSize}*${currPage}>=rownum)
-		where rn>${pageSize}*(${currPage}-1) and Exists(select bid,mid from
-		menu group by bid,mid) order by bid,mid DESC
+	<select id="getMenu" resultType="Menu" resultMap="MenuMap">
+		select
+		m.bid,b.bname,m.mid,m.mname,m.bcontent from (select
+		n.*,rownum rn from
+		(select * from menu order by 1 ) n where
+		${pageSize}*${currPage}>=rownum) m join book b
+		on m.bid=b.bid where
+		rn>${pageSize}*(${currPage}-1) and
+		Exists(select bid,mid from menu
+		group by bid,mid) order by bid,mid DESC
 	</select>
 
 	<update id="modifytMenu" parameterType="Menu">
@@ -50,8 +56,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 
 	<select id="searchMenu" parameterType="Menu" resultType="Menu">
-		select * from menu 
-			 where bid like '%${bid}%' 
+		select *
+		from menu
+		where bid like '%${bid}%'
 	</select>
-	
+
 </mapper>

@@ -57,7 +57,7 @@ $('#menuList').datagrid({
 	columns : [ [ {field : 'mid',title : '章节',width : 50,align : 'center'
 	}, {field : 'mname',title : '章节名',width : 50,align : 'center'
 	}, {field : 'bid',title : '书的编号',width : 50,align : 'center'
-	}, {field : 'bcontent',title : '章节内容',width : 200,align : 'center'
+	}, {field : 'bnid',title : '书名',width : 200,align : 'center'
 	}, {field : 'opr',title : '操作',width : 150,align : 'center',
 		formatter: function(value,row,index){
 			var oprStr = '<a class="detailBtn" href="javascript:void(0)" onclick="openDatail(' + index + ')">详情</a>&nbsp;&nbsp;' + 
@@ -85,6 +85,7 @@ $("#detailDiv").dialog({
 	width:300,
 	modal:true,
 });
+
 
 $("#detailDiv").dialog("close");
 
@@ -143,6 +144,7 @@ function openDatail(index){
 	$("#dmid").val(row.mid);
 	$("#dmname").val(row.mname);
 	$("#dbid").val(row.bid);
+	$("#dbname").val(row.book.bname);
 	$("#dbcontent").val(row.bcontent);
 }
 

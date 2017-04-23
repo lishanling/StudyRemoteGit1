@@ -78,6 +78,9 @@
 			书编号：<input id="dbid" name="bid" class="inputclass" />
 		</p>
 		<p>
+			书&nbsp;名：<input id="dbname" name="bname" class="inputclass" />
+		</p>
+		<p>
 			内容：
 			<textarea id="dbcontent" name="bcontent" rows="6" cols="25"></textarea>
 		</p>

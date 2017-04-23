@@ -6,6 +6,16 @@ public class Menu {
 	private String mname;
 	private String bid;
 	private String bcontent;
+	private Book book;
+	
+	
+	
+	public Book getBook() {
+		return book;
+	}
+	public void setBook(Book book) {
+		this.book = book;
+	}
 	public String getMid() {
 		return mid;
 	}
@@ -31,11 +41,23 @@ public class Menu {
 	public void setBcontent(String bcontent) {
 		this.bcontent = bcontent;
 	}
+	
+	public Menu(String mid, String mname, String bid, String bcontent, Book book) {
+		this.mid = mid;
+		this.mname = mname;
+		this.bid = bid;
+		this.bcontent = bcontent;
+		this.book = book;
+	}
+	public Menu() {
+		
+	}
 	@Override
 	public String toString() {
-		return "\nMenu [mid=" + mid + ", mname=" + mname + ", bid=" + bid + ", bcontent=" + bcontent + "]";
+		return "\nMenu [mid=" + mid + ", mname=" + mname + ", bid=" + bid + ", bcontent=" + bcontent + ", book=" + book
+				+ "]";
 	}
-	
-	
+
+
 
 }
