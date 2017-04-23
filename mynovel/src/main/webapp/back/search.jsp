@@ -13,21 +13,19 @@
 <body>
 	<div id="box">
 
-		<div id="header">
-			<ul>
-				<li class="red"><c:choose>
-						<c:when test="${loginUser.uname eq null}">
-							<a href="back/login.jsp">登录</a>
-						</c:when>
-						<c:otherwise>
-							<a href="back/userinfo.jsp">${loginUser.uname}</a>
-						</c:otherwise>
-					</c:choose></li>
-				<li class="red"><a href="back/register.jsp">注册</a></li>
-				<li class="red"><a href="#">帮助</a></li>
-				<li class="red"><a href="back/adminlogin.jsp">后台管理</a></li>
-				<li class="red"><a href="javascript:void(0)"
-					onclick="outLogin()">退出登录</a></li>
+<div id="header">
+<ul>
+<li class="red">
+			<c:choose>
+			<c:when test="${loginUser.uname eq null}">
+			<a href="back/login.jsp">登录</a>
+			</c:when>
+			<c:otherwise>
+			<a href="back/userinfo.jsp">${loginUser.uname}</a>
+			</c:otherwise>
+			</c:choose>
+			</li><li class="red"><a href="back/register.jsp">注册</a></li>
+<li class="red"><a href="javascript:void(0)" onclick="outLogin()">退出登录</a></li>
 
 			</ul>
 		</div>
@@ -49,9 +47,9 @@
 			<ul>
 				<li><a href="homepage.jsp">首页</a></li>
 				<li><a href="collect/toDayList.action">榜单</a></li>
-				<li><a href="back/us.jsp">关于我们</a></li>
-				<li><a href="book/toAll">搜索</a></li>
-				<li><a href="back/client.jsp">客户端</a></li>
+				<li><a href="book/toAll">去搜索</a></li>
+				<li><a href="back/us.jsp">关于</a></li>
+				<li><a href="back/client.jsp">关注</a></li>
 			</ul>
 		</div>
 
@@ -94,7 +92,7 @@
 			</ul>
 		</div>
 		<div id="allRight">
-			<span id="dd" style="display: none">${loginUser.uname}</span>
+				<span id="dd" style="display:none">${loginUser.uname}</span>
 			<li><a>Copyright&copy;Duokan. All Rights Reserved</a></li>
 		</div>
 	</div>

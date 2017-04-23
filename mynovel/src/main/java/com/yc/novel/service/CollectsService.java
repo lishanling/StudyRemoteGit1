@@ -25,5 +25,5 @@ public interface CollectsService {
 	List<Book> findBook();
 
 	boolean delCollect(String bid);
-
+	boolean mycnki(Collects c);
 }

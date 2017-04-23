@@ -2,7 +2,7 @@ function openAdd(){
 	$("#addDiv").dialog("open");
 }
 $(".addadminBtn").linkbutton({
-	iconCls: "icon-ok",
+	iconCls: "icon-add",
 });
 $("#addDiv").dialog({
 	title:"管理员添加",
@@ -142,11 +142,21 @@ function openDatail(index){
 
 function delDetail(index){
 	var row = $("#adminList").datagrid("getRows")[index];
+	if(row.aid=='A1001'){
+		$.messager.show({
+			title:'删除消息',
+			msg:'您没有此权限！',
+			timeout:5000,
+			showType:'slide'
+		});
+	}
+	else{
 	$("#adminList").datagrid("deleteRow",index);
 	$.post("admin/delete?aid="+row.aid, function(data) {
 		$.messager.alert('管理员删除','删除成功！');
-
+		$("#adminList").datagrid("reload"); //刷新修改数据
 	}, "json");
+	}
 }
 
 

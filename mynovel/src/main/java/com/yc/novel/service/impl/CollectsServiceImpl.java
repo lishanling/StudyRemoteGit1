@@ -65,5 +65,10 @@ public class CollectsServiceImpl implements CollectsService {
 		return collectsMapper.delCollect(bid)>0;
 	}
 
+	@Override
+	public boolean mycnki(Collects c) {
+		return collectsMapper.cnki(c)>0;
+	}
+
 
 }

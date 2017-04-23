@@ -1,6 +1,7 @@
 package com.yc.novel.service;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.fail;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 import com.yc.novel.entity.Menu;
 import com.yc.novel.entity.PaginationBean;
 
@@ -39,7 +41,7 @@ public class MenuServiceTest {
 	public void testListPartMenu() {
 		PaginationBean<Menu> menu=menuservice.listPartMenu("1","10");
 		System.out.println(menu);
-		
+
 	}
 
 	@Test
@@ -63,14 +65,25 @@ public class MenuServiceTest {
 		System.out.println(result);
 		assertNotNull(result);
 	}
-	
+
 	@Test
 	public void testSearch() {
 		Menu menu=new Menu();
 		menu.setBid("B1010");
 		List<Menu> menus=menuservice.searchMenu(menu);
 		System.out.println(menus);
-		
+
 	}
+
+	@Test
+	public void testFindByMid() {
+		Menu menu=new Menu();
+		menu.setBid("B1020");
+		menu.setMid("第一章");
+		menu=menuservice.findByMid(menu);
+		System.out.println(menu);
+		assertNotNull(menu);
+	}
+
 
 }

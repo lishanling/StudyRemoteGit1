@@ -25,7 +25,7 @@ public interface CollectsMapper {
 	List<Book> findBook();
 
 	int delCollect(String bid);
-
+	int cnki(Collects collects);
 	
 
 }

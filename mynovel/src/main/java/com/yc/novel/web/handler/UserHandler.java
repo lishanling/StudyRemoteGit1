@@ -70,7 +70,6 @@ public class UserHandler {
 	public boolean out(HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException{
 		 HttpSession session = request.getSession(false);//防止创建Session  
 	     session.removeAttribute(ServletUtil.LOGIN_USER);  
-	    // response.sendRedirect("../back/outlogin.jsp");
 	     return true;
 	}
 

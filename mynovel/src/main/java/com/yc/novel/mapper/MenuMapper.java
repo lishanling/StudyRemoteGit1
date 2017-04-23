@@ -17,5 +17,5 @@ public interface MenuMapper {
 	int deleteMenu(Menu menuid);
 
 	List<Menu> searchMenu(Menu menu);
-
+	Menu findByMid(Menu menu);
 }

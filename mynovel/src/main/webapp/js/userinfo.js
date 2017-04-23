@@ -43,7 +43,7 @@ function outLogin(){
 	}else{
 		$.post("user/outlogin",function(data){
 			alert("退出成功！");
-			window.location.replace("back/outlogin.jsp"); 
+			document.location = 'http://localhost:8080/mynovel/';
 		});
 	}
 }
@@ -59,7 +59,7 @@ function updUser(){
 		if(data){
 		$.post("user/outlogin",function(data){
 			alert('修改成功，自动退出！');
-			window.location.replace("back/outlogin.jsp"); 
+			window.location.replace("back/login.jsp"); 
 		},"json");
 		}
 	}, "json");

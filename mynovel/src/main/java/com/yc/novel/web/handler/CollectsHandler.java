@@ -33,6 +33,15 @@ public class CollectsHandler {
 		collects.setUdate(currentDate);
 		return collectsService.addCollects(collects);
   	}
+	@RequestMapping("/cnki")
+	@ResponseBody
+ 	public boolean getCnki(String bid,String usid){
+		usid=usid.trim();
+		Collects c=new Collects();
+		c.setBid(bid);
+		c.setUsid(usid);
+		return collectsService.mycnki(c);
+  	}
 
 	@ResponseBody
 	@RequestMapping(value="collectbookinfo",method=RequestMethod.POST)
